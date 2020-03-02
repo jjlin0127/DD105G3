@@ -1,0 +1,88 @@
+%!Adobe-FontList 1.19
+%Locale:0x404
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:GenJyuuGothic-Monospace-Regular
+FamilyName:Gen Jyuu Gothic Monospace
+StyleName:Regular
+FullName:Gen Jyuu Gothic Monospace Regular
+MenuName:Gen Jyuu Gothic Monospace Regular
+StyleBits:0
+FamilyNameNative:源柔ゴシック等幅
+StyleNameNative:Regular
+FullNameNative:源柔ゴシック等幅 Regular
+WritingScript:Japanese
+OutlineFileName:C:\Users\luck4\Google 雲端硬碟\資策會_前端班\[ 團體專題 ]\首頁ai與公版\首頁ai與公版\Font\GenJyuuGothic-Monospace-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:10544252
+FileModTime:1433626300
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Gen Jyuu Gothic Monospace Regular
+NameArray:0,Win,1,Gen Jyuu Gothic Monospace Regular
+NameArray:0,Win,16,Gen Jyuu Gothic Monospace
+NameArray:1,Win,1,源柔ゴシック等幅 Regular
+NameArray:1,Win,16,源柔ゴシック等幅
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansCJKtc-Regular
+FamilyName:Noto Sans CJK TC
+StyleName:Regular
+FullName:Noto Sans CJK TC Regular
+MenuName:Noto Sans CJK TC Regular
+StyleBits:0
+FamilyNameNative:Noto Sans CJK TC
+StyleNameNative:Regular
+FullNameNative:Noto Sans CJK TC Regular
+WritingScript:TraditionalChinese
+OutlineFileName:C:\Users\luck4\Google 雲端硬碟\資策會_前端班\[ 團體專題 ]\首頁ai與公版\首頁ai與公版\Font\NotoSansCJKtc-Regular.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16431292
+FileModTime:1434350948
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Noto Sans CJK TC Regular
+NameArray:0,Win,1,Noto Sans CJK TC Regular
+NameArray:0,Win,16,Noto Sans CJK TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:PingFang-SC-Medium
+FamilyName:PingFang SC
+StyleName:Medium
+FullName:PingFang SC Medium
+MenuName:PingFang SC Medium
+StyleBits:0
+FamilyNameNative:苹方
+StyleNameNative:中等
+FullNameNative:苹方 中等
+WritingScript:SimplifiedChinese
+OutlineFileName:C:\Users\luck4\Google 雲端硬碟\資策會_前端班\[ 團體專題 ]\首頁ai與公版\首頁ai與公版\Font\PingFang Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:10968356
+FileModTime:1582006792
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,PingFang SC Medium
+NameArray:0,Win,16,PingFang SC
+NameArray:25,Win,1,苹方 中等
+NameArray:25,Win,16,苹方
+%EndFont
+

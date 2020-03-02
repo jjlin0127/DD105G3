@@ -1,0 +1,62 @@
+body {
+    box-sizing: border-box;
+    background-color: lightblue;
+    background-image: url();
+}
+
+.wrap {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+
+/* -- 關於我們------------------------------------ -- */
+
+
+/* -- 特色果甘------------------------------------ -- */
+
+
+/* -- 客製禮盒------------------------------------ -- */
+
+
+/* -- 客製果甘------------------------------------ -- */
+
+.cust_title {
+    width: 200px;
+    text-align: center;
+    letter-spacing: .1rem;
+    padding: 10px;
+    position: relative;
+    /* border-width: 3px; */
+    border-style: dotted;
+    /* border-color: #a6c165; */
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 50px auto;
+}
+
+.cust_title img.leafLeft {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 20%;
+}
+
+.cust_title img.leafRight {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 20%;
+    -webkit-transform: rotate(260deg);
+    transform: rotate(260deg);
+}
+
+
+/* -- 問答遊戲------------------------------------ -- */
+
+
+/* -- 果甘話區------------------------------------ -- */

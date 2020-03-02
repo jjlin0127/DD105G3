@@ -1,0 +1,100 @@
+//========   按鈕模組 =======
+//.btn {
+//     @include btn;
+// }
+//功能按鈕可自訂寬度
+// .game_btn{
+//     @include btn_f(120px);
+// }
+//=========   end   ========
+
+@mixin btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 200px;
+    padding: 15px 30px;
+    color: $btnColor;
+    background-color: $btnBgColor;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    transition: all .5s;
+    &:hover{
+        background-color: $btnHovBgColor;
+    }
+}
+
+@mixin btn_m {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 140px;
+    padding: 12px;
+    color: $btnColor;
+    background-color: $btnBgColor;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    transition: all .5s;
+    &:hover{
+        background-color: $btnHovBgColor;
+    }
+}
+
+@mixin btn_s {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    color: $btnColor;
+    background-color: $btnBgColor;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    transition: all .5s;
+    &:hover{
+        background-color: $btnHovBgColor;
+    }
+}
+
+@mixin btn_a {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 150px;
+    padding: 16px 20px;
+    color: $btnColor;
+    background-color: $btnBgColor;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all .5s;
+    &:hover{
+        background-color: $btnHovBgColor;
+    }
+}
+
+@mixin btn_f($width){
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    width: $width;
+    padding: 12px;
+    color: $btnColor;
+    background-color: $btnFuncBgColor;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    transition: all .5s;
+    &:hover{
+        background-color: $btnFuncHovBgColor;
+    }
+}
