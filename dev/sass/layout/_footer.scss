@@ -1,9 +1,29 @@
+//共用的footer
 footer {
-        height:85px;
-        background-color: #4b823d;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        color:#fff;
-        font-size:1rem;
+    height:85px;
+    background-color: #4b823d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:1rem;
 }
+
+
+ //平板
+// @include respond(medium){
+//     footer {
+//         width: 600px;
+//         background-color: #3bfc00;
+//      }
+//     }
+    
+    
+//     //手機版
+//     @include respond(small){
+//         footer {
+//             width: 200px;
+//             background-color: #3bfc00;
+//          }
+    
+//     }

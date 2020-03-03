@@ -1,3 +1,4 @@
+//共用的header
 header .header__container {
     width: 100%;
     display: flex;
@@ -31,7 +32,7 @@ header .header__container .navList {
 .navList .navItem {
     text-decoration: none;
     padding: 15px;
-    margin: 10px 10px 10px 20px;
+    margin: 10px;
     color: #8a5b41;
     font-size: 1.4rem;
     transition: transform .2s .1s, color .2s .1s;
@@ -61,12 +62,12 @@ header .header__container .navList {
     border-bottom: 3px solid #e08c34;
     /* #e08c34 */
     top: 80%;
-    left: 25px;
+    left: 16px;
     transition: width .3s;
 }
 
 .navItem:hover:after {
-    width: 75px;
+    width: 88px;
     transition: width .3s .1s;
 }
 
@@ -77,6 +78,8 @@ header .header__container .navList {
     /* #a6c165 */
     transition: transform .2s;
 }
+
+
 
 .navItem:hover>.fa-seedling,
 .navItem:hover>.fa-apple-alt,
@@ -90,11 +93,33 @@ header .header__container .navList {
     0% {
         transform: rotate(-10deg);
     }
+
     100% {
         transform: rotate(10deg);
     }
 }
 
+
 .navList .focus {
     color: #a6c165;
 }
+
+
+
+// //平板
+// @include respond(medium){
+// header {
+//     width: 600px;
+//     background-color: rgb(247, 1, 1);
+//  }
+// }
+
+
+// //手機版
+// @include respond(small){
+//     header {
+//         width: 200px;
+//         background-color: rgb(247, 1, 1);
+//      }
+
+// }

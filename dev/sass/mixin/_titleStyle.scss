@@ -1,0 +1,35 @@
+//========   標題模組 =======
+//.title_index {
+//     @include title(3.5px, solid, #a6c165, 10px);
+// }
+// .title_page{
+//     @include title(3px, dotted, #a6c165, 10px,#fff);
+// }
+//=========   end   ========
+
+@mixin title($border-w, $border-s, $border-c, $border-r, $bgc:null) {
+    width: 200px;
+    text-align: center;
+    letter-spacing: .1rem;
+    padding: 10px;
+    position: relative;    
+    border-width: $border-w;
+    border-style: $border-s;
+    border-color: $border-c;
+    border-radius: 10px;
+    background-color: $bgc;
+    img.leafLeft {
+        position: absolute;
+        top: -25px;
+        left: -25px;
+        width: 25%;
+    
+    }
+    img.leafRight {
+        position: absolute;
+        top: -15px;
+        right: -20px;
+        width: 18%;
+        transform: rotate(245deg);
+    }
+}
