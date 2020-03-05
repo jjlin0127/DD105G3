@@ -5,37 +5,33 @@
 // ----------------------------------------------------------------------
 
 
-// @include respond-to(small) { ... }
-// @include respond-to(medium) { ... }
-// @include respond-to(large) { ... }
+// @include respond(phone) { ... }
+// @include respond(ipad) { ... }
+// @include respond(ipadpro) { ... }
 
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == "xsmall" {
-    @media all and (max-width: $xsmall_max) {
+@mixin respond($breakpoint) {
+  @if $breakpoint == "phone" {
+    @media all and (max-width: $phone) {
       @content;
     }
-  }
-
-  @else if $breakpoint == "small" {
-    @media all and (min-width: $small) and (max-width: $medium_max)  {
+  } @else if $breakpoint == "ipad" {
+    @media all and (max-width: $ipad) {
       @content;
     }
-  }
-
-  @else if $breakpoint == "medium" {
-    @media all and (min-width: $medium) and (max-width: $medium_max)  {
+  } @else if $breakpoint == "ipadpro" {
+    @media all and (max-width: $ipadpro) {
       @content;
     }
-  }
-
-  @else if $breakpoint == "large" {
-    @media all and (min-width: $large) and (max-width: $large_max)  {
+  } @else if $breakpoint == "latop-min" {
+    @media all and (max-width: $latop-min) {
       @content;
     }
-  }
-
-  @else if $breakpoint == "desktop" {
-    @media all and (min-width: $desktop) {
+  } @else if $breakpoint == "latop-max" {
+    @media all and (max-width: $latop-max) {
+      @content;
+    }
+  } @else if $breakpoint == "desktop" {
+    @media all and (min-width: $latop-max) {
       @content;
     }
   }

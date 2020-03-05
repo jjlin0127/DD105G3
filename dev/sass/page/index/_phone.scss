@@ -1,0 +1,34 @@
+@include respond(phone) {
+    //手機都寫在裡面
+    //forum
+    img.balloon1{
+      width: 110px;
+      margin-left: 5%;}
+
+    img.balloon2{
+      width: 80px;
+      margin-left: 35%;}
+
+    .wrapper_forum .hot_post {
+      perspective: 6000px;}
+
+    .wrapper_forum .hot_post .carousels .carousel {
+      width: 85%;}
+
+    //forum_article
+    .wrapper_article .article_container{
+      width: 95%; }
+
+    .article_area .post{
+      margin: 0 10px; }
+
+    .comments_area .comment{
+      margin: 0 10px; }
+
+    .comment_zone{
+      margin: 10px; }
+
+    .comment_form > textarea{
+      width: 300px; }
+
+}

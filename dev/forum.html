@@ -9,7 +9,7 @@
 </head>
 <body>
     @@include('layout/header.html',{
-        "focus05" : "focus"
+        "focus06" : "focus"
     })
     <div class="wrapper_forum">
         <img class="balloon1" src="./images/forum/ball.svg">
@@ -292,9 +292,11 @@
             <a href="forum_post.html" class="publish_btn">發表話題</a>
             <a href="forum_post.html" class="mobile_publish_btn"></a>
             
-            <div class="post_zone">        
+            <div class="post_zone">
+                <button id="panelBtn"></button>        
                 <aside class="sortAndFilter">
                     <div class="forum_sort">
+                        <button id="closeBtn"></button>
                         <form action="" class="sort_form">
                             <h5>話題排序</h5>
                             <label for="sort_by">
@@ -659,7 +661,9 @@
         function init() {
             document.getElementById('angle_left').addEventListener('click', showPrev);
             document.getElementById('angle_right').addEventListener('click', showNext);
+            document.getElementById('panelBtn').addEventListener('click', showPanel);
         }
+
         currentDeg = 0;
         function showNext() {
             currentDeg = currentDeg - 60;
@@ -670,6 +674,14 @@
             currentDeg = currentDeg + 60;
             document.getElementsByClassName('carousels')[0].style.transform = 'translate(-50%,-50%) rotateY(' + currentDeg + 'deg)';
         }
+
+        function showPanel() {
+            document.getElementsByClassName('sortAndFilter')[0].classList.add("show");
+            document.getElementById('closeBtn').addEventListener('click', function(){
+                document.getElementsByClassName('sortAndFilter')[0].classList.remove("show");
+            });
+        }
+
         window.addEventListener('load', init);
     </script>
 </body>

@@ -1,0 +1,105 @@
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+
+.wrapper_post{
+    width: 100%;
+    background-image: url("../../../images/forum/sky.jpg");
+    background-size: cover;
+}
+
+.wrapper_post .post_container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 150px; 
+    padding-bottom: 50px; 
+}
+
+.wrapper_post .post_container .post_area{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: floralwhite;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+    padding: 30px;
+}
+
+.post_area .cancel_post{
+    text-align: right;
+}
+
+.post_area .cancel_post > a{
+    display: inline-block;
+}
+
+.cancel_post button.cancel_btn{
+    @include btn_f(120px);
+}
+
+.post_form > div{
+    margin-bottom: 20px;
+}
+
+.post_form p{
+    margin-bottom: 10px;
+}
+
+.post_area .set_post_topic{
+    width: 100%;
+}
+
+.post_area .set_post_topic >input{
+    width: 280px;
+}
+
+.select_post_topic{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    height: 90px;
+}
+
+.select_post_topic .option{
+    height: 30%;
+}
+
+.set_post_topic > label{
+    vertical-align: middle;
+}
+
+.set_post_topic > input{
+    width: 300px;
+    height: 20px;
+}
+
+.select_post_fruit{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90px;
+}
+
+.select_post_fruit .option{
+    height: 30%;
+}
+
+.post_btn{
+    text-align: center;
+}
+
+.post_btn > input{
+    @include btn_f(120px);
+    margin: 10px;
+    display: inline-block;
+}
+
+@import "../../modules/rwd";
+@import "../../page/forum/ipad";
+@import "../../page/forum/phone";

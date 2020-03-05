@@ -1,0 +1,137 @@
+@include respond(ipad) {
+    //小尺寸平板都寫在裡面
+    //forum
+    img.balloon1{
+      width: 120px;
+      margin-left: 5%; }
+
+    img.balloon2{
+      width: 90px;
+      margin-left: 40%; }
+
+    .wrapper_forum .hot_post {
+      width: 360px;
+      height: 450px;
+      perspective: 5000px; }
+    
+    .wrapper_forum .hot_post .carousels .carousel {
+      width: 90%; }
+
+    .publish_btn{
+      display: none; }
+
+    .mobile_publish_btn{
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      border: transparent;
+      background-color: #e08c34;
+      background-image: url('../../../images/forum/edit1.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: 2;
+      text-decoration: none;
+      cursor: pointer;
+      position: fixed;
+      bottom: 70px;
+      right: 10px;
+      transition: all .5s; 
+      &:hover {
+        background-color: #Fa0; }
+      }
+    
+    button#panelBtn{
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      border: transparent;
+      background-color: #e08c34;;
+      background-image: url('../../../images/forum/filter1.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: 2;
+      cursor: pointer;
+      position: fixed;
+      bottom: 25px;
+      right: 10px;
+      transition: all .5s; 
+      &:hover {
+        background-color: #Fa0; }
+      }
+
+    aside.sortAndFilter{
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 130px 0 50px 0;
+      background-color: rgba(177, 200, 211, 0.877);
+      position:fixed;
+      top: 0;
+      left: 100%;
+      transition: all .8s; }
+
+    aside.sortAndFilter > div{
+      width: 30vw;
+      margin: 0 auto; }
+
+    aside.sortAndFilter.show{
+      left: 0%; }
+
+    button#closeBtn{
+      display: block;
+      width: 40px;
+      height: 40px;
+      border: transparent;
+      background-color:transparent;
+      background-image: url('../../../images/forum/close.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: 6;
+      cursor: pointer;
+      position: absolute;
+      top: 100px;
+      right: 10px; }
+
+    section{
+      width: 90%;
+      margin: 0 5%; }
+
+    .wrapper_forum .all_posts_area .post_zone .all_posts .post{
+      margin: 0 10px;
+      padding: 10px; }
+
+    //forum_article
+    .wrapper_article .article_container{
+      width: 90%; }
+
+    .article_area .post{
+      margin: 0 20px;
+      padding: 10px; }
+
+    .comments_area .comment{
+      margin: 0 20px;
+      padding: 10px; }
+
+    .comment_zone{
+      margin: 20px; }
+    
+    .comment_form > textarea{
+      width: 300px; }
+
+    //forum_post
+    .wrapper_post .post_container{
+      width: 90%; }
+
+    .post_area .set_post_topic >input{
+      width: 90%; }
+
+    .select_post_fruit{
+      width: 100%; }
+
+}

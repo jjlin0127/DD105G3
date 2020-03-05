@@ -1,0 +1,16 @@
+@include respond(ipadpro) {
+    //大尺寸平板都寫在裡面
+    //forum
+    img.balloon1{
+      margin-left: 10%;}
+  
+    img.balloon2{
+      margin-left: 40%;}
+
+    aside.sortAndFilter{
+      width: 120px;}
+
+    section{
+      width: calc(100% - 170px);}
+
+}
