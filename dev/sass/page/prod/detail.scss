@@ -1,0 +1,230 @@
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../layout/login';
+@import '../../layout/tab';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+@import '../../modules/rwd';
+
+.detail_wrapper{
+    width:1200px;
+    box-sizing: border-box;
+    background-color: rgba(211, 235, 174, 0.85);
+    border:3px solid #A2C070;
+    border-radius:10px;
+    position:relative;
+    left: 50%;
+    margin-left:-600px;
+    margin-bottom: 40px;
+    padding:20px;
+    padding-right: 0px;
+    flex-wrap: wrap;
+}
+
+.detail_wrapper > .prdt_img{
+    display:inline-block;
+    width:40%;
+    /* border:1px solid red; */
+    background-color: white;
+    border-radius: 4px;
+}
+.large_img > img{
+    width:80%;
+    margin-left: 10%;
+}
+
+.prdt_img > table.small_img{
+    width:100%;
+    border:1px solid green;
+    background-color: white;
+}
+
+img.sm_photo {
+    width:120px;
+}
+
+.prdt_text{
+    display:inline-block;
+    /* float:right; */
+    margin-left: 50px;
+    width:54%;
+}
+
+.prdt_text > table.grade{
+    width:100%;
+    /* border:1px solid green; */
+    /* background-color: white; */
+    margin:20px 0px;
+    padding-left:40px;
+}
+
+
+
+td.score{
+    /* border:1px dotted grey; */
+    padding-left: 40px;
+    width:80px;
+}
+
+td.stars > img{
+    width:120px;
+    /* border:1px dotted hotpink; */
+    float:left;
+}
+
+p.introduce{
+    margin: 10px 0px;
+    font-size:18px;
+}
+
+div.buy > div,h4{
+    margin:10px 0px;;
+}
+
+.quantity > h4{display:inline-block;}
+.quantity > div,button{
+    font-size:2rem;
+    display:inline-block;
+}
+#howmany{
+    width:30px;
+    background-color:white;
+    border: 1px solid #CCCBCF;
+    padding: 10px; 
+}
+button.count{
+    width:40px;
+    background-color:#CCCBCF;
+    padding: 5px 10px; 
+}
+
+button.for_buyit{
+    margin: 10px 20px;
+}
+
+button#putin{
+    width:180px;
+    color: black;
+    padding:8px 20px 8px 8px;
+    border:3px solid #D35D3D; 
+    background-color: rgb(230, 230, 230);
+    box-sizing: border-box;
+}
+
+button#putin:hover{
+    background-color: white;
+}
+button#putin > img{
+    width:22px;
+    margin-left:10px;
+    position: relative;
+    top:3px;
+}
+
+ul.prtd_comment{
+    height:600px;
+    overflow: auto;
+    margin: 10px;
+    padding: 10px 30px;
+    line-height: 1.4;
+    background-color: white;
+    border-radius: 20px;
+}
+
+ul.prtd_comment > li{
+    width:1100px;
+    border-bottom: 2px dotted black;
+    position: relative;
+    line-height: 1.4;
+}
+ul.prtd_comment > li > div{
+    margin: 20px 0px;
+}
+
+table.each_comment{
+    margin-bottom:10px;
+}
+
+tr.each_comment > td:first-child {
+    /* border: 1px solid blue; */
+    width:70%;
+    position: relative;
+    right:0px;
+}
+
+tr.each_comment > td {
+    /* border: 1px solid red; */
+    padding: 0px 10px;
+}
+
+td.accuse{
+    color:#8C512E;
+}
+
+td.accuse:hover{
+    cursor: pointer;
+}
+
+tr.each_comment > td > img{
+    width:130px;
+}
+
+
+#cloudBoard{		/*div*/
+	margin: 100px auto;
+	width: 100%;
+	height: 600px;
+	/* background-color: hotpink; */
+	overflow: hidden;
+	/* transform: rotate(345deg); */
+	position: absolute;
+	top:150px;
+    left:0px;
+    z-index:-2;
+}
+
+
+#cloudBoard ul{	/*ul*/
+	width: 4000px;
+	position: relative;
+	top:-20px;
+	animation: slider 16s infinite linear; /*"infinit"可以改成3，就變成只播放三次*/
+	/* transform: rotate(45deg); */
+}
+
+
+img#moving_cloud {
+  width:1400px;
+  /* border:1px solid green; */
+}
+
+
+
+@keyframes slider{
+    0%{left: -600px;
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+
+    20%{left:60px;
+        opacity: 1.0;
+    }
+
+    50%{ left: 750px;
+        opacity: 0.9;
+        /* transform:skewX(10deg); */
+    }
+
+    60%{
+        opacity:0.6;
+        transform:scaleX(2.0);
+    }
+
+    100%{left: 1900px;
+        opacity: 0.1;
+        /* transform:skewX(40deg); */
+    }
+}

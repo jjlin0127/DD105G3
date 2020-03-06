@@ -8,41 +8,6 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-body {
-    box-sizing: border-box;
-    background-color: #fff;
-    background-image: url();
-}
-
-.wrap {
-    width: 100%;
-}
-
-section {
-    width: 100%;
-    border: 1px solid gray;
-    box-sizing: border-box;
-    /*↓↓↓加這個指令，手機就不會出現橫向卷軸*/
-}
-
-/* -- 特色果甘------------------------------------ -- */
-
-@font-face {
-    font-family: Noto;
-    src: url(../font/NotoSansCJKtc-Regular.otf);
-}
-
-@font-face {
-    font-family: Genjyuu;
-    src: url(../font/GenJyuuGothic-Monospace-Regular.ttf);
-}
-
-html {
-    font-size: 16px;
-    color: #4c4948;
-    font-family: Noto, Genjyuu;
-}
-
 .box_for_prod_title_hot_topics {
     position: relative;
     /* border:1px solid blue ; */
@@ -57,11 +22,12 @@ html {
     padding: 10px;
     position: relative;
     border-width: 3px;
-    border-style: dotted;
-    border-color: #a6c165;
+    border-style: dashed;
+    border-color:#a6c165;
     border-radius: 10px;
     background-color: #fff;
     margin: 50px auto;
+    margin-bottom: 20px;
 }
 
 .prod_title_hot_topics img.prod_leafLeft {
@@ -95,131 +61,70 @@ div.contain {
     box-sizing: border-box;
 }
 
+table.prod_leaderboard{
+    // border:3px green dashed;
+    width:100%;
+    td.lower{
+        position: relative;
+        top:60px;
+    }
+    td.prod_colorful_balloon{
+        width:8%;
+        img{
+            width:50%;
+        }
+
+        img.higher{
+            position: relative;
+            top:-250px;
+        }
+        img.float_right{
+            float: right;
+        }
+    }
+    td.prod_leaderboard{
+        // border:1px solid #800080;
+        width:26%;
+        position: relative;
+        img{
+            width:70%;
+            margin-left: 15%;
+        }
+        div.prod_introduce{
+            position: absolute;
+            top:0px;
+            width: 70%;
+            margin-left: 15%;
+            z-index: 2;
+            img{
+                width:80%;
+                margin-left: 10%;
+            }
+            h2,h3{
+                text-align: center;
+            }
+            img.prod_stars{
+                width:60%;
+                margin-left: 20%;
+                // border:2px dashed blue;
+            }
+        }
+    }
+}
+
 div.box_for_balloon {
     width: 78%;
     margin: 0 auto;
-    /* border: 1px solid green; */
+    border: 1px solid green;
     box-sizing: border-box;
 }
 
 div.prod_wrapper_3balloon {
-    /* border:1px solid blueviolet; */
+    border:1px solid blueviolet;
     width: 79%;
     display: inline-block;
 }
 
-div.prod_a_balloon {
-    /* border: 1px solid purple; */
-    box-sizing: border-box;
-    width: 32%;
-    /* width:26%; */
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-}
-
-img.the_3balloon {
-    width: 80%;
-    margin: 0 10%;
-}
-
-.prod_down150 {
-    position: relative;
-    animation-name: moveup;
-    animation-duration: 10s;
-    animation-iteration-count: 3;
-}
-
-@keyframes moveup {
-    0% {
-        top: 0px;
-        opacity: 0;
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        top: -450px;
-        opacity: 0;
-    }
-}
-
-.prod_down200 {
-    position: relative;
-    animation-name: smaller;
-    animation-duration: 10s;
-    animation-iteration-count: 3;
-}
-
-@keyframes smaller {
-    0% {
-        top: 0px;
-        opacity: 0;
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        top: -250px;
-        opacity: 0;
-        transform: scale(0.6);
-    }
-}
-
-div.prod_a_balloon>div.prod_introduce {
-    width: 100%;
-    position: absolute;
-    /* border:1px solid violet; */
-    bottom: 20%;
-    box-sizing: border-box;
-    padding: 10px;
-    z-index: 10;
-}
-
-div.prod_introduce>h2,
-h3 {
-    text-align: center;
-    line-height: 1.6;
-    z-index: 2;
-}
-
-div.prod_introduce>h3 {
-    font-size: 1.75rem;
-}
-
-div.prod_introduce>h2 {
-    font-size: 2.25rem;
-    color: #F15A24;
-}
-
-img.prod_stars {
-    width: 50%;
-    margin-left: 30%;
-    z-index: 2;
-}
-
-div.center_balloon {
-    position: relative;
-    /*↓↓↓轉手機螢幕 top:20px*/
-    top: 40px;
-}
-
-div.prod_box_for_balloons {
-    /*↓↓↓轉手機螢幕width會變3%*/
-    width: 10%;
-    /* border: 1px solid blue; */
-    box-sizing: border-box;
-    display: inline-block;
-}
-
-
-/* #prod_box_for_balloons03{
-    width:10%;
-} */
-
-img.prod {
-    width: 70%;
-}
 
 div.prod_white_line {
     position: relative;
@@ -256,11 +161,6 @@ input {
     transition: all .5s;
     cursor: pointer;
     border: 2px solid #e08c34;
-    position: relative;
-    top: -65px;
-    left: 50%;
-    margin-left: -100px;
-    transform: scale(1.0);
 }
 
 .prod_btn:hover {
@@ -273,26 +173,16 @@ input {
     h2.prod_the_grey_title {
         font-size: 1.75rem;
     }
-    div.prod_box_for_balloons {
-        width: 3%;
+    td.prod_colorful_balloon{
+        display:none;
     }
-    /* #prod_box_for_balloons03{
-        width:10%;
-    } */
-    div.center_balloon {
-        top: 20px;
+    td.prod_leaderboard{
+        width:33%;
     }
-    .prod_btn {
-        transform: scale(0.8);
-        margin-left: -120px;
-    }
-    /*以下是針對div.prod_introduce裡面的h2和h3*/
-    div.prod_a_balloon>div.prod_introduce {
-        bottom: 0%;
-    }
-    div.prod_introduce>h2,
-    h3 {
+    div.prod_introduce{
+        h2,h3 {
         line-height: 1.2;
+        }
     }
     div.prod_introduce>h3 {
         font-size: 0.9rem;
@@ -300,6 +190,17 @@ input {
     }
     div.prod_introduce>h2 {
         font-size: 1rem;
+    }
+    center.prod_center{
+        // transform: scale(0.7);
+        h4{
+            font-size: 0.7rem;
+        }
+    }
+    button.prod_btn{
+        width: 80%;
+        padding: 5px 10px;
+        font-size: 1.0rem;        
     }
 }
 
@@ -335,9 +236,7 @@ input {
     div.prod_box_for_balloons {
         width: 8%;
     }
-    /* #prod_box_for_balloons03{
-        width:10%;
-    } */
+
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -358,10 +257,20 @@ input {
     div.prod_box_for_balloons {
         width: 5%;
     }
-    /* #prod_box_for_balloons03{
-        width:10%;
-    } */
-    /* div.prod_white_line{
-        left:-40px;
-    } */
+    .prod_btn {
+        width: 180px;
+        background: #e08c34;
+        border: none;
+        border-radius: 100px;
+        padding: 13px 27px;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 1.25rem;
+        font-family: Noto;
+        text-align: center;
+        transition: all .5s;
+        cursor: pointer;
+        border: 2px solid #e08c34;
+    }
+
 }
