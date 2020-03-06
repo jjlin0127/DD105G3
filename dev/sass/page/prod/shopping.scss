@@ -1,0 +1,192 @@
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../layout/login';
+@import '../../layout/tab';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+@import '../../modules/rwd';
+
+h2.say_hi{
+    text-align: center;
+    margin-bottom: 10px;;
+}
+div.box_for_shopping_title{
+    background-color: #CAE7BC;
+    width:300px;
+    position: relative;
+    left:50%;
+    margin-top: 60px;
+    margin-left:-190px;
+    padding:20px 40px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+h3.shopping_title{
+    text-align:center;    
+}
+.shopping_wrapper{
+    width:1200px;
+    box-sizing: border-box;
+    background-color: rgba(211, 235, 174, 0.85);
+    border:3px solid #A2C070;
+    border-radius:10px;
+    position:relative;
+    left: 50%;
+    margin-left:-600px;
+    margin-bottom: 40px;
+    padding:20px;
+    /* padding-right: 0px; */
+    flex-wrap: wrap;
+}
+table.purchase_list{
+    width:100%;
+    border:1px solid blue;
+}
+
+th{
+    padding:10px 30px;
+    color:white;
+    font-size:1.25rem;
+    background-color: #377039;
+    border: 3px solid rgba(211, 235, 174, 0.85);
+}
+
+tr{
+    border: 1px solid purple;
+    vertical-align: baseline;
+}
+
+td{
+    border: 3px dotted grey;
+    position: relative;
+    height:100px;
+    vertical-align: middle;
+}
+
+td > img {
+    width:250px;
+    height:210px;
+}
+
+td > div.quantity {
+    /* border: 1px solid hotpink; */
+    position: relative;
+    top:0px;
+}
+
+button.test_btn,button.remove_btn{
+    float:right;
+}
+
+.quantity > h4{display:inline-block;}
+.quantity > div,button{
+    font-size:2rem;
+    display:inline-block;
+    margin: 10px;
+}
+#howmany{
+    width:30px;
+    background-color:white;
+    border: 1px solid #CCCBCF;
+    padding: 10px; 
+}
+button.count{
+    width:40px;
+    background-color:#CCCBCF;
+    padding: 5px 10px; 
+}
+
+
+/*從政儒discuss.css的boutton.test_btn去改*/
+button.remove_btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    /*↓↓↓可以考慮改成width:100px*/
+    width: 100px;
+    border: 3px solid #e08c34;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    color: grey;  /*#ffffff*/
+    background-color: rgba(200,200,200);  /*#e08c34*/
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 100px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+button.remove_btn:hover{
+    background-color: rgba(255,255,255);
+}
+
+
+div.shopping_sum{
+    margin-top: 20px;
+    position: relative;
+    left:50%;
+    margin-left: -385px;
+}
+
+div.shopping_sum > h2,button{
+    display: inline;
+}
+
+#cloudBoard{		/*div*/
+	margin: 100px auto;
+	width: 100%;
+	/* height: 600px; */
+	/* background-color: hotpink; */
+	overflow: hidden;
+	/* transform: rotate(345deg); */
+	position: absolute;
+	top:30px;
+    left:0px;
+    z-index:-2;
+}
+
+
+#cloudBoard ul{	/*ul*/
+	/* width: 1200px; */
+	position: relative;
+	animation: slider 16s infinite linear; /*"infinit"可以改成3，就變成只播放三次*/
+	/* transform: rotate(45deg); */
+}
+
+img#moving_cloud {
+  width:1400px;
+  /* border:1px solid green; */
+}
+
+
+
+@keyframes slider{
+    0%{left: -600px;
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+
+    20%{left:60px;
+        opacity: 1.0;
+    }
+
+    50%{ left: 750px;
+        opacity: 0.9;
+        /* transform:skewX(10deg); */
+    }
+
+    60%{
+        opacity:0.6;
+        transform:scaleX(2.0);
+    }
+
+    100%{left: 1900px;
+        opacity: 0.1;
+        /* transform:skewX(40deg); */
+    }
+}
