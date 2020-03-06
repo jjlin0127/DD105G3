@@ -1,0 +1,103 @@
+<section class="index_prod" style="background-color:#D2E8F2;">
+    <div class="box_for_prod_title_hot_topics">
+        <div class="prod_title_hot_topics">
+            <img src="./images/dark_leaf.svg" class="prod_leafLeft">
+            <img src="./images/dark_leaf.svg" class="prod_leafRight">
+            特色果甘
+        </div>      
+    </div>
+    <h2 class="prod_the_grey_title">特色果甘排行</h2>
+    <div class="contain">
+        <div class="box_for_balloons">
+            <div class="prod_box_for_balloons" id="prod_box_for_balloons01"><!--我是空格1--><img src="images/grey_balloon.svg"></div>
+            <script>
+                function $id(id){
+                    return document.getElementById(id);
+                    }
+                    window.addEventListener("scroll",function(){
+                        if( document.documentElement.scrollTop > 600){
+                            $id("prod_box_for_balloons01").classList.add("prod_down150");
+                        }else {
+                            $id("prod_box_for_balloons01").classList.remove("prod_down150");
+                        }
+                    })
+            </script>
+            <div class="prod_wrapper_3balloon">
+                <div class="prod_a_balloon" >
+                    <img src="./images/white_balloon_and_mango.png" class="the_3balloon">
+                    <div class="prod_introduce">
+                        <div class="prod_introduce">
+                            <h3>我是芒果</h3>
+                            <h2 >3.9</h2>
+                            <img src="images/icon/three_stars.svg" class="prod_stars" >
+                        </div>
+                    </div>
+                </div>
+                <div class="prod_a_balloon center_balloon">
+                    <img src="./images/white_balloon_and_strawberry.png" class="the_3balloon">
+                    <div class="prod_introduce">
+                        <h3>我是草莓</h3>
+                        <h2>3.9</h2>
+                        <img src="images/icon/three_stars.svg" class="prod_stars" >
+                    </div>
+                </div>
+                <div class="prod_a_balloon">
+                    <img src="./images/white_balloon_and_pineapple.png" class="the_3balloon">
+                    <div class="prod_introduce">
+                        <h3>我是鳳梨</h3>
+                        <h2>3.9</h2>
+                        <img src="images/icon/three_stars.svg" class="prod_stars" >
+                    </div>
+                </div>
+            </div> <!--div.prod_wrapper_3balloon"-->
+            <div class="prod_box_for_balloons" id="prod_box_for_balloons02"><img src="images/grey_balloon.svg" style="width:80%;"></div>
+            <script>
+                function $id(id){
+                    return document.getElementById(id);
+                    }
+                    window.addEventListener("scroll",function(){
+                        if( document.documentElement.scrollTop > 600){
+                            $id("prod_box_for_balloons02").classList.add("prod_down200");
+                        }else {
+                            $id("prod_box_for_balloons02").classList.remove("prod_down200");
+                        }
+                    })
+            </script>
+        </div> <!--box_for_balloon的結尾標籤-->
+        <div class="box_for_whiteline">
+            <div class="prod_box_for_balloons" id="prod_box_for_balloons03"><img src="images/yellow_balloon.svg"></div>
+            <script>
+                function $id(id){
+                    return document.getElementById(id);
+                    }
+                    window.addEventListener("scroll",function(){
+                        if( document.documentElement.scrollTop > 900){
+                            $id("prod_box_for_balloons03").classList.add("prod_down200");
+                        }else {
+                            $id("prod_box_for_balloons03").classList.remove("prod_down200");
+                        }
+                    })
+            </script>
+            <div class="prod_white_line">
+                <img src="./images/balloon_line_ready.svg" class="the_line">
+            </div>
+            <div class="prod_box_for_balloons" id="prod_box_for_balloons04"><img src="images/blue_balloon.svg" style="width:100%;"></div>
+            <script>
+                function $id(id){
+                    return document.getElementById(id);
+                    }
+                    window.addEventListener("scroll",function(){
+                        if( document.documentElement.scrollTop > 1200){
+                            $id("prod_box_for_balloons04").classList.add("prod_down200");
+                        }else {
+                            $id("prod_box_for_balloons04").classList.remove("prod_down200");
+                        }
+                    })
+            </script>
+
+        </div>  <!--div.box_for_whiteline-->
+
+        <button class="prod_btn" onclick="location.href='./product.html'">更多果甘</button>
+
+    </div>
+</section>

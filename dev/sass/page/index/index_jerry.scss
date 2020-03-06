@@ -1,0 +1,245 @@
+// Jerry的首頁-----------------------------------------
+
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+
+body {
+    box-sizing: border-box;
+    background-color: #fff;
+    background-image: url("../../../images/sky.jpg");
+}
+
+.wrap {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+/* -- 果甘話區------------------------------------ -- */
+.index_bbs .contain{
+    width: 100%;
+}
+
+.bbs_title{
+    @include title(3px, dotted, #a6c165, 10px, #fff);
+    margin: 50px auto 200px;
+}
+
+.bbs_articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bbs_article{
+    width: 22%;
+    max-width: 300px;
+    min-width: 275px;
+    position: relative;
+}
+
+.bbs_article1{
+    animation: bbs_balloonAnimate1 5s linear infinite alternate;
+}
+.bbs_article2{
+    // margin: 0 40px 50px;
+    animation: bbs_balloonAnimate2 3s linear infinite alternate;
+}
+.bbs_article3{
+    animation: bbs_balloonAnimate1 4s linear infinite alternate;
+}
+@keyframes bbs_balloonAnimate1 {
+    0% {    
+        transform: translateY(15px);
+    }
+    100% { 
+        transform: translateY(-20px);
+    }
+}
+@keyframes bbs_balloonAnimate2 {
+    0% {    
+        transform: translateY(-15px);
+    }
+    100% { 
+        transform: translateY(20px);
+    }
+}
+
+.bbs_article1 > img{
+    width: 70%;
+    position: absolute;
+    top: -55%;
+    left: 30%;
+    z-index: 1;
+}
+.bbs_article2 > img{
+    width: 30%;
+    position: absolute;
+    top: -44%;
+    left: 35%;
+    z-index: 1;
+}
+.bbs_article3 > img{
+    width: 62%;
+    position: absolute;
+    top: -49%;
+    left: 32%;
+    z-index: 1;
+}
+
+.bbs_article_contain::before{
+    content: '';
+	height: 22px;
+    border-right: 3px solid peru;
+    position: absolute;
+    left: 42%;
+    top: -16px;
+    transform: rotate(45deg);
+}
+.bbs_article_contain::after{
+    content: '';
+	height: 22px;
+    border-right: 3px solid peru;
+    position: absolute;
+    right: 43%;
+    top: -16px;
+    transform: rotate(-45deg);
+}
+
+.bbs_article_contain{
+    background-color: white;
+    border: 5px solid peru;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+}
+
+.bbs_article_contain .post{
+    padding: 10px;
+}
+
+.bbs_article_contain a.post_link{
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #4c4948;
+}
+
+.bbs_article_contain .post .author {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bbs_article_contain .post .author .author_img {
+    width: 80px;
+    border-radius: 50%;
+    border: 5px solid #D35D3D;
+    overflow: hidden;
+}
+
+.bbs_article_contain .post .author .author_img > img {
+    width: 100%;
+}
+
+.bbs_article_contain .post .author p.author_name {
+    margin-left: 10px;
+}
+
+.bbs_article_contain .post p.post_title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.bbs_article_contain .post .post_topic{
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.bbs_article_contain .post .post_topic1{
+    color: lightseagreen;
+}
+.bbs_article_contain .post .post_topic2{
+    color: tomato;
+}
+.bbs_article_contain .post .post_topic3{
+    color: sandybrown;
+}
+
+.bbs_article_contain .post .post_topic > img{
+    width: 16px;
+}
+
+.bbs_article_contain .post .post_topic > span{
+    margin-left: 5px;
+}
+
+.bbs_article_contain .post .post_topic span.post_time{
+    font-size: 0.8rem;
+    color: $color;
+    margin-left: 15px;
+}
+
+.bbs_article_contain .post p.post_content{
+    margin-top: 20px;
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp: 3;      
+    -webkit-box-orient: vertical;
+    line-height: 1.5rem;
+    max-height: 4.5rem;
+}
+
+.bbs_article_contain .post .post_hashtag{
+    margin-top: 20px;
+}
+
+.bbs_article_contain .post .post_hashtag .fruit_kind{
+    color: white;
+    border-radius: 3px;
+    margin-right: 3px;
+    padding: 3px;
+    font-size: 0.8rem;
+}
+
+.bbs_article_contain .post .post_hashtag .fruit_kind1{
+    background-color: lightseagreen;
+}
+.bbs_article_contain .post .post_hashtag .fruit_kind2{
+    background-color: tomato;
+}
+.bbs_article_contain .post .post_hashtag .fruit_kind3{
+    background-color: sandybrown;
+}
+
+.bbs_article_contain .post .social_zone{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.bbs_article_contain .post .social_zone .likeAndComment{
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bbs_article_contain .post .social_zone .likeAndComment > p{
+    margin: 0 15px 0 5px;
+}
+
+.bbs_btn{
+    @include btn_a;
+    display: block;
+    margin: 50px auto;
+}

@@ -1,0 +1,258 @@
+// Felix的首頁-----------------------------------------
+
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+body {
+    box-sizing: border-box;
+    background-color: lightblue;
+    background-image: url();
+}
+
+.wrap {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+/* -- 客製果甘------------------------------------ -- */
+
+@mixin content {
+    right: 61px;
+    top: 146px;
+    transform: rotate(-135deg);
+    border: 4px solid #CEA45A;
+    //------------------------
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    &:hover {
+        background: #eee
+    }
+    .wheel_plate {
+        background: url(../images/index_cust/wheel_plate.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 120px;
+        width: 100%;
+        top: -405px;
+        right: 65px;
+        img {
+            width: 110px;
+            height: 110px;
+            position: relative;
+            top: -165px;
+            left: 5px;
+        }
+    }
+    a {
+        width: 100%;
+        height: 100%;
+        line-height: 545px;
+        left: 210px;
+        display: block;
+        position: absolute;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.index_cust {
+    .contain {
+        .title_index {
+            @include title(3.5px,
+            solid,
+            #a6c165,
+            10px);
+            margin: 50px auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        .cust_qna_contain {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .cust_contain {
+                margin-top: -130px;
+                .cust_wheelset {
+                    .cust_wheelstick {
+                        position: relative;
+                        left: -65px;
+                        bottom: -430px;
+                        z-index: 1;
+                        height: 48px;
+                        background-image: url(../images/index_cust/wheel_stick.png);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                    .cust_wheel {
+                        border-radius: 100%;
+                        position: relative;
+                        z-index: 2;
+                        left: 200px;
+                        bottom: -100px;
+                        height: 600px;
+                        width: 600px;
+                        overflow: hidden;
+                        // background-image: url(../images/index_cust/wheel.png);
+                        background: #987845;
+                        border: 4px solid #CEA45A;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        .item {
+                            overflow: hidden;
+                            position: absolute;
+                            width: 300px;
+                            height: 300px;
+                            transform-origin: 100% 100%;
+                        }
+                        .item1 {
+                            z-index: 1;
+                            transform: rotate(68deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item2 {
+                            z-index: 2;
+                            transform: rotate(113deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item3 {
+                            z-index: 3;
+                            transform: rotate(158deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item4 {
+                            z-index: 4;
+                            transform: rotate(203deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item5 {
+                            z-index: 5;
+                            transform: rotate(248deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item6 {
+                            z-index: 6;
+                            transform: rotate(293deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item7 {
+                            z-index: 7;
+                            transform: rotate(338deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        .item8 {
+                            z-index: 8;
+                            transform: rotate(23deg);
+                            .content {
+                                @include content;
+                            }
+                        }
+                        #wrapper8 {
+                            position: absolute;
+                            width: 300px;
+                            height: 300px;
+                            overflow: hidden;
+                            transform-origin: 100% 100%;
+                        }
+                        #center {
+                            position: absolute;
+                            left: 145px;
+                            top: 145px;
+                            width: 315px;
+                            height: 315px;
+                            z-index: 8;
+                            background: rgba(255, 255, 255, .5);
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+            .qna_contain {
+                display: flex;
+                margin: 100px 200px 0px 0px;
+                line-height: 1.5;
+                .title_page {
+                    @include title(3px,
+                    dotted,
+                    #a6c165,
+                    10px,
+                    #fff);
+                    height: 55px;
+                    margin: 0px 30px;
+                }
+                .qna_paper {
+                    width: 500px;
+                    height: 350px;
+                    margin-top: 15px;
+                    border-radius: 20px;
+                    border: 1px solid #8A5B41;
+                    background: #fff;
+                    .qna_paper_upper {
+                        margin: 30px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .qna_paper_lower {
+                        margin-top: 100px;
+                        margin: 30px;
+                        span {
+                            display: block;
+                            margin: 30px;
+                        }
+                    }
+                    .qna_paper_buttons {
+                        display: flex;
+                        justify-content: center;
+                        button {
+                            font-family: Noto, Genjyuu;
+                            margin: 0 10px;
+                            @include btn_f(100px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cust_platform {
+        margin-top: -130px;
+        z-index: -1;
+        position: relative;
+        left: -166px;
+        height: 488px;
+        background-image: url(../images/index_cust/cust_platform.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .cust_more {
+        font-family: Noto, Genjyuu;
+        float: right;
+        margin-right: 160px;
+        position: relative;
+        top: -255px;
+        @include btn;
+    }
+}

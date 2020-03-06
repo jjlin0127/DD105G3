@@ -1,0 +1,302 @@
+.fa-times {
+    color: #076baf;
+    cursor: pointer;
+    margin-right:10px;
+}
+
+
+.order {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.order:nth-child(odd) {
+    background-color: lavenderblush;
+    border-radius: 24px;
+}
+
+.order:nth-child(even) {
+    background-color: #fff;
+    border-radius: 24px;
+}
+
+.order .orderList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 425px) {
+    .order .orderList {
+        padding: 10px;
+    }
+}
+
+.order .orderList table tr {
+    line-height: 1.6;
+}
+
+.order .orderList table tr th {
+    color: #076baf;
+    font-size: 20px;
+    font-family: g2Font;
+    width: 150px;
+}
+
+@media only screen and (max-width: 425px) {
+    .order .orderList table tr th {
+        width: 112px;
+    }
+}
+
+.order .orderList table tr td {
+    color: #076baf;
+    font-size: 18px;
+    font-family: g2Med;
+    padding: 10px;
+}
+
+.order .total {
+    text-align: right;
+}
+
+.order .total p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #076baf;
+    font-family: g2Font;
+    padding: 20px;
+    margin-top: -35px;
+}
+
+.order .orderitem {
+    width: 100%;
+    margin-top: -10px;
+}
+
+.order .orderitem p {
+    text-align: center;
+    font-size: 18px;
+    color: #076baf;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.order .orderitem .line {
+    width: 92%;
+    margin: auto;
+    height: 2px;
+    border-bottom: 2px solid #076baf;
+}
+
+.order .orderitem .orderLis_content {
+    position: relative;
+    display: none;
+    width: 100%;
+}
+
+.order .orderitem .orderLis_content .orderList_items_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.order .orderitem .orderLis_content .orderList_items_title li {
+    line-height: 1.6;
+    padding: 10px;
+    width: 25%;
+    font-size: 18px;
+    text-align: center;
+    color: #076baf;
+    font-family: g2Med;
+    white-space: nowrap;
+}
+
+.order .orderitem .orderLis_content .orderList_items_title li:first-child {
+    /* display: none; */
+}
+
+.order .orderitem .orderLis_content .orderList_items_title li:nth-child(5) {
+    /* display: none; */
+}
+
+.order .orderitem .orderLis_content .orderList_items_title li:nth-child(6) {
+    /* display: none; */
+}
+
+.order .orderitem .orderLis_content .orderList_moreItems {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.order .orderitem .orderLis_content .orderList_moreItems li {
+    line-height: 1.4;
+    text-align: center;
+    padding: 8px;
+    width: 25%;
+    font-size: 16px;
+    color: #076baf;
+    font-family: g2Med;
+}
+
+.order .orderitem .orderLis_content .orderList_moreItems li button {
+    outline: none;
+    cursor: pointer;
+    width: 80px;
+    font-size: 12px;
+    height: 30px;
+}
+
+.order .orderitem .orderLis_content .orderList_moreItems li button.orderList_eva_done {
+    background-color: #cfcece;
+    color: #737374;
+    cursor: default;
+}
+
+
+.order .orderitem .orderLis_content .orderList_moreItems li:first-child {
+    /* display: none; */
+}
+
+.order .orderitem .orderLis_content .orderList_moreItems li:nth-child(5) {
+    /* display: none; */
+}
+
+.order .orderitem .orderLis_content .orderList_moreItems li:nth-child(6) {
+    /* display: none; */
+}
+
+
+.order .orderitem .orderLis_content .eva_lightBox {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    right: 0;
+    display: none;
+    border-radius: 10px;
+    width: 320px;
+    margin: auto;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0px #aaa;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_leave {
+    text-align: right;
+    display: block;
+    font-size: 28px;
+    line-height: 1.6;
+}
+
+@media only screen and (max-width: 992px) {
+    .order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_leave {
+        padding: 0 10px;
+    }
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_leave i {
+    cursor: pointer;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .evaContent {
+    width: 100px;
+    margin: auto;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .evaContent img {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .evaContent p {
+    font-size: 16px;
+    padding: 5px;
+    line-height: 1.6;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts {
+    margin-left: 10px;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li p {
+    text-align: left;
+    padding: 5px;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li .eva_lightBox_gdStars {
+    font-size: 16px;
+    color: #076baf;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li .eva_lightBox_gdStars li {
+    text-align: center;
+
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li .eva_lightBox_gdStars li input {
+    display: none;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li .eva_lightBox_gdStars li span {
+    position: relative;
+    font-size: 20px;
+    font-family: g2Med;
+    cursor: pointer;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_Starts ul li .eva_lightBox_gdStars li input[type=radio]:checked+span::after {
+    content: '';
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -40%;
+    left: -38%;
+    border: 2px solid #076baf;
+    border-radius: 12px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .eva_lightBox_textDics {
+    display: block;
+    padding: 5px;
+    margin: auto;
+    resize: none;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .evaSend {
+    text-align: center;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox .evaSend .sendEva {
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+}
+
+.order .orderitem .orderLis_content .eva_lightBox.appear {
+    display: block;
+    margin: auto;
+}
+
+.order .orderitem .orderLis_content.show {
+    display: block;
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    .order .orderitem .orderLis_content.show {
+        padding-bottom: 10px;
+    }
+}
