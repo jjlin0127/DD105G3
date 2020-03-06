@@ -1,0 +1,15 @@
+@mixin rwd($breakpoint){
+    @if $breakpoint == desktop{
+        @media screen and (max-width:1280px){
+            @content;
+        }
+    }@else if $breakpoint == medium{
+        @media screen and (max-width:768px){
+            @content;
+        }
+    }@else if $breakpoint == small{
+        @media screen and (max-width:414px){
+            @content;
+        }
+    }
+}
