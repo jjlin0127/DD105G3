@@ -240,7 +240,7 @@ section {
                         button {
                             font-family: Noto, Genjyuu;
                             margin: 0 10px;
-                            @include btn_link(100px);
+                            @include btn_primary(100px);
                         }
                     }
                 }
