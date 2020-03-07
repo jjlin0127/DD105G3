@@ -4,7 +4,7 @@ header .header__container {
     display: flex;
     justify-content: center;
     position: fixed;
-    height: 85px;
+    height: 65px;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     z-index: 99;
@@ -17,7 +17,7 @@ header .header__container .logo {
 }
 
 header .header__container .logo a img {
-    width: 250px;
+    width: 200px;
 }
 
 header .header__container .navList {
