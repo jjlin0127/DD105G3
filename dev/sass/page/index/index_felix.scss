@@ -263,6 +263,7 @@ section {
         margin-right: 160px;
         position: relative;
         top: -255px;
+        cursor: pointer;
         @include btn_link(160px);
     }
 }

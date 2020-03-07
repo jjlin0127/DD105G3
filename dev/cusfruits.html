@@ -22,24 +22,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header__container">
-            <span class="logo">
-                <a href="index.html"><img src="./images/Logo.svg"></a>
-            </span>
-            <div class="navList">
-                <a class="navItem" href="#">關於我們<i class="fas fa-seedling"></i></a>
-                <a class="navItem" href="#">特色果甘<i class="fas fa-apple-alt"></i></a>
-                <a class="navItem focus" href="#">客製果甘<i class="fas fa-lemon"></i></a>
-                <a class="navItem" href="#">折扣遊戲<i class="fas fa-carrot"></i></a>
-                <a class="navItem" href="#">果甘話區<i class="fas fa-leaf"></i></a>
-            </div>
-            <div class="navList_2">
-                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
-                <a class="navItem_2" href="#"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </header>
+    @@include('layout/header.html',{ "focus04" : "focus" })
     <h2 class="title_cusfruits">
         <img src="./images/leaf.svg" class="leafLeft">
         <img src="./images/leaf.svg" class="leafRight"> 客製果甘
