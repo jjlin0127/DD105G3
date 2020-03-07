@@ -239,7 +239,7 @@ section {
 }
 
 .bbs_btn{
-    @include btn_a;
+    @include btn_link(150px);
     display: block;
     margin: 50px auto;
 }
