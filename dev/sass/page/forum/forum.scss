@@ -214,7 +214,8 @@ p.post_content{
 }
 
 .publish_btn{
-    @include btn_a;
+    @include btn_primary(150px);
+    margin: 0 auto;
 }
 .mobile_publish_btn{
     display: none;
@@ -321,11 +322,6 @@ a.post_link{
 }
 .post_hashtag .fruit_kind3{
     background-color: sandybrown;
-}
-
-.wrapper_forum .all_posts_area .post_zone .all_posts .post button.see_post_btn{
-    @include btn_m;
-    margin: 20px auto;
 }
 
 .pagination_block{

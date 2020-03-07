@@ -331,11 +331,11 @@
             }
         }
         .addCartBtn{
-            @include btn_m();
-            margin-left: 50%;  //按鈕置中
-            transform: translateX(-50%); //按鈕置中
-            margin-top: 30px;
-            margin-bottom: 50px;
+            @include btn_primary(300px);
+            // margin-left: 50%;  //按鈕置中
+            // transform: translateX(-50%); //按鈕置中
+            // margin-top: 30px;
+            // margin-bottom: 50px;
         }
     }
 }
