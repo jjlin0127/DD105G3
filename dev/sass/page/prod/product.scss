@@ -11,25 +11,24 @@ div.wrapper{
 	width:100%;
 	/* border:3px solid blue; */
 	box-sizing: border-box;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 img.carousel{
 	width: 100%;
 	height: auto;
-	border: 1px solid red;
+  // border: 1px solid red;
 }
 div#prod_carousel{		
-	border: 1px solid blue;
-	width: 100%;
+	// border: 1px solid blue;
 	height: auto;
-	margin: 100px auto;
-	overflow: visible;
-	/*↑↑↑讓3個灰色圓點出來*/
+  margin: 100px auto;
+	overflow: hidden;
+  /*↑↑↑讓3個灰色圓點出來*/
 }
 
 #content{			
-	position: relative;
+  position: relative;
 }
 
 #content li{		/*li*/
@@ -42,7 +41,7 @@ div#prod_carousel{
 
 /* circle button */
 #contentButton{
-	border: 1px solid red;
+	// border: 1px solid red;
 	height: 50px;
 	width: 100%;
 	text-align: center;
@@ -53,13 +52,17 @@ div#prod_carousel{
 	border-radius: 50%;
 	background: #ccc;
 	margin: 8px;
-
-	display: inline-block;
+  display: inline-block;
 }
 #contentButton li.clickMe{
 	background: #888;
 }
 
+h3.under_carousel{
+  margin-top: 100px;
+  text-align: center;
+  // border: 1px solid hotpink;
+}
 
 div.text_underdish{
   padding: 0px 20px;
@@ -68,15 +71,16 @@ div.text_underdish{
 }
 
 
-div.wrapper_cards{
+ul.wrapper_cards{
 	width:100%;
 	/* border:3px solid blue; */
   box-sizing: border-box;
   display:flex;   /*每個商品卡並排*/
-  flex-wrap:wrap; /*摺行的指令*/
+  flex-wrap:wrap; 
+  justify-content: space-around;
 }
 
-div.cards{
+li.cards{
   display: inline-block;
   width:320px;
   /* height:440px; */
@@ -94,7 +98,7 @@ img.fresh_fruit{
   position: relative;
   left:0px;
   width:100%;
-  opacity: 0.8;
+  // opacity: 0.8;
 
 }
 
@@ -120,6 +124,202 @@ div.fresh_fruit:hover .rada{
   opacity: 1;
   left:0px;
 }
+
+//以下的.grey_btn是複製政儒的 cancel_btn
+.grey_btn{
+  text-align: right;
+  display: inline-block;
+}
+
+.grey_btn{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0px;
+  border-width: 0;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  min-width: 120px;
+  width: 120px;
+  color: #141414;
+  background-color: #A8A8A8;
+  -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+          box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  text-decoration: none;
+}
+
+.grey_btn:before {
+  content: "\f054";
+  font-family: FontAwesome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 50% 50% 0;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.grey_btn:hover {
+  text-indent: 30px;
+}
+
+.grey_btn:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  text-indent: 0;
+}
+
+
+//以下的orange_btn是複製政儒的.post_btn
+
+.orange_btn {
+  text-align: center;
+}  
+
+.orange_btn {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0px;
+  border-width: 0;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  min-width: 120px;
+  width: 120px;
+  color: #ffffff;
+  background-color: #D35D3D;
+  -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+          box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  display: inline-block;
+  margin: 10px;
+}
+  
+  .orange_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .orange_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .orange_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+
+//以下的green_btn是複製政儒的post_rest_btn
+.green_btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0px;
+  border-width: 0;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  min-width: 120px;
+  width: 120px;
+  color: #ffffff;
+  background-color: #1F7962;
+  -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+          box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  display: inline-block;
+  margin: 10px;
+}
+
+.green_btn:before {
+  content: "\f054";
+  font-family: FontAwesome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 50% 50% 0;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.green_btn:hover {
+  text-indent: 30px;
+}
+
+.green_btn:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  text-indent: 0;
+}
+
 
 @import "../../modules/rwd";
 @import "../../page/forum/ipadpro";
