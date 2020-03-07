@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="shortcut icon" href="./images/shortIcon.png">
+    <link rel="stylesheet" href="./css/page/login/login.css">
+    <link rel="stylesheet" href="./css/header.css">
+
+    <!-- fontawesome -->
+    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+
+    <!-- <script src="./js/login.js"></script> -->
+    <!-- jquery&jqueryUI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header__container">
+            <span class="logo">
+                <a href="index.html"><img src="./images/Logo.svg"></a>
+            </span>
+            <div class="navList">
+                <a class="navItem @@focus01" href="about.html">關於我們 <i class="fas fa-seedling"></i></a>
+                <a class="navItem @@focus02" href="product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
+                <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-parachute-box"></i></a>
+                <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
+                <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a>
+                <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
+            </div>
+            <div class="navList_2">
+                <a class="navItem_2" href="login.html"> <i class="fas fa-user-circle"></i></a>
+                <a class="navItem_2" href="shopping.html"> <i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="title_cusfruits">
+        <img src="./images/leaf.svg" class="leafLeft">
+        <img src="./images/leaf.svg" class="leafRight"> 登入/註冊
+    </h2> -->
+    <div class="signupcontainer">
+        <div class="imageblock">
+            <div class="whiteform" style="transform: translateX(0%);">
+                <div class="signup">
+                    <h1>註冊帳號</h1>
+                    <form autocomplete="off">
+                        <label>暱稱</label>
+                        <input type="text" class="emailinput" name="memNickname">
+                        <label>E-mail*:</label>
+                        <input type="email" class="emailinput regiterinput" title="ENTER RIGHT" name="memId" required="">
+                        <label>密碼*:</label>
+                        <input type="password" class="emailinput firsttimepsw regiterinput1" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <label>確認密碼*:</label>
+                        <input type="password" class="emailinput confirmpsw regiterinput1" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <button type="button" class="loginregisterbtn">註冊</button>
+                    </form>
+                </div>
+                <div class="signin">
+                    <h1>登入會員</h1>
+                    <form autocomplete="off">
+                        <label>E-mail*:</label>
+                        <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="mem_acct" required="">
+                        <label>密碼*:</label>
+                        <input type="password" class="mempsw" pattern="\w{5,17}$" name="mem_psw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <a href="" class="forgetpswlightbox">忘記密碼?</a>
+                        <button type="button" class="buttonsubmitlogin loginbutton">登入</button>
+                    </form>
+                </div>
+            </div>
+            <div class="leftbox">
+                <h2 class="title"><span>天然甘</span><br>新鮮水果製成果乾</h2>
+                <!-- <img class="flower smaller" src="./img/register/flower.png" alt="1357d638624297b" border="0"> -->
+                <p class="account">已經有帳號了嗎?</p>
+                <a href="./member.html"><button id="signin">登入</button></a>
+            </div>
+            <div class="rightbox">
+                <h2 class="title"><span>天然水果甘</span><br>歡迎光臨天然甘</h2>
+                <img class="juicyfruit" src="./images/login/block_right.png">
+                <p class="account">還沒有帳號嗎?</p>
+                <button id="signup">註冊</button>
+            </div>
+        </div>
+    </div>
+    <div id="mobilelogintab">
+        <ul class="motabtitle">
+            <li><a href="#mobilelogintab1">登入</a></li>
+            <li><a href="#mobilelogintab2">註冊</a></li>
+        </ul>
+        <div id="mobilelogintab1" class="motabinner">
+            <form autocomplete="off">
+                <label>E-mail*:</label>
+                <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
+                <label>密碼*:</label>
+                <input type="password" class="mempsw" name="mem_psw">
+                <a href="" class="forgetpswlightbox">forget password?</a>
+                <button type="button" class="buttonsubmitlogin loginbutton">Log in</button>
+            </form>
+        </div>
+        <div id="mobilelogintab2" class="motabinner">
+            <form autocomplete="off">
+                <label>暱稱</label>
+                <input type="text" class="emailinput" name="memNickname">
+                <label>E-mail*:</label>
+                <input type="email" class="emailinput regiterinput" title="ENTER RIGHT" name="memId" required="">
+                <label>密碼*:</label>
+                <input type="password" class="emailinput firsttimepsw regiterinput1" name="mem_psw">
+                <label>確認密碼*:</label>
+                <input type="password" class="emailinput confirmpsw regiterinput1" name="mem_psw">
+                <button type="button" class="loginregisterbtnMob">Create</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <strong>Copyright &copy; 2020 Natural Sweet</strong>
+        <i class="fas fa-leaf"></i>
+    </footer>
+    <script>
+        // 電腦版註冊登入切換
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+        window.addEventListener('load', function() {
+            var whiteform = document.getElementsByClassName('whiteform')[0];
+            var signin = document.getElementsByClassName('signin')[0];
+            var signup = document.getElementsByClassName('signup')[0];
+            signup.style.display = 'none';
+            $('signup').onclick = function() {
+                whiteform.style.transform = 'translateX(80%)';
+                signin.style.display = 'none';
+                signup.style.display = '';
+            }
+            $('signin').onclick = function() {
+                whiteform.style.transform = 'translateX(0%)';
+                signup.style.display = 'none';
+                signin.style.display = '';
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+@import '../../modules/rwd';
+$green: #d0d6d6;
+@mixin butttonn02 {
+    background-color: #f1c40f;
+    font-size: 0.8rem;
+    padding: 10px 30px;
+    border: 1px solid #f1c40f;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+body {
+    background: url('../../../images/sky.jpg');
+    .header__container {
+        position: sticky;
+    }
+}
+
+.title_cusfruits {
+    @include title(3px,
+    dotted,
+    #a6c165,
+    10px,
+    #fff);
+    margin: 50px auto;
+}
+
+.lightCover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .lightbox_s {
+        position: absolute;
+        top: calc(50% - 215px);
+        left: calc(50% - 250px);
+        height: 300px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 5%;
+        input {
+            background-color: $green;
+            border: 1px solid $green;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            width: 60%;
+        }
+        i {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+        h4 {
+            margin: 60px 0 30px 0;
+            text-align: center;
+        }
+    }
+}
+
+.signupcontainer {
+    line-height: 1.5;
+    @include respond(ipad) {
+        display: none;
+    }
+    @include respond(phone) {
+        display: none;
+    }
+    @include respond(ipadpro) {
+        width: 550px;
+        // top: 150px;
+    }
+    @include respond(latop-min) {
+        width: 750px;
+        // top: 180px;
+    }
+    margin: 100px auto 0px;
+    width: 900px;
+    height: 600px;
+    padding-bottom:80px;
+    position: relative;
+    // top: 190px;
+    .imageblock {
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('../../../images/login/block_bg.png');
+            background-size: cover;
+            opacity: 0.5;
+        }
+        width: 100%;
+        // height: 400px;
+        @include respond(phone) {
+            width: 300px;
+            height: 500px;
+        }
+        @include respond(ipadpro) {
+            height: 450px;
+            width: 700px;
+            margin: 0 auto;
+        }
+        @include respond(latop-min) {
+            height: 500px;
+        }
+    }
+    .whiteform {
+        position: absolute;
+        top: -9%;
+        left: 7%;
+        background-color: #fff;
+        border: 1px solid #aaa;
+        width: 430px;
+        height: 700px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, .1);
+        transition: all .5s ease-in-out;
+        z-index: 2;
+        @include respond(latop-min) {
+            width: 360px;
+            height: 600px;
+            top: -8%;
+        }
+        @include respond(ipadpro) {
+            width: 350px;
+            height: 600px;
+            top: -8%;
+        }
+    }
+    .displaynone {
+        display: none;
+        transition: all .5s ease;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 55px;
+        @include respond(ipadpro) {
+            margin-top: 25px;
+            // font-size: 2rem;
+        }
+        @include respond(latop-min) {
+            margin-top: 25px;
+        }
+    }
+    .leftbox,
+    .rightbox {
+        position: absolute;
+        width: 50%;
+        transition: 1s all ease;
+        h2 {
+            text-align: center;
+            margin: 17px;
+        }
+    }
+    .leftbox {
+        left: -2%;
+    }
+    .rightbox {
+        right: -2%;
+    }
+    .signin {
+        a {
+            font-size: 0.6rem;
+            margin-left: 220px;
+            margin-bottom: 90px;
+            @include respond(ipadpro) {
+                margin-left: 12px;
+                margin-bottom: 0px;
+            }
+            @include respond(latop-min) {
+                margin-left: 200px;
+            }
+        }
+    }
+    .emailinput {
+        margin-bottom: 30px;
+        @include respond(ipadpro) {
+            margin-bottom: 20px;
+        }
+        @include respond(latop-min) {
+            margin-bottom: 20px;
+        }
+    }
+    input {
+        background-color: $green;
+        border: none;
+        padding: 12px;
+        @include respond(ipadpro) {
+            padding: 10px;
+        }
+        @include respond(latop-min) {
+            padding: 10px;
+        }
+    }
+    .signin {
+        form {
+            padding-top: 35px;
+            @include respond(ipadpro) {
+                padding-top: 10px;
+            }
+            @include respond(latop-min) {
+                padding-top: 5px;
+            }
+            button {
+                margin-top: 102px;
+                @include respond(latop-min) {
+                    margin-top: 108px;
+                }
+                @include respond(ipadpro) {
+                    margin-top: 198px;
+                }
+            }
+        }
+    }
+    .signup {
+        button {
+            margin-top: 29px;
+            @include respond(ipadpro) {
+                margin-top: 50px;
+            }
+            @include respond(latop-min) {
+                margin-top: 43px;
+            }
+        }
+    }
+    button {
+        @include butttonn02;
+        border-radius: 10px;
+        margin: auto;
+        display: block;
+        margin-top: 10px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    form {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        margin: 30px 60px 60px 65px;
+        @include respond(ipadpro) {
+            margin: 30px 20px 0px 40px;
+        }
+        @include respond(latop-min) {
+            margin: 30px 30px 0px 50px;
+        }
+    }
+    .title {
+        font-size: 1.5em;
+        padding-top: 10px;
+        span {
+            color: #fff;
+        }
+    }
+    .account {
+        margin-top: 45%;
+    }
+    p {
+        color: #333;
+        text-align: center;
+        padding-top: 150px;
+        @include respond(ipadpro) {
+            padding-top: 110px;
+        }
+        @include respond(latop-min) {
+            padding-top: 120px;
+        }
+    }
+    .juicyfruit {
+        position: absolute;
+        opacity: 0.8;
+        height: 320px;
+        top: 25%;
+        // left: 25%;
+        @include respond(ipadpro) {
+            height: 200px;
+            // left: 15%;
+        }
+        @include respond(latop-min) {
+            height: 280px;
+            // left: 30%;
+        }
+    }
+    .smaller {
+        height: 320px;
+        top: 25%;
+        left: 28%;
+        @include respond(ipadpro) {
+            height: 200px;
+        }
+        @include respond(latop-min) {
+            height: 270px;
+            left: 30%;
+            top: 25%;
+        }
+    }
+    input {
+        width: 90%;
+        &::placeholder {
+            font-size: 1.3em;
+        }
+        &:focus {
+            font-size: 1em;
+            transition: .8s all ease;
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+#mobilelogintab {
+    display: none;
+    @include respond(ipad) {
+        display: block;
+        border: 1px solid #d0d6d6;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        /* position: relative; */
+        padding: 50px 0px 50px 0px;
+        width: 80vw;
+        /* top: 50%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        margin: 100px auto;
+        .motabtitle {
+            text-align: center;
+            li {
+                display: inline-block;
+                padding: 20px;
+                position: relative;
+                top: 50%;
+                left: 15%;
+                margin-top: 40px;
+                transform: translate(-50%, -50%);
+                border: 1px solid $green;
+                &:hover {
+                    background-color: $green;
+                }
+                a {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    &:hover {
+                        color: #fff;
+                        background-color: $green;
+                    }
+                }
+            }
+        }
+        .motabinner {
+            form {
+                display: flex;
+                align-items: left;
+                flex-direction: column;
+                margin: 0px 0px 0px 50px;
+                button {
+                    @include butttonn02;
+                    border-radius: 10px;
+                    margin: 0 auto;
+                    display: block;
+                    position: relative;
+                    right: 10%;
+                    margin-top: 70px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                input {
+                    background-color: $green;
+                    border: none;
+                    padding: 10px;
+                    width: 80%;
+                }
+                .mobileemailinput {
+                    margin-bottom: 15px;
+                }
+                a {
+                    margin-left: 110px;
+                }
+            }
+        }
+    }
+    @include respond(phone) {
+        display: inline-block;
+        border: 1px solid $green;
+        background-color: #fff;
+        position: absolute;
+        padding: 50px 0px 50px 0px;
+        width: 80vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-position: center;
+        background-repeat: no-repeat;
+        .motabtitle {
+            text-align: center;
+            li {
+                display: inline-block;
+                padding: 10px;
+                position: relative;
+                top: 50%;
+                left: 20%;
+                &:hover {
+                    background-color: $green;
+                }
+                a {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    &:hover {
+                        color: #fff;
+                        background-color: $green;
+                    }
+                }
+            }
+        }
+        .motabinner {
+            form {
+                display: flex;
+                align-items: left;
+                flex-direction: column;
+                margin: 0px 20px 0px 60px;
+                button {
+                    @include butttonn02;
+                    border-radius: 10px;
+                    margin: 0 auto;
+                    display: block;
+                    position: relative;
+                    right: 10%;
+                    margin-top: 40px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                a {
+                    margin-left: 70px;
+                    font-size: 0.7rem;
+                }
+                input {
+                    background-color: $green;
+                    border: none;
+                    padding: 5px;
+                    width: 85%;
+                }
+                .mobileemailinput {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
