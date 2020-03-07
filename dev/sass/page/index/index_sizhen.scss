@@ -13,25 +13,27 @@
 @import '../../base/box_keyframes.scss';
 @import '../../respond/index/box_rwd.scss';
 
-#index_body header{
-    position: absolute;
-    top: 0;
-}
+/* -- 客製禮盒------------------------------------ -- */
 section.index_box{
-    overflow-x: hidden;  //絕對不會出現水平捲軸
     max-width: 1920px;
-    margin-top: 150px;
-    height: 800px;
+    overflow: hidden;
     div.contain{
         position: relative;
         width: 100%;
-        h2{
+        .box_title{
+            @include title(3px, dotted, #a6c165, 10px, #fff);
+            margin: 10px auto 50px auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        h3{
             text-align: center;
         }
         div.index_box_outer{  
             position: relative;
             width: 300px;
-            margin-top: 100px;
+            // margin-top: 100px;
             cursor: pointer;
             margin: 0 auto;
             margin-top: 100px;
@@ -79,9 +81,10 @@ section.index_box{
             }
         }
         .box_btn{
-            @include btn();
+            @include btn_a;
+            display: block;
+            margin-top: 80px;
             margin-left: 70%;
-            margin-top: 100px;
         }
         .hot_air_blue_balloon{
             width: 150px;
@@ -100,64 +103,6 @@ section.index_box{
             bottom: 150px;
             animation: hot_air_balloon 2s infinite alternate;
             animation-delay: 1s;
-        }
-    }
-}
-
-
-@include rwd(medium){
-    section.index_box{
-        div.contain{
-            div.index_box_outer{
-                // width: 200px;
-                img:nth-child(2){
-                    width: 700px;
-                    left: -200px;
-                    top: -100px;
-                }
-                img:nth-child(3){
-                    left: 200px;
-                    top: -30px;
-                }
-                img:nth-child(5){
-                    width: 300px;
-                }
-            }
-            .box_btn{
-                margin-left: 50%;
-                transform: translateX(-50%);
-                margin-top: 80px;
-            }
-        }
-    }
-}
-
-@include rwd(small){
-    section.index_box{
-        div.contain{
-            div.index_box_outer{
-                width: 200px;
-                img:nth-child(2){
-                    width: 500px;
-                    left: -150px;
-                    top: -80px;
-                }
-                img:nth-child(3){
-                    width: 150px;
-                    left: 150px;
-                    top: 0px;
-                }
-                img:nth-child(4){
-                    left: 0px;
-                }
-                img:nth-child(5){
-                    width: 150px;
-                    left: -50px;
-                }
-            }
-        }
-        .hot_air_blue_balloon{
-            display: none;
         }
     }
 }
