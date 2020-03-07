@@ -27,18 +27,198 @@ body {
 
 section {
     width: 100%;
-    // height: 200vh;
     border: 1px solid gray;
 }
 
-// .index_about {
-//     position: relative;
-// }
-.index_about {
+//吉祥物
+.choco_black {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    z-index: 100;
 
+
+}
+
+
+
+.index_about {
     .contain {
         margin-top: 200px;
         height: 100%;
+
+        .cloud_section img.cloud1 {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            z-index: -1;
+            animation: cloudAnimate 3s linear infinite alternate;
+        }
+
+        .cloud_section img.cloud2 {
+            position: absolute;
+            top: 12%;
+            left: 70%;
+            z-index: -1;
+            animation: cloudAnimate 2s linear infinite alternate;
+        }
+
+        .land_section {
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 50;
+
+            // border: 1px solid blue;
+            //首頁button
+            .about_btn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 100px;
+
+                a .btn {
+                    @include btn;
+                }
+            }
+
+            .land {
+                animation: land 3s linear infinite alternate;
+            }
+
+            .fruitsInBasket {
+                width: 450px;
+                height: 300px;
+                position: absolute;
+                left: 480px;
+                top: 50px;
+                z-index: -1;
+
+                // border: 1px solid orange;
+                img:nth-child(1) {
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    width: 100px;
+                    z-index: 1;
+                    animation: fruitsInBasket 2s linear 1s infinite alternate;
+                    //    animation: name duration timing-function delay iteration-count direction fill-mode;
+                }
+
+                img:nth-child(2) {
+                    position: absolute;
+                    left: 90px;
+                    width: 110px;
+                    z-index: 2;
+                    animation: fruitsInBasket 3.5s linear infinite alternate;
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    left: 150px;
+                    width: 100px;
+                    z-index: 1;
+                    animation: fruitsInBasket 8s linear infinite alternate;
+                }
+
+                img:nth-child(4) {
+                    position: absolute;
+                    left: 180px;
+                    width: 120px;
+                    z-index: 2;
+                    animation: fruitsInBasket 7s linear infinite alternate;
+                }
+
+                img:nth-child(5) {
+                    position: absolute;
+                    left: 250px;
+                    width: 100px;
+                    z-index: 1;
+                    animation: fruitsInBasket 6s linear infinite alternate;
+                }
+
+                img:nth-child(6) {
+                    position: absolute;
+                    left: 300px;
+                    width: 100px;
+                    z-index: 2;
+                    animation: fruitsInBasket 9s linear infinite alternate;
+                }
+
+                img:nth-child(7) {
+                    position: absolute;
+                    left: 340px;
+                    width: 125px;
+                    z-index: 2;
+                    animation: fruitsInBasket 5s linear infinite alternate;
+                }
+
+
+
+            }
+        }
+
+        //parallax
+        .skyFruits {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            // border: 1px solid green;
+
+            #scene {
+
+                //天空葡萄
+                .layer1>img {
+                    position: absolute;
+                    top: -100px;
+                    left: 100px;
+
+                }
+
+                //天空蘋果
+                .layer2>img {
+                    position: absolute;
+                    top: 50px;
+                    left: 300px;
+                }
+
+                // 天空芒果
+                .layer3>img {
+                    position: absolute;
+                    top: 100px;
+                    left: 250px;
+                }
+
+                // 天空柿子
+                .layer4>img {
+                    position: absolute;
+                    top: -50px;
+                    left: 1100px;
+                }
+
+                // 天空水梨
+                .layer5>img {
+                    position: absolute;
+                    top: 100px;
+                    left: 1000px;
+
+                }
+
+                // 天空酪梨
+                .layer6>img {
+                    position: absolute;
+                    top: 200px;
+                    left: 1200px;
+
+                }
+            }
+
+        }
 
     }
 
@@ -51,263 +231,47 @@ section {
 
 
 
-    .title_index {
-        @include title(3.5px, solid, #a6c165, 10px);
-        margin: 0 auto;
 
 
-    }
-
-    .land_section {
-        margin: 0 auto;
-        // border: 1px solid blue;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 50;
-
-
-
-    }
-
-    .land {
-        animation: land 3s linear infinite alternate;
-    }
-
-    .fruitsInBasket {
-        width: 450px;
-        height: 300px;
-        position: absolute;
-        left: 480px;
-        top: 50px;
-        // border: 1px solid orange;
-        z-index: -1;
-
-    }
-
-
-
-
-    .land_section .fruitsInBasket>img:nth-child(1) {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        width: 100px;
-        z-index: 1;
-        animation: fruitsInBasket 2s linear 1s infinite alternate;
-        //    animation: name duration timing-function delay iteration-count direction fill-mode;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(2) {
-        position: absolute;
-        left: 90px;
-        width: 110px;
-        z-index: 2;
-        animation: fruitsInBasket 3.5s linear infinite alternate;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(3) {
-        position: absolute;
-        left: 150px;
-        width: 100px;
-        z-index: 1;
-        animation: fruitsInBasket 8s linear infinite alternate;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(4) {
-        position: absolute;
-        left: 180px;
-        width: 120px;
-        z-index: 2;
-        animation: fruitsInBasket 7s linear infinite alternate;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(5) {
-        position: absolute;
-        left: 250px;
-        width: 100px;
-        z-index: 1;
-        animation: fruitsInBasket 6s linear infinite alternate;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(6) {
-        position: absolute;
-        left: 300px;
-        width: 100px;
-        z-index: 2;
-        animation: fruitsInBasket 9s linear infinite alternate;
-    }
-
-    .land_section .fruitsInBasket>img:nth-child(7) {
-        position: absolute;
-        left: 340px;
-        width: 125px;
-        z-index: 2;
-        animation: fruitsInBasket 5s linear infinite alternate;
-    }
-
-
-
+    //水果在籃子裡的動畫
     @keyframes fruitsInBasket {
         0% {
             transform: translateY(-10px);
             opacity: 0;
-
         }
 
         100% {
             transform: translateY(10px);
             opacity: 1;
-
         }
     }
 
+    //島動畫
     @keyframes land {
         0% {
-
             transform: translateY(-10px);
 
         }
 
         100% {
-
             transform: translateY(10px);
-
         }
     }
 
-
-
-
-    //parallax
-    .skyFruits {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        // overflow: hidden;
-        background: url();
-        // background-attachment: fixed;
-        // border: 1px solid green;
-
-
-    }
-
-
-    //天空葡萄
-    #scene .layer1>img {
-        position: absolute;
-        top: -100px;
-        left: 100px;
-
-    }
-
-    //天空蘋果
-    #scene .layer2>img {
-        position: absolute;
-        top: 50px;
-        left: 300px;
-
-    }
-
-    // 天空芒果
-    #scene .layer3>img {
-        position: absolute;
-        top: 100px;
-        left: 250px;
-
-
-    }
-
-    // 天空柿子
-    #scene .layer4>img {
-        position: absolute;
-        top: -50px;
-        left: 1100px;
-
-    }
-
-    // 天空水梨
-    #scene .layer5>img {
-        position: absolute;
-        top: 100px;
-        left: 1000px;
-
-    }
-
-    // 天空酪梨
-    #scene .layer6>img {
-        position: absolute;
-        top: 200px;
-        left: 1200px;
-
-    }
-
-    //首頁button
-
-    .about_btn {
-        width: 100%;
-        // height: 100%;
-        // border: 1px solid red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 100px;
-
-
-    }
-
-    // a {
-    //     display: inline-block;
-    // }
-
-    a .btn {
-        @include btn;
-
-
-
-    }
-
-
-
-
-    // .cloud_section {
-    //     position: relative;
-    //     border: 1px solid #a6c165;
-    // }
-
-    /* 雲動畫 */
-    .contain .cloud_section img.cloud1 {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        z-index: -1;
-        animation: cloudAnimate 3s linear infinite alternate;
-    }
-
-    .contain .cloud_section img.cloud2 {
-        position: absolute;
-        top: 12%;
-        left: 70%;
-        z-index: -1;
-        animation: cloudAnimate 2s linear infinite alternate;
-    }
-
+    //雲動畫
     @keyframes cloudAnimate {
         0% {
-
             transform: translateX(30px);
-
         }
 
         100% {
-
             transform: translateX(-30px);
-
         }
     }
+
+
+
+
 
 
 
