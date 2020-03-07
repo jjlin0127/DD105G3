@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>關於我們</title>
+    <link rel="shortcut icon" href="./images/shortIcon.png">
+    <link rel="stylesheet" href="./css/about.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header__container">
+    
+            <span class="logo">
+                <a href="index.html"><img src="./images/Logo.svg"></a>
+            </span>
+            <div class="navList">
+                <a class="navItem focus" href="#">關於我們 <i class="fas fa-seedling"></i></a>
+                <a class="navItem" href="product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
+                <a class="navItem" href="#">客製果甘 <i class="fas fa-lemon"></i></a>
+                <a class="navItem" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a>
+                <a class="navItem" href="#">果甘話區 <i class="fas fa-leaf"></i></a>
+            </div>
+    
+            <div class="navList_2">
+                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
+                <a class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+    
+    
+    
+        </div>
+        </div>
+    </header>
+
+    <div class="wrapper" id="js-wrapper">
+        <img class="Tao" src="./images/about/tao.png" alt="">
+        
+        <div class="sections" id="js-slideContainer">
+            <section class="section">
+                <img class="cloud1" src="./images/about/cloud1.svg" alt="" width="20%">
+                <img class="cloud2" src="./images/about/cloud2.svg" alt="" width="20%">
+              <div class="section_2">
+                <img class="ball"src="./images/about/ball.svg" alt="" width="60%">
+                <span class="section__title" id="title1">品牌緣起</span>
+               
+                <p>「天然甘」展現了台灣豐富水果多樣性，
+                    堅持用最天然的方式來呈現出水果最健康的美味，
+                    秉持著讓消費者可以吃的安心的初衷，
+                    我們堅持著理念，友善栽培果甘禮盒，
+                    做著自己可以引以為傲的天然水果甘。</p>
+              </div>
+                <span id="trigger--title1"></span>
+             <div class="fruit_land">
+                <img class="fruits"src="./images/about/fruits.svg" alt="" width="15%">
+                <img class="land" src="./images/about/Land.svg" alt="" width="50%">
+             </div>
+            </section>
+            <section class="section">
+                <img class="cloud1" src="./images/about/cloud1.svg" alt="" width="20%">
+                <img class="cloud2" src="./images/about/cloud2.svg" alt="" width="20%">
+
+                <div class="section_2"> 
+                <span class="section__title" id="title2">製造流程</span>
+                <p>從產地摘取新鮮的水果，經過清洗過後，再把水果去皮細切成片，放進工廠裡的烤箱烘製完成。</p>
+                <span id="trigger--title2"></span>
+                </div>
+
+              <div class="windCloud_windRotate">
+                <img class="apple_1" src="./images/about/apple_1.svg" alt="" width="3%">
+                <img class="appleTree" src="./images/about/apple.svg" alt="" width="70%">
+                <img class="windRotate" src="./images/about/windRotate.png" alt="" width="20%">
+             </div>
+            </section>
+            <section class="section">
+                <img class="cloud1" src="./images/about/cloud1.svg" alt="" width="20%">
+                <img class="cloud2" src="./images/about/cloud2.svg" alt="" width="20%">
+                <div class="section_2"> 
+                <span class="section__title" id="title3">品牌理念</span>
+                <p> 希望能幫助台灣小農把滯銷盛產的水果做成果甘並且容易保存，
+                    除了內需市場也可以新鮮空運外銷到全世界各地，
+                    讓全世界的朋友能夠享用台灣製作的天然水果甘。</p>
+                <span id="trigger--title3"></span>
+                
+                </div>
+                
+                <img class="world" src="./images/about/world360.svg" alt="" width="55%">
+                <!-- <img class="world" src="./images/world3.svg" alt="" width="40%"> -->
+            </section>
+            <section class="section">
+                <img class="cloud1" src="./images/about/cloud1.svg" alt="" width="20%">
+                <img class="cloud2" src="./images/about/cloud2.svg" alt="" width="20%">
+              <!-- <div class="section_c"> -->
+                <!-- <span class="section__title" id="title4">開發人員</span> -->
+                <span id="trigger--title4"></span>
+              <!-- </div> -->
+                
+                <section class="userSetting_adm">
+                    <!--Natural Sweet開發者資訊-->
+                    <!-- <h1 class="people">開發人員</h1> -->
+                    <div class="admKanban" id="admKanban">
+                        <div class="box">
+                            <h1 class="people">開發人員</h1>
+                            <div id="app">
+                                <div class="postarea">
+                                    <div class="posts" :style="computed_left">
+                                        <div class="postbox" v-for="(work,id) in works" :class="{cur_item:id==now_index}">
+                                            <div class="cover" :style="bg_css(work.cover)">
+                                                <div class="infos">
+                                                    <a v-bind:href="(work.src)" target="_blank">
+                                                        <h3 class="threed-text-red shop-text">
+                                                            <span class="devName">{{work.title}}</span>
+                                                            <p>個人作品:</p>
+                                                            <p>{{work.description}}</p>
+                                                        </h3>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <i class="fa fa-angle-left"></i> -->
+                                <!-- <i class="fa fa-angle-right"></i> -->
+                                <div class="control_left" @click="delta(-1)"></div>
+                                <div class="control_right" @click="delta(1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </section>
+
+
+
+
+
+
+
+
+            </section>
+            <!-- <section class="section">
+                <span class="section__title" id="title5">Section Five</span>
+                <span id="trigger--title5"></span>
+                
+            </section> -->
+            
+            <!-- <div class="clearfix"></div> -->
+            
+        </div>
+        <!-- <footer>     
+            <strong>Copyright &copy; 2020 Natural Sweet</srong>
+                <i class="fas fa-leaf"></i>
+        </footer> -->
+    </div>
+
+    
+    <!-- <footer>     
+        <strong>Copyright &copy; 2020 Natural Sweet</strong>
+            <i class="fas fa-leaf"></i>
+    </footer> -->
+    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js'></script>
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="./js/about.js"></script>
+  
+</body>
+</html>
