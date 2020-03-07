@@ -15,97 +15,53 @@ div.wrapper{
 	box-sizing: border-box;
 	overflow: hidden;
 }
-#sliderBoard{		/*div*/
-  border:1px solid purple;
-	margin: 0px auto;
-	margin-top: 100px;
-	/* width: 1400px; */
-	height: 600px;
-	/* background-color: hotpink; */
-	/* overflow: hidden; */
-	transform: rotate(350deg);
-	position: relative;
-	top:-100px;
-	left:0px;
+
+img.carousel{
+	width: 100%;
+	height: auto;
+	border: 1px solid red;
+}
+div#prod_carousel{		
+	border: 1px solid blue;
+	width: 100%;
+	height: auto;
+	margin: 100px auto;
+	overflow: visible;
+	/*↑↑↑讓3個灰色圓點出來*/
 }
 
-
-#sliderBoard ul{	/*ul*/
-  border: 1px solid blue;
-	width: 4600px; 
+#content{			
 	position: relative;
-	/* top:-20px; */
-	animation: slider 15s infinite linear; /*"infinit"可以改成3，就變成只播放三次*/
-	/* transform: rotate(45deg); */
 }
-#sliderBoard li{	/*li*/
-	width: 300px;
-	height: 600px;
-  margin: 40px 80px;
-  margin-bottom: 0px;
-  border: 1px solid red;
-	/* font: bold 150px Tahoma; */
+
+#content li{		/*li*/
+	float: left;
+}
+
+.contentMov{
+	animation: slider 10s infinite ;
+}
+
+/* circle button */
+#contentButton{
+	border: 1px solid red;
+	height: 50px;
+	width: 100%;
 	text-align: center;
-	line-height: 450px;
-	transform: rotate(10deg); 
+}
+#contentButton li{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ccc;
+	margin: 8px;
+
 	display: inline-block;
-	/* float: left; */
+}
+#contentButton li.clickMe{
+	background: #888;
 }
 
-#sliderBoard li > a{	/*li*/
-  color:#4C4948;
-  text-decoration: none;
-}
-
-@keyframes slider{
-	0%{left: 0px;}
-	/* 5%{left: -90px;}
-	10%{left: -180px;}
-	15%{left: -270px;}
-	20%{left: -360px;}
-	25%{left: -450px;}
-	30%{left: -540px;}
-	35%{left: -630px;}
-	40%{left: -720px;}
-	50%{left: -900px;}
-	55%{left: -990px;}
-	60%{left: -1080px;}
-	65%{left: -1170px;}
-	70%{left: -1260px;}
-	75%{left: -1350px;}
-	80%{left: -1440px;}
-	85%{left: -1530px;}
-	90%{left: -1620px;}
-	95%{left: -1710px;} */
-	100%{left: -4050px;}
-}  
-
-div.fresh_leaf{
-	width:300px;
-	height:300px;
-	background-image: url(./images/prdt/freshleaf_nobg.png);
-	background-size: contain;
-}
-
-div.fresh_leaf img{
-	width:300px;
-}
-
-div.dish{
-	width:150px;
-	height:150px;
-	/* border: 1px solid greenyellow; */
-	background-image: url(./images/prdt/dish_nobg.png);
-	background-size: contain;
-	margin-left: 75px;
-}
-
-div.dish img{
-	width:150px;
-	/* border: 1px solid yellow; */
-	position: relative;
-	top:-80px;
-}
 
 div.text_underdish{
   padding: 0px 20px;
@@ -113,52 +69,6 @@ div.text_underdish{
 	line-height: 1.4;
 }
 
-div.box_for_ctrlbtn{
-	width:156px;
-	position: relative;
-	top:30px;
-  left:50%;
-  /* transform: rotate(10deg); */
-	margin-left: -77px;
-  /* border: 1px solid red; */
-  box-sizing: border-box;
-  /* z-index: -1; */
-} 
-button.ctrl{
-	width:60px;
-	height:60px;
-	border:3px solid grey;
-	border-radius: 50%;
-	font-size:48px;
-	/* margin:0px 40px; */
-}
-
-
-@keyframes slider_cloud{
-    0%{left: -600px;
-        opacity: 0.3;
-        transform: scale(1.1);
-    }
-
-    20%{left:60px;
-        opacity: 1.0;
-    }
-
-    50%{ left: 750px;
-        opacity: 0.9;
-        /* transform:skewX(10deg); */
-    }
-
-    60%{
-        opacity:0.6;
-        transform:scale(2.0);
-    }
-
-    100%{left: 1900px;
-        opacity: 0.1;
-        /* transform:skewX(40deg); */
-    }
-}
 
 div.wrapper_cards{
 	width:100%;
@@ -179,7 +89,6 @@ div.cards{
   padding: 10px;
   overflow: hidden;
   position: relative;
-
 }
 
 img.fresh_fruit{
@@ -214,15 +123,3 @@ div.fresh_fruit:hover .rada{
   left:0px;
 }
 
-/* div.dry_fruit{
-  transition: all 0.3s ease 0.3s;
-}
-
-.cards:hover .fresh_fruit{
-  opacity: 0;
-}
-
-.cards:hover .dried_fruit{
-  opacity: 0;
-  left:-50%;
-} */

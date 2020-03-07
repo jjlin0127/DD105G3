@@ -7,10 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-特色果甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <link rel="stylesheet" href="./css/page/prod/product.css"> 
+    <!-- <link rel="stylesheet" href="./css/page/prod/product.css"> -->
+    <link rel="stylesheet" href="./sass/page/prod/product.css">  
     <!-- <link rel="stylesheet" href="./sass/css/product_media.css">  -->
     <!-- <link rel="stylesheet" href="./sass/css/newproduct.css">  -->
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>		
+    <script src="./js/prod_carousel.js"></script>
     
 </head>
 
@@ -44,152 +47,19 @@
                 特色果甘
             </div>      
         </div>
-        <div class="box_for_ctrlbtn"> 
-            <button class="ctrl">&lt;</button>
-            <button class="ctrl" style="margin-left: 30px;">&gt;</button>
+    <!-- 以下是輪播圖 -->
+        <div id="prod_carousel">
+            <ul id="content">
+				<li><img src="./images/prdt/carousel_blood.jpg" class="carousel"></li>
+				<li><img src="./images/prdt/carousel_brain.jpg" class="carousel"></li>
+				<li><img src="./images/prdt/carousel_stomach.jpg" class="carousel"></li>
+			</ul>
+			<ul id="contentButton">
+			</ul>
         </div>
-        <div id="sliderBoard">
-            <ul class="product">
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshstarfruit_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/starfruit.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然楊桃甘</p>
-                        <p>價格：350點</p>
-                        <p><span>放入購物車</span>
-                        <img src="imagesprdt/prdt/icon/shopping_cart.svg" style="width:40px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshpineapple_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/pineapple_nobg.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然鳳梨甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshdragon_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/dragon.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然火龍果甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshbanaba_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/banana.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然香蕉甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <a href="detail_strawberry.html">
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshstrawberry_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/strawberry_nobg.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然草莓甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="detail_strawberry.html">
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshguava_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/guava.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然芭樂甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                    </a>
-                </li>
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshmango_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/mango_nobg.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然芒果甘</p>
-                        <p>價格：350點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <div class="fresh_leaf">
-                        <img src="images/prdt/freshapple_nobg.png">
-                    </div> <!--div.fresh_leaf的結尾標籤-->
-                    <div class="dish">
-                        <img src="images/prdt/apple.png">
-                    </div> <!--div.dish的結尾標籤-->
-                    <div class="text_underdish">
-                        <p>天然蘋果甘</p>
-                        <p>價格：370點</p>
-                        <p><span>放入購物車</span>
-                        <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                    </div>
-                </li>
-                <li>
-                    <a href="detail_strawberry.html">
-                        <div class="fresh_leaf">
-                            <img src="images/prdt/freshblueberry_nobg.png">
-                        </div> <!--div.fresh_leaf的結尾標籤-->
-                        <div class="dish">
-                            <img src="images/prdt/blueberry.png">
-                        </div> <!--div.dish的結尾標籤-->
-                        <div class="text_underdish">
-                            <p>天然藍莓甘</p>
-                            <p>價格：370點</p>
-                            <p><span>放入購物車</span>
-                            <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-
-        </div>
-        <center><h3>不知道自己適合吃哪種果甘嗎？別擔心！讓心裡測驗建議您。</h3><br><a class="alink_btn">前往心理測驗</a></center>
+    <!-- 以上是輪播圖 -->
+        <center><h3>不知道自己適合吃哪種果甘嗎？別擔心！讓心裡測驗建議您。</h3><br><button class="btn_secondary">前往心理測驗</button></center>
         <div style="height:80px;"></div>
-        <center><h3>想要製作一個專屬於自己的禮盒嗎？那就點選下方的橘黃色按鈕吧！</h3><br><a class=alink_btn>客製禮盒</a></center>
-        <div style="height:40px;"></div>
     </div>   <!--div.wrapper的結尾標籤-->
     <hr>
     <div style="height:80px;"></div>
@@ -256,7 +126,7 @@
                 <p>天然鳳梨甘<span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>價格：350點</p>
                 <p><span>放入購物車</span>
                 <img src="images/prdt/icon/shopping_cart.svg" style="width:30px;display:inline-block"></p>
-                <center><button class="middle_btn" style="margin:20px 0px;">直接購買</button></center>
+                <center><button class="btn_secondary" style="margin:20px 0px;">直接購買</button></center>
             </div> <!--div.text_underdish的指令-->
         </div> <!--div.cards的結尾標籤-->
 
@@ -283,6 +153,11 @@
         </div> <!--div.cards的結尾標籤-->
 
     </div>  <!--div.wrapper_cards的結尾標籤-->
+    <center>
+        <h3>想要製作一個專屬於自己的禮盒嗎？那就點選下方的橘黃色按鈕吧！</h3>
+        <br>
+        <button class="btn_secondary">客製禮盒</button>
+    </center>
     <div style="height:100px;"> </div>
 </body>
 <footer>
