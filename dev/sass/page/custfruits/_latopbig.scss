@@ -1,0 +1,20 @@
+// $latop-max: 1200px;
+@include respond(latop-max) {
+    //大尺寸筆電都寫在裡面
+    .cusfruits_wrapper {
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        .wrapper_right {
+            flex-direction: row;
+            align-items: baseline;
+            .rwd_group {
+                display: flex;
+                flex-direction: column;
+                .lower {
+                    top: 0;
+                }
+            }
+        }
+    }
+}

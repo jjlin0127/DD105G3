@@ -1,0 +1,16 @@
+// $ipadpro: 768px;
+@include respond(ipadpro) {
+    //大尺寸平板都寫在裡面
+    .cusfruits_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .wrapper_right {
+            flex-direction: column;
+            .buttons {
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
+    }
+}

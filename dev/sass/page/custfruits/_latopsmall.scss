@@ -1,0 +1,9 @@
+// $latop-min: 992px;
+@include respond(latop-min) {
+    //小尺寸筆電都寫在裡面
+    .cusfruits_wrapper {
+        .wrapper_middle {
+            display: none;
+        }
+    }
+}
