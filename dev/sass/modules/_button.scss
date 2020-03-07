@@ -3,7 +3,7 @@
 //     @include btn_primary(120px);
 //     margin: 0 auto;
 // }
-// 變數只有width，
+// 變數只有width，但我有設min-width
 //=========   end   ========
 @mixin btn_link($width) {
     display: block;
@@ -11,6 +11,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
     position: relative;
     padding: 15px 0px;
     border-radius: 10px;
@@ -54,6 +55,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
@@ -97,6 +99,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
@@ -140,6 +143,7 @@
     text-decoration: none;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
     position: relative;
     padding: 10px 0px;
     border-width: 0;

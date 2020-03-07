@@ -243,3 +243,15 @@ section {
     display: block;
     margin: 50px auto;
 }
+
+@import "../../modules/rwd";
+
+@include respond(ipadpro) {
+    .bbs_article3{
+      display: none; }
+}
+
+@include respond(ipad) {
+    .bbs_article2{
+      display: none; }
+}
