@@ -26,7 +26,7 @@
       height: 40px;
       border-radius: 100%;
       border: transparent;
-      background-color: #e08c34;
+      background-color: #D35D3D;
       background-image: url('../../../images/forum/edit1.png');
       background-size: 20px;
       background-repeat: no-repeat;
@@ -39,7 +39,7 @@
       right: 10px;
       transition: all .5s; 
       &:hover {
-        background-color: #Fa0; }
+        background-color: #f85f35; }
       }
     
     button#panelBtn{
@@ -48,7 +48,7 @@
       height: 40px;
       border-radius: 100%;
       border: transparent;
-      background-color: #e08c34;;
+      background-color: #D35D3D;
       background-image: url('../../../images/forum/filter1.png');
       background-size: 20px;
       background-repeat: no-repeat;
@@ -60,7 +60,7 @@
       right: 10px;
       transition: all .5s; 
       &:hover {
-        background-color: #Fa0; }
+        background-color: #f85f35; }
       }
 
     aside.sortAndFilter{
