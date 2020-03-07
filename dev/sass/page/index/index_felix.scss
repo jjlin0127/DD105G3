@@ -1,5 +1,4 @@
 // Felix的首頁-----------------------------------------
-
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
@@ -22,6 +21,7 @@ section {
     border: 1px solid gray;
 }
 
+
 /* -- 客製果甘------------------------------------ -- */
 
 @mixin content {
@@ -37,7 +37,7 @@ section {
         background: #eee
     }
     .wheel_plate {
-        background: url(../images/index_cust/wheel_plate.png);
+        background: url(../../../images/index/index_felix/wheel_plate.png);
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
@@ -84,13 +84,14 @@ section {
             .cust_contain {
                 margin-top: -130px;
                 .cust_wheelset {
+                    position: relative;
                     .cust_wheelstick {
                         position: relative;
                         left: -65px;
                         bottom: -430px;
                         z-index: 1;
                         height: 48px;
-                        background-image: url(../images/index_cust/wheel_stick.png);
+                        background-image: url(../../../images/index/index_felix/wheel_stick.png);
                         background-repeat: no-repeat;
                         background-size: contain;
                     }
@@ -178,15 +179,24 @@ section {
                             overflow: hidden;
                             transform-origin: 100% 100%;
                         }
-                        #center {
-                            position: absolute;
-                            left: 145px;
-                            top: 145px;
-                            width: 315px;
-                            height: 315px;
-                            z-index: 8;
-                            background: rgba(255, 255, 255, .5);
-                            border-radius: 100%;
+                    }
+                    #center {
+                        position: absolute;
+                        // left: 145px;
+                        // top: 145px;
+                        left: 343.5px;
+                        top: 289.5px;
+                        width: 315px;
+                        height: 315px;
+                        z-index: 8;
+                        background: rgba(255, 255, 255, .5);
+                        border-radius: 100%;
+                        display: flex;
+                        div {
+                            width: 250px;
+                            text-align: center;
+                            margin: auto;
+                            line-height: 1.25;
                         }
                     }
                 }
@@ -243,7 +253,7 @@ section {
         position: relative;
         left: -166px;
         height: 488px;
-        background-image: url(../images/index_cust/cust_platform.png);
+        background-image: url(../../../images/index/index_felix/cust_platform.png);
         background-repeat: no-repeat;
         background-size: contain;
     }
