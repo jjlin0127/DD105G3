@@ -8,10 +8,11 @@
 .bbs_title{
     @include indexTitle(3px, 10px);
     margin: 50px auto;
-    margin-bottom: 200px;
+    // margin-bottom: 200px;
 }
 
 .bbs_articles{
+    margin-top: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -217,7 +218,7 @@
 }
 
 .bbs_btn{
-    @include btn_link(150px);
+    @include btn_link(170px);
     display: block;
     margin: 50px auto;
 }
