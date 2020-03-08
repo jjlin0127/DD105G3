@@ -240,7 +240,7 @@ section {
                         button {
                             font-family: Noto, Genjyuu;
                             margin: 0 10px;
-                            @include btn_link(100px);
+                            @include btn_primary(100px);
                         }
                     }
                 }
@@ -263,6 +263,7 @@ section {
         margin-right: 160px;
         position: relative;
         top: -255px;
+        cursor: pointer;
         @include btn_link(160px);
     }
 }
