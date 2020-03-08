@@ -50,46 +50,103 @@
     margin-bottom: 10px;
 }
 
-.post_area .set_post_topic{
+.post_area .set_post_title{
     width: 100%;
 }
 
-.post_area .set_post_topic >input{
-    width: 280px;
-}
-
-.select_post_topic{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    // flex-wrap: wrap;
-    height: 90px;
-}
-
-.select_post_topic .option{
-    height: 30%;
-}
-
-.set_post_topic > label{
+.set_post_title > label{
     vertical-align: middle;
 }
 
-.set_post_topic > input{
+.post_area .set_post_title > input{
     width: 300px;
     height: 20px;
 }
 
-.select_post_fruit{
+.set_post_topic{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+
+.set_post_topic .option{
+    height: 30%;
+}
+
+.set_post_fruit{
     width: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 90px;
+    height: 100px;
 }
 
-.select_post_fruit .option{
+.set_post_fruit .option{
     height: 30%;
 }
+
+.options_set {
+    margin-bottom: 10px;
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    }
+
+    label {
+        position: relative;
+        margin-right: 1em;
+        padding-left: 2em;
+        padding-right: 1em;
+        line-height: 1.75em;
+        cursor: pointer;
+        z-index: 1;
+
+        &:before {
+            box-sizing: border-box;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            border: 2px solid #4c4948;
+            border-radius: .25em;
+            z-index: 0;
+        }
+    }
+
+    input[type="radio"] + label::before {
+        border-radius: 1em;
+    }
+
+    /* Checked */
+    input[type="checkbox"]:checked + label,
+    input[type="radio"]:checked + label {
+        padding-left: 1em;
+        color: white;
+        &:before {
+            top: 0;
+            width: 100%;
+            height: 1.5em;
+            background: #4c4948;
+            z-index: -1;
+        }
+    }
+
+    /* Transition */
+    label,
+    label::before {
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+    }
+}
+
 .post_btns{
     text-align: center;
 
