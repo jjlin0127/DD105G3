@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="./discuss.css"> -->
     <!-- <link rel="stylesheet" href="./css/page/prod/detail.css">  -->
     <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
+    <link rel="stylesheet" href="./sass/page/prod/detail_media.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     
@@ -69,9 +70,9 @@
 
             <p class="introduce" style="line-height: 1.4;">基本介紹：草莓成熟後的果實富含有糖、蛋白質、粗纖維；其中維生素A也特別高，超過了橘子、芒果；還含有礦物質、蛋白質、鈣、磷、鐵等營養成分。</p>
             <div class="buy">
-                <h4>售價：<span class="price_label">340點</span></h4>
+                <h4>售價:<span class="price_label">340點</span></h4>
                 <div class="quantity">
-                    <h4>數量：</h4>
+                    <h4>數量:</h4>
                     <button class="count" id="minus">-</button>
                     <div calss="amount" id="howmany">1</div>
                     <button class="count" id="add">+</button>
@@ -79,14 +80,14 @@
                 <div class="purchase">
                     <button class="orange_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg">
                     <br>
-                    <button class="green_btn" id="buyit">直接購買</button>
+                    <button class="green_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg">
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
         <table class="previous_and_next">
             <tr>
-                <td><h4><a href="#">上一筆產品：香蕉</a></h4></td>
-                <td class="prod_next"><h4><a href="#">下一筆產品：草莓</a></h4></td>
+                <td><h4><a href="#" class="a_previous_and_next"><img src="images/prdt/icon/icon_previous.svg">上一筆產品：香蕉</a></h4></td>
+                <td class="prod_next"><h4><a href="#" class="a_previous_and_next">下一筆產品：草莓<img src="images/prdt/icon/icon_next.svg"></a></h4></td>
             </tr>
         </table>
         <hr size="4px" align="center" width="100%">
@@ -99,67 +100,75 @@
             <ul class="prtd_comment">
                 <li>
                     <div>Peggy1001於  2020.02.26  23:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/five_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Ted1001於  2020.02.24  08:10 發表評價：我覺得這款果甘不錯吃，但分量有點太少。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/three_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Eric0101於  2020.02.20  23:40 發表評價：還有客製化禮盒，這個我最喜歡的。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/four_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Hellen1001於  2020.02.16  13:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/five_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Peggy1001於  2020.02.26  23:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/five_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Ted1001於  2020.02.24  08:10 發表評價：我覺得這款果甘不錯吃，但分量有點太少。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/four_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Eric0101於  2020.02.20  23:40 發表評價：還有客製化禮盒，這個我最喜歡的。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/five_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <div>Hellen1001於  2020.02.16  13:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <table class="each_comment">
-                        <tr class="each_comment">
-                            <td></td><td class="each_star"><img src="images/prdt/icon/five_stars.svg"></td><td class="accuse">我想檢舉這篇評論</td>
-                        </tr>
-                    </table>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
                 </li>
 
             </ul>  <!--ul.prdt_comment的結尾標籤-->

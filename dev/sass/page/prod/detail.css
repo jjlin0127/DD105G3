@@ -404,8 +404,9 @@ div.tab_container .tab_content h2 {
   width: 1200px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(211, 235, 174, 0.85);
-  border: 3px solid #A2C070;
+  background: -webkit-gradient(linear, left top, right top, from(#fafac0), to(#f0f0dd));
+  background: linear-gradient(90deg, #fafac0, #f0f0dd);
+  border: 3px solid #FEBD7B;
   border-radius: 10px;
   position: relative;
   left: 50%;
@@ -417,9 +418,28 @@ div.tab_container .tab_content h2 {
       flex-wrap: wrap;
 }
 
+@media all and (max-width: 1200px) {
+  .detail_wrapper {
+    width: 992px;
+    padding: 15px;
+    position: relative;
+    left: 50%;
+    margin-left: -500px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .detail_wrapper {
+    width: 768px;
+    padding: 15px;
+    position: relative;
+    left: 50%;
+    margin-left: -384px;
+  }
+}
+
 .detail_wrapper > .prdt_img {
   width: 40%;
-  /* border:1px solid red; */
   background-color: white;
   border-radius: 4px;
   float: left;
@@ -474,10 +494,10 @@ p.introduce {
   display: inline-block;
 }
 
-.quantity > div, button {
+.quantity div, .quantity button {
   font-size: 2rem;
   display: inline-block;
-  margin: 10px;
+  margin: 0px;
 }
 
 #howmany {
@@ -528,8 +548,14 @@ table.previous_and_next a {
 }
 
 table.previous_and_next td.prod_next {
-  float: right;
+  text-align: right;
   padding-right: 20px;
+}
+
+table.previous_and_next img {
+  width: 30px;
+  position: relative;
+  top: 3px;
 }
 
 ul.prtd_comment {
@@ -537,49 +563,48 @@ ul.prtd_comment {
   height: 600px;
   overflow: auto;
   margin: 10px auto;
-  padding: 10px 30px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 1.4;
   background-color: white;
   border-radius: 20px;
 }
 
 ul.prtd_comment > li {
-  width: 1100px;
+  width: 100%;
   border-bottom: 2px dotted black;
   position: relative;
   line-height: 1.4;
 }
 
 ul.prtd_comment > li > div {
-  margin: 20px 0px;
+  width: 100%;
+  margin: 10px;
 }
 
-table.each_comment {
-  margin-bottom: 10px;
+div.each_comment {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-tr.each_comment > td:first-child {
-  /* border: 1px solid blue; */
-  width: 70%;
+div.each_comment .accuse {
+  font-size: 1rem;
+  border-radius: 10px;
+  float: right;
+}
+
+div.each_comment img.stars {
+  margin: 0px 10px;
+  width: 150px;
+  display: inline-block;
+}
+
+div.each_comment img.accuse_icon {
+  margin-left: 4px;
+  width: 20px;
   position: relative;
-  right: 0px;
-}
-
-tr.each_comment > td {
-  /* border: 1px solid red; */
-  padding: 0px 10px;
-}
-
-td.accuse {
-  color: #8C512E;
-}
-
-td.accuse:hover {
-  cursor: pointer;
-}
-
-tr.each_comment > td > img {
-  width: 130px;
+  top: 3px;
 }
 
 .grey_btn {
