@@ -1,64 +1,67 @@
 // 珮珊的首頁-----------------------------------------
 
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
+/* -- 特色果甘------------------------------------ -- */
 
-.box_for_prod_title_hot_topics {
-    position: relative;
-    /* border:1px solid blue ; */
-    box-sizing: border-box;
+//以下引用共用title
+// .box_for_prod_title_hot_topics {
+//     position: relative;
+//     /* border:1px solid blue ; */
+//     box-sizing: border-box;
+// }
+
+// .prod_title_hot_topics {
+//     width: 200px;
+//     text-align: center;
+//     font-size: 36px;
+//     letter-spacing: .1rem;
+//     padding: 10px;
+//     position: relative;
+//     border-width: 3px;
+//     border-style: dashed;
+//     border-color:#a6c165;
+//     border-radius: 10px;
+//     background-color: #fff;
+//     margin: 50px auto;
+//     margin-bottom: 20px;
+// }
+
+// .prod_title_hot_topics img.prod_leafLeft {
+//     position: absolute;
+//     top: -20px;
+//     left: -20px;
+//     width: 50px;
+//     /* border: 1px solid red; */
+// }
+
+// .prod_title_hot_topics img.prod_leafRight {
+//     position: absolute;
+//     top: -20px;
+//     right: -20px;
+//     width: 50px;
+//     /* border: 1px solid orange; */
+//     transform: rotate(260deg);
+// }
+
+
+/* -- 特色果甘------------------------------------ -- */
+
+.prod_title{
+    @include title(3px, dotted, #a6c165, 10px, #fff);
+    margin: 40px auto 40px;
 }
 
-.prod_title_hot_topics {
-    width: 200px;
-    text-align: center;
-    font-size: 36px;
-    letter-spacing: .1rem;
-    padding: 10px;
-    position: relative;
-    border-width: 3px;
-    border-style: dashed;
-    border-color:#a6c165;
-    border-radius: 10px;
-    background-color: #fff;
-    margin: 50px auto;
-    margin-bottom: 20px;
-}
-
-.prod_title_hot_topics img.prod_leafLeft {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 50px;
-    /* border: 1px solid red; */
-}
-
-.prod_title_hot_topics img.prod_leafRight {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 50px;
-    /* border: 1px solid orange; */
-    transform: rotate(260deg);
-}
-
-h2.prod_the_grey_title {
+.prod_the_grey_title {
     /*↓↓↓轉手機螢幕會變成1.75rem*/
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 div.contain {
     width: 100%;
     position: relative;
     /* border: 1px solid red; */
-    box-sizing: border-box;
+    // box-sizing: border-box;
 }
 
 table.prod_leaderboard{
@@ -66,12 +69,12 @@ table.prod_leaderboard{
     width:100%;
     td.lower{
         position: relative;
-        top:60px;
+        top:90px;
     }
     td.prod_colorful_balloon{
         width:8%;
         img{
-            width:50%;
+            width:80%;
         }
 
         img.higher{
@@ -87,7 +90,7 @@ table.prod_leaderboard{
         width:26%;
         position: relative;
         img{
-            width:70%;
+            width:80%;
             margin-left: 15%;
         }
         div.prod_introduce{
@@ -112,18 +115,18 @@ table.prod_leaderboard{
     }
 }
 
-div.box_for_balloon {
-    width: 78%;
-    margin: 0 auto;
-    border: 1px solid green;
-    box-sizing: border-box;
-}
+// div.box_for_balloon {
+//     width: 78%;
+//     margin: 0 auto;
+//     border: 1px solid green;
+//     box-sizing: border-box;
+// }
 
-div.prod_wrapper_3balloon {
-    border:1px solid blueviolet;
-    width: 79%;
-    display: inline-block;
-}
+// div.prod_wrapper_3balloon {
+//     border:1px solid blueviolet;
+//     width: 79%;
+//     display: inline-block;
+// }
 
 
 div.prod_white_line {

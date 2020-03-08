@@ -240,34 +240,147 @@ button#closeBtn{
 aside.sortAndFilter{
     position: sticky;
     z-index: 4;
-    top: 100px;
+    top: 75px;
     width: 200px;
     margin: 0px 10px;
     vertical-align: top;
     display: inline-block;
 }
-form{
-    margin-bottom: 30px;
+
+aside.sortAndFilter form{
+    width: 100%;
+    margin-bottom: 15px;
 }
-form h5{
+aside.sortAndFilter form > h5{
     margin-bottom: 10px;
 }
-form p{
-    margin-top: 20px;
-    margin-bottom:10px;
-}
-.topic, .fruit{
-    margin-bottom: 20px;
-}
-.search_btn{
-    width: 80px;
-    font-size: 1rem;
-}
-select{
-    width: 80px;
+aside.sortAndFilter form p{
+    margin: 5px 0;
 }
 
-section{
+// Select
+.forum_sort > form .sort_select {
+    position: relative;
+    width: 135px;
+    height: 1.5em;
+    line-height: 1.5em;
+    background: #4c4948;
+    overflow: hidden;
+    border-radius: .25em;
+
+    .sort_by {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    background: #4c4948;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 0 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .sort_by::-ms-expand {
+    display: none;
+  }
+}
+
+// Arrow 
+.sort_select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 .5em;
+    background: #2e2e2e;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+// Transition 
+.sort_select:hover::after {
+    color: #e08c34;
+}
+
+.optios{
+    margin-bottom: 10px;
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    }
+
+    label {
+        position: relative;
+        margin-right: 1em;
+        padding-left: 2em;
+        padding-right: 1em;
+        line-height: 1.75em;
+        cursor: pointer;
+        
+        &:before {
+            box-sizing: border-box;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            border: 2px solid #4c4948;
+            border-radius: .25em;
+            z-index: -1;
+        }
+    }
+
+    input[type="radio"] + label::before {
+        border-radius: 1em;
+    }
+
+    /* Checked */
+    input[type="checkbox"]:checked + label,
+    input[type="radio"]:checked + label {
+        padding-left: 1em;
+        color: white;
+        &:before {
+            top: 0;
+            width: 100%;
+            height: 1.5em;
+            background: #4c4948;
+        }
+    }
+
+    /* Transition */
+    label,
+    label::before {
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+    }
+}
+
+.search_btn{
+    color: #fff;
+    background: #2c3e50;
+    border: 0;
+    border-radius: .25em;
+    width: 135px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.post_zone > section{
     width: calc(100% - 240px);
     display: inline-block;
     background-color: #fff;

@@ -1,0 +1,7 @@
+@mixin footer_bgc_img($url_files) {
+    background-image: url('../../../images/footer/#{$url_files}.png');
+}
+
+@mixin bgc_img($url_files) {
+    background-image: url('../../../images/bgc/#{$url_files}.svg');
+}
