@@ -2,9 +2,13 @@
 
 /* -- 客製果甘------------------------------------ -- */
 
-.box_title{
+.cust_title{
     @include indexTitle(3px, 10px);
     margin: 50px auto;
+}
+
+h3{
+    text-align: center;
 }
 
 @mixin content {
@@ -17,13 +21,13 @@
     width: 100%;
     height: 100%;
     &:hover {
-        background: #eee
+        background: #eee;
     }
 
-    h3{
-        text-align: center;
+    &:hover>li {
+        color: #4c4948;
     }
-    
+
     .wheel_plate {
         background: url(../../../images/index/index_felix/wheel_plate.png);
         background-size: contain;
@@ -65,6 +69,11 @@
         h2 {
             text-align: center;
         }
+
+        h3 {
+            line-height: 2rem;
+        }
+
         .cust_qna_contain {
             width: 100%;
             display: flex;
@@ -87,8 +96,8 @@
                         border-radius: 100%;
                         position: relative;
                         z-index: 2;
-                        left: 200px;
-                        bottom: -100px;
+                        left: 50px;
+                        bottom: -50px;
                         height: 600px;
                         width: 600px;
                         overflow: hidden;
@@ -172,14 +181,15 @@
                         position: absolute;
                         // left: 145px;
                         // top: 145px;
-                        left: 343.5px;
-                        top: 289.5px;
+                        left: 33%;
+                        top: 36.95%;
                         width: 315px;
                         height: 315px;
                         z-index: 8;
-                        background: rgba(255, 255, 255, .5);
+                        background: rgba(255, 255, 255, .8);
                         border-radius: 100%;
                         display: flex;
+                        color: #4c4948;
                         div {
                             width: 250px;
                             text-align: center;
