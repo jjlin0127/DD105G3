@@ -3,14 +3,17 @@
 @import '../../base/fontSetting';
 @import '../../layout/header';
 @import '../../layout/footer';
+// @import '../../layout/login';
+@import '../../layout/tab';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
+@import '../../modules/rwd';
 
 .detail_wrapper{
     width:1200px;
     box-sizing: border-box;
-    background: linear-gradient(rgb(245, 245, 210), rgb(186, 230, 99));
-    border:3px solid rgb(130, 161, 79);
+    background-color: rgba(211, 235, 174, 0.85);
+    border:3px solid #A2C070;
     border-radius:10px;
     position:relative;
     left: 50%;
@@ -29,12 +32,13 @@
     border-radius: 4px;
 }
 .large_img > img{
-    width:100%;
+    width:80%;
+    margin-left: 10%;
 }
 
 .prdt_img > table.small_img{
     width:100%;
-    // border:1px solid green;
+    border:1px solid green;
     background-color: white;
 }
 
@@ -101,9 +105,23 @@ button.for_buyit{
     margin: 10px 20px;
 }
 
-hr.hr_for_detail{
-    margin: 30px;
-    border-style: dashed;
+button#putin{
+    width:180px;
+    color: black;
+    padding:8px 20px 8px 8px;
+    border:3px solid #D35D3D; 
+    background-color: rgb(230, 230, 230);
+    box-sizing: border-box;
+}
+
+button#putin:hover{
+    background-color: white;
+}
+button#putin > img{
+    width:22px;
+    margin-left:10px;
+    position: relative;
+    top:3px;
 }
 
 ul.prtd_comment{
@@ -154,204 +172,59 @@ tr.each_comment > td > img{
     width:130px;
 }
 
-//以下的.grey_btn是複製政儒的 cancel_btn
-.grey_btn{
-    text-align: right;
-    display: inline-block;
-  }
-  
-  .grey_btn{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 0px;
-    border-width: 0;
-    border-radius: 10px;
-    font-size: 1.25rem;
-    min-width: 120px;
-    width: 120px;
-    color: #141414;
-    background-color: #A8A8A8;
-    -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
-            box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
-    -webkit-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-    text-decoration: none;
-  }
-  
-  .grey_btn:before {
-    content: "\f054";
-    font-family: FontAwesome;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    width: 20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 0 50% 50% 0;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    -webkit-transform-origin: left center;
-            transform-origin: left center;
-    -webkit-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-  }
-  
-  .grey_btn:hover {
-    text-indent: 30px;
-  }
-  
-  .grey_btn:hover:before {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    text-indent: 0;
-  }
-  
-  
-  //以下的orange_btn是複製政儒的.post_btn
-  
-  .orange_btn {
-    text-align: center;
-  }  
-  
-  .orange_btn {
-    display: block;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 0px;
-    border-width: 0;
-    border-radius: 10px;
-    font-size: 1.25rem;
-    min-width: 120px;
-    width: 120px;
-    color: #ffffff;
-    background-color: #D35D3D;
-    -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
-            box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
-    -webkit-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-    display: inline-block;
-    margin: 10px;
-  }
-    
-    .orange_btn:before {
-      content: "\f054";
-      font-family: FontAwesome;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      position: absolute;
-      top: 0;
-      left: 0px;
-      height: 100%;
-      width: 20px;
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 0 50% 50% 0;
-      -webkit-transform: scale(0, 1);
-              transform: scale(0, 1);
-      -webkit-transform-origin: left center;
-              transform-origin: left center;
-      -webkit-transition: all 0.2s linear 0s;
-      transition: all 0.2s linear 0s;
-    }
-    
-    .orange_btn:hover {
-      text-indent: 30px;
-    }
-    
-    .orange_btn:hover:before {
-      -webkit-transform: scale(1, 1);
-              transform: scale(1, 1);
-      text-indent: 0;
-    }
-    
-  
-  //以下的green_btn是複製政儒的post_rest_btn
-  .green_btn {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 0px;
-    border-width: 0;
-    border-radius: 10px;
-    font-size: 1.25rem;
-    min-width: 120px;
-    width: 120px;
-    color: #ffffff;
-    background-color: #1F7962;
-    -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
-            box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
-    -webkit-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-    display: inline-block;
-    margin: 10px;
-  }
-  
-  .green_btn:before {
-    content: "\f054";
-    font-family: FontAwesome;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    width: 20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 0 50% 50% 0;
-    -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-    -webkit-transform-origin: left center;
-            transform-origin: left center;
-    -webkit-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-  }
-  
-  .green_btn:hover {
-    text-indent: 30px;
-  }
-  
-  .green_btn:hover:before {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    text-indent: 0;
-  }
-  
+
+#cloudBoard{		/*div*/
+	margin: 100px auto;
+	width: 100%;
+	height: 600px;
+	/* background-color: hotpink; */
+	overflow: hidden;
+	/* transform: rotate(345deg); */
+	position: absolute;
+	top:150px;
+    left:0px;
+    z-index:-2;
+}
 
 
-@import "../../modules/rwd";
-@import "../../page/forum/ipadpro";
-@import "../../page/forum/ipad";
-@import "../../page/forum/phone";
+#cloudBoard ul{	/*ul*/
+	width: 4000px;
+	position: relative;
+	top:-20px;
+	animation: slider 16s infinite linear; /*"infinit"可以改成3，就變成只播放三次*/
+	/* transform: rotate(45deg); */
+}
+
+
+img#moving_cloud {
+  width:1400px;
+  /* border:1px solid green; */
+}
+
+
+
+@keyframes slider{
+    0%{left: -600px;
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+
+    20%{left:60px;
+        opacity: 1.0;
+    }
+
+    50%{ left: 750px;
+        opacity: 0.9;
+        /* transform:skewX(10deg); */
+    }
+
+    60%{
+        opacity:0.6;
+        transform:scaleX(2.0);
+    }
+
+    100%{left: 1900px;
+        opacity: 0.1;
+        /* transform:skewX(40deg); */
+    }
+}

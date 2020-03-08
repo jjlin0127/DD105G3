@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-商品詳情</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <!-- <link rel="stylesheet" href="./css/page/prod/detail.css">  -->
-    <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./discuss.css"> -->
+    <link rel="stylesheet" href="./css/page/prod/detail.css"> 
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     
 </head>
 
-<body style="background-color: rgb(181, 218, 241);">
+<body style="background-color:#B9D7EA ;">
     <!-- ↓↓↓ 導覽列 -->
     <header>
         <div class="header__container">
@@ -36,6 +35,15 @@
         </div>
     </header>
     <!-- ↑↑↑ 導覽列 -->
+    <div id="cloudBoard">
+
+        <ul>
+            <li>
+                <img src="images/moving_cloud.png" id="moving_cloud">
+            </li>
+
+        </ul>
+    </div>
     <div class="box_for_title_hot_topics">
         <div class="title_hot_topics">
             <img src="./images/leaf_small.svg" class="leafLeft">
@@ -47,11 +55,11 @@
     <div class="detail_wrapper">
         <div class="prdt_img">
             <div class="large_img">
-                <img src="images/prdt/strawberry03.jpg">
+                <img src="images/prdt/strawberry01.png">
             </div>
             <table class="small_img">
                 <tr>
-                    <td><img src="images/prdt/strawberry03.png" class="sm_photo"></td>
+                    <td><img src="images/prdt/strawberry01.png" class="sm_photo"></td>
                     <td><img src="images/prdt/strawberry02.jpg" class="sm_photo"></td>
                     <td><img src="images/prdt/strawberry03.jfif" class="sm_photo"></td>
                     <td><img src="images/prdt/strawberry04.jfif" class="sm_photo"></td>
@@ -77,14 +85,14 @@
                     <button class="count" id="add">+</button>
                 </div>
                 <div class="purchase">
-                    <button class="orange_btn" id="putin"> 放入購物車</button>
-                    <button class="green_btn" id="buyit">直接購買</button>
+                    <button class="game_btn for_buyit" id="putin"> 放入購物車<img src="images/prdt/icon/shopping_cart.svg"></button>
+                    <button class="game_btn for_buyit" id="buyit">直接購買</button>
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
-        <hr class="hr_for_detail">
+        <hr style="margin: 30px;border-style: dashed;">
         <div class="see_comment">
-            <center><h2>觀看評價</h2></center>
+            <h2 style="text-align: center;">觀看評價</h2>
             <ul class="prtd_comment">
                 <li>
                     <div>Peggy1001於  2020.02.26  23:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
@@ -154,6 +162,7 @@
             </ul>  <!--ul.prdt_comment的結尾標籤-->
         </div> <!--see_comment的結尾標籤-->
     </div> <!--detail_wrapper的結尾標籤-->
+
 </body>
 <footer>
     <strong>Copyright &copy; 2020 Natural Sweet</srong>
