@@ -1,0 +1,48 @@
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../mixin/bgc_img';
+@import '../../modules/button';
+
+body {
+    box-sizing: border-box;
+    // background-color: #fff;
+    color: $indexFontColor;
+    @include bgc_img(index_bgc_nightblue2);
+    background-size: cover;
+}
+
+.wrap {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+h1 {
+    font-size: 2rem;
+    color: $indexTitleFontColor;
+}
+h2 {
+    font-size: 1.75rem;
+    color: $indexTitleFontColor;
+}
+h3 {
+    font-size: 1.5rem;
+    color: $indexFontColor;
+}
+h4 {
+    font-size: 1.25rem;
+    color: $indexTitleFontColor;
+}
+h5 {
+    font-size: 1.15rem;
+    color: $indexTitleFontColor;
+}
+
+

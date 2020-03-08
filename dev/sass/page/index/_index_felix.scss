@@ -1,28 +1,11 @@
 // Felix的首頁-----------------------------------------
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
-body {
-    box-sizing: border-box;
-    background-color: lightblue;
-    background-image: url();
-}
-
-.wrap {
-    width: 100%;
-}
-
-section {
-    width: 100%;
-    border: 1px solid gray;
-}
-
 
 /* -- 客製果甘------------------------------------ -- */
+
+.box_title{
+    @include indexTitle(3px, 10px);
+    margin: 50px auto;
+}
 
 @mixin content {
     right: 61px;
@@ -36,6 +19,11 @@ section {
     &:hover {
         background: #eee
     }
+
+    h3{
+        text-align: center;
+    }
+    
     .wheel_plate {
         background: url(../../../images/index/index_felix/wheel_plate.png);
         background-size: contain;

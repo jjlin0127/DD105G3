@@ -1,129 +1,140 @@
 // 珮珊的首頁-----------------------------------------
 
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
+/* -- 特色果甘------------------------------------ -- */
 
-.box_for_prod_title_hot_topics {
-    position: relative;
-    /* border:1px solid blue ; */
-    box-sizing: border-box;
-}
-
-.prod_title_hot_topics {
-    width: 200px;
-    text-align: center;
-    font-size: 36px;
-    letter-spacing: .1rem;
-    padding: 10px;
-    position: relative;
-    border-width: 3px;
-    border-style: dashed;
-    border-color:#a6c165;
-    border-radius: 10px;
-    background-color: #fff;
+.box_title{
+    @include indexTitle(3px, 10px);
     margin: 50px auto;
-    margin-bottom: 20px;
 }
 
-.prod_title_hot_topics img.prod_leafLeft {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 50px;
-    /* border: 1px solid red; */
-}
-
-.prod_title_hot_topics img.prod_leafRight {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 50px;
-    /* border: 1px solid orange; */
-    transform: rotate(260deg);
-}
-
-h2.prod_the_grey_title {
+.prod_the_grey_title {
     /*↓↓↓轉手機螢幕會變成1.75rem*/
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 div.contain {
     width: 100%;
     position: relative;
-    /* border: 1px solid red; */
-    box-sizing: border-box;
 }
 
-table.prod_leaderboard{
+table.prod_leaderboard {
     // border:3px green dashed;
     width:100%;
     td.lower{
         position: relative;
-        top:60px;
+        top:90px;
     }
-    td.prod_colorful_balloon{
-        width:8%;
+    td.prod_colorful_balloon_left {
+        border: 1px solid red;
+        width: 8%;
         img{
-            width:50%;
+            width:80%;
         }
 
-        img.higher{
+        img:nth-child(1) {
+            border: 1px solid #fa0;
             position: relative;
-            top:-250px;
+            top: -290px;
         }
-        img.float_right{
-            float: right;
+
+        img:nth-child(2) {
+            border: 1px solid deeppink;
+            position: relative;
+            top: 0px;
+            right: -80px;
         }
+
     }
-    td.prod_leaderboard{
+
+    td.prod_leaderboard {
+        border: 1px solid blue;
         // border:1px solid #800080;
         width:26%;
         position: relative;
-        img{
-            width:70%;
-            margin-left: 15%;
+
+        img {
+            width:90%;
+            margin: 0 auto;
         }
-        div.prod_introduce{
+
+        div.prod_introduce {
+            border: 1px solid green;
+            width: 100px;
             position: absolute;
-            top:0px;
-            width: 70%;
-            margin-left: 15%;
+            top: 18px;
+            width: 60%;
+            left: 80px;
             z-index: 2;
-            img{
-                width:80%;
-                margin-left: 10%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            
+    
+            .prod_leaderboard_img {
+                // border: 1px solid red;
+                width: 170px;
+                height: 170px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+    
             }
-            h2,h3{
-                text-align: center;
+            
+            .prod_lntro_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: $indexSecFontColor;
+
+                p {
+                   font-size: 1.5rem; 
+                }
+
+                span {
+                    font-size: 1.25rem;
+                }
+
+                img {
+                    width: 60%;
+                    // text-align: center;
+                }
             }
-            img.prod_stars{
-                width:60%;
-                margin-left: 20%;
-                // border:2px dashed blue;
-            }
+
+            // h2,h3{
+            //     text-align: center;
+            // }
+
+            // img.prod_stars{
+            //     width:60%;
+            //     margin-left: 20%;
+            //     // border:2px dashed blue;
+            // }
         }
     }
 }
 
-div.box_for_balloon {
-    width: 78%;
-    margin: 0 auto;
-    border: 1px solid green;
-    box-sizing: border-box;
-}
+// div.box_for_balloon {
+//     width: 78%;
+//     margin: 0 auto;
+//     border: 1px solid green;
+//     box-sizing: border-box;
+// }
 
-div.prod_wrapper_3balloon {
-    border:1px solid blueviolet;
-    width: 79%;
-    display: inline-block;
-}
+// div.prod_wrapper_3balloon {
+//     border:1px solid blueviolet;
+//     width: 79%;
+//     display: inline-block;
+// }
 
 
 div.prod_white_line {

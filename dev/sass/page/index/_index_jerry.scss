@@ -1,36 +1,14 @@
 // Jerry的首頁-----------------------------------------
 
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
-
-body {
-    box-sizing: border-box;
-    background-color: #fff;
-    background-image: url("../../../images/sky.jpg");
-}
-
-.wrap {
-    width: 100%;
-}
-
-section {
-    width: 100%;
-    border: 1px solid gray;
-}
-
 /* -- 果甘話區------------------------------------ -- */
 .index_bbs .contain{
     width: 100%;
 }
 
-.bbs_title{
-    @include title(3px, dotted, #a6c165, 10px, #fff);
-    margin: 50px auto 200px;
+.box_title{
+    @include indexTitle(3px, 10px);
+    margin: 50px auto;
+    margin-bottom: 200px;
 }
 
 .bbs_articles{
