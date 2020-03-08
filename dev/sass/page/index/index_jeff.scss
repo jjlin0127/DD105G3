@@ -82,8 +82,11 @@ section {
                 align-items: center;
                 margin-top: 100px;
 
-                a .btn {
-                    @include btn;
+                @include btn_link(150px);
+                margin: 0 auto;
+                a{
+                    text-decoration: none;
+                    color:#ffffff;
                 }
             }
 
