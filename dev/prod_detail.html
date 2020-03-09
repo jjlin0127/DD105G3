@@ -48,7 +48,7 @@
 
     <div class="detail_wrapper">
         <div class="prdt_img">
-            <div class="large_img">
+            <div class="large_img" id="large">
                 <img src="images/prdt/strawberry03.jpg">
             </div>
             <table class="small_img">
@@ -59,8 +59,22 @@
                     <td><img src="images/prdt/strawberry04.jfif" class="sm_photo"></td>
                 </tr>
             </table>
+            <script>
+                function showLarge(e){
+                let large = document.getElementById("large")	   
+                    large.src = e.target.src;
+                }
+        
+                function init(){
+                    let imgs = document.getElementsByClassName("sm_photo");
+        
+                    for( let i=0; i<imgs.length; i++){
+                        imgs[i].onclick = showLarge;
+                    }
+                }
+                window.onload = init;
+            </script>
         </div> <!--prdt_img的結尾標籤-->
-
         <div class="prdt_text">
             <center><h2><b>天然草莓甘</b></h2></center>
             <center>
@@ -174,7 +188,6 @@
             </ul>  <!--ul.prdt_comment的結尾標籤-->
         <!--</div>--> <!--see_comment的結尾標籤-->
     </div> <!--detail_wrapper的結尾標籤-->
-
 </body>
 <footer>
     <strong>Copyright &copy; 2020 Natural Sweet</srong>
