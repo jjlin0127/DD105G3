@@ -460,14 +460,23 @@
             
         }
         .addCartBtn{
+<<<<<<< HEAD
             @include btn_link(150px);
             margin:  30px auto 50px auto;
 >>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
+=======
+            @include btn_primary(300px);
+            // margin-left: 50%;  //按鈕置中
+            // transform: translateX(-50%); //按鈕置中
+            // margin-top: 30px;
+            // margin-bottom: 50px;
+>>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
         }
     }
 }
 
 @import '../../modules/rwd';
+<<<<<<< HEAD
 <<<<<<< HEAD
 @import 'latop-min.scss';
 =======
@@ -480,3 +489,6 @@
 
 // 按按鈕一直跳原因：其實本體定在上面，但使用relative 才讓盒子看起來往下移，因此改變盒子他會想跑到盒子(本體)那邊。
 >>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
+=======
+@import 'latop-min.scss';
+>>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
