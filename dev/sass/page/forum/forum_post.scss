@@ -38,7 +38,8 @@
 }
 
 .cancel_post button.cancel_btn{
-    @include btn_f(120px);
+    @include btn_cancel(120px);
+    text-decoration: none;
 }
 
 .post_form > div{
@@ -89,16 +90,23 @@
 .select_post_fruit .option{
     height: 30%;
 }
-
-.post_btn{
+.post_btns{
     text-align: center;
+
+    .post_submit_btn{
+        @include btn_primary(120px);
+        display: inline-block;
+        margin: 10px;
+    }
+    
+    .post_reset_btn{
+        @include btn_secondary(120px);
+        display: inline-block;
+        margin: 10px;
+    }
 }
 
-.post_btn > input{
-    @include btn_f(120px);
-    margin: 10px;
-    display: inline-block;
-}
+
 
 @import "../../modules/rwd";
 @import "../../page/forum/ipad";

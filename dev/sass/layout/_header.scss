@@ -4,7 +4,7 @@ header .header__container {
     display: flex;
     justify-content: center;
     position: fixed;
-    height: 85px;
+    height: 65px;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     z-index: 99;
@@ -17,7 +17,7 @@ header .header__container .logo {
 }
 
 header .header__container .logo a img {
-    width: 250px;
+    width: 200px;
 }
 
 header .header__container .navList {
@@ -75,12 +75,12 @@ header .header__container .navList {
     transition: transform .2s;
 }
 
-.navItem:hover >.fa-seedling,
-.navItem:hover >.fa-apple-alt,
-.navItem:hover >.fa-gift,
-.navItem:hover >.fa-lemon,
-.navItem:hover >.fa-carrot,
-.navItem:hover >.fa-leaf {
+.navItem:hover>.fa-seedling,
+.navItem:hover>.fa-apple-alt,
+.navItem:hover>.fa-gift,
+.navItem:hover>.fa-lemon,
+.navItem:hover>.fa-carrot,
+.navItem:hover>.fa-leaf {
     animation: ss .2s linear infinite alternate;
 }
 
@@ -88,6 +88,7 @@ header .header__container .navList {
     0% {
         transform: rotate(-10deg);
     }
+
     100% {
         transform: rotate(10deg);
     }
@@ -96,3 +97,10 @@ header .header__container .navList {
 .navList .focus {
     color: #a6c165;
 }
+
+
+
+
+
+
+//rwd

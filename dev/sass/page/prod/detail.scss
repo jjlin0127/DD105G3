@@ -12,8 +12,9 @@
 .detail_wrapper{
     width:1200px;
     box-sizing: border-box;
-    background-color: rgba(211, 235, 174, 0.85);
-    border:3px solid #A2C070;
+    background: linear-gradient(90deg,rgb(250, 250, 192), rgb(240, 240, 221));
+    border:3px solid #FEBD7B; 
+    //#A2C070
     border-radius:10px;
     position:relative;
     left: 50%;
@@ -24,70 +25,85 @@
     flex-wrap: wrap;
 }
 
+@media all and (max-width: 1200px) {
+    .detail_wrapper{
+        width:992px;
+        padding:15px;
+        position:relative;
+        left: 50%;
+        margin-left:-500px;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .detail_wrapper{
+        width:768px;
+        padding:15px;
+        position:relative;
+        left: 50%;
+        margin-left:-384px;
+    }
+
+
+}
+
 .detail_wrapper > .prdt_img{
-    display:inline-block;
     width:40%;
-    /* border:1px solid red; */
+    // border:1px solid red; 
     background-color: white;
     border-radius: 4px;
+    float: left;
 }
 .large_img > img{
-    width:80%;
-    margin-left: 10%;
+    width:100%;
 }
 
 .prdt_img > table.small_img{
     width:100%;
-    border:1px solid green;
     background-color: white;
-}
-
-img.sm_photo {
-    width:120px;
+    td{
+        width:25%;
+        img{
+            width:100%;
+        }
+    }
 }
 
 .prdt_text{
-    display:inline-block;
-    /* float:right; */
-    margin-left: 50px;
-    width:54%;
+    float:right;
+    width:50%;
+    margin: 5%;
 }
 
-.prdt_text > table.grade{
-    width:100%;
-    /* border:1px solid green; */
-    /* background-color: white; */
-    margin:20px 0px;
-    padding-left:40px;
+.prdt_text{
+    h2{
+        line-height: 1.5;
+    }
+    h2.prdt_avgscore{
+       display: inline-block;
+       text-decoration: underline;
+       margin-right: 10px;
+    }
+    img.star{
+        display: inline-block;
+        width:40%;
+        position: relative;
+        top:6px;
+    }
 }
 
-
-
-td.score{
-    /* border:1px dotted grey; */
-    padding-left: 40px;
-    width:80px;
-}
-
-td.stars > img{
-    width:120px;
-    /* border:1px dotted hotpink; */
-    float:left;
-}
 
 p.introduce{
     margin: 10px 0px;
     font-size:18px;
 }
-
-div.buy > div,h4{
-    margin:10px 0px;;
-}
-
 .quantity > h4{display:inline-block;}
-.quantity > div,button{
-    font-size:2rem;
-    display:inline-block;
+.quantity{
+    div,button{
+        font-size:2rem;
+        display:inline-block;
+        margin: 0px;
+    }
 }
 #howmany{
     width:30px;
@@ -101,130 +117,286 @@ button.count{
     padding: 5px 10px; 
 }
 
-button.for_buyit{
-    margin: 10px 20px;
-}
 
-button#putin{
-    width:180px;
-    color: black;
-    padding:8px 20px 8px 8px;
-    border:3px solid #D35D3D; 
-    background-color: rgb(230, 230, 230);
+div.buy{
+    width: 98%;
+    margin: 1%;
+    border: 2px dashed #007864;
+    border-radius: 20px;
     box-sizing: border-box;
+    padding: 10px 20px;
+    h4{
+        margin: 10px;
+    }
+    img{
+        display:inline-block;
+        width:40px;
+        position: relative;
+        top:12px;
+    }
+
+    span.price_label{
+        font-weight: bolder;
+    }
 }
 
-button#putin:hover{
-    background-color: white;
-}
-button#putin > img{
-    width:22px;
-    margin-left:10px;
-    position: relative;
-    top:3px;
+table.previous_and_next{
+    width: 100%;
+    // border: 1px solid red;
+    a{
+        color: #935B43;
+        text-decoration: none;
+    }
+    td.prod_next{
+        text-align: right;
+        padding-right:20px;
+    }
+    img{
+        // border: 1px solid red;
+        width:30px;
+        position: relative;
+        top:3px;
+    }
+    
 }
 
 ul.prtd_comment{
+    width:90%;
     height:600px;
     overflow: auto;
-    margin: 10px;
-    padding: 10px 30px;
+    margin:10px auto;
+    padding: 10px;
+    box-sizing: border-box;
     line-height: 1.4;
     background-color: white;
     border-radius: 20px;
 }
 
 ul.prtd_comment > li{
-    width:1100px;
+    width:100%;
     border-bottom: 2px dotted black;
     position: relative;
     line-height: 1.4;
 }
 ul.prtd_comment > li > div{
-    margin: 20px 0px;
+    width:100%;
+    margin: 10px;
 }
 
-table.each_comment{
-    margin-bottom:10px;
+div.each_comment{
+    // border: 1px solid hotpink;
+    box-sizing: border-box;
+    .accuse{
+        font-size:1rem;
+        border-radius: 10px;
+        float:right;
+    }
+    img.stars{
+        margin: 0px 10px;
+        width:150px;
+        display: inline-block;
+    }
+    img.accuse_icon{
+        margin-left: 4px;
+        width:20px;
+        position: relative;
+        top:3px;
+    }
 }
 
-tr.each_comment > td:first-child {
-    /* border: 1px solid blue; */
-    width:70%;
+
+
+//以下的.grey_btn是複製政儒的 cancel_btn
+.grey_btn{
+    text-align: right;
+    display: inline-block;
+  }
+  
+  .grey_btn{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
     position: relative;
-    right:0px;
-}
-
-tr.each_comment > td {
-    /* border: 1px solid red; */
-    padding: 0px 10px;
-}
-
-td.accuse{
-    color:#8C512E;
-}
-
-td.accuse:hover{
-    cursor: pointer;
-}
-
-tr.each_comment > td > img{
-    width:130px;
-}
-
-
-#cloudBoard{		/*div*/
-	margin: 100px auto;
-	width: 100%;
-	height: 600px;
-	/* background-color: hotpink; */
-	overflow: hidden;
-	/* transform: rotate(345deg); */
-	position: absolute;
-	top:150px;
-    left:0px;
-    z-index:-2;
-}
-
-
-#cloudBoard ul{	/*ul*/
-	width: 4000px;
-	position: relative;
-	top:-20px;
-	animation: slider 16s infinite linear; /*"infinit"可以改成3，就變成只播放三次*/
-	/* transform: rotate(45deg); */
-}
-
-
-img#moving_cloud {
-  width:1400px;
-  /* border:1px solid green; */
-}
-
-
-
-@keyframes slider{
-    0%{left: -600px;
-        opacity: 0.3;
-        transform: scale(1.1);
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #141414;
+    background-color: #A8A8A8;
+    -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+            box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    text-decoration: none;
+  }
+  
+  .grey_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .grey_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .grey_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+  
+  //以下的orange_btn是複製政儒的.post_btn
+  
+  .orange_btn {
+    text-align: center;
+  }  
+  
+  .orange_btn {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #D35D3D;
+    -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+            box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+    
+    .orange_btn:before {
+      content: "\f054";
+      font-family: FontAwesome;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      height: 100%;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0 50% 50% 0;
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+      -webkit-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
     }
-
-    20%{left:60px;
-        opacity: 1.0;
+    
+    .orange_btn:hover {
+      text-indent: 30px;
     }
-
-    50%{ left: 750px;
-        opacity: 0.9;
-        /* transform:skewX(10deg); */
+    
+    .orange_btn:hover:before {
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1);
+      text-indent: 0;
     }
-
-    60%{
-        opacity:0.6;
-        transform:scaleX(2.0);
-    }
-
-    100%{left: 1900px;
-        opacity: 0.1;
-        /* transform:skewX(40deg); */
-    }
-}
+    
+  
+  //以下的green_btn是複製政儒的post_rest_btn
+  .green_btn {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #1F7962;
+    -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+            box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .green_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .green_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .green_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }

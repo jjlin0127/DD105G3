@@ -1,12 +1,182 @@
 //========   按鈕模組 =======
-//.btn {
-//     @include btn;
+// .publish_btn{
+//     @include btn_primary(120px);
+//     margin: 0 auto;
 // }
-//功能按鈕可自訂寬度
-// .game_btn{
-//     @include btn_f(120px);
-// }
+// 變數只有width，
 //=========   end   ========
+@mixin btn_link($width) {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 15px 0px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: $width;
+    color: $btnColor;
+    background-color: $btnLinkBgColor;
+    box-shadow: 2px 2px 5px rgba($btnLinkBgColor, 0.5);
+    ;
+    transition: all 0.2s linear 0s;
+    &:before {
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 20px;
+        background-color: rgba($overlay-color, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
+    }
+    &:hover {
+        text-indent: 30px;
+        &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+        }
+    }
+}
+
+@mixin btn_primary($width) {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: $width;
+    color: $btnColor;
+    background-color: $btnPriBgColor;
+    box-shadow: 2px 2px 5px rgba($btnPriBgColor, 0.5);
+    ;
+    transition: all 0.2s linear 0s;
+    &:before {
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 20px;
+        background-color: rgba($overlay-color, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
+    }
+    &:hover {
+        text-indent: 30px;
+        &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+        }
+    }
+}
+
+@mixin btn_secondary($width) {
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: $width;
+    color: $btnColor;
+    background-color: $btnSecBgColor;
+    box-shadow: 2px 2px 5px rgba($btnSecBgColor, 0.5);
+    ;
+    transition: all 0.2s linear 0s;
+    &:before {
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 20px;
+        background-color: rgba($overlay-color, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
+    }
+    &:hover {
+        text-indent: 30px;
+        &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+        }
+    }
+}
+
+@mixin btn_cancel($width) {
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: $width;
+    color: $btnCancelColor;
+    background-color: $btnCancelBgColor;
+    box-shadow: 2px 2px 5px rgba($btnCancelBgColor, 0.5);
+    ;
+    transition: all 0.2s linear 0s;
+    &:before {
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 20px;
+        background-color: rgba($overlay-color, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
+    }
+    &:hover {
+        text-indent: 30px;
+        &:before {
+            transform: scale(1, 1);
+            text-indent: 0;
+        }
+    }
+}
 
 @mixin btn {
     display: inline-block;
@@ -21,7 +191,7 @@
     border: none;
     border-radius: 100px;
     transition: all .5s;
-    &:hover{
+    &:hover {
         background-color: $btnHovBgColor;
     }
 }
@@ -39,7 +209,7 @@
     border: none;
     border-radius: 100px;
     transition: all .5s;
-    &:hover{
+    &:hover {
         background-color: $btnHovBgColor;
     }
 }
@@ -57,7 +227,7 @@
     border: none;
     border-radius: 100px;
     transition: all .5s;
-    &:hover{
+    &:hover {
         background-color: $btnHovBgColor;
     }
 }
@@ -76,12 +246,12 @@
     border-radius: 100px;
     text-decoration: none;
     transition: all .5s;
-    &:hover{
+    &:hover {
         background-color: $btnHovBgColor;
     }
 }
 
-@mixin btn_f($width){
+@mixin btn_f($width) {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -94,7 +264,7 @@
     border: none;
     border-radius: 100px;
     transition: all .5s;
-    &:hover{
+    &:hover {
         background-color: $btnFuncHovBgColor;
     }
 }
