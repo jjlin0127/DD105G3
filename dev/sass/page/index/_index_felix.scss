@@ -36,11 +36,9 @@ span {
     &:hover {
         background: #eee;
     }
-
     &:hover>a {
         color: #4c4948;
     }
-
     .wheel_plate {
         background: url(../../../images/index/index_felix/wheel_plate.png);
         background-size: contain;
@@ -73,25 +71,19 @@ span {
 .index_cust {
     .contain {
         .title_index {
-            @include title(3.5px,
-            solid,
-            #a6c165,
-            10px);
+            @include title(3.5px, solid, #a6c165, 10px);
             margin: 50px auto;
         }
         h2 {
             text-align: center;
         }
-
         h3 {
             line-height: 2rem;
         }
-
         .cust_qna_contain {
             width: 100%;
             display: flex;
             justify-content: space-between;
-
             .cust_contain {
                 margin-top: -130px;
                 .cust_wheelset {
@@ -213,23 +205,17 @@ span {
                     }
                 }
             }
-
             .qna_title {
                 @include indexQaTitle(3px, 10px);
                 margin: 0px auto;
                 color: #D35D3D;
             }
-
             .qna_contain {
                 display: flex;
                 margin: 30px 200px 0px 0px;
                 line-height: 1.5;
                 .title_page {
-                    @include title(3px,
-                    dotted,
-                    #a6c165,
-                    10px,
-                    #fff);
+                    @include title(3px, dotted, #a6c165, 10px, #fff);
                     height: 55px;
                     margin: 0px 30px;
                 }
@@ -241,8 +227,6 @@ span {
                     border: 4px solid #CEA45A;
                     // background: #fff;
                     background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-        
-
                     .qna_paper_upper {
                         margin: 30px;
                         display: flex;
@@ -280,20 +264,10 @@ span {
         background-size: contain;
     }
     .cust_more {
-<<<<<<< HEAD:dev/sass/page/index/index_felix.scss
-        font-family: Noto, Genjyuu;
-        float: right;
-        margin-right: 160px;
-        position: relative;
-        top: -255px;
-        cursor: pointer;
-        @include btn_link(160px);
-=======
         margin: 0 auto;
         margin-top: -200px;
         margin-bottom: 80px;
         @include btn_link(170px);
         border: 0;
->>>>>>> syy717:dev/sass/page/index/_index_felix.scss
     }
 }
