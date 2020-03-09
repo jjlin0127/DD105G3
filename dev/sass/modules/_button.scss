@@ -12,6 +12,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 15px 0px;
     border-radius: 10px;
@@ -22,6 +23,7 @@
     background-color: $btnLinkBgColor;
     box-shadow: 2px 2px 5px rgba($btnLinkBgColor, 0.5);
     transition: all 0.2s linear 0s;
+    outline: none;
     &:before {
         content: "\f054";
         font-family: FontAwesome;
@@ -55,6 +57,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
@@ -65,7 +68,10 @@
     color: $btnColor;
     background-color: $btnPriBgColor;
     box-shadow: 2px 2px 5px rgba($btnPriBgColor, 0.5);
-    ;
+<<<<<<< HEAD
+    outline: none;
+=======
+>>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -99,6 +105,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
@@ -109,7 +116,10 @@
     color: $btnColor;
     background-color: $btnSecBgColor;
     box-shadow: 2px 2px 5px rgba($btnSecBgColor, 0.5);
-    ;
+<<<<<<< HEAD
+    outline: none;
+=======
+>>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -143,6 +153,7 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
@@ -153,7 +164,10 @@
     color: $btnCancelColor;
     background-color: $btnCancelBgColor;
     box-shadow: 2px 2px 5px rgba($btnCancelBgColor, 0.5);
-    ;
+<<<<<<< HEAD
+    outline: none;
+=======
+>>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
