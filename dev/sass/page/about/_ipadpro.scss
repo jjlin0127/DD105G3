@@ -1,0 +1,32 @@
+// $ipadpro: 768px;
+@include respond(ipadpro) {
+    .section {
+        // .fruit_land {
+        //     // .fruits {
+
+        //     //     // display: none;
+        //     // }
+
+        //     // .land {
+        //     //      // display: none;
+        //     // }
+        // }
+
+        .windCloud_windRotate {
+            .apple_1 {
+                display: none;
+
+            }
+
+            .appleTree {
+                top: 300px;
+            }
+
+            .windRotate {
+                top: 300px;
+
+            }
+        }
+    }
+
+}
