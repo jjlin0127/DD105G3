@@ -146,13 +146,14 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
 
 
 
-
+var imgNum = 1;
 function dragstart(e){  //e.target代表圖片的DOM本身
 let img = e.target.src;  //取得圖片路徑
-let data = `<image width="50px" src="${img}"> `;  //製作img標籤字串
+
+let data = `<img width="50px" src="${img}" id="img${imgNum}">`;  //製作img標籤字串
 e.dataTransfer.setData('image/jpeg',data);
-e.dataTransfer.setData("offsetx", e.offsetX);
-e.dataTransfer.setData("offsety", e.offsetY);
+
+imgNum++;
 }
 
 function dragover(e){
@@ -166,24 +167,31 @@ function dragover(e){
 
 
 
-drop_count = 1; //設為全域，讓手機板JQ可以使用
 
 function drop(e){  //e.target代表放置區域的DOM本身
   e.preventDefault();
-
-  drop_count += 1;//每次觸發drop就增加一次，讓新觸發物件的z-index更高
-  // console.log(`drop_count: ${drop_count}`);
-
   let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
 
-  //接收來自dragstart的座標訊息
-  let mouseOffset = { x: 0, y: 0 };
-  mouseOffset.x = e.dataTransfer.getData("offsetx");
-  mouseOffset.y = e.dataTransfer.getData("offsety");
 
   e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
   e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
+
+  let img = document.getElementById(`img${imgNum-1}`);
+
+
+  let x = e.offsetX;
+  let y = e.offsetY;
+  alert(x);
+  alert(y);
+
+  img.style.position = "absolute";
+  img.style.top = y;
+  img.style.left = x;
 }
+
+
+
+
 
 
 
