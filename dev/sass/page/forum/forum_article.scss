@@ -121,7 +121,54 @@
     position: relative;
     display: inline-block;
 }
- 
+
+.favoriteAndReport .postfunc > .socialBtns{
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 100%;
+    display: inline-block;
+    color: #aaa;
+    transition: .2s;
+}
+
+.favoriteAndReport .postfunc > i:hover{
+    color: #666;
+}
+
+.favoriteAndReport .postfunc.like > .checked{
+    color: crimson;
+}
+.favoriteAndReport .postfunc.favorite > .checked{
+    color: royalblue;
+}
+.favoriteAndReport .postfunc.subscript> .checked{       
+    color: darkorange;
+}
+.favoriteAndReport .postfunc.report > .checked{
+    color: #000;
+}
+  
+.favoriteAndReport .postfunc.like > i:before{
+    font-family: fontawesome;
+    content: '\f004';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.favorite > i:before{
+    font-family: fontawesome;
+    content: '\f02e';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.subscript > i:before{
+    font-family: fontawesome;
+    content: '\f0f3';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.report > i:before{
+    font-family: fontawesome;
+    content: '\f06a';
+    font-style: normal;
+}
+
 .postfunc .tooltiptext {
     visibility: hidden;
     width: 50px;
@@ -137,41 +184,8 @@
     margin-left: -25px;
 }
  
-.postfunc:hover .tooltiptext {
+.postfunc:hover .tooltiptext{
     visibility: visible;
-}
-
-.favoriteAndReport .postfunc > i{
-    cursor:pointer;
-    padding: 0px 15px;
-    display:inline-block;
-    color:#aaa;
-    transition:.2s;
-}
-
-.favoriteAndReport .postfunc > i:hover{
-    color:#666;
-}
-  
-.favoriteAndReport .postfunc.like > i:before{
-    font-family: fontawesome;
-    content:'\f004';
-    font-style:normal;
-}
-.favoriteAndReport .postfunc.favorite > i:before{
-    font-family: fontawesome;
-    content:'\f02e';
-    font-style:normal;
-}
-.favoriteAndReport .postfunc.subscript > i:before{
-    font-family: fontawesome;
-    content:'\f0f3';
-    font-style:normal;
-}
-.favoriteAndReport .postfunc.report > i:before{
-    font-family: fontawesome;
-    content:'\f06a';
-    font-style:normal;
 }
 
 .post .post_hashtag{
