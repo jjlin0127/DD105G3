@@ -21,31 +21,18 @@
         text-align: center;
     }
     .box_contain{
-<<<<<<< HEAD
-        width: 100%;
-        
-        .outer{
-            width: 80%;
-            border: 5px solid blue;
-            position: relative;  
-            height: 600px;
-=======
         width: 100%;      
         .outer{
             position: relative;
             width: 80%;
             border: 5px solid blue;
             // height: 600px;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
             background-color: #fff;
             background-image: url('../../../images/box/box_bg_material.jpg');
             border: 3px dashed #a6c165;
             margin: 0 auto;
             margin-top: 50px;
             display: flex;
-<<<<<<< HEAD
-            align-items: center;
-=======
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
@@ -79,7 +66,6 @@
                     }
                 }
             }
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
             .bow-knot-left{
                 width: 200px;
                 position: absolute;
@@ -100,13 +86,6 @@
                     width: 100%;
                 }
             }
-<<<<<<< HEAD
-            .left_box{
-                width: 70%;        
-                // border: solid 1px red;
-                .cube-wrap{
-                    position: relative;
-=======
             .button-wrap{
                 border: 1px solid red;
                 height: auto;
@@ -134,7 +113,7 @@
                     // -webkit-transform: translateY(0px);
                     // transform: translateY(0px);
                     margin: 5px;
-                    @include btn_primary();
+                    // @include btn_primary();
                     &:hover{
                         background-color: $btnFuncHovBgColor;
                     }
@@ -144,7 +123,6 @@
                 width: 400px;
                 border: solid 1px blue;
                 .cube-wrap{
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                     height: 50%;
                     -webkit-transition: .6s;
                     transition: .6s;
@@ -152,11 +130,8 @@
                             perspective: 1000;
                     -webkit-perspective-origin: 50% 50%;
                     perspective-origin: 50% 50%;
-<<<<<<< HEAD
-=======
                     -webkit-transform: scale(1.3);
                     transform: scale(1.3);
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                     .cube{
                         position: absolute;
                         top: 0;
@@ -174,13 +149,6 @@
                                 transform-origin: 50% 50% -75px;
                         -webkit-backface-visibility: visible;
                                 backface-visibility: visible;
-<<<<<<< HEAD
-                        .cube-face{
-                            position: relative;
-                            background-color: #acd968;
-                            outline: 1px solid rgba(0, 0, 0, 0.1);
-                            outline-offset: -1px;
-=======
                         
                         .cube-face{
                             position: relative;
@@ -188,7 +156,6 @@
                             outline: 1px solid rgba(0, 0, 0, 0.1);
                             outline-offset: -1px;
                             
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                             i{
                                 position: absolute;
                                 top: 0;
@@ -298,13 +265,8 @@
                 //     transform: rotateX(-30deg) rotateY(110deg) rotateZ(0deg);
                 // }
                 #zoom-cube:checked ~ .cube-wrap{
-<<<<<<< HEAD
-                    -webkit-transform: scale(1.4);
-                    transform: scale(1.4);
-=======
                     -webkit-transform: scale(1.8);
                     transform: scale(1.8);
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                 }
                 // #show-front:checked ~ .cube-wrap .cube{
                 //     -webkit-transform: rotateX(0) rotateY(0);
@@ -336,45 +298,7 @@
                     left: 0;
                     opacity: 0;
                 }
-<<<<<<< HEAD
-                .button-wrap{
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    // width: 560px;
-                    height: 50px;
-                    bottom: 30px;
-                    margin: 0 auto;
-                    font-size: 0;
-                    text-align: center;
-                    label{
-                        display: inline-block;
-                        width: 50px;
-                        height: 50px;
-                        margin: 0px 5px 0px 5px;
-                        color: #ffffff;
-                        border-radius: 20px;
-                        font-size: 16px;
-                        font-weight: bold;
-                        line-height: 52px;
-                        text-align: center;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        cursor: pointer;
-                        -webkit-transition: .3s;
-                        transition: .3s;
-                        background-color: $btnFuncBgColor;
-                        -webkit-transform: translateY(0px);
-                        transform: translateY(0px);
-                        &:hover{
-                            background-color: $btnFuncHovBgColor;
-                        }
-                    }
-                }
-=======
                 
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                 // 按鈕變色
                 #show-front:checked ~ .button-wrap .for-front,
                 #show-back:checked ~ .button-wrap .for-back,
@@ -387,15 +311,9 @@
                 }
             }
             .tab_wrap{
-<<<<<<< HEAD
-                // border: solid 1px red;
-                margin-right: 5%;
-                width: 30%; 
-=======
                 width: 300px;
                 border: solid 1px red;
                 margin: 0;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                 .tab_container{
                     #tab1{
                         #picker{
@@ -416,11 +334,7 @@
                                 width: 60px;
                                 height: 60px;
                                 margin: 5px;
-<<<<<<< HEAD
-                                // border: 1px solid red;
-=======
                                 border: 1px solid red;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
                                 cursor: pointer;
                                 img{
                                     width: 100%;
@@ -448,7 +362,7 @@
                     }
                 }
             }
-<<<<<<< HEAD
+// <<<<<<< HEAD
         }
         .addCartBtn{
             @include btn_primary(300px);
@@ -456,30 +370,30 @@
             // transform: translateX(-50%); //按鈕置中
             // margin-top: 30px;
             // margin-bottom: 50px;
-=======
+// =======
             
         }
         .addCartBtn{
-<<<<<<< HEAD
+// <<<<<<< HEAD
             @include btn_link(150px);
             margin:  30px auto 50px auto;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
-=======
+// >>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
+// =======
             @include btn_primary(300px);
             // margin-left: 50%;  //按鈕置中
             // transform: translateX(-50%); //按鈕置中
             // margin-top: 30px;
             // margin-bottom: 50px;
->>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
+// >>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
         }
     }
 }
 
 @import '../../modules/rwd';
-<<<<<<< HEAD
-<<<<<<< HEAD
+// <<<<<<< HEAD
+// <<<<<<< HEAD
 @import 'latop-min.scss';
-=======
+// =======
 @import 'latop-min.scss';
 @import 'ipadpro.scss';
 
@@ -488,7 +402,7 @@
 
 
 // 按按鈕一直跳原因：其實本體定在上面，但使用relative 才讓盒子看起來往下移，因此改變盒子他會想跑到盒子(本體)那邊。
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
-=======
+// >>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
+// =======
 @import 'latop-min.scss';
->>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
+// >>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a

@@ -1,10 +1,6 @@
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
-<<<<<<< HEAD
-@import '../../base/fontSetting';
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
 @import '../../layout/header';
 @import '../../layout/footer';
 @import '../../mixin/titleStyle';
@@ -27,11 +23,7 @@ $green: #d0d6d6;
 }
 
 body {
-<<<<<<< HEAD
-    background: url('../../../images/sky.jpg');
-=======
     background: url('../../../images/login/full_bg.png');
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     .header__container {
         position: sticky;
     }
@@ -84,34 +76,11 @@ body {
 
 .signupcontainer {
     line-height: 1.5;
-<<<<<<< HEAD
-    @include respond(ipad) {
-        display: none;
-    }
-    @include respond(phone) {
-        display: none;
-    }
-    @include respond(ipadpro) {
-        width: 550px;
-        // top: 150px;
-    }
-    @include respond(latop-min) {
-        width: 750px;
-        // top: 180px;
-    }
-    margin: 100px auto 0px;
-    width: 900px;
-    height: 600px;
-    padding-bottom:80px;
-    position: relative;
-    // top: 190px;
-=======
     margin: 100px auto 0px;
     width: 900px;
     height: 600px;
     padding-bottom: 80px;
     position: relative;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     .imageblock {
         &:before {
             content: '';
@@ -129,21 +98,6 @@ body {
         }
         width: 100%;
         // height: 400px;
-<<<<<<< HEAD
-        @include respond(phone) {
-            width: 300px;
-            height: 500px;
-        }
-        @include respond(ipadpro) {
-            height: 450px;
-            width: 700px;
-            margin: 0 auto;
-        }
-        @include respond(latop-min) {
-            height: 500px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .whiteform {
         position: absolute;
@@ -156,19 +110,6 @@ body {
         box-shadow: 2px 0 10px rgba(0, 0, 0, .1);
         transition: all .5s ease-in-out;
         z-index: 2;
-<<<<<<< HEAD
-        @include respond(latop-min) {
-            width: 360px;
-            height: 600px;
-            top: -8%;
-        }
-        @include respond(ipadpro) {
-            width: 350px;
-            height: 600px;
-            top: -8%;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .displaynone {
         display: none;
@@ -177,16 +118,6 @@ body {
     h1 {
         text-align: center;
         margin-top: 55px;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            margin-top: 25px;
-            // font-size: 2rem;
-        }
-        @include respond(latop-min) {
-            margin-top: 25px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .leftbox,
     .rightbox {
@@ -209,81 +140,27 @@ body {
             font-size: 0.6rem;
             margin-left: 220px;
             margin-bottom: 90px;
-<<<<<<< HEAD
-            @include respond(ipadpro) {
-                margin-left: 12px;
-                margin-bottom: 0px;
-            }
-            @include respond(latop-min) {
-                margin-left: 200px;
-            }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
         }
     }
     .emailinput {
         margin-bottom: 30px;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            margin-bottom: 20px;
-        }
-        @include respond(latop-min) {
-            margin-bottom: 20px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     input {
         background-color: $green;
         border: none;
         padding: 12px;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            padding: 10px;
-        }
-        @include respond(latop-min) {
-            padding: 10px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .signin {
         form {
             padding-top: 35px;
-<<<<<<< HEAD
-            @include respond(ipadpro) {
-                padding-top: 10px;
-            }
-            @include respond(latop-min) {
-                padding-top: 5px;
-            }
             button {
                 margin-top: 102px;
-                @include respond(latop-min) {
-                    margin-top: 108px;
-                }
-                @include respond(ipadpro) {
-                    margin-top: 198px;
-                }
-=======
-            button {
-                margin-top: 102px;
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
             }
         }
     }
     .signup {
         button {
             margin-top: 29px;
-<<<<<<< HEAD
-            @include respond(ipadpro) {
-                margin-top: 50px;
-            }
-            @include respond(latop-min) {
-                margin-top: 43px;
-            }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
         }
     }
     button {
@@ -301,15 +178,6 @@ body {
         align-items: left;
         flex-direction: column;
         margin: 30px 60px 60px 65px;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            margin: 30px 20px 0px 40px;
-        }
-        @include respond(latop-min) {
-            margin: 30px 30px 0px 50px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .title {
         font-size: 1.5em;
@@ -325,15 +193,6 @@ body {
         color: #333;
         text-align: center;
         padding-top: 150px;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            padding-top: 110px;
-        }
-        @include respond(latop-min) {
-            padding-top: 120px;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .juicyfruit {
         position: absolute;
@@ -341,33 +200,11 @@ body {
         height: 320px;
         top: 25%;
         // left: 25%;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            height: 200px;
-            // left: 15%;
-        }
-        @include respond(latop-min) {
-            height: 280px;
-            // left: 30%;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     .smaller {
         height: 320px;
         top: 25%;
         left: 28%;
-<<<<<<< HEAD
-        @include respond(ipadpro) {
-            height: 200px;
-        }
-        @include respond(latop-min) {
-            height: 270px;
-            left: 30%;
-            top: 25%;
-        }
-=======
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
     }
     input {
         width: 90%;
@@ -386,145 +223,6 @@ body {
 
 #mobilelogintab {
     display: none;
-<<<<<<< HEAD
-    @include respond(ipad) {
-        display: block;
-        border: 1px solid #d0d6d6;
-        background-color: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-        /* position: relative; */
-        padding: 50px 0px 50px 0px;
-        width: 80vw;
-        /* top: 50%; */
-        /* left: 50%; */
-        /* transform: translate(-50%, -50%); */
-        margin: 100px auto;
-        .motabtitle {
-            text-align: center;
-            li {
-                display: inline-block;
-                padding: 20px;
-                position: relative;
-                top: 50%;
-                left: 15%;
-                margin-top: 40px;
-                transform: translate(-50%, -50%);
-                border: 1px solid $green;
-                &:hover {
-                    background-color: $green;
-                }
-                a {
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                    &:hover {
-                        color: #fff;
-                        background-color: $green;
-                    }
-                }
-            }
-        }
-        .motabinner {
-            form {
-                display: flex;
-                align-items: left;
-                flex-direction: column;
-                margin: 0px 0px 0px 50px;
-                button {
-                    @include butttonn02;
-                    border-radius: 10px;
-                    margin: 0 auto;
-                    display: block;
-                    position: relative;
-                    right: 10%;
-                    margin-top: 70px;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                }
-                input {
-                    background-color: $green;
-                    border: none;
-                    padding: 10px;
-                    width: 80%;
-                }
-                .mobileemailinput {
-                    margin-bottom: 15px;
-                }
-                a {
-                    margin-left: 110px;
-                }
-            }
-        }
-    }
-    @include respond(phone) {
-        display: inline-block;
-        border: 1px solid $green;
-        background-color: #fff;
-        position: absolute;
-        padding: 50px 0px 50px 0px;
-        width: 80vw;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-position: center;
-        background-repeat: no-repeat;
-        .motabtitle {
-            text-align: center;
-            li {
-                display: inline-block;
-                padding: 10px;
-                position: relative;
-                top: 50%;
-                left: 20%;
-                &:hover {
-                    background-color: $green;
-                }
-                a {
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                    &:hover {
-                        color: #fff;
-                        background-color: $green;
-                    }
-                }
-            }
-        }
-        .motabinner {
-            form {
-                display: flex;
-                align-items: left;
-                flex-direction: column;
-                margin: 0px 20px 0px 60px;
-                button {
-                    @include butttonn02;
-                    border-radius: 10px;
-                    margin: 0 auto;
-                    display: block;
-                    position: relative;
-                    right: 10%;
-                    margin-top: 40px;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                }
-                a {
-                    margin-left: 70px;
-                    font-size: 0.7rem;
-                }
-                input {
-                    background-color: $green;
-                    border: none;
-                    padding: 5px;
-                    width: 85%;
-                }
-                .mobileemailinput {
-                    margin-bottom: 20px;
-                }
-            }
-        }
-    }
-}
-=======
 }
 
 @import './latopbig';
@@ -532,4 +230,3 @@ body {
 @import './ipadpro';
 @import './ipad';
 @import './phone';
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516

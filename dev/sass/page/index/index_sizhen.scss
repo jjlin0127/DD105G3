@@ -13,21 +13,6 @@
 @import '../../base/box_keyframes.scss';
 @import '../../respond/index/box_rwd.scss';
 
-<<<<<<< HEAD
-
-section.index_box{
-    h2.box_title{
-        text-align: center;
-        @include title(3px, dotted, #a6c165, 10px, #fff);
-        margin: 50px auto 80px auto;
-    }
-    h4{
-        text-align: center;
-    }
-    div.contain{
-        position: relative;
-        width: 100%;
-=======
 #index_body header{
     position: absolute;
     top: 0;
@@ -43,7 +28,6 @@ section.index_box{
         h2{
             text-align: center;
         }
->>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
         div.index_box_outer{  
             position: relative;
             width: 300px;
@@ -95,11 +79,7 @@ section.index_box{
             }
         }
         .box_btn{
-<<<<<<< HEAD
-            @include btn_link(150px);
-=======
             @include btn();
->>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
             margin-left: 70%;
             margin-top: 100px;
         }
@@ -158,15 +138,9 @@ section.index_box{
             div.index_box_outer{
                 width: 200px;
                 img:nth-child(2){
-<<<<<<< HEAD
-                    width: 410px;
-                    left: -100px;
-                    top: -40px;
-=======
                     width: 500px;
                     left: -150px;
                     top: -80px;
->>>>>>> 88c650e35d13560bf5e3402f784f668701480e0a
                 }
                 img:nth-child(3){
                     width: 150px;
