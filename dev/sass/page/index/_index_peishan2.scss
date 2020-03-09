@@ -1,0 +1,279 @@
+// 珮珊的首頁-----------------------------------------
+
+/* -- 特色果甘------------------------------------ -- */
+
+//以下引用共用title
+// .box_for_prod_title_hot_topics {
+//     position: relative;
+//     /* border:1px solid blue ; */
+//     box-sizing: border-box;
+// }
+
+// .prod_title_hot_topics {
+//     width: 200px;
+//     text-align: center;
+//     font-size: 36px;
+//     letter-spacing: .1rem;
+//     padding: 10px;
+//     position: relative;
+//     border-width: 3px;
+//     border-style: dashed;
+//     border-color:#a6c165;
+//     border-radius: 10px;
+//     background-color: #fff;
+//     margin: 50px auto;
+//     margin-bottom: 20px;
+// }
+
+// .prod_title_hot_topics img.prod_leafLeft {
+//     position: absolute;
+//     top: -20px;
+//     left: -20px;
+//     width: 50px;
+//     /* border: 1px solid red; */
+// }
+
+// .prod_title_hot_topics img.prod_leafRight {
+//     position: absolute;
+//     top: -20px;
+//     right: -20px;
+//     width: 50px;
+//     /* border: 1px solid orange; */
+//     transform: rotate(260deg);
+// }
+
+
+/* -- 特色果甘------------------------------------ -- */
+
+.prod_title{
+    @include title(3px, dotted, #a6c165, 10px, #fff);
+    margin: 40px auto 40px;
+}
+
+.prod_the_grey_title {
+    /*↓↓↓轉手機螢幕會變成1.75rem*/
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+div.contain {
+    width: 100%;
+    position: relative;
+    /* border: 1px solid red; */
+    // box-sizing: border-box;
+}
+
+table.prod_leaderboard{
+    // border:3px green dashed;
+    width:100%;
+    td.lower{
+        position: relative;
+        top:90px;
+    }
+    td.prod_colorful_balloon{
+        width:8%;
+        img{
+            width:80%;
+        }
+
+        img.higher{
+            position: relative;
+            top:-250px;
+        }
+        img.float_right{
+            float: right;
+        }
+    }
+    td.prod_leaderboard{
+        // border:1px solid #800080;
+        width:26%;
+        position: relative;
+        img{
+            width:80%;
+            margin-left: 15%;
+        }
+        div.prod_introduce{
+            position: absolute;
+            top:0px;
+            width: 70%;
+            margin-left: 15%;
+            z-index: 2;
+            img{
+                width:80%;
+                margin-left: 10%;
+            }
+            h2,h3{
+                text-align: center;
+            }
+            img.prod_stars{
+                width:60%;
+                margin-left: 20%;
+                // border:2px dashed blue;
+            }
+        }
+    }
+}
+
+// div.box_for_balloon {
+//     width: 78%;
+//     margin: 0 auto;
+//     border: 1px solid green;
+//     box-sizing: border-box;
+// }
+
+// div.prod_wrapper_3balloon {
+//     border:1px solid blueviolet;
+//     width: 79%;
+//     display: inline-block;
+// }
+
+
+div.prod_white_line {
+    position: relative;
+    /* border: 1px solid yellowgreen; */
+    box-sizing: border-box;
+    width: 79%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+img.the_line {
+    width: 100%;
+    position: relative;
+    top: -50px;
+    opacity: 0.5;
+}
+
+button,
+input {
+    outline: none;
+}
+
+.prod_btn {
+    width: 200px;
+    background: #e08c34;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 30px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-family: Noto;
+    text-align: center;
+    transition: all .5s;
+    cursor: pointer;
+    border: 2px solid #e08c34;
+}
+
+.prod_btn:hover {
+    background-color: #ffffff;
+    color: #e08c34;
+    border: 2px solid #e08c34;
+}
+
+@media screen and (max-width:575px) {
+    h2.prod_the_grey_title {
+        font-size: 1.75rem;
+    }
+    td.prod_colorful_balloon{
+        display:none;
+    }
+    td.prod_leaderboard{
+        width:33%;
+    }
+    div.prod_introduce{
+        h2,h3 {
+        line-height: 1.2;
+        }
+    }
+    div.prod_introduce>h3 {
+        font-size: 0.9rem;
+        /* border: 1px solid green; */
+    }
+    div.prod_introduce>h2 {
+        font-size: 1rem;
+    }
+    center.prod_center{
+        // transform: scale(0.7);
+        h4{
+            font-size: 0.7rem;
+        }
+    }
+    button.prod_btn{
+        width: 80%;
+        padding: 5px 10px;
+        font-size: 1.0rem;        
+    }
+}
+
+
+/* @media (min-width: 1100px) and (max-width: 1280px) {
+    div.prod_white_line{
+        left:-25px;
+    }
+} */
+
+
+/* @media (min-width: 769px) and (max-width: 1109px) {
+    div.prod_white_line{
+        left:-27px;
+    }
+} */
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    div.prod_a_balloon>div.prod_introduce {
+        bottom: 6%;
+    }
+    div.prod_introduce>h2,
+    h3 {
+        line-height: 1.6;
+    }
+    div.prod_introduce>h3 {
+        font-size: 1.5rem;
+        /* border: 1px solid black; */
+    }
+    div.prod_introduce>h2 {
+        font-size: 2rem;
+    }
+    div.prod_box_for_balloons {
+        width: 8%;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    div.prod_a_balloon>div.prod_introduce {
+        bottom: 3%;
+    }
+    div.prod_introduce>h2,
+    h3 {
+        line-height: 1.4;
+    }
+    div.prod_introduce>h3 {
+        font-size: 1.3rem;
+        /* border: 1px solid brown; */
+    }
+    div.prod_introduce>h2 {
+        font-size: 1.75rem;
+    }
+    div.prod_box_for_balloons {
+        width: 5%;
+    }
+    .prod_btn {
+        width: 180px;
+        background: #e08c34;
+        border: none;
+        border-radius: 100px;
+        padding: 13px 27px;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 1.25rem;
+        font-family: Noto;
+        text-align: center;
+        transition: all .5s;
+        cursor: pointer;
+        border: 2px solid #e08c34;
+    }
+
+}

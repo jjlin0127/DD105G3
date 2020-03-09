@@ -1,0 +1,56 @@
+// $latop-min: 992px;
+@include respond(latop-min) {
+    //小尺寸筆電都寫在裡面
+    .signupcontainer {
+        width: 750px;
+        .imageblock {
+            height: 500px;
+        }
+        .whiteform {
+            width: 360px;
+            height: 600px;
+            top: -8%;
+        }
+        h1 {
+            margin-top: 25px;
+        }
+        .signin {
+            a {
+                margin-left: 200px;
+            }
+        }
+        .emailinput {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+        }
+        .signin {
+            form {
+                padding-top: 5px;
+                button {
+                    margin-top: 108px;
+                }
+            }
+        }
+        .signup {
+            button {
+                margin-top: 43px;
+            }
+        }
+        form {
+            margin: 30px 30px 0px 50px;
+        }
+        p {
+            padding-top: 120px;
+        }
+        .juicyfruit {
+            height: 280px;
+        }
+        .smaller {
+            height: 270px;
+            left: 30%;
+            top: 25%;
+        }
+    }
+}

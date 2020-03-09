@@ -13,21 +13,19 @@
 @import '../../base/box_keyframes.scss';
 @import '../../respond/index/box_rwd.scss';
 
-#index_body header{
-    position: absolute;
-    top: 0;
-}
+
 section.index_box{
-    overflow-x: hidden;  //絕對不會出現水平捲軸
-    max-width: 1920px;
-    margin-top: 150px;
-    height: 800px;
+    h2.box_title{
+        text-align: center;
+        @include title(3px, dotted, #a6c165, 10px, #fff);
+        margin: 50px auto 80px auto;
+    }
+    h4{
+        text-align: center;
+    }
     div.contain{
         position: relative;
         width: 100%;
-        h2{
-            text-align: center;
-        }
         div.index_box_outer{  
             position: relative;
             width: 300px;
@@ -79,7 +77,7 @@ section.index_box{
             }
         }
         .box_btn{
-            @include btn();
+            @include btn_link(150px);
             margin-left: 70%;
             margin-top: 100px;
         }
@@ -138,9 +136,9 @@ section.index_box{
             div.index_box_outer{
                 width: 200px;
                 img:nth-child(2){
-                    width: 500px;
-                    left: -150px;
-                    top: -80px;
+                    width: 410px;
+                    left: -100px;
+                    top: -40px;
                 }
                 img:nth-child(3){
                     width: 150px;

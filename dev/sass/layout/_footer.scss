@@ -1,12 +1,21 @@
+@import '../../sass/mixin/bgc_img';
+
 //共用的footer
 footer {
-    height:85px;
-    background-color: #4b823d;
+    height:400px;
+    // background-color: #4b823d;
+    @include footer_bgc_img(bgc3);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items: flex-end;
     color:#fff;
-    font-size:1rem;
+}
+
+.footer_content {
+    padding: 40px;
 }
 
 

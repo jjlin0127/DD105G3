@@ -300,93 +300,71 @@
                         <button id="closeBtn"></button>
                         <form action="" class="sort_form">
                             <h5>話題排序</h5>
-                            <label for="sort_by">
-                                <select name="sort_by" name="sort-by">
-                                    <option value="hot" selected>熱門</option>
+                            <div class="sort_select">
+                                <select name="sort_by" id="sort_by" class="sort_by">
+                                    <option>請選擇方式...</option>
+                                    <option value="hot">熱門</option>
                                     <option value="time">最新</option>
                                 </select>
-                            </label>
+                            </div>
                         </form>
-                    </div>    
+                    </div>      
                     <div class="forum_filter">
                         <form action="post" class="filter_form">
                             <h5>分類搜尋</h5>
-                            <div class="topic">
-                                <p>選擇話題種類</p>
+                            <p>選擇話題種類</p>
+                            <div class="optios topic_options"> 
                                 <div class="option">
-                                    <label for="digestion">
-                                        <input type="checkbox" name="digestion" id="digestion">
-                                        幫助消化
-                                    </label>
+                                    <input type="checkbox" name="topic_option" id="digestion">
+                                    <label for="digestion">幫助消化 </label>
                                 </div>
                                 <div class="option">
-                                    <label for="cvd">
-                                        <input type="checkbox" name="cvd" id="cvd">
-                                        保護血管
-                                    </label>
+                                    <input type="checkbox" name="topic_option" id="cvd">
+                                    <label for="cvd">保護血管</label>
                                 </div>
                                 <div class="option">
-                                    <label for="brain">
-                                        <input type="checkbox" name="brain" id="brain">
-                                        活化大腦
-                                    </label>
+                                    <input type="checkbox" name="topic_option" id="brain">
+                                    <label for="brain">活化大腦</label>
                                 </div>
                             </div>
-                            <div class="fruit">
-                                <p>選擇果甘種類</p>
+
+                            <p>選擇果甘種類</p>
+                            <div class="optios fruit_options">                             
                                 <div class="option">
-                                    <label for="star">
-                                        <input type="checkbox" name="star" id="star">
-                                        楊桃
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="star">
+                                    <label for="star">楊桃</label>
                                 </div>
                                 <div class="option">
-                                    <label for="pineapple">
-                                        <input type="checkbox" name="pineapple" id="pineapple">
-                                        鳳梨
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="pineapple">
+                                    <label for="pineapple">鳳梨</label>
                                 </div>                           
                                 <div class="option">
-                                    <label for="dragon">
-                                        <input type="checkbox" name="dragon" id="dragon">
-                                        火龍果
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="dragon">
+                                    <label for="dragon">火龍果</label>
+                                </div>
+                                <div class="option">                                    
+                                    <input type="checkbox" name="fruit_option" id="banana">
+                                    <label for="banana">香蕉</label>
+                                </div>
+                                <div class="option">                                   
+                                    <input type="checkbox" name="fruit_option" id="strawberry">
+                                    <label for="strawberry">草莓</label>
                                 </div>
                                 <div class="option">
-                                    <label for="banana">
-                                        <input type="checkbox" name="banana" id="banana">
-                                        香蕉
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="hawthorn">
+                                    <label for="hawthorn">山楂</label>
+                                </div>
+                                <div class="option">                                   
+                                    <input type="checkbox" name="fruit_option" id="longan">
+                                    <label for="longan">桂圓</label>
                                 </div>
                                 <div class="option">
-                                    <label for="strawberry">
-                                        <input type="checkbox" name="strawberry" id="strawberry">
-                                        草莓
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="appale">
+                                    <label for="appale">蘋果</label>
                                 </div>
                                 <div class="option">
-                                    <label for="hawthorn">
-                                        <input type="checkbox" name="hawthorn" id="hawthorn">
-                                        山楂
-                                    </label>
-                                </div>
-                                <div class="option">
-                                    <label for="longan">
-                                        <input type="checkbox" name="longan" id="longan">
-                                        桂圓
-                                    </label>
-                                </div>
-                                <div class="option">
-                                    <label for="appale">
-                                        <input type="checkbox" name="appale" id="appale">
-                                        蘋果
-                                    </label>
-                                </div>
-                                <div class="option">
-                                    <label for="blueberry">
-                                        <input type="checkbox" name="blueberry" id="blueberry">
-                                        藍莓
-                                    </label>
+                                    <input type="checkbox" name="fruit_option" id="blueberry">
+                                    <label for="blueberry">藍莓</label>
                                 </div>
                             </div>
                             <input type="submit" value="搜尋" class="search_btn" id="search_btn">
