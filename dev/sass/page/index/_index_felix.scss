@@ -280,20 +280,10 @@ span {
         background-size: contain;
     }
     .cust_more {
-<<<<<<< HEAD:dev/sass/page/index/index_felix.scss
-        font-family: Noto, Genjyuu;
-        float: right;
-        margin-right: 160px;
-        position: relative;
-        top: -255px;
-        cursor: pointer;
-        @include btn_link(160px);
-=======
         margin: 0 auto;
         margin-top: -200px;
         margin-bottom: 80px;
         @include btn_link(170px);
         border: 0;
->>>>>>> syy717:dev/sass/page/index/_index_felix.scss
     }
 }
