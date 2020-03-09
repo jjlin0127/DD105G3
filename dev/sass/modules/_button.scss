@@ -34,7 +34,6 @@
 =======
 >>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
     transition: all 0.2s linear 0s;
-    outline: none;
     &:before {
         content: "\f054";
         font-family: FontAwesome;
@@ -79,10 +78,6 @@
     color: $btnColor;
     background-color: $btnPriBgColor;
     box-shadow: 2px 2px 5px rgba($btnPriBgColor, 0.5);
-<<<<<<< HEAD
-    outline: none;
-=======
->>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -127,10 +122,6 @@
     color: $btnColor;
     background-color: $btnSecBgColor;
     box-shadow: 2px 2px 5px rgba($btnSecBgColor, 0.5);
-<<<<<<< HEAD
-    outline: none;
-=======
->>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -175,10 +166,6 @@
     color: $btnCancelColor;
     background-color: $btnCancelBgColor;
     box-shadow: 2px 2px 5px rgba($btnCancelBgColor, 0.5);
-<<<<<<< HEAD
-    outline: none;
-=======
->>>>>>> forum
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
