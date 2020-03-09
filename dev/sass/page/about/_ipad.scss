@@ -1,0 +1,54 @@
+// $ipad: 576px;
+@include respond(ipad) {
+    img.Tao {
+        width: 40%;
+    }
+
+    .section {
+        .cloud1 {
+            top: 100px;
+        }
+
+        .cloud2 {
+            top: 120px;
+        }
+
+        .section_2 {
+            width: 75%;
+            text-align: left;
+
+            .section__title {
+                left: 25%;
+            }
+
+            .ball {
+                display: none;
+            }
+        }
+
+        .fruit_land {
+            .fruits {
+
+
+                display: none;
+            }
+
+            .land {
+                // width:50%;
+                display: none;
+            }
+        }
+
+        .windCloud_windRotate {
+            .appleTree {
+                top: 210px;
+            }
+
+            .windRotate {
+                top: 210px;
+            }
+        }
+    }
+
+
+}

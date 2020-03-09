@@ -1,4 +1,7 @@
 $(document).ready(function(e){
+
+  $('.cube').css('transform','rotateX(-30deg) rotateY(120deg)'); //一開始要立體的角度
+
   $('.for-front').click(function(e){ //如果label按鈕被點擊
     $('.cube-face-front').siblings().removeClass('checked'); //其他同層則移除.checked
     $('.cube-face-front').addClass('checked'); //盒子的面就加上.checked
@@ -35,9 +38,10 @@ $(document).ready(function(e){
     $('.cube').css('transform','rotateX(0deg) rotateY(-90deg)')
   })
 
-  $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
-    $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
-  })
+
+  // $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
+  //   $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
+  // })
 
   
   // tab切換標籤
@@ -106,6 +110,11 @@ colorPicker.on('color:change', function(color) {
 function doFirst(){
 //先跟畫面產生關聯，再建事件聆聽的功能
 
+
+// 監聽：旋轉按鈕被點擊的話，就改變禮盒角度
+let rotateBtn = document.querySelector('.for-rotate-cube');
+rotateBtn.addEventListener('click',degChange);
+
 //圖片上傳的change事件
 document.getElementById('theFile').onchange = fileChange; 
 
@@ -135,27 +144,61 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
 });
 }
 
+
+
+
 function dragstart(e){  //e.target代表圖片的DOM本身
 let img = e.target.src;  //取得圖片路徑
 let data = `<image width="50px" src="${img}"> `;  //製作img標籤字串
 e.dataTransfer.setData('image/jpeg',data);
+e.dataTransfer.setData("offsetx", e.offsetX);
+e.dataTransfer.setData("offsety", e.offsetY);
 }
 
 function dragover(e){
-e.preventDefault();
+  e.preventDefault();
+  e.target.style.opacity = "0.8";  //圖片移到盒子上，盒子就變透明
+   //新增加的元素可以直接被事件觸發，透過for迴圈去抓元素的方式不行
+  if (e.target.classList.contains("drag_img") == true) {//contains一個droped_img使
+     e.target.style.pointerEvents = "none";//pointerEvents穿透屬性 none指不到
+  }//使用 classList 屬性是取得元素 Class 的一種便利方式
 }
 
-function drop(e){  //e.target代表放置區域的DOM本身
-e.preventDefault();
 
-let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
-e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
+
+drop_count = 1; //設為全域，讓手機板JQ可以使用
+
+function drop(e){  //e.target代表放置區域的DOM本身
+  e.preventDefault();
+
+  drop_count += 1;//每次觸發drop就增加一次，讓新觸發物件的z-index更高
+  // console.log(`drop_count: ${drop_count}`);
+
+  let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
+
+  //接收來自dragstart的座標訊息
+  let mouseOffset = { x: 0, y: 0 };
+  mouseOffset.x = e.dataTransfer.getData("offsetx");
+  mouseOffset.y = e.dataTransfer.getData("offsety");
+
+  e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
+  e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
+}
+
+
+
+
+var clickCount = 0;  //要先宣告在外面，才能一直被加，放在function裡執行完畢資料就會消失
+function degChange(e){
+  clickCount ++; 
+  
+  let cube = document.querySelector('.cube');
+  if(clickCount == 12){
+    clickCount = 0;
+  }
+  let degNow = 120 + 30 * clickCount;
+  cube.style.transform = `rotateX(-30deg) rotateY(${degNow}deg)`;
 }
 
 
 window.addEventListener('load',doFirst);
-
-
-
-
-
