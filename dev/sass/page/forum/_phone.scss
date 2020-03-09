@@ -9,10 +9,10 @@
       width: 80px;
       margin-left: 35%;}
 
-    .wrapper_forum .hot_post {
+    .wrapper_forum .hot_post{
       perspective: 6000px;}
 
-    .wrapper_forum .hot_post .carousels .carousel {
+    .wrapper_forum .hot_post .carousels .carousel{
       width: 85%;}
 
     //forum_article
@@ -40,7 +40,13 @@
 
     .set_post_fruit{
       width: 100%; }
+    
+    .post_btns{
+    .post_submit_btn{
+      margin-right: 5px; }
+    
+    .post_reset_btn{
+      margin-left: 5px; }
+    }
 
-    .post_btn > input{
-      @include btn_primary(100px);}
 }

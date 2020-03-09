@@ -1,4 +1,21 @@
 //字體設定
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+@font-face {
+    font-family: Noto;
+    src: url(../../font/NotoSansCJKtc-Regular.otf);
+    // src: url(../font/NotoSansCJKtc-Regular.otf);
+}
+
+@font-face {
+    font-family: Genjyuu;
+    src: url('../../font/GenJyuuGothic-Monospace-Regular.ttf');
+}
+
+html {
+=======
+>>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
 // @font-face {
 //     font-family: Noto;
 //     src: url(../../font/NotoSansCJKtc-Regular.otf);
@@ -11,6 +28,10 @@
 
 
 html{
+<<<<<<< HEAD
+=======
+>>>>>>> f10dfb7a77ea5b150b2f9e326a9ec4c247232495
+>>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
     font-size: 16px;
     font-family: $fontFamily;
     color: $color;

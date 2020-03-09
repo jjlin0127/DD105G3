@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
@@ -261,3 +262,282 @@ form{
 @import "../../modules/rwd";
 @import "../../page/forum/ipad";
 @import "../../page/forum/phone";
+=======
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+
+.wrapper_article{
+    width: 100%;
+    background-image: url("../../../images/forum/sky.jpg");
+    background-size: cover;
+}
+
+.wrapper_article .article_container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 150px; 
+    padding-bottom: 50px; 
+}
+
+.article_container .article_area{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+}
+
+.article_area .post{
+    border-bottom: 1px solid lightgrey;
+    margin: 0 40px;
+    padding: 20px;
+}
+
+.author{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.author .author_img{
+    width: 80px;
+    border-radius: 50%;
+    border: 5px solid #D35D3D;
+    overflow: hidden;
+}
+
+.author .author_img > img{
+    width: 100%;
+}
+
+.author p.author_name{
+    margin-left: 10px;
+}
+
+.post p.post_title{
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.post .post_topic{
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.post .post_topic > img{
+    width: 16px;
+}
+
+.post .post_topic > span{
+    margin-left: 5px;
+}
+.post span.post_time{
+    font-size: 0.8rem;
+    color: $color;
+    margin-left: 15px;
+}
+
+.post_topic1{
+    color: lightseagreen;
+}
+.post_topic2{
+    color: tomato;
+}
+.post_topic3{
+    color: sandybrown;
+}
+
+.post p.post_content{
+    width: 100%;
+    line-height: 1.5rem;
+    margin-top: 20px;
+}
+
+.social_zone{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social_zone .likeAndComment{
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.social_zone .likeAndComment > p{
+    margin: 0 15px 0 5px;
+}
+
+.social_zone .favoriteAndReport{
+    width: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.postfunc {
+    position: relative;
+    display: inline-block;
+}
+
+.favoriteAndReport .postfunc > .socialBtns{
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 100%;
+    display: inline-block;
+    color: #aaa;
+    transition: .2s;
+}
+
+.favoriteAndReport .postfunc > i:hover{
+    color: #666;
+}
+
+.favoriteAndReport .postfunc.like > .checked{
+    color: crimson;
+}
+.favoriteAndReport .postfunc.favorite > .checked{
+    color: royalblue;
+}
+.favoriteAndReport .postfunc.subscript> .checked{       
+    color: darkorange;
+}
+.favoriteAndReport .postfunc.report > .checked{
+    color: #000;
+}
+  
+.favoriteAndReport .postfunc.like > i:before{
+    font-family: fontawesome;
+    content: '\f004';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.favorite > i:before{
+    font-family: fontawesome;
+    content: '\f02e';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.subscript > i:before{
+    font-family: fontawesome;
+    content: '\f0f3';
+    font-style: normal;
+}
+.favoriteAndReport .postfunc.report > i:before{
+    font-family: fontawesome;
+    content: '\f06a';
+    font-style: normal;
+}
+
+.postfunc .tooltiptext {
+    visibility: hidden;
+    width: 50px;
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 105%;
+    left: 55%; 
+    margin-left: -25px;
+}
+ 
+.postfunc:hover .tooltiptext{
+    visibility: visible;
+}
+
+.post .post_hashtag{
+    margin-top: 20px;
+}
+
+.post .post_hashtag .fruit_kind{
+    color: white;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 3px;
+}
+
+.post .post_hashtag .fruit_kind1{
+    background-color: lightseagreen;
+}
+.post .post_hashtag .fruit_kind2{
+    background-color: tomato;
+}
+.post .post_hashtag .fruit_kind3{
+    background-color: sandybrown;
+}
+
+.comments_area{
+    margin-top: 40px;
+    background-color: floralwhite;
+    border-radius: 0 0 10px 10px;
+}
+.comments_area > p{
+    margin: 0 40px;
+    padding: 15px 0;
+    border-bottom: 1px solid lightgrey;
+}
+
+.comments_area .comment{
+    border-bottom: 1px solid lightgrey;
+    margin: 0 40px;
+    padding: 20px;
+}
+
+.comment_time{
+    font-size: 0.8rem;
+    color: $color;
+    margin-top: 20px;
+    display: block;
+}
+
+.comment_content{
+    width: 100%;
+    line-height: 1.5rem;
+    margin-top: 20px;
+}
+
+.comment_zone{
+    margin: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+form{
+    margin: 10px 0;
+}
+
+.comment_form{
+    text-align: center;
+}
+
+.comment_form > textarea{
+    box-sizing: border-box;
+    width: 400px;
+    height: 250px;
+    resize: none;
+}
+
+.comment_submit_btn{
+    @include btn_primary(120px);
+    display: inline-block;
+    margin: 10px;
+}
+
+.comment_reset_btn{
+    @include btn_secondary(120px);
+    display: inline-block;
+    margin: 10px;
+}
+
+@import "../../modules/rwd";
+@import "../../page/forum/ipad";
+@import "../../page/forum/phone";
+>>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79

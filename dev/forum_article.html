@@ -55,19 +55,19 @@
                         </div>
                         <div class="favoriteAndReport">
                             <div class="postfunc like">
-                                <i></i>
+                                <i class="socialBtns"></i>
                                 <span class="tooltiptext">愛心</span>
                             </div>
                             <div class="postfunc favorite">
-                                <i></i>
+                                <i class="socialBtns"></i>
                                 <span class="tooltiptext">收藏</span>
                             </div>
                             <div class="postfunc subscript">
-                                <i></i>
+                                <i class="socialBtns"></i>
                                 <span class="tooltiptext">訂閱</span>
                             </div>
                             <div class="postfunc report">
-                                <i></i>
+                                <i class="reportBtns"></i>
                                 <span class="tooltiptext">檢舉</span>
                             </div>
                         </div>
@@ -95,11 +95,11 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i></i>
+                                    <i class="socialBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
-                                    <i></i>
+                                    <i class="reportBtns"></i>
                                     <span class="tooltiptext">檢舉</span>
                                 </div>
                             </div>
@@ -125,11 +125,11 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i></i>
+                                    <i class="socialBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
-                                    <i></i>
+                                    <i class="reportBtns"></i>
                                     <span class="tooltiptext">檢舉</span>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="comment_zone">
                         <!-- <p>我要留言</p> -->
-                        <form action="" class="comment_form">
+                        <form method="post" action="" class="comment_form">
                             <textarea name="" id="" maxlength="350" placeholder="最多輸入300個字"></textarea>
                             <div class="comment_btns">
                                 <button type="submit" class="comment_submit_btn">發表留言</button>
@@ -147,10 +147,41 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <!-- popbox start -->
+        <div id="reportBox" class="reportBox hidden">
+            <form method="post" action="">
+                
+            </form>
+        </div>
+        <!-- popbox end -->
     </div>
     @@include('./layout/footer.html') 
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    <script>
+        //  social btns toggle css-checked
+        function doFirst(){
+            let socialBtns = document.getElementsByClassName('socialBtns');
+            for(let i=0; i<socialBtns.length; i++){
+                socialBtns[i].addEventListener('click', socialBtnChecked);
+            }
+
+            let reportBtns = document.getElementsByClassName('reportBtns');
+            for(let i=0; i<reportBtns.length; i++){
+                reportBtns[i].addEventListener('click', reportArticle);
+            }
+        }
+
+        function socialBtnChecked(){
+            this.classList.toggle("checked");
+        }
+
+        function reportArticle(){
+
+        }
+
+        window.addEventListener('load', doFirst);
+    </script>
 </body>
 </html>

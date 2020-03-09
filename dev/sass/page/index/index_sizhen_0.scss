@@ -1,0 +1,163 @@
+// 思甄的首頁-----------------------------------------
+
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+
+
+// 這邊新增的scss
+@import '../../base/box_keyframes.scss';
+@import '../../respond/index/box_rwd.scss';
+
+#index_body header{
+    position: absolute;
+    top: 0;
+}
+section.index_box{
+    overflow-x: hidden;  //絕對不會出現水平捲軸
+    max-width: 1920px;
+    margin-top: 150px;
+    height: 800px;
+    div.contain{
+        position: relative;
+        width: 100%;
+        h2{
+            text-align: center;
+        }
+        div.index_box_outer{  
+            position: relative;
+            width: 300px;
+            margin-top: 100px;
+            cursor: pointer;
+            margin: 0 auto;
+            margin-top: 100px;
+            img:first-child{     //box
+                width: 100%;
+            //    border: 1px solid red;
+               animation: shake .5s infinite alternate;
+            }
+            img:nth-child(2){    //isLand
+                position: absolute;
+                top: -150px;
+                width: 800px;
+                left: -200px;
+                //  border: 1px solid blue;
+                 z-index: -1;
+            }
+            img:nth-child(3){       //green_balloon
+                position: absolute;
+                width: 300px;
+                top: 0;
+                left: 250px;
+                z-index: -2;
+                animation: scale_green 2s infinite alternate;
+                transform-origin: bottom left;
+            }
+            img:nth-child(4){      //red_balloon
+                position: absolute;
+                width: 200px;
+                top: 0;
+                left: -100px;
+                z-index: -2;
+                animation: scale_red 2s infinite alternate;
+                animation-delay: 1s;
+                transform-origin: bottom center;
+            }
+            img:nth-child(5){      //yellow_balloon
+                position: absolute;
+                width: 300px;
+                top: -30px;
+                left: -200px;
+                z-index: -2;
+                animation: scale_yellow 2s infinite alternate;
+                transform-origin: bottom right;
+                animation-delay: 0.5s;
+            }
+        }
+        .box_btn{
+            @include btn();
+            margin-left: 70%;
+            margin-top: 100px;
+        }
+        .hot_air_blue_balloon{
+            width: 150px;
+            position: absolute;
+            left: 50px;
+            top: 20px;
+            animation: hot_air_balloon 2s infinite alternate;
+            img{
+                width: 100%;
+            }
+        }
+        .hot_air_red_balloon{
+            width: 100px;
+            position: absolute;
+            right: 50px;
+            bottom: 150px;
+            animation: hot_air_balloon 2s infinite alternate;
+            animation-delay: 1s;
+        }
+    }
+}
+
+
+@include rwd(medium){
+    section.index_box{
+        div.contain{
+            div.index_box_outer{
+                // width: 200px;
+                img:nth-child(2){
+                    width: 700px;
+                    left: -200px;
+                    top: -100px;
+                }
+                img:nth-child(3){
+                    left: 200px;
+                    top: -30px;
+                }
+                img:nth-child(5){
+                    width: 300px;
+                }
+            }
+            .box_btn{
+                margin-left: 50%;
+                transform: translateX(-50%);
+                margin-top: 80px;
+            }
+        }
+    }
+}
+
+@include rwd(small){
+    section.index_box{
+        div.contain{
+            div.index_box_outer{
+                width: 200px;
+                img:nth-child(2){
+                    width: 500px;
+                    left: -150px;
+                    top: -80px;
+                }
+                img:nth-child(3){
+                    width: 150px;
+                    left: 150px;
+                    top: 0px;
+                }
+                img:nth-child(4){
+                    left: 0px;
+                }
+                img:nth-child(5){
+                    width: 150px;
+                    left: -50px;
+                }
+            }
+        }
+        .hot_air_blue_balloon{
+            display: none;
+        }
+    }
+}
