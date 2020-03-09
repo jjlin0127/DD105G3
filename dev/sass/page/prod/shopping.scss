@@ -3,11 +3,8 @@
 @import '../../base/fontSetting';
 @import '../../layout/header';
 @import '../../layout/footer';
-// @import '../../layout/login';
-@import '../../layout/tab';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
-@import '../../modules/rwd';
 
 h2.say_hi{
     text-align: center;
@@ -137,6 +134,205 @@ div.shopping_sum > h2,button{
     display: inline;
 }
 
-
+//以下的.grey_btn是複製政儒的 cancel_btn
+.grey_btn{
+    text-align: right;
+    display: inline-block;
+  }
+  
+  .grey_btn{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #141414;
+    background-color: #A8A8A8;
+    -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+            box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    text-decoration: none;
+  }
+  
+  .grey_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .grey_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .grey_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+  
+  //以下的orange_btn是複製政儒的.post_btn
+  
+  .orange_btn {
+    text-align: center;
+  }  
+  
+  .orange_btn {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #D35D3D;
+    -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+            box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+    
+    .orange_btn:before {
+      content: "\f054";
+      font-family: FontAwesome;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      height: 100%;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0 50% 50% 0;
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+      -webkit-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
+    }
+    
+    .orange_btn:hover {
+      text-indent: 30px;
+    }
+    
+    .orange_btn:hover:before {
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1);
+      text-indent: 0;
+    }
+    
+  
+  //以下的green_btn是複製政儒的post_rest_btn
+  .green_btn {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #1F7962;
+    -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+            box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .green_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .green_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .green_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+  
+  @import "../../modules/rwd";
+  @import "../../page/forum/ipadpro";
+  @import "../../page/forum/ipad";
+  @import "../../page/forum/phone";
 
 
