@@ -1,57 +1,83 @@
+<link rel="stylesheet" href="./css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> -->
+<link rel="stylesheet" href="./css/page/index/index_jeff.css">
 <div class="contain">
     <div class="cloud_section">
-        <img class="cloud1" src="./Jeff_images/img_1/couldSun.svg" alt="" width="20%">
-        <img class="cloud2" src="./Jeff_images/img_1/cloud2.svg" alt="" width="20%">
+        <img class="cloud1" src="./images/index/index_jeff/img_1/couldSun.svg" alt="" width="20%">
+        <img class="cloud2" src="./images/index/index_jeff/img_1/cloud2.svg" alt="" width="20%">
     </div>
-    
-    <h2 class="title_index">
-        <img src="./Jeff_images/leaf.svg" class="leafLeft">
-        <img src="./Jeff_images/leaf.svg" class="leafRight">
-        關於我們
-    </h2>
+
+
 
     <p>堅持來自產地新鮮水果製成果甘，“天然甘”提供多種天然水果甘及客製禮盒。</p>
-    
+
     <div class="skyFruits">
         <ul id="scene">
             <li class="layer1" data-depth=".5">
-                <img src="./Jeff_images/img_1/fruit01.svg" alt="" width="150px">
+                <img src="./images/index/index_jeff/img_1/fruit01.svg" alt="" width="150px">
             </li>
             <li class="layer2" data-depth="1">
-                <img src="./Jeff_images/img_1/fruit06.svg" alt="" width="100px">
+                <img src="./images/index/index_jeff/img_1/fruit06.svg" alt="" width="100px">
             </li>
             <li class="layer3" data-depth="-1">
-                <img src="./Jeff_images/img_1/fruit05.svg" alt="" width="90px">
+                <img src="./images/index/index_jeff/img_1/fruit05.svg" alt="" width="90px">
             </li>
             <li class="layer4" data-depth=".8">
-                <img src="./Jeff_images/img_1/fruit03.svg" alt="" width="100px">
+                <img src="./images/index/index_jeff/img_1/fruit03.svg" alt="" width="100px">
             </li>
             <li class="layer5" data-depth="0.5">
-                <img src="./Jeff_images/img_1/fruit02.svg" alt="" width="100px">
+                <img src="./images/index/index_jeff/img_1/fruit02.svg" alt="" width="100px">
             </li>
             <li class="layer6" data-depth="0.6">
-                <img src="./Jeff_images/img_1/fruit04.svg" alt="" width="100px">
+                <img src="./images/index/index_jeff/img_1/fruit04.svg" alt="" width="100px">
             </li>
         </ul>
     </div>
 
     <div class="land_section">
         <div class="fruitsInBasket">
-            <img src="./Jeff_images/img_2/fruitsInBasket_e.svg" alt="" width="100px">
-            <img src="./Jeff_images/img_2/fruitsInBasket_f.svg" alt="">
-            <img src="./Jeff_images/img_2/fruitsInBasket_e.svg" alt="">
-            <img src="./Jeff_images/img_2/fruitsInBasket_d.svg" alt="">
-            <img src="./Jeff_images/img_2/fruitsInBasket_c.svg" alt="">
-            <img src="./Jeff_images/img_2/fruitsInBasket_b.svg" alt="">
-            <img src="./Jeff_images/img_2/fruitsInBasket_a.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_e.svg" alt="" width="100px">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_f.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_e.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_d.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_c.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_b.svg" alt="">
+            <img src="./images/index/index_jeff/img_2/fruitsInBasket_a.svg" alt="">
         </div>
 
-        <img class="land" src="./Jeff_images/img_1/landBasket.svg" alt="" width="65%">
+        <img class="land" src="./images/index/index_jeff/img_1/landBasket.svg" alt="" width="65%">
 
         <div class="about_btn">
-            <a href="#">
-                <div class="btn">關於我們</div>
+            <a href="about.html">
+                <div class="btn">果甘物語</div>
             </a>
         </div>
-    </div>    
+
+        <img class="choco_black" src="./images/index/index_jeff/happy_nobg.png" alt="" class="choco_black" width="200px">
+    </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>
+    var scene = document.getElementById('scene')
+    var parallax = new Parallax(scene);
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js'></script>
+<script src="./js/Jeff_index.js"></script>
+
+
+
+<script>
+    function stop_tweenmax() {
+        if (screen.width > 1024) {
+            // setTween(choco_black);
+        } else {
+            TweenMax.killTweensOf('.choco_black');
+
+        }
+    }
+    window.addEventListener('load', stop_tweenmax);
+</script>

@@ -1,28 +1,28 @@
 // Felix的首頁-----------------------------------------
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
-body {
-    box-sizing: border-box;
-    background-color: lightblue;
-    background-image: url();
-}
-
-.wrap {
-    width: 100%;
-}
-
-section {
-    width: 100%;
-    border: 1px solid gray;
-}
-
 
 /* -- 客製果甘------------------------------------ -- */
+
+.cust_title {
+    @include indexTitle(3px, 10px);
+    margin: 50px auto;
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+}
+
+h4 {
+    color: #4c4948;
+}
+
+h5 {
+    color: #4c4948;
+}
+
+span {
+    color: #4c4948;
+}
 
 @mixin content {
     right: 61px;
@@ -34,7 +34,10 @@ section {
     width: 100%;
     height: 100%;
     &:hover {
-        background: #eee
+        background: #eee;
+    }
+    &:hover>a {
+        color: #4c4948;
     }
     .wheel_plate {
         background: url(../../../images/index/index_felix/wheel_plate.png);
@@ -68,14 +71,14 @@ section {
 .index_cust {
     .contain {
         .title_index {
-            @include title(3.5px,
-            solid,
-            #a6c165,
-            10px);
+            @include title(3.5px, solid, #a6c165, 10px);
             margin: 50px auto;
         }
         h2 {
             text-align: center;
+        }
+        h3 {
+            line-height: 2rem;
         }
         .cust_qna_contain {
             width: 100%;
@@ -99,8 +102,8 @@ section {
                         border-radius: 100%;
                         position: relative;
                         z-index: 2;
-                        left: 200px;
-                        bottom: -100px;
+                        left: 50px;
+                        bottom: -50px;
                         height: 600px;
                         width: 600px;
                         overflow: hidden;
@@ -184,14 +187,15 @@ section {
                         position: absolute;
                         // left: 145px;
                         // top: 145px;
-                        left: 343.5px;
-                        top: 289.5px;
+                        left: 33%;
+                        top: 36.95%;
                         width: 315px;
                         height: 315px;
                         z-index: 8;
-                        background: rgba(255, 255, 255, .5);
+                        background: rgba(255, 255, 255, .8);
                         border-radius: 100%;
                         display: flex;
+                        color: #4c4948;
                         div {
                             width: 250px;
                             text-align: center;
@@ -201,16 +205,17 @@ section {
                     }
                 }
             }
+            .qna_title {
+                @include indexQaTitle(3px, 10px);
+                margin: 0px auto;
+                color: #D35D3D;
+            }
             .qna_contain {
                 display: flex;
-                margin: 100px 200px 0px 0px;
+                margin: 30px 200px 0px 0px;
                 line-height: 1.5;
                 .title_page {
-                    @include title(3px,
-                    dotted,
-                    #a6c165,
-                    10px,
-                    #fff);
+                    @include title(3px, dotted, #a6c165, 10px, #fff);
                     height: 55px;
                     margin: 0px 30px;
                 }
@@ -219,8 +224,9 @@ section {
                     height: 350px;
                     margin-top: 15px;
                     border-radius: 20px;
-                    border: 1px solid #8A5B41;
-                    background: #fff;
+                    border: 4px solid #CEA45A;
+                    // background: #fff;
+                    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
                     .qna_paper_upper {
                         margin: 30px;
                         display: flex;
@@ -240,7 +246,7 @@ section {
                         button {
                             font-family: Noto, Genjyuu;
                             margin: 0 10px;
-                            @include btn_link(100px);
+                            @include btn_primary(100px);
                         }
                     }
                 }
@@ -258,11 +264,10 @@ section {
         background-size: contain;
     }
     .cust_more {
-        font-family: Noto, Genjyuu;
-        float: right;
-        margin-right: 160px;
-        position: relative;
-        top: -255px;
-        @include btn_link(160px);
+        margin: 0 auto;
+        margin-top: -200px;
+        margin-bottom: 80px;
+        @include btn_link(170px);
+        border: 0;
     }
 }

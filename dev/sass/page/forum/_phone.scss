@@ -9,10 +9,10 @@
       width: 80px;
       margin-left: 35%;}
 
-    .wrapper_forum .hot_post {
+    .wrapper_forum .hot_post{
       perspective: 6000px;}
 
-    .wrapper_forum .hot_post .carousels .carousel {
+    .wrapper_forum .hot_post .carousels .carousel{
       width: 85%;}
 
     //forum_article
@@ -35,12 +35,18 @@
     .wrapper_post .post_container{
       width: 90%; }
 
-    .post_area .set_post_topic >input{
+    .post_area .set_post_title > input{
       width: 100%; }
 
-    .select_post_fruit{
+    .set_post_fruit{
       width: 100%; }
+    
+    .post_btns{
+    .post_submit_btn{
+      margin-right: 5px; }
+    
+    .post_reset_btn{
+      margin-left: 5px; }
+    }
 
-    .post_btn > input{
-      @include btn_primary(100px);}
 }

@@ -6,7 +6,10 @@
                 display: block;
                 flex-direction: column;   
                 height: 750px;       
-                .left_box{
+                .button-wrap{
+                    flex-direction: row;
+                }
+                .box{
                     margin: 0 auto;
                     margin-top: 200px;
                 }

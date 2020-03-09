@@ -1,6 +1,13 @@
 //字體變數
 $color: #4c4948;
 $titleColor: #8A5B41;
+$fontFamily: 'Noto Sans TC', sans-serif;
+/* -- 首頁字體變數-----------------------*/
+
+$indexFontColor: #fff;
+$indexSecFontColor: #4c4948;
+$indexTitleFontColor: #af7342;
+
 
 //連結按鈕變數
 $btnColor: #ffffff;
@@ -13,10 +20,15 @@ $btnSecBgColor: #1F7962;
 //取消按鈕變數
 $btnCancelColor: #141414;
 $btnCancelBgColor: #A8A8A8;
-
 // RWD 斷點
 $phone: 376px;
 $ipad: 576px;
 $ipadpro: 768px;
 $latop-min: 992px;
 $latop-max: 1200px;
+//一般按鈕變數
+$btnBgColor: #e08c34;
+$btnHovBgColor: #Fa0;
+//功能按鈕變數
+$btnFuncBgColor: #D35D3D;
+$btnFuncHovBgColor: #f85f35;

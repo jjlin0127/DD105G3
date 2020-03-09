@@ -13,41 +13,59 @@
     <script src="js/box.js"></script>
 </head>
 <body id="box-body">
-    <header>
-        <div class="header__container">
-            <span class="logo">
-                <a href="index.html"><img src="./images/Logo.svg"></a>
-            </span>
-            <div class="navList">
-                <a class="navItem" href="#">關於我們<i class="fas fa-seedling"></i></a>
-                <a class="navItem" href="#">特色果甘<i class="fas fa-apple-alt"></i></a>
-                <a class="navItem focus" href="#">客製果甘<i class="fas fa-lemon"></i></a>
-                <a class="navItem" href="#">折扣遊戲<i class="fas fa-carrot"></i></a>
-                <a class="navItem" href="#">果甘話區<i class="fas fa-leaf"></i></a>
-            </div>
-            <div class="navList_2">
-                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
-                <a class="navItem_2" href="#"><i class="fas fa-shopping-cart"></i></a>               
-            </div>
-        </div>
-        </div>
-    </header>
+    @@include('layout/header.html',{
+        "focus03" : "focus"
+    })
     <h2>客製禮盒
         <img src="images/box/leaf.svg" alt="" class="leafLeft">
         <img src="images/box/leaf.svg" alt="" class="leafRight">
     </h2>
     <div class="box_contain">
         <div class="outer">
+            <h4>客製禮盒步驟</h4>
+            <div class="step_wrap">
+                <div class="step">
+                    <div class="circle">1</div>
+                    <p>選擇盒面</p>
+                </div>
+                <div class="step">
+                    <div class="circle">2</div>
+                    <p>決定盒面顏色</p>
+                </div>
+                <div class="step">
+                    <div class="circle">3</div>
+                    <p>放置圖片至盒面</p>
+                </div>
+                <div class="step">
+                    <div class="circle">4</div>
+                    <p>添加文字</p>
+                </div>
+                <div class="step">
+                    <div class="circle">5</div>
+                    <p>加入購物車</p>
+                </div>
+            </div>
             <div class="bow-knot-left">
                 <img src="images/box/bow-knot.png">
             </div>
             <div class="bow-knot-right">
                 <img src="images/box/bow-knot.png">
             </div>
-            <div class="left_box">
+            <div class="button-wrap">
+                <label class="for-zoom-cube" for="zoom-cube">縮放</label>
+                <label class="for-rotate-cube" for="rotate-cube">旋轉</label>
+                <label class="for-front" for="show-front">前</label>
+                <label class="for-back" for="show-back">後</label>
+                <label class="for-top" for="show-top">上</label>
+                <label class="for-bottom" for="show-bottom">下</label>
+                <label class="for-left" for="show-left">左</label>
+                <label class="for-right" for="show-right">右</label>
+                
+            </div>
+            <div class="box">
                 <input type="checkbox" id="zoom-cube">
-                <input type="checkbox" id="rotate-cube">
-                <input type="radio" id="show-front" checked>
+                <input type="checkbox" id="rotate-cube" checked>
+                <input type="radio" id="show-front">
                 <input type="radio" id="show-back">
                 <input type="radio" id="show-top">
                 <input type="radio" id="show-bottom">
@@ -63,16 +81,7 @@
                         <div class="cube-face cube-face-bottom" ><i></i></div>
                     </div>
                 </div>
-                <div class="button-wrap">
-                    <label class="for-front" for="show-front">前</label>
-                    <label class="for-back" for="show-back">後</label>
-                    <label class="for-top" for="show-top">上</label>
-                    <label class="for-bottom" for="show-bottom">下</label>
-                    <label class="for-left" for="show-left">左</label>
-                    <label class="for-right" for="show-right">右</label>
-                    <label class="for-zoom-cube" for="zoom-cube">縮放</label>
-                    <label class="for-rotate-cube" for="rotate-cube">旋轉</label>
-                </div>
+                
 
             </div>
             <div class="tab_wrap">
@@ -93,9 +102,9 @@
                             <div class="item"><img src="images/box/cusImg03.png" alt="" class="drag_img"></div>
                             <div class="item"><img src="images/box/cusImg04.png" alt="" class="drag_img"></div>
                             <div class="item"><img src="images/box/cusImg05.png" alt="" class="drag_img"></div>
-                            <div class="item"><img src="images/box/cusImg05.png" alt="" class="drag_img"></div>
-                            <div class="item"><img src="images/box/cusImg05.png" alt="" class="drag_img"></div>
-                            <div class="item"><img src="images/box/cusImg05.png" alt="" class="drag_img"></div>
+                            <div class="item"><img src="images/box/cusImg06.svg" alt="" class="drag_img"></div>
+                            <div class="item"><img src="images/box/cusImg07.svg" alt="" class="drag_img"></div>
+                            <div class="item"><img src="images/box/cusImg08.svg" alt="" class="drag_img"></div>
                             <div class="item"><img src="" alt="" id="myImg" class="drag_img"></div>
                         </div>
                         <form action="">
@@ -118,3 +127,4 @@
     </footer>
 </body>
 </html>
+

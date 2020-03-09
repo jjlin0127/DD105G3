@@ -11,22 +11,22 @@ window.addEventListener('load', function () {
       hamburgerMenu.style.left = "100%";
 
       // 解開畫面
-      if ($(document).height() > $(window).height()) {
-        $("html").removeClass("noscroll");
-      } else {
-        $("html").removeClass("fixWindow");
-      }
+      // if ($(document).height() > $(window).height()) {
+      //   $("html").removeClass("noscroll");
+      // } else {
+      //   $("html").removeClass("fixWindow");
+      // }
 
     } else {
       hamburger.classList.add("is-active");
       hamburgerMenu.style.left = "0%";
 
       // 鎖住畫面
-      if ($(document).height() > $(window).height()) {
-        $("html").addClass("noscroll");
-      } else {
-        $("html").addClass("fixWindow");
-      }
+      // if ($(document).height() > $(window).height()) {
+      //   $("html").addClass("noscroll");
+      // } else {
+      //   $("html").addClass("fixWindow");
+      // }
 
     }
   }})
