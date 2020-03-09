@@ -23,7 +23,6 @@
     background-color: $btnLinkBgColor;
     box-shadow: 2px 2px 5px rgba($btnLinkBgColor, 0.5);
     transition: all 0.2s linear 0s;
-    outline: none;
     &:before {
         content: "\f054";
         font-family: FontAwesome;
