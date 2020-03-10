@@ -6,10 +6,13 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-.wrapper_post{
-    width: 100%;
+body{
     background-image: url("../../../images/forum/sky.jpg");
     background-size: cover;
+}
+
+.wrapper_post{
+    width: 100%;
 }
 
 .wrapper_post .post_container{
@@ -33,11 +36,7 @@
     text-align: right;
 }
 
-.post_area .cancel_post > a{
-    display: inline-block;
-}
-
-.cancel_post button.cancel_btn{
+.cancel_post button.cancel_post_btn{
     @include btn_cancel(120px);
     text-decoration: none;
 }

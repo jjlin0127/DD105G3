@@ -220,9 +220,7 @@ html.fixWindow {
 } */
 
 @media all and (max-width: 992px) {
-    header {
-        padding: 0px 0px 20px 0px;
-    }
+    
 
     header ul {
         width: 100%;
@@ -230,12 +228,12 @@ html.fixWindow {
 
     header ul li {
         font-size: 1rem;
-        padding: 5px;
+        // padding: 5px;
     }
 
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width:1024px) {
     header {
         width: 100%;
        
