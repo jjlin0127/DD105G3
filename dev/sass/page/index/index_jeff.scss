@@ -33,7 +33,7 @@ section {
 .choco_black {
     position: absolute;
     top: 200px;
-    left: 300px;
+    left: 500px;
     z-index: 100;
 
 
@@ -128,7 +128,7 @@ section {
                 // 天空芒果
                 .layer3>img {
                     position: absolute;
-                    top: 100px;
+                    top: 250px;
                     left: 250px;
                 }
 
@@ -136,14 +136,14 @@ section {
                 .layer4>img {
                     position: absolute;
                     top: -50px;
-                    left: 1100px;
+                    left: 1500px;
                 }
 
                 // 天空水梨
                 .layer5>img {
                     position: absolute;
                     top: 100px;
-                    left: 1000px;
+                    left: 1400px;
 
                 }
 
@@ -151,7 +151,7 @@ section {
                 .layer6>img {
                     position: absolute;
                     top: 200px;
-                    left: 1200px;
+                    left: 1600px;
 
                 }
             }
@@ -267,18 +267,59 @@ section {
 
 @import "../../modules/rwd";
 
+//1440px
+@media all and (max-width:1439px){
+    #scene {
+        border:1px solid red;
+        //天空葡萄
+        .layer1>img {
+            position: absolute;
+            top: -100px;
+            left: 100px;
 
-// @media all and (max-width: 768px) {
-//     .skyFruits {
-//         #scene {
-//             display:none;
-//         }
-//     }
-//     .land{
+        }
 
-//     }
+        //天空蘋果
+        .layer2>img {
+            position: absolute;
+            top: 50px;
+            left: 300px;
+        }
 
-// }
+        // 天空芒果
+        .layer3>img {
+            position: absolute;
+            top: 250px;
+            left: 250px;
+        }
+
+        // 天空柿子
+        .layer4>img {
+            position: absolute;
+            top: -50px;
+            left:100px;
+        }
+
+        // 天空水梨
+        .layer5>img {
+            position: absolute;
+            top: 100px;
+            left: 1400px;
+
+        }
+
+        // 天空酪梨
+        .layer6>img {
+            position: absolute;
+            top: 200px;
+            left: 1600px;
+
+        }
+    }
+
+
+
+}
 
 
 
