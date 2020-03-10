@@ -313,10 +313,10 @@
                         <form action="post" class="filter_form">
                             <h5>分類搜尋</h5>
                             <p>選擇話題種類</p>
-                            <div class="optios topic_options"> 
+                            <div class="options topic_options"> 
                                 <div class="option">
                                     <input type="checkbox" name="topic_option" id="digestion">
-                                    <label for="digestion">幫助消化 </label>
+                                    <label for="digestion">幫助消化</label>
                                 </div>
                                 <div class="option">
                                     <input type="checkbox" name="topic_option" id="cvd">
@@ -329,7 +329,7 @@
                             </div>
 
                             <p>選擇果甘種類</p>
-                            <div class="optios fruit_options">                             
+                            <div class="options fruit_options">                             
                                 <div class="option">
                                     <input type="checkbox" name="fruit_option" id="star">
                                     <label for="star">楊桃</label>
@@ -352,11 +352,11 @@
                                 </div>
                                 <div class="option">
                                     <input type="checkbox" name="fruit_option" id="hawthorn">
-                                    <label for="hawthorn">山楂</label>
+                                    <label for="guava">芭樂</label>
                                 </div>
                                 <div class="option">                                   
                                     <input type="checkbox" name="fruit_option" id="longan">
-                                    <label for="longan">桂圓</label>
+                                    <label for="mango">芒果</label>
                                 </div>
                                 <div class="option">
                                     <input type="checkbox" name="fruit_option" id="appale">
@@ -637,31 +637,31 @@
     @@include('./layout/footer.html') 
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     <script>
-        function init() {
+        function doFirst(){
             document.getElementById('angle_left').addEventListener('click', showPrev);
             document.getElementById('angle_right').addEventListener('click', showNext);
             document.getElementById('panelBtn').addEventListener('click', showPanel);
         }
 
         currentDeg = 0;
-        function showNext() {
+        function showNext(){
             currentDeg = currentDeg - 60;
             document.getElementsByClassName('carousels')[0].style.transform = 'translate(-50%,-50%) rotateY(' + currentDeg + 'deg)';
         }
 
-        function showPrev() {
+        function showPrev(){
             currentDeg = currentDeg + 60;
             document.getElementsByClassName('carousels')[0].style.transform = 'translate(-50%,-50%) rotateY(' + currentDeg + 'deg)';
         }
 
-        function showPanel() {
+        function showPanel(){
             document.getElementsByClassName('sortAndFilter')[0].classList.add("show");
             document.getElementById('closeBtn').addEventListener('click', function(){
                 document.getElementsByClassName('sortAndFilter')[0].classList.remove("show");
             });
         }
 
-        window.addEventListener('load', init);
+        window.addEventListener('load', doFirst);
     </script>
 </body>
 </html>

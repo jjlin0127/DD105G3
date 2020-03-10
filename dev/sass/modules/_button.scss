@@ -12,11 +12,12 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 15px 0px;
     border-radius: 10px;
     font-size: 1.25rem;
-    min-width: 120px;
+    min-width: 100px;
     width: $width;
     color: $btnColor;
     background-color: $btnLinkBgColor;
@@ -55,17 +56,17 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
-    min-width: 120px;
+    min-width: 100px;
     width: $width;
     color: $btnColor;
     background-color: $btnPriBgColor;
     box-shadow: 2px 2px 5px rgba($btnPriBgColor, 0.5);
-    ;
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -99,17 +100,17 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
-    min-width: 120px;
+    min-width: 100px;
     width: $width;
     color: $btnColor;
     background-color: $btnSecBgColor;
     box-shadow: 2px 2px 5px rgba($btnSecBgColor, 0.5);
-    ;
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";
@@ -143,17 +144,17 @@
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
     padding: 10px 0px;
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
-    min-width: 120px;
+    min-width: 100px;
     width: $width;
     color: $btnCancelColor;
     background-color: $btnCancelBgColor;
     box-shadow: 2px 2px 5px rgba($btnCancelBgColor, 0.5);
-    ;
     transition: all 0.2s linear 0s;
     &:before {
         content: "\f054";

@@ -6,10 +6,13 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-.wrapper_post{
-    width: 100%;
+body{
     background-image: url("../../../images/forum/sky.jpg");
     background-size: cover;
+}
+
+.wrapper_post{
+    width: 100%;
 }
 
 .wrapper_post .post_container{
@@ -33,11 +36,7 @@
     text-align: right;
 }
 
-.post_area .cancel_post > a{
-    display: inline-block;
-}
-
-.cancel_post button.cancel_btn{
+.cancel_post button.cancel_post_btn{
     @include btn_cancel(120px);
     text-decoration: none;
 }
@@ -86,17 +85,17 @@
     height: 30%;
 }
 
-.options_set {
+.options_set{
     margin-bottom: 10px;
     
     input[type="checkbox"],
-    input[type="radio"] {
+    input[type="radio"]{
     position: absolute;
     opacity: 0;
     z-index: 1;
     }
 
-    label {
+    label{
         position: relative;
         margin-right: 1em;
         padding-left: 2em;
@@ -105,7 +104,7 @@
         cursor: pointer;
         z-index: 1;
 
-        &:before {
+        &:before{
             box-sizing: border-box;
             content: " ";
             position: absolute;
@@ -120,13 +119,13 @@
         }
     }
 
-    input[type="radio"] + label::before {
+    input[type="radio"] + label::before{
         border-radius: 1em;
     }
 
     /* Checked */
     input[type="checkbox"]:checked + label,
-    input[type="radio"]:checked + label {
+    input[type="radio"]:checked + label{
         padding-left: 1em;
         color: white;
         &:before {
@@ -140,7 +139,7 @@
 
     /* Transition */
     label,
-    label::before {
+    label::before{
         -webkit-transition: .25s all ease;
         -o-transition: .25s all ease;
         transition: .25s all ease;

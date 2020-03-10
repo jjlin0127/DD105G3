@@ -64,7 +64,7 @@ section {
 
         .land_section {
             margin: 0 auto;
-            height: 100vh;
+            min-height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -109,7 +109,6 @@ section {
             border: 1px solid green;
 
             #scene {
-               
 
                 //天空葡萄
                 .layer1>img {
@@ -268,7 +267,22 @@ section {
 @import "../../modules/rwd";
 
 
-@media all and (max-width: 768px) {
+// @media all and (max-width: 768px) {
+//     .skyFruits {
+//         #scene {
+//             display:none;
+//         }
+//     }
+//     .land{
+
+//     }
+
+// }
+
+
+
+//768px
+@include respond(ipadpro) {
     .skyFruits {
         #scene {
             display: none;
@@ -276,34 +290,19 @@ section {
         }
     }
 
-}
-
-
-
-//768px
-@include respond(ipadpro) {
-    .skyFruits {
-        #scene .layer1>img {
-            display: none;
-
-        }
+    .choco_black {
+        display: none;
     }
+
+    
 }
 
 
 //576px
-@include respond(ipad) {
-    .skyFruits {
-        #scene .layer1>img {
-            display: none;
-        }
-    }
-}
+@include respond(ipad) {}
 
 @include respond(phone) {
-    .skyFruits {
-        #scene .layer1>img {
-            display: none;
-        }
+    .index_about .contain>p {
+        display:none;
     }
 }
