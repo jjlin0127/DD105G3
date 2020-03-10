@@ -25,28 +25,6 @@
     flex-wrap: wrap;
 }
 
-@media all and (max-width: 1200px) {
-    .detail_wrapper{
-        width:992px;
-        padding:15px;
-        position:relative;
-        left: 50%;
-        margin-left:-500px;
-    }
-}
-
-@media all and (max-width: 992px) {
-    .detail_wrapper{
-        width:768px;
-        padding:15px;
-        position:relative;
-        left: 50%;
-        margin-left:-384px;
-    }
-
-
-}
-
 .detail_wrapper > .prdt_img{
     width:40%;
     // border:1px solid red; 
@@ -58,13 +36,15 @@
     width:100%;
 }
 
-.prdt_img > table.small_img{
+.prdt_img > .small_img{
     width:100%;
     background-color: white;
-    td{
-        width:25%;
-        img{
-            width:100%;
+    div.small_imgs_list{
+        // border: 1px solid green;
+        box-sizing:border-box;
+        width:100%;
+        img.sm_photo{
+            width:24%;
         }
     }
 }
@@ -97,7 +77,10 @@ p.introduce{
     margin: 10px 0px;
     font-size:18px;
 }
-.quantity > h4{display:inline-block;}
+.quantity > h4{
+    // color:red;
+    display:inline-block;
+}
 .quantity{
     div,button{
         font-size:2rem;
@@ -105,15 +88,15 @@ p.introduce{
         margin: 0px;
     }
 }
-#howmany{
-    width:30px;
-    background-color:white;
-    border: 1px solid #CCCBCF;
+input#howmany{
+    width:40px;
+    font-size: 26px;
+    // border: 1px solid red;
     padding: 10px; 
 }
 button.count{
     width:40px;
-    background-color:#CCCBCF;
+    // background-color:red;
     padding: 5px 10px; 
 }
 
@@ -353,7 +336,7 @@ div.each_comment{
     border-radius: 10px;
     font-size: 1.25rem;
     min-width: 120px;
-    width: 120px;
+    width: 140px;
     color: #ffffff;
     background-color: #1F7962;
     -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
@@ -393,8 +376,9 @@ div.each_comment{
   
   .green_btn:hover {
     text-indent: 30px;
+    // padding: 12px 0px;
   }
-  
+
   .green_btn:hover:before {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);

@@ -8,7 +8,8 @@
     <title>天然甘-商品詳情</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <!-- <link rel="stylesheet" href="./discuss.css"> -->
-    <!-- <link rel="stylesheet" href="./css/page/prod/detail.css">  -->
+    <!-- <link rel="stylesheet" href="./css/detail.css">  -->
+    <!-- <link rel="stylesheet" href="./css/detail_media.css">  -->
     <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
     <link rel="stylesheet" href="./sass/page/prod/detail_media.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,27 +49,26 @@
 
     <div class="detail_wrapper">
         <div class="prdt_img">
-            <div class="large_img" id="large_img">
+            <div class="large_img" id="large">
                 <img src="images/prdt/strawberry03.jpg">
             </div>
-            <table class="small_img">
-                <tr>
-                    <td><img src="images/prdt/strawberry03.jpg" class="sm_photo"></td>
-                    <td><img src="images/prdt/strawberry02.jpg" class="sm_photo"></td>
-                    <td><img src="images/prdt/strawberry03.jfif" class="sm_photo"></td>
-                    <td><img src="images/prdt/strawberry04.jfif" class="sm_photo"></td>
-                </tr>
-            </table>
+            <div class="small_img">
+                <div class="small_imgs_list">
+                    <img src="images/prdt/strawberry03.jpg" class="sm_photo">
+                    <img src="images/prdt/strawberry02.jpg" class="sm_photo">
+                    <img src="images/prdt/strawberry03.jfif" class="sm_photo">
+                    <img src="images/prdt/strawberry04.jfif" class="sm_photo">
+                </div>
+            </div>
             <script>
                 function showLarge(e){
-                    alert(e.target.src);
-                let large_img = document.getElementById("large_img")	   
-                    large_img.src = e.target.src;
+                    let large = document.getElementById("large")	
+                        large.src = e.target.src;
                 }
-        
+
                 function init(){
                     let imgs = document.getElementsByClassName("sm_photo");
-        
+
                     for( let i=0; i<imgs.length; i++){
                         imgs[i].onclick = showLarge;
                     }
@@ -76,6 +76,7 @@
                 window.onload = init;
             </script>
         </div> <!--prdt_img的結尾標籤-->
+
         <div class="prdt_text">
             <center><h2><b>天然草莓甘</b></h2></center>
             <center>
@@ -93,9 +94,9 @@
                     <button class="count" id="add">+</button>
                 </div>
                 <div class="purchase">
-                    <button class="orange_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg">
+                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg">
                     <br>
-                    <button class="green_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg">
+                    <button class="orange_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg">
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
@@ -189,6 +190,7 @@
             </ul>  <!--ul.prdt_comment的結尾標籤-->
         <!--</div>--> <!--see_comment的結尾標籤-->
     </div> <!--detail_wrapper的結尾標籤-->
+
 </body>
 <footer>
     <strong>Copyright &copy; 2020 Natural Sweet</srong>
