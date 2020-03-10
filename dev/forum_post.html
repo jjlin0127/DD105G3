@@ -22,64 +22,88 @@
                     </a>
                 </div>
                 <form method="post" class="post_form">
-                    <div class="set_post_title">
+                    <div class="set_post_topic">
                         <label for="post_title">標題</label>
                         <input type="text" name="post_title" id="post_title" autofocus>
                     </div>
 
                     <p>選擇話題種類</p>
-                    <div class="options_set set_post_topic"> 
+                    <div class="select_post_topic">
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="digestion">
-                            <label for="digestion">幫助消化 </label>
+                            <label for="digestion">
+                                <input type="radio" name="topic" id="digestion">
+                                幫助消化
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="cvd">
-                            <label for="cvd">保護血管</label>
+                            <label for="cvd">
+                                <input type="radio" name="topic" id="cvd">
+                                保護血管
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="brain">
-                            <label for="brain">活化大腦</label>
+                            <label for="brain">
+                                <input type="radio" name="topic" id="brain">
+                                活化大腦
+                            </label>
                         </div>
                     </div>
 
                     <p>選擇果甘種類</p>
-                    <div class="options_set set_post_fruit">
+                    <div class="select_post_fruit">
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="star">
-                            <label for="star">楊桃</label>
+                            <label for="star">
+                                <input type="checkbox" name="star" id="star">
+                                楊桃
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="pineapple">
-                            <label for="pineapple">鳳梨</label>
+                            <label for="pineapple">
+                                <input type="checkbox" name="pineapple" id="pineapple">
+                                鳳梨
+                            </label>
                         </div>                           
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="dragon">
-                            <label for="dragon">火龍果</label>
-                        </div>
-                        <div class="option">                                    
-                            <input type="checkbox" name="set_fruit_option" id="banana">
-                            <label for="banana">香蕉</label>
-                        </div>
-                        <div class="option">                                   
-                            <input type="checkbox" name="set_fruit_option" id="strawberry">
-                            <label for="strawberry">草莓</label>
+                            <label for="dragon">
+                                <input type="checkbox" name="dragon" id="dragon">
+                                火龍果
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="hawthorn">
-                            <label for="guava">芭樂</label>
-                        </div>
-                        <div class="option">                                   
-                            <input type="checkbox" name="set_fruit_option" id="longan">
-                            <label for="mango">芒果</label>
+                            <label for="banana">
+                                <input type="checkbox" name="banana" id="banana">
+                                香蕉
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="appale">
-                            <label for="appale">蘋果</label>
+                            <label for="strawberry">
+                                <input type="checkbox" name="strawberry" id="strawberry">
+                                草莓
+                            </label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="blueberry">
-                            <label for="blueberry">藍莓</label>
+                            <label for="hawthorn">
+                                <input type="checkbox" name="hawthorn" id="hawthorn">
+                                山楂
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label for="longan">
+                                <input type="checkbox" name="longan" id="longan">
+                                桂圓
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label for="appale">
+                                <input type="checkbox" name="appale" id="appale">
+                                蘋果
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label for="blueberry">
+                                <input type="checkbox" name="blueberry" id="blueberry">
+                                藍莓
+                            </label>
                         </div>
                     </div>
                     <textarea id="summernote" name="editordata"></textarea>

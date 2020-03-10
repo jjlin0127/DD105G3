@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/respond/index/box_rwd.scss"
+    ],
+    "names": [],
+    "file": "box_rwd.css"
+}

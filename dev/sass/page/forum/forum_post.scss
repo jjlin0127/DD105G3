@@ -6,13 +6,10 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-body{
-    background-image: url("../../../images/forum/sky.jpg");
-    background-size: cover;
-}
-
 .wrapper_post{
     width: 100%;
+    background-image: url("../../../images/forum/sky.jpg");
+    background-size: cover;
 }
 
 .wrapper_post .post_container{
@@ -53,103 +50,46 @@ body{
     margin-bottom: 10px;
 }
 
-.post_area .set_post_title{
+.post_area .set_post_topic{
     width: 100%;
 }
 
-.set_post_title > label{
+.post_area .set_post_topic >input{
+    width: 280px;
+}
+
+.select_post_topic{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    height: 90px;
+}
+
+.select_post_topic .option{
+    height: 30%;
+}
+
+.set_post_topic > label{
     vertical-align: middle;
 }
 
-.post_area .set_post_title > input{
+.set_post_topic > input{
     width: 300px;
     height: 20px;
 }
 
-.set_post_topic{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-}
-
-.set_post_topic .option{
-    height: 30%;
-}
-
-.set_post_fruit{
+.select_post_fruit{
     width: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100px;
+    height: 90px;
 }
 
-.set_post_fruit .option{
+.select_post_fruit .option{
     height: 30%;
 }
-
-.options_set{
-    margin-bottom: 10px;
-    
-    input[type="checkbox"],
-    input[type="radio"]{
-    position: absolute;
-    opacity: 0;
-    z-index: 1;
-    }
-
-    label{
-        position: relative;
-        margin-right: 1em;
-        padding-left: 2em;
-        padding-right: 1em;
-        line-height: 1.75em;
-        cursor: pointer;
-        z-index: 1;
-
-        &:before{
-            box-sizing: border-box;
-            content: " ";
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            width: 1.5em;
-            height: 1.5em;
-            border: 2px solid #4c4948;
-            border-radius: .25em;
-            z-index: 0;
-        }
-    }
-
-    input[type="radio"] + label::before{
-        border-radius: 1em;
-    }
-
-    /* Checked */
-    input[type="checkbox"]:checked + label,
-    input[type="radio"]:checked + label{
-        padding-left: 1em;
-        color: white;
-        &:before {
-            top: 0;
-            width: 100%;
-            height: 1.5em;
-            background: #4c4948;
-            z-index: -1;
-        }
-    }
-
-    /* Transition */
-    label,
-    label::before{
-        -webkit-transition: .25s all ease;
-        -o-transition: .25s all ease;
-        transition: .25s all ease;
-    }
-}
-
 .post_btns{
     text-align: center;
 

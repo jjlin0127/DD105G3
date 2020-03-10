@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-購物車</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <!-- <link rel="stylesheet" href="./discuss.css"> -->
-    <link rel="stylesheet" href="./css/page/prod/shopping.css">
+    <!-- <link rel="stylesheet" href="./css/page/prod/shopping.css"> -->
+    <link rel="stylesheet" href="./sass/page/prod/shopping.css">
+    <link rel="stylesheet" href="./sass/page/prod/shopping_media.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     
 </head>
@@ -43,62 +45,67 @@
             購物車
         </div>      
     </div>
-    <h2 class="say_hi">Peggy1001, 您好！您目前可使用的折扣點數為：<span style="font-weight: 600;">3000  點</span></h2>
+    <h2 class="say_hi">Peggy1001, 您好！您目前可使用的折扣點數：<span style="font-weight: 600;">3000  點</span></h2>
     <div class="box_for_shopping_title">
         <h3 class="shopping_title">購物明細</h3>
     </div>
     <div class="shopping_wrapper">
-        <table class="purchase_list" style="vertical-align: top;">
-            <tr><th colspan="2" style="width:50%;">商品明細</th><th>數量</th><th>變更明細</th></tr>
-            <tr>
-                <td style="width:25%;">
-                    <img src="images/prdt/mango03.jpg">
-                </td>
-                <td style="font-size: 18pt;line-height: 36pt;padding: 10px;">
-                    <div class="quantity">品名：天然芒果甘<br>價格：350點</div>
-                </td>
-                <td>                
-                    <div class="quantity">
-                        <button class="count" id="minus">-</button>
-                        <div calss="amount" id="howmany">1</div>
-                        <button class="count" id="add">+</button>
-                    </div>
-                </td>
-                <td style="width:25%;">
-                    <button class="test_btn">單筆結帳</button>
-                    <br>
-                    <button class="remove_btn">刪除</button>
-                </td>
-            </tr>
-            <tr>
-                <td style="width:25%;">
-                    <img src="images/prdt/strawberry03.jfif">
-                </td>
-                <td style="font-size: 18pt;line-height: 36pt;padding: 10px;">
-                    <div class="quantity">品名：天然草莓甘<br>價格：340點</div>
-                </td>
-                <td>                
-                    <div class="quantity">
-                        <button class="count" id="minus">-</button>
-                        <div calss="amount" id="howmany">1</div>
-                        <button class="count" id="add">+</button>
-                    </div>
-                </td>
-                <td style="width:25%;">
-                    <button class="test_btn">單筆結帳</button>
-                    <br>
-                    <button class="remove_btn">刪除</button>
-                </td>
-            </tr>
-        </table>
+        <div class="item_cards">
+            <div class="item_img">
+                <img src="images/prdt/mango03.jpg">
+            </div>
+            <div class="item_text">
+                <h2>天然芒果甘</h2>
+                <h3>價格：<b>350</b>點</h3>
+                <div class="quantity">
+                    <h3>數量:</h3>
+                    <button class="count" id="minus">-</button>
+                    <div calss="amount" id="howmany">1</div>
+                    <button class="count" id="add">+</button>
+                </div>
+                <div class="single_checkout">
+                    <button class="orange_btn">單筆結帳</button>
+                    <img src="images/prdt/icon/shopping_cart.svg">
+                </div>
+                <div class="single_remove">
+                    <button class="grey_btn">單筆刪除</button>
+                    <img src="images/prdt/icon/icon_remove.svg">
+                </div>
+            </div>
+        </div>  <!--item_cards的結尾標籤-->
+        <div class="item_cards">
+            <div class="item_img">
+                <img src="images/prdt/strawberry03.jpg">
+            </div>
+            <div class="item_text">
+                <h2>天然草莓甘</h2>
+                <h3>價格：<b>350</b>點</h3>
+                <div class="quantity">
+                    <h3>數量:</h3>
+                    <button class="count" id="minus">-</button>
+                    <div calss="amount" id="howmany">1</div>
+                    <button class="count" id="add">+</button>
+                </div>
+                <div class="single_checkout">
+                    <button class="orange_btn">單筆結帳</button>
+                    <img src="images/prdt/icon/shopping_cart.svg">
+                </div>
+                <div class="single_remove">
+                    <button class="grey_btn">單筆刪除</button>
+                    <img src="images/prdt/icon/icon_remove.svg">
+                </div>
+            </div>
+        </div>  <!--item_cards的結尾標籤-->
 
-        <div class="shopping_sum">
-            <h2 class="sum">目前總共所需要的點數為：<span style="font-weight: 600;">690  點</span></h2><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span>
-            <button class="game_btn for_buyit" id="buyit">結帳</button>
-            <button class="middle_btn for_buyit" id="buy_more" onclick="location.href='./product.html'">繼續購物</button>
-        </div>  <!--shopping_sum的結尾標籤-->
-  
+
     </div> <!--shopping_wrapper的結尾標籤-->
+        
+        <div class="shopping_sum">
+            <center><h2 class="sum">目前總共所需要的點數：<span style="font-weight: 600;">690 點</span></h2></center>
+            <center><button class="orange_btn shopping_cart">整筆結帳</button><button class="grey_btn" onclick="location.href='./product.html'">繼續購物</button></center>
+        </div>  <!--shopping_sum的結尾標籤-->
+    <div style="height:30px;"> 
+    </div> 
 
 </body>
 <footer>

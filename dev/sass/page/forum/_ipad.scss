@@ -9,12 +9,12 @@
       width: 90px;
       margin-left: 40%; }
 
-    .wrapper_forum .hot_post{
+    .wrapper_forum .hot_post {
       width: 360px;
       height: 450px;
       perspective: 5000px; }
     
-    .wrapper_forum .hot_post .carousels .carousel{
+    .wrapper_forum .hot_post .carousels .carousel {
       width: 90%; }
 
     .publish_btn{
@@ -24,7 +24,6 @@
       display: block;
       width: 40px;
       height: 40px;
-      outline: none;
       border-radius: 100%;
       border: transparent;
       background-color: #D35D3D;
@@ -47,7 +46,6 @@
       display: block;
       width: 40px;
       height: 40px;
-      outline: none;
       border-radius: 100%;
       border: transparent;
       background-color: #D35D3D;
@@ -70,7 +68,7 @@
       width: 100vw;
       height: 100vh;
       margin: 0;
-      padding-top: 120px;
+      padding: 130px 0 50px 0;
       background-color: rgba(177, 200, 211, 0.877);
       position:fixed;
       top: 0;
@@ -78,7 +76,7 @@
       transition: all .8s; }
 
     aside.sortAndFilter > div{
-      width: 35vw;
+      width: 30vw;
       margin: 0 auto; }
 
     aside.sortAndFilter.show{
@@ -97,10 +95,10 @@
       z-index: 6;
       cursor: pointer;
       position: absolute;
-      top: 80px;
-      right: 15px; }
+      top: 100px;
+      right: 10px; }
 
-    .post_zone > section{
+    section{
       width: 90%;
       margin: 0 5%; }
 
@@ -130,10 +128,10 @@
     .wrapper_post .post_container{
       width: 90%; }
 
-    .post_area .set_post_title > input{
+    .post_area .set_post_topic >input{
       width: 90%; }
 
-    .set_post_fruit{
+    .select_post_fruit{
       width: 100%; }
 
 }

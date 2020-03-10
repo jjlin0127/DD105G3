@@ -1,7 +1,4 @@
 $(document).ready(function(e){
-
-  $('.cube').css('transform','rotateX(-30deg) rotateY(120deg)'); //一開始要立體的角度
-
   $('.for-front').click(function(e){ //如果label按鈕被點擊
     $('.cube-face-front').siblings().removeClass('checked'); //其他同層則移除.checked
     $('.cube-face-front').addClass('checked'); //盒子的面就加上.checked
@@ -38,10 +35,9 @@ $(document).ready(function(e){
     $('.cube').css('transform','rotateX(0deg) rotateY(-90deg)')
   })
 
-
-  // $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
-  //   $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
-  // })
+  $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
+    $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
+  })
 
   
   // tab切換標籤
@@ -110,11 +106,6 @@ colorPicker.on('color:change', function(color) {
 function doFirst(){
 //先跟畫面產生關聯，再建事件聆聽的功能
 
-
-// 監聽：旋轉按鈕被點擊的話，就改變禮盒角度
-let rotateBtn = document.querySelector('.for-rotate-cube');
-rotateBtn.addEventListener('click',degChange);
-
 //圖片上傳的change事件
 document.getElementById('theFile').onchange = fileChange; 
 
@@ -144,69 +135,27 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
 });
 }
 
-
-
-var imgNum = 1;
 function dragstart(e){  //e.target代表圖片的DOM本身
 let img = e.target.src;  //取得圖片路徑
-
-let data = `<img width="50px" src="${img}" id="img${imgNum}">`;  //製作img標籤字串
+let data = `<image width="50px" src="${img}"> `;  //製作img標籤字串
 e.dataTransfer.setData('image/jpeg',data);
-
-imgNum++;
 }
 
 function dragover(e){
-  e.preventDefault();
-  e.target.style.opacity = "0.8";  //圖片移到盒子上，盒子就變透明
-   //新增加的元素可以直接被事件觸發，透過for迴圈去抓元素的方式不行
-  if (e.target.classList.contains("drag_img") == true) {//contains一個droped_img使
-     e.target.style.pointerEvents = "none";//pointerEvents穿透屬性 none指不到
-  }//使用 classList 屬性是取得元素 Class 的一種便利方式
+e.preventDefault();
 }
-
-
-
 
 function drop(e){  //e.target代表放置區域的DOM本身
-  e.preventDefault();
-  let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
+e.preventDefault();
 
-
-  e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
-  e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
-
-  let img = document.getElementById(`img${imgNum-1}`);
-
-
-  let x = e.offsetX;
-  let y = e.offsetY;
-  alert(x);
-  alert(y);
-
-  img.style.position = "absolute";
-  img.style.top = y;
-  img.style.left = x;
-}
-
-
-
-
-
-
-
-
-var clickCount = 0;  //要先宣告在外面，才能一直被加，放在function裡執行完畢資料就會消失
-function degChange(e){
-  clickCount ++; 
-  
-  let cube = document.querySelector('.cube');
-  if(clickCount == 12){
-    clickCount = 0;
-  }
-  let degNow = 120 + 30 * clickCount;
-  cube.style.transform = `rotateX(-30deg) rotateY(${degNow}deg)`;
+let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
+e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
 }
 
 
 window.addEventListener('load',doFirst);
+
+
+
+
+
