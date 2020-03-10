@@ -429,17 +429,19 @@ div.tab_container .tab_content h2 {
   width: 100%;
 }
 
-.prdt_img > table.small_img {
+.prdt_img > .small_img {
   width: 100%;
   background-color: white;
 }
 
-.prdt_img > table.small_img td {
-  width: 25%;
+.prdt_img > .small_img div.small_imgs_list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 
-.prdt_img > table.small_img td img {
-  width: 100%;
+.prdt_img > .small_img div.small_imgs_list img.sm_photo {
+  width: 24%;
 }
 
 .prdt_text {
@@ -480,16 +482,14 @@ p.introduce {
   margin: 0px;
 }
 
-#howmany {
-  width: 30px;
-  background-color: white;
-  border: 1px solid #CCCBCF;
+input#howmany {
+  width: 40px;
+  font-size: 26px;
   padding: 10px;
 }
 
 button.count {
   width: 40px;
-  background-color: #CCCBCF;
   padding: 5px 10px;
 }
 
@@ -728,7 +728,7 @@ div.each_comment img.accuse_icon {
   border-radius: 10px;
   font-size: 1.25rem;
   min-width: 120px;
-  width: 120px;
+  width: 140px;
   color: #ffffff;
   background-color: #1F7962;
   -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
@@ -768,11 +768,6 @@ div.each_comment img.accuse_icon {
 
 .green_btn:hover {
   text-indent: 30px;
-  padding: 11.5px 0px;
-}
-
-.shopping_cart_btn:hover {
-  font-size: 18px;
 }
 
 .green_btn:hover:before {

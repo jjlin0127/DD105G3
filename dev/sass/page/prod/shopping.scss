@@ -131,6 +131,7 @@ button.count{
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
+    font-family: "Noto Sans TC", sans-serif;
     min-width: 120px;
     width: 120px;
     color: #141414;
@@ -199,6 +200,7 @@ button.count{
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
+    font-family: "Noto Sans TC", sans-serif;
     min-width: 120px;
     width: 120px;
     color: #ffffff;
@@ -208,7 +210,7 @@ button.count{
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
     display: inline-block;
-    margin: 10px;
+    margin: 6px;
   }
     
     .orange_btn:before {
@@ -261,8 +263,9 @@ button.count{
     border-width: 0;
     border-radius: 10px;
     font-size: 1.25rem;
+    font-family: "Noto Sans TC", sans-serif;
     min-width: 120px;
-    width: 120px;
+    width: 140px;
     color: #ffffff;
     background-color: #1F7962;
     -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
@@ -270,7 +273,7 @@ button.count{
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
     display: inline-block;
-    margin: 10px;
+    margin: 6px;
   }
   
   .green_btn:before {
@@ -303,11 +306,7 @@ button.count{
   .green_btn:hover {
     text-indent: 30px;
   }
-  .shopping_cart_btn:hover{
-    //↓↓↓針對放入購物車的按鈕
-        font-size: 18px;
-        padding: 11.5px 0px;
-  }
+
   .green_btn:hover:before {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
