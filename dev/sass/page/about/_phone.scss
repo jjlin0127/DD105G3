@@ -1,9 +1,17 @@
 // $phone: 376px;
 @include respond(phone) {
-    img.Tao{
+    .sections {
+        height:100vh;
+    }
+
+    img.Tao {
         width: 40%;
     }
+
     .section {
+        width: 100%;
+
+        // height:100vh;
         .cloud1 {
             top: 100px;
         }
@@ -15,9 +23,11 @@
         .section_2 {
             width: 75%;
             text-align: left;
-            .section__title{
-               left:25%;
+
+            .section__title {
+                left: 25%;
             }
+
             .ball {
                 display: none;
             }
@@ -25,8 +35,8 @@
 
         .fruit_land {
             .fruits {
-                
-               
+
+
                 display: none;
             }
 
@@ -41,8 +51,8 @@
                 top: 210px;
             }
 
-            .windRotate{
-                top:210px;
+            .windRotate {
+                top: 210px;
             }
         }
     }

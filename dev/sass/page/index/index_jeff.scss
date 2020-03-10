@@ -1,5 +1,4 @@
 // Jeff的首頁-----------------------------------------
-
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
@@ -14,7 +13,7 @@
 
 
 body {
-    // background-color: #fff;
+
     // background-image: url();
     background: linear-gradient(270deg, #b0fbfb, #defcdf);
 }
@@ -84,9 +83,10 @@ section {
 
                 @include btn_link(150px);
                 margin: 0 auto;
-                a{
+
+                a {
                     text-decoration: none;
-                    color:#ffffff;
+                    color: #ffffff;
                 }
             }
 
@@ -94,86 +94,22 @@ section {
                 animation: land 3s linear infinite alternate;
             }
 
-            .fruitsInBasket {
-                width: 450px;
-                height: 300px;
-                position: absolute;
-                left: 480px;
-                top: 50px;
-                z-index: -1;
-
-                // border: 1px solid orange;
-                img:nth-child(1) {
-                    position: absolute;
-                    left: 10px;
-                    top: 10px;
-                    width: 100px;
-                    z-index: 1;
-                    animation: fruitsInBasket 2s linear 1s infinite alternate;
-                    //    animation: name duration timing-function delay iteration-count direction fill-mode;
-                }
-
-                img:nth-child(2) {
-                    position: absolute;
-                    left: 90px;
-                    width: 110px;
-                    z-index: 2;
-                    animation: fruitsInBasket 3.5s linear infinite alternate;
-                }
-
-                img:nth-child(3) {
-                    position: absolute;
-                    left: 150px;
-                    width: 100px;
-                    z-index: 1;
-                    animation: fruitsInBasket 8s linear infinite alternate;
-                }
-
-                img:nth-child(4) {
-                    position: absolute;
-                    left: 180px;
-                    width: 120px;
-                    z-index: 2;
-                    animation: fruitsInBasket 7s linear infinite alternate;
-                }
-
-                img:nth-child(5) {
-                    position: absolute;
-                    left: 250px;
-                    width: 100px;
-                    z-index: 1;
-                    animation: fruitsInBasket 6s linear infinite alternate;
-                }
-
-                img:nth-child(6) {
-                    position: absolute;
-                    left: 300px;
-                    width: 100px;
-                    z-index: 2;
-                    animation: fruitsInBasket 9s linear infinite alternate;
-                }
-
-                img:nth-child(7) {
-                    position: absolute;
-                    left: 340px;
-                    width: 125px;
-                    z-index: 2;
-                    animation: fruitsInBasket 5s linear infinite alternate;
-                }
 
 
 
-            }
+
+
         }
 
         //parallax
         .skyFruits {
             width: 100%;
             height: 100%;
-            position: absolute;
-            // border: 1px solid green;
+            position: relative;
+            border: 1px solid green;
 
             #scene {
+               
 
                 //天空葡萄
                 .layer1>img {
@@ -326,4 +262,48 @@ section {
 
 
 
+}
+
+
+@import "../../modules/rwd";
+
+
+@media all and (max-width: 768px) {
+    .skyFruits {
+        #scene {
+            display: none;
+
+        }
+    }
+
+}
+
+
+
+//768px
+@include respond(ipadpro) {
+    .skyFruits {
+        #scene .layer1>img {
+            display: none;
+
+        }
+    }
+}
+
+
+//576px
+@include respond(ipad) {
+    .skyFruits {
+        #scene .layer1>img {
+            display: none;
+        }
+    }
+}
+
+@include respond(phone) {
+    .skyFruits {
+        #scene .layer1>img {
+            display: none;
+        }
+    }
 }

@@ -1,3 +1,10 @@
+
+
+var scene = document.getElementById('scene')
+var parallax = new Parallax(scene);
+
+
+
 //首頁水果飄
 $(document).ready(function () {
 
@@ -412,3 +419,16 @@ $(document).ready(function () {
     //  .setPin('html')
     
     // }
+
+
+
+//停止吉祥物路徑
+function stop_tweenmax() {
+    if (screen.width > 1024) {
+        // setTween(choco_black);
+    } else {
+        TweenMax.killTweensOf('.choco_black');
+
+    }
+}
+window.addEventListener('load', stop_tweenmax);
