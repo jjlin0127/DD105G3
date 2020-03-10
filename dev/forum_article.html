@@ -198,13 +198,13 @@
         function socialBtnCheck(){
             this.classList.toggle('checked');
             if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
-                alert("收藏成功！");
+                alert("收藏話題成功！");
             }else if(this.classList.contains('favoriteBtns')){
-                alert("已取消收藏！");
+                alert("已取消收藏話題！");
             }else if(this.classList.contains('subscriptBtns') && this.classList.contains('checked')){
-                alert("訂閱成功！");
+                alert("訂閱作者成功！");
             }else if(this.classList.contains('subscriptBtns')){
-                alert("已取消訂閱！");
+                alert("已取消訂閱作者！");
             }
         }
 
@@ -214,7 +214,6 @@
             reportBox.classList.remove('hidden')
 
             document.getElementById('cancel_report_btn').addEventListener('click', function(e){
-                e.target.preventDefault();
                 reportBox.classList.add('hidden')
                 this.classList.toggle('checked');
             });
