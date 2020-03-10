@@ -1,10 +1,4 @@
 $(document).ready(function(e){
-<<<<<<< HEAD
-=======
-
-  $('.cube').css('transform','rotateX(-30deg) rotateY(120deg)'); //一開始要立體的角度
-
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
   $('.for-front').click(function(e){ //如果label按鈕被點擊
     $('.cube-face-front').siblings().removeClass('checked'); //其他同層則移除.checked
     $('.cube-face-front').addClass('checked'); //盒子的面就加上.checked
@@ -41,16 +35,9 @@ $(document).ready(function(e){
     $('.cube').css('transform','rotateX(0deg) rotateY(-90deg)')
   })
 
-<<<<<<< HEAD
   $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
     $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
   })
-=======
-
-  // $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
-  //   $('.cube').css('transform','rotateX(-30deg) rotateY(110deg) ') //盒子旋轉成三個面都看得到
-  // })
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
 
   
   // tab切換標籤
@@ -119,14 +106,6 @@ colorPicker.on('color:change', function(color) {
 function doFirst(){
 //先跟畫面產生關聯，再建事件聆聽的功能
 
-<<<<<<< HEAD
-=======
-
-// 監聽：旋轉按鈕被點擊的話，就改變禮盒角度
-let rotateBtn = document.querySelector('.for-rotate-cube');
-rotateBtn.addEventListener('click',degChange);
-
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
 //圖片上傳的change事件
 document.getElementById('theFile').onchange = fileChange; 
 
@@ -156,23 +135,15 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
 });
 }
 
-<<<<<<< HEAD
-=======
 
-
-<<<<<<< HEAD
-
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
-=======
 var imgNum = 1;
->>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
+
 function dragstart(e){  //e.target代表圖片的DOM本身
 let img = e.target.src;  //取得圖片路徑
 
 let data = `<img width="50px" src="${img}" id="img${imgNum}">`;  //製作img標籤字串
 e.dataTransfer.setData('image/jpeg',data);
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 }
 
 function dragover(e){
@@ -188,13 +159,13 @@ e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM�
 
 
 window.addEventListener('load',doFirst);
-=======
+
 e.dataTransfer.setData("offsetx", e.offsetX);
 e.dataTransfer.setData("offsety", e.offsetY);
-=======
+
 
 imgNum++;
->>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
+
 }
 
 function dragover(e){
@@ -229,21 +200,7 @@ function drop(e){  //e.target代表放置區域的DOM本身
   img.style.top = y;
   img.style.left = x;
 }
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
 
-
-
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
-=======
-
-
-
-
->>>>>>> e6cbfee870521c1a1c8e8ce67b5eedf4557f5e79
 var clickCount = 0;  //要先宣告在外面，才能一直被加，放在function裡執行完畢資料就會消失
 function degChange(e){
   clickCount ++; 
@@ -258,4 +215,4 @@ function degChange(e){
 
 
 window.addEventListener('load',doFirst);
->>>>>>> 6f49b77d50069adfd005e3927ec1a033964af516
+
