@@ -55,19 +55,19 @@
                         </div>
                         <div class="favoriteAndReport">
                             <div class="postfunc like">
-                                <i class="socialBtns likeBtns"></i>
+                                <i></i>
                                 <span class="tooltiptext">愛心</span>
                             </div>
                             <div class="postfunc favorite">
-                                <i class="socialBtns favoriteBtns"></i>
+                                <i></i>
                                 <span class="tooltiptext">收藏</span>
                             </div>
                             <div class="postfunc subscript">
-                                <i class="socialBtns subscriptBtns"></i>
+                                <i></i>
                                 <span class="tooltiptext">訂閱</span>
                             </div>
                             <div class="postfunc report">
-                                <i class="reportBtns"></i>
+                                <i></i>
                                 <span class="tooltiptext">檢舉</span>
                             </div>
                         </div>
@@ -95,11 +95,11 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
-                                    <i class="reportBtns"></i>
+                                    <i></i>
                                     <span class="tooltiptext">檢舉</span>
                                 </div>
                             </div>
@@ -125,11 +125,11 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
-                                    <i class="reportBtns"></i>
+                                    <i></i>
                                     <span class="tooltiptext">檢舉</span>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="comment_zone">
                         <!-- <p>我要留言</p> -->
-                        <form method="post" action="" class="comment_form">
+                        <form action="" class="comment_form">
                             <textarea name="" id="" maxlength="350" placeholder="最多輸入300個字"></textarea>
                             <div class="comment_btns">
                                 <button type="submit" class="comment_submit_btn">發表留言</button>
@@ -147,80 +147,10 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- popbox start -->
-        <div id="reportBox" class="reportBox hidden">
-            <form method="post" action="">
-                <h5>檢舉原因</h5>
-                <div class="options_set set_report_reasons"> 
-                    <div class="option">
-                        <input type="radio" name="set_report_reason" id="abuse">
-                        <label for="abuse">中傷、歧視或謾罵他人</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" name="set_report_reason" id="spamming">
-                        <label for="spamming">惡意洗版、重複張貼</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" name="set_report_reason" id="intense">
-                        <label for="intense">含色情、血腥或暴力等內容</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" name="set_report_reason" id="other">
-                        <label for="other">其他原因</label>
-                    </div>
-                    <div class="reportBox_btns">
-                        <button type="submit" id="submit_report_btn">送出</button>
-                        <a href="forum_article.html" id="cancel_report_btn">取消</a>
-                    </div>
-                </div>
-            </form>
         </div>
-        <!-- popbox end -->
     </div>
     @@include('./layout/footer.html') 
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script>
-        //  social btns toggle css-checked
-        function doFirst(){
-            let socialBtns = document.getElementsByClassName('socialBtns');
-            for(let i=0; i<socialBtns.length; i++){
-                socialBtns[i].addEventListener('click', socialBtnCheck);
-            }
-
-            let reportBtns = document.getElementsByClassName('reportBtns');
-            for(let i=0; i<reportBtns.length; i++){
-                reportBtns[i].addEventListener('click', reportPost);
-            }
-        }
-
-        function socialBtnCheck(){
-            this.classList.toggle('checked');
-            if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
-                alert("收藏成功！");
-            }else if(this.classList.contains('favoriteBtns')){
-                alert("已取消收藏！");
-            }else if(this.classList.contains('subscriptBtns') && this.classList.contains('checked')){
-                alert("訂閱成功！");
-            }else if(this.classList.contains('subscriptBtns')){
-                alert("已取消訂閱！");
-            }
-        }
-
-        function reportPost(){
-            this.classList.toggle('checked');
-            let reportBox = document.getElementById('reportBox');
-            reportBox.classList.remove('hidden')
-
-            document.getElementById('cancel_report_btn').addEventListener('click', function(e){
-                e.target.preventDefault();
-                reportBox.classList.add('hidden')
-                this.classList.toggle('checked');
-            });
-        }
-
-        window.addEventListener('load', doFirst);
-    </script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 // Jeff的首頁-----------------------------------------
+
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
@@ -13,7 +14,7 @@
 
 
 body {
-
+    // background-color: #fff;
     // background-image: url();
     background: linear-gradient(270deg, #b0fbfb, #defcdf);
 }

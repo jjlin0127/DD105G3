@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-商品詳情</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <!-- <link rel="stylesheet" href="./discuss.css"> -->
-    <!-- <link rel="stylesheet" href="./css/detail.css">  -->
-    <!-- <link rel="stylesheet" href="./css/detail_media.css">  -->
-    <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
-    <link rel="stylesheet" href="./sass/page/prod/detail_media.css"> 
+    <link rel="stylesheet" href="./css/detail.css"> 
+    <link rel="stylesheet" href="./css/detail_media.css"> 
+    <!-- <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
+    <link rel="stylesheet" href="./sass/page/prod/detail_media.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     
@@ -22,19 +21,19 @@
     <header>
         <div class="header__container">
             <span class="logo">
-                <a href="index.html"><img src="./images/logo2.png"></a>
+                <a href="index.html"><img src="./images/Logo.svg"></a>
             </span>
             <div class="navList">
-                <a class="navItem" href="#">關於我們<i class="fas fa-seedling"></i></a>
-                <a class="navItem focus" href="product.html">特色果甘<i class="fas fa-apple-alt"></i></a>
-                <a class="navItem" href="#">客製果甘<i class="fas fa-lemon"></i></a>
-                <a class="navItem" href="#">折扣遊戲<i class="fas fa-carrot"></i></a>
-                <a class="navItem" href="#">果甘話區<i class="fas fa-leaf"></i></a>
-            </div>
-            
+                <a class="navItem @@focus01" href="about.html">關於我們 <i class="fas fa-seedling"></i></a>
+                <a class="navItem @@focus02" href="product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
+                <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
+                <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
+                <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a>
+                <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
+            </div> 
             <div class="navList_2">
-                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
-                <a class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>              
+                <a class="navItem_2" href="login.html"><i class="fas fa-user-circle"></i></a>
+                <a class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>               
             </div>
         </div>
     </header>
@@ -49,31 +48,38 @@
 
     <div class="detail_wrapper">
         <div class="prdt_img">
-            <div class="large_img" id="large">
-                <img src="images/prdt/strawberry03.jpg">
+            <div class="large_img">
+                <!-- ↓↓↓記得id="large"要下在圖片本身-->
+                <img  id="large" src="images/prdt/strawberry03.png">
             </div>
             <div class="small_img">
                 <div class="small_imgs_list">
-                    <img src="images/prdt/strawberry03.jpg" class="sm_photo">
+                    <img src="images/prdt/strawberry03.png" class="sm_photo">
                     <img src="images/prdt/strawberry02.jpg" class="sm_photo">
-                    <img src="images/prdt/strawberry03.jfif" class="sm_photo">
-                    <img src="images/prdt/strawberry04.jfif" class="sm_photo">
+                    <img src="images/prdt/strawberry05.jpg" class="sm_photo">
+                    <img src="images/prdt/strawberry01.jpg" class="sm_photo">
                 </div>
             </div>
             <script>
                 function showLarge(e){
-                    let large = document.getElementById("large")	
+                    
+                    let large = document.getElementById("large");
+                    if(e.target.classList.contains("sm_photo")){
+                        console.log(large.src);
                         large.src = e.target.src;
+                        console.log(e.target.src);
+                        console.log(large.src);
+                    }	
+                        
                 }
 
-                function init(){
+                window.addEventListener("load", function(){
                     let imgs = document.getElementsByClassName("sm_photo");
 
                     for( let i=0; i<imgs.length; i++){
                         imgs[i].onclick = showLarge;
-                    }
-                }
-                window.onload = init;
+                    }                    
+                });
             </script>
         </div> <!--prdt_img的結尾標籤-->
 
@@ -87,23 +93,23 @@
             <p class="introduce" style="line-height: 1.4;">基本介紹：草莓成熟後的果實富含有糖、蛋白質、粗纖維；其中維生素A也特別高，超過了橘子、芒果；還含有礦物質、蛋白質、鈣、磷、鐵等營養成分。</p>
             <div class="buy">
                 <h4>售價:<span class="price_label">340點</span></h4>
-                <div class="quantity">
+                <!-- <div class="quantity">
                     <h4>數量:</h4>
                     <button class="count" id="minus">-</button>
                     <div calss="amount" id="howmany">1</div>
                     <button class="count" id="add">+</button>
-                </div>
+                </div> -->
                 <div class="purchase">
-                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg">
+                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
                     <br>
-                    <button class="orange_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg">
+                    <button class="orange_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon">
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
         <table class="previous_and_next">
             <tr>
                 <td><h4><a href="#" class="a_previous_and_next"><img src="images/prdt/icon/icon_previous.svg">上一筆產品：香蕉</a></h4></td>
-                <td class="prod_next"><h4><a href="#" class="a_previous_and_next">下一筆產品：草莓<img src="images/prdt/icon/icon_next.svg"></a></h4></td>
+                <td class="prod_next"><h4><a href="#" class="a_previous_and_next">下一筆產品：芭樂<img src="images/prdt/icon/icon_next.svg"></a></h4></td>
             </tr>
         </table>
         <hr size="4px" align="center" width="100%">

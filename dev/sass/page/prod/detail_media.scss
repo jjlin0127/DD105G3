@@ -141,4 +141,9 @@
             font-size: 0.8rem;
         }
     }
+
+    //因為green_btn的按鈕比較長，所以要調整左邊的邊界(原本是10px)，以免手機上跑版
+    button.green_btn{
+        margin-left: 0px;
+    }
 }

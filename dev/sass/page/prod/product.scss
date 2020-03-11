@@ -400,6 +400,20 @@ div.fresh_fruit:hover .rada{
     text-indent: 0;
   }
 
+  div.newItem{
+    div.content{
+      border: 1px solid red;
+      img{
+        width:20px;
+      }
+      span{
+        margin:10px;
+        border: 1px solid green;
+      }
+    }
+  }
+
+
 @import "../../modules/rwd";
 @import "../../page/forum/ipadpro";
 @import "../../page/forum/ipad";

@@ -391,10 +391,25 @@ h3.under_carousel {
   text-align: center;
 }
 
-div.text_underdish {
+div.text_oncard {
   padding: 0px 20px;
   font-size: 18px;
   line-height: 1.4;
+}
+
+div.text_oncard span.name {
+  margin-right: 20px;
+}
+
+div.text_oncard span {
+  font-size: 22px;
+}
+
+div.text_oncard img.icon {
+  width: 30px;
+  position: relative;
+  top: 6px;
+  margin-left: -3px;
 }
 
 ul.wrapper_cards {
@@ -545,7 +560,7 @@ div.fresh_fruit:hover .rada {
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
   display: inline-block;
-  margin: 10px;
+  margin: 10px auto 0pc auto;
 }
 
 .orange_btn:before {
@@ -597,7 +612,7 @@ div.fresh_fruit:hover .rada {
   border-radius: 10px;
   font-size: 1.25rem;
   min-width: 120px;
-  width: 120px;
+  width: 140px;
   color: #ffffff;
   background-color: #1F7962;
   -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
@@ -605,7 +620,7 @@ div.fresh_fruit:hover .rada {
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
   display: inline-block;
-  margin: 10px;
+  margin: 10px auto 0pc auto;
 }
 
 .green_btn:before {
@@ -640,6 +655,71 @@ div.fresh_fruit:hover .rada {
 }
 
 .green_btn:hover:before {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  text-indent: 0;
+}
+
+.link_btn {
+  text-align: center;
+}
+
+.link_btn {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0px;
+  border-width: 0;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  min-width: 120px;
+  width: 120px;
+  color: #ffffff;
+  background-color: #E08C34;
+  -webkit-box-shadow: 2px 2px 5px rgba(244, 140, 52, 0.5);
+  box-shadow: 2px 2px 5px rgba(244, 140, 52, 0.5);
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  display: inline-block;
+  margin: 10px;
+}
+
+.link_btn:before {
+  content: "\f054";
+  font-family: FontAwesome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 50% 50% 0;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.link_btn:hover {
+  text-indent: 30px;
+}
+
+.link_btn:hover:before {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
   text-indent: 0;
@@ -895,4 +975,3 @@ div.fresh_fruit:hover .rada {
   }
 }
 /*# sourceMappingURL=product.css.map */
-

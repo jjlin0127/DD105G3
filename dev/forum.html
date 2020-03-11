@@ -300,71 +300,93 @@
                         <button id="closeBtn"></button>
                         <form action="" class="sort_form">
                             <h5>話題排序</h5>
-                            <div class="sort_select">
-                                <select name="sort_by" id="sort_by" class="sort_by">
-                                    <option>請選擇方式...</option>
-                                    <option value="hot">熱門</option>
+                            <label for="sort_by">
+                                <select name="sort_by" name="sort-by">
+                                    <option value="hot" selected>熱門</option>
                                     <option value="time">最新</option>
                                 </select>
-                            </div>
+                            </label>
                         </form>
-                    </div>      
+                    </div>    
                     <div class="forum_filter">
                         <form action="post" class="filter_form">
                             <h5>分類搜尋</h5>
-                            <p>選擇話題種類</p>
-                            <div class="options topic_options"> 
+                            <div class="topic">
+                                <p>選擇話題種類</p>
                                 <div class="option">
-                                    <input type="checkbox" name="topic_option" id="digestion">
-                                    <label for="digestion">幫助消化</label>
+                                    <label for="digestion">
+                                        <input type="checkbox" name="digestion" id="digestion">
+                                        幫助消化
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="topic_option" id="cvd">
-                                    <label for="cvd">保護血管</label>
+                                    <label for="cvd">
+                                        <input type="checkbox" name="cvd" id="cvd">
+                                        保護血管
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="topic_option" id="brain">
-                                    <label for="brain">活化大腦</label>
+                                    <label for="brain">
+                                        <input type="checkbox" name="brain" id="brain">
+                                        活化大腦
+                                    </label>
                                 </div>
                             </div>
-
-                            <p>選擇果甘種類</p>
-                            <div class="options fruit_options">                             
+                            <div class="fruit">
+                                <p>選擇果甘種類</p>
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="star">
-                                    <label for="star">楊桃</label>
+                                    <label for="star">
+                                        <input type="checkbox" name="star" id="star">
+                                        楊桃
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="pineapple">
-                                    <label for="pineapple">鳳梨</label>
+                                    <label for="pineapple">
+                                        <input type="checkbox" name="pineapple" id="pineapple">
+                                        鳳梨
+                                    </label>
                                 </div>                           
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="dragon">
-                                    <label for="dragon">火龍果</label>
-                                </div>
-                                <div class="option">                                    
-                                    <input type="checkbox" name="fruit_option" id="banana">
-                                    <label for="banana">香蕉</label>
-                                </div>
-                                <div class="option">                                   
-                                    <input type="checkbox" name="fruit_option" id="strawberry">
-                                    <label for="strawberry">草莓</label>
+                                    <label for="dragon">
+                                        <input type="checkbox" name="dragon" id="dragon">
+                                        火龍果
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="hawthorn">
-                                    <label for="guava">芭樂</label>
-                                </div>
-                                <div class="option">                                   
-                                    <input type="checkbox" name="fruit_option" id="longan">
-                                    <label for="mango">芒果</label>
+                                    <label for="banana">
+                                        <input type="checkbox" name="banana" id="banana">
+                                        香蕉
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="appale">
-                                    <label for="appale">蘋果</label>
+                                    <label for="strawberry">
+                                        <input type="checkbox" name="strawberry" id="strawberry">
+                                        草莓
+                                    </label>
                                 </div>
                                 <div class="option">
-                                    <input type="checkbox" name="fruit_option" id="blueberry">
-                                    <label for="blueberry">藍莓</label>
+                                    <label for="hawthorn">
+                                        <input type="checkbox" name="hawthorn" id="hawthorn">
+                                        山楂
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label for="longan">
+                                        <input type="checkbox" name="longan" id="longan">
+                                        桂圓
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label for="appale">
+                                        <input type="checkbox" name="appale" id="appale">
+                                        蘋果
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label for="blueberry">
+                                        <input type="checkbox" name="blueberry" id="blueberry">
+                                        藍莓
+                                    </label>
                                 </div>
                             </div>
                             <input type="submit" value="搜尋" class="search_btn" id="search_btn">
@@ -637,31 +659,31 @@
     @@include('./layout/footer.html') 
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     <script>
-        function doFirst(){
+        function init() {
             document.getElementById('angle_left').addEventListener('click', showPrev);
             document.getElementById('angle_right').addEventListener('click', showNext);
             document.getElementById('panelBtn').addEventListener('click', showPanel);
         }
 
         currentDeg = 0;
-        function showNext(){
+        function showNext() {
             currentDeg = currentDeg - 60;
             document.getElementsByClassName('carousels')[0].style.transform = 'translate(-50%,-50%) rotateY(' + currentDeg + 'deg)';
         }
 
-        function showPrev(){
+        function showPrev() {
             currentDeg = currentDeg + 60;
             document.getElementsByClassName('carousels')[0].style.transform = 'translate(-50%,-50%) rotateY(' + currentDeg + 'deg)';
         }
 
-        function showPanel(){
+        function showPanel() {
             document.getElementsByClassName('sortAndFilter')[0].classList.add("show");
             document.getElementById('closeBtn').addEventListener('click', function(){
                 document.getElementsByClassName('sortAndFilter')[0].classList.remove("show");
             });
         }
 
-        window.addEventListener('load', doFirst);
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>

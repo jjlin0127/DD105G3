@@ -5,16 +5,150 @@
 @import '../../layout/footer';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
-// @import '../../layout/tab';
-// @import '../../page/member/order';
+@import '../../layout/tab';
+@import '../../page/member/order';
 
 * {
     box-sizing: border-box;
 }
 
+
 body {
-    @include bgc_img(index_bgc_evening2);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 105%;
+    // background-color: #fff;
+    // background-image: url();
+    // background: linear-gradient(270deg, #b0fbfb, #defcdf);
+    // background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    // background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+section {
+    width: 100%;
+    // height: 200vh;
+    // border: 1px solid gray;
+}
+
+
+//會員頁面共用
+.wrap {
+    width: 1200px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+.contain {
+    // border: 1px solid peru;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title_member {
+    @include title(3.5px, solid, #a6c165, 10px);
+    margin: 0 auto;
+}
+
+// -- 會員資料------------------------------------ --
+.member_info {
+    border: 2px solid #de8c3e;
+    border-radius: 30px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: relative;  
+    overflow: hidden;
+}
+
+.member_info::after {
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+
+}
+
+.member_info_left {
+    // border: 1px solid deeppink;
+    width: 40%;
+
+    .photo {
+        border: 2px solid #de8c3e;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 10%;
+        background-image: url(./images/GF3ict.jpg);
+    }
+}
+
+.member_info_right {
+    // border: 1px solid green;
+    width: 60%;
+    
+    div {
+        border-radius: 20px;
+        width: 90%;
+        height: 30px;
+        background-color: #de8c3e;
+        color: #fff;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        line-height: 1.7rem;
+    }
+    
+    form {
+        // border: 2px solid peru;
+        border-radius: 30px;
+        width: 90%;
+        height: 250px;
+        margin: 0 auto;
+        padding: 30px;
+        
+        p {
+            display: block;
+            margin: 0 auto;
+
+            .member_input {
+                width: 50%;
+            }
+
+            span {
+                border: 1px solid peru;
+                width: 30px;
+            }
+        }
+    }
+
+    .member_point {
+        // border: 1px solid red;
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.5rem;
+    }
+    
+}
+
+// -- 會員訂單與我的收藏------------------------------------ --
+
+
+div.tab_container .tab_content {
+    padding: 20px;
+}
+
+div.tab_container .tab_content h2 {
+    margin: 0 0 20px;
 }

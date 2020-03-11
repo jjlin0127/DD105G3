@@ -21,51 +21,20 @@
         text-align: center;
     }
     .box_contain{
-        width: 100%;      
+        width: 100%;
+        
         .outer{
-            position: relative;
             width: 80%;
             border: 5px solid blue;
-            // height: 600px;
+            position: relative;  
+            height: 600px;
             background-color: #fff;
             background-image: url('../../../images/box/box_bg_material.jpg');
             border: 3px dashed #a6c165;
             margin: 0 auto;
             margin-top: 50px;
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
-            padding: 80px 0px 50px 0px;
-            h4{
-                border: solid 1px red;
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0px;
-            }
-            .step_wrap{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 30px;
-                border: 2px solid purple;
-                .step{      
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin: 20px;
-                    .circle{
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        background-color: $btnSecBgColor;
-                        text-align: center;
-                        line-height: 2;
-                        color: white;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
             .bow-knot-left{
                 width: 200px;
                 position: absolute;
@@ -86,43 +55,11 @@
                     width: 100%;
                 }
             }
-            .button-wrap{
-                border: 1px solid red;
-                height: auto;
-                font-size: 0;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                label{
-                    // display: inline-block;
-                    // width: 50px;
-                    // height: 50px;
-                    // margin: 0px 5px 0px 5px;
-                    // color: #ffffff;
-                    // border-radius: 20px;
-                    // font-size: 16px;
-                    // font-weight: bold;
-                    // line-height: 52px;
-                    // text-align: center;
-                    // text-decoration: none;
-                    // text-transform: uppercase;
-                    // cursor: pointer;
-                    // -webkit-transition: .3s;
-                    // transition: .3s;
-                    // background-color: $btnFuncBgColor;
-                    // -webkit-transform: translateY(0px);
-                    // transform: translateY(0px);
-                    margin: 5px;
-                    @include btn_primary(150px);
-                    &:hover{
-                        background-color: $btnFuncHovBgColor;
-                    }
-                }
-            }
-            .box{ 
-                width: 400px;
-                border: solid 1px blue;
+            .left_box{
+                width: 70%;        
+                // border: solid 1px red;
                 .cube-wrap{
+                    position: relative;
                     height: 50%;
                     -webkit-transition: .6s;
                     transition: .6s;
@@ -130,8 +67,6 @@
                             perspective: 1000;
                     -webkit-perspective-origin: 50% 50%;
                     perspective-origin: 50% 50%;
-                    -webkit-transform: scale(1.3);
-                    transform: scale(1.3);
                     .cube{
                         position: absolute;
                         top: 0;
@@ -149,13 +84,11 @@
                                 transform-origin: 50% 50% -75px;
                         -webkit-backface-visibility: visible;
                                 backface-visibility: visible;
-                        
                         .cube-face{
                             position: relative;
-                            background-color: white;
+                            background-color: #acd968;
                             outline: 1px solid rgba(0, 0, 0, 0.1);
                             outline-offset: -1px;
-                            
                             i{
                                 position: absolute;
                                 top: 0;
@@ -265,8 +198,8 @@
                 //     transform: rotateX(-30deg) rotateY(110deg) rotateZ(0deg);
                 // }
                 #zoom-cube:checked ~ .cube-wrap{
-                    -webkit-transform: scale(1.8);
-                    transform: scale(1.8);
+                    -webkit-transform: scale(1.4);
+                    transform: scale(1.4);
                 }
                 // #show-front:checked ~ .cube-wrap .cube{
                 //     -webkit-transform: rotateX(0) rotateY(0);
@@ -298,7 +231,41 @@
                     left: 0;
                     opacity: 0;
                 }
-                
+                .button-wrap{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    // width: 560px;
+                    height: 50px;
+                    bottom: 30px;
+                    margin: 0 auto;
+                    font-size: 0;
+                    text-align: center;
+                    label{
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        margin: 0px 5px 0px 5px;
+                        color: #ffffff;
+                        border-radius: 20px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        line-height: 52px;
+                        text-align: center;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        -webkit-transition: .3s;
+                        transition: .3s;
+                        background-color: $btnFuncBgColor;
+                        -webkit-transform: translateY(0px);
+                        transform: translateY(0px);
+                        &:hover{
+                            background-color: $btnFuncHovBgColor;
+                        }
+                    }
+                }
                 // 按鈕變色
                 #show-front:checked ~ .button-wrap .for-front,
                 #show-back:checked ~ .button-wrap .for-back,
@@ -311,9 +278,9 @@
                 }
             }
             .tab_wrap{
-                width: 300px;
-                border: solid 1px red;
-                margin: 0;
+                // border: solid 1px red;
+                margin-right: 5%;
+                width: 30%; 
                 .tab_container{
                     #tab1{
                         #picker{
@@ -334,7 +301,7 @@
                                 width: 60px;
                                 height: 60px;
                                 margin: 5px;
-                                border: 1px solid red;
+                                // border: 1px solid red;
                                 cursor: pointer;
                                 img{
                                     width: 100%;
@@ -369,31 +336,9 @@
             // transform: translateX(-50%); //按鈕置中
             // margin-top: 30px;
             // margin-bottom: 50px;
-
-            
-        }
-        .addCartBtn{
-
-            @include btn_link(150px);
-            margin:  30px auto 50px auto;
-
-            @include btn_primary(300px);
-            // margin-left: 50%;  //按鈕置中
-            // transform: translateX(-50%); //按鈕置中
-            // margin-top: 30px;
-            // margin-bottom: 50px;
-
         }
     }
 }
 
 @import '../../modules/rwd';
-
 @import 'latop-min.scss';
-
-@import 'latop-min.scss';
-@import 'ipadpro.scss';
-
-
-
-
