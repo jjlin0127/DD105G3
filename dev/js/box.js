@@ -124,10 +124,13 @@ colorPicker.on('color:change', function(color) {
 
 
 
-// ---------------------圖片拖曳------------------------------------------------
+// ---------------------圖片拖曳-------------------------------------------------------------------------
 
-var imgNum = 1;
+var dropCount = 1;
 var arrDropedImg = [];  //放從tab放到盒子上的img，因為動態生成的元素沒有辦法被抓，所以要改成陣列操作監聽
+
+//---------------------圖片按鈕-------------------------------------------
+
 
 function doFirst(){
 //先跟畫面產生關聯，再建事件聆聽的功能
@@ -145,20 +148,49 @@ function doFirst(){
     files[i].addEventListener('dragstart',dragstart);  //監聽img的dragstart事件
   }
 
-  // dragstart 事件(已經被放到盒子的圖)
-  // for(let i = 0; i < arrDropedImg.length; i++){
-  //   files[i].addEventListener('dragstart',dragstart2);  //監聽img的dragstart事件
-  // }
-
   // dragover/drop 事件(右邊tab裡的圖)
   let dropAreas = document.querySelectorAll('.cube-face'); // 抓拖曳放下的區域
   for(let i =0; i < dropAreas.length; i++){
     dropAreas[i].addEventListener('dragover',dragover); //放置區域監聽dragover事件
     dropAreas[i].addEventListener('drop',drop);  //放置區域監聽drop事件
     dropAreas[i].addEventListener('dragleave',dragleave);  
-    dropAreas[i].addEventListener('mouseenter', function wakeUp(e){
+
+    dropAreas[i].addEventListener('mouseenter', function wakeUp(e){ //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
       console.log('1234');
+      for(let i = 0; i < arrDropedImg.length; i++){
+        arrDropedImg[i].addEventListener('dragstart', function dragstart_2(e){
+          e.target.classList.add('select');  //drag時，會有select
+          e.dataTransfer.setData("text", "onSurface");  //在drop的時候，會用這個來判定圖片是否在盒子上
+          imgOnBox = this; //沒有加var 是全域變數 什麼時候都可以用 -> drop時可以用此抓取在箱子被drag的圖片
+        })
+      }
+      for(let i = 0; i < arrDropedImg.length; i++){
+        arrDropedImg[i].addEventListener('click',function(){  
+          e.target.classList.add('select'); 
+          
+        })
+      }
+
+      imgSelect = document.querySelector('.select');
+
+      large = document.getElementById('large');
+      // small = document.getElementById('small');
+      // turnleft = document.getElementById('turnleft');
+      // turnright = document.getElementById('turnright');
+      // deletebtn = document.getElementById('deletebtn');
+
+      
+      large.addEventListener('click', larger);
+      // small.addEventListener('click', smaller);
+      // turnleft.addEventListener('click', turnLeft);
+      // turnright.addEventListener('click', turnRight);
+      // deletebtn.addEventListener('click', deleteImg);
     });  
+
+    
+    
+
+    
   }
 }
 
@@ -183,16 +215,12 @@ function dragstart(e){  //e.target代表圖片的DOM本身
   // 分為兩種方法  1.資料單純放圖片的src，到drop再加工給更多屬性   2.將資料做成字串
   let data = e.target.src;  //方法1
   //--------------------------------方法2------------------------------------------------------------------------------------------------------
-  // let data = `<img width="50px" src="${img}" class="imgOnBox imgOnBox${imgNum}">`;  //製作img標籤字串(傳送的資料設定class：(將會)放在box上的圖片)
+  // let data = `<img width="50px" src="${img}" class="imgOnBox imgOnBox${dropCount}">`;  //製作img標籤字串(傳送的資料設定class：(將會)放在box上的圖片)
   //--------------------------------方法2------------------------------------------------------------------------------------------------------
 
   e.dataTransfer.setData('image/jpeg',data);
 }
 
-// function dragstart2(e){
-//   let data = e.target;
-//   e.dataTransfer.setData('image/jpeg',data);
-// }
 
 function dragover(e){
   e.preventDefault();
@@ -209,9 +237,14 @@ function dragleave(e){
 
 function drop(e){  //e.target代表放置區域的DOM本身
   e.preventDefault();
-  
-  //要是圖片是本來就在盒子上的，就
 
+  if (e.dataTransfer.getData('text') == "onSurface"){ //要是圖片是本來就在盒子上的，就執行這段
+    let x = e.offsetX;
+    let y = e.offsetY;
+    imgOnBox.style.top = y + "px";
+    imgOnBox.style.left = x + "px";
+    imgOnBox.classList.remove("select"); //drop完就移除select
+  }else{ //如果是從tab移入的圖片，就執行這段
     //--------------------------------字串方法----------------------------------------
     // let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
     // e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
@@ -222,24 +255,38 @@ function drop(e){  //e.target代表放置區域的DOM本身
     img.src = e.dataTransfer.getData('image/jpeg');  //取得src資料
     img.style.width = '50px'; //給寬度
     img.style.position = "absolute"; //才可以被定位在盒子
-    img.style.zIndex = imgNum; 
-    img.classList.add("imgOnBox");
-    img.classList.add(`imgOnBox${imgNum}`);
+    img.style.zIndex = dropCount; 
+    // img.classList.add("imgOnBox");  //可能不需要了
+    // img.classList.add(`imgOnBox${dropCount}`); //可能不需要了
     let x = e.offsetX;  //dropX位置 ＝ 相對盒子左上的x位置
     let y = e.offsetY; //dropY位置 ＝ 相對盒子左上的y位置
     img.style.top = y + "px"; 
     img.style.left = x + "px";
     img.style.transform = 'translateX(-50%) translateY(-50%)'; //會用圖片左上角定位，要移回本身的寬高
     this.appendChild(img);//把圖片塞進去
-    imgNum++;  //如果成功被drop，數字才會增加，這樣等等drag才會是下一個數字
+    dropCount++;  //如果成功被drop，數字才會增加，這樣等等drag才會是下一個數字
     arrDropedImg.push(img);//做一個陣列把動態添加元素的資料先存起來，之後統一操作
     //--------------------------------新增DOM，之後appendChild方法----------------------------------------
-  e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
   
+  } 
+  e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
 }
 
-window.addEventListener('load',doFirst);
-// ---------------------圖片拖曳------------------------------------------------
+
+
+
+
+// ---------------------圖片拖曳-------------------------------------------------------------------------
+
+
+
+function larger(e){
+  imgSelect.width *= 1.05;
+}
+
+
+
+
 
 
 
@@ -264,6 +311,4 @@ function degChange(e){
 
 
 
-// 抓盒子的面
-//箱子表面監聽
-    //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
+window.addEventListener('load',doFirst);
