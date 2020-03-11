@@ -6,10 +6,13 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-.wrapper_forum{
-    width: 100%;
+body{
     background-image: url("../../../images/forum/sky.jpg");
     background-size: cover;
+}
+
+.wrapper_forum{
+    width: 100%;
 }
 
 img.balloon1{

@@ -6,10 +6,13 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-.wrapper_article{
-    width: 100%;
+body{
     background-image: url("../../../images/forum/sky.jpg");
     background-size: cover;
+}
+
+.wrapper_article{
+    width: 100%;
 }
 
 .wrapper_article .article_container{
@@ -122,7 +125,7 @@
     display: inline-block;
 }
 
-.favoriteAndReport .postfunc > .socialBtns{
+.favoriteAndReport .postfunc > i{
     cursor: pointer;
     padding: 0 10px;
     border-radius: 100%;
@@ -271,6 +274,109 @@ form{
     display: inline-block;
     margin: 10px;
 }
+
+.reportBox{
+    display: block;
+    box-sizing: border-box;
+    width: 300px;
+    height: 280px;
+    padding: 15px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px rgba(150, 150, 150, 0.75);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.reportBox.hidden{
+    display: none;
+}
+
+.reportBox div{
+    margin: 10px 0;
+}
+
+.options_set{
+    margin-bottom: 10px;
+    
+    input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    }
+
+    label{
+        position: relative;
+        margin-right: 1em;
+        padding-left: 2em;
+        padding-right: 1em;
+        line-height: 1.75em;
+        cursor: pointer;
+        z-index: 1;
+
+        &:before{
+            box-sizing: border-box;
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            border: 2px solid #4c4948;
+            border-radius: .25em;
+            z-index: 0;
+        }
+    }
+
+    input[type="radio"] + label::before{
+        border-radius: 1em;
+    }
+
+    /* Checked */
+    input[type="radio"]:checked + label{
+        padding-left: 1em;
+        color: white;
+        &:before {
+            top: 0;
+            width: 100%;
+            height: 1.5em;
+            background: #4c4948;
+            z-index: -1;
+        }
+    }
+
+    /* Transition */
+    label,
+    label::before{
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+    }
+}
+
+.reportBox_btns{
+    text-align: center;
+
+    #submit_report_btn{
+        @include btn_primary(100px);
+        display: inline-block;
+        margin: 5px;
+        vertical-align: middle;
+    }
+    
+    a#cancel_report_btn{
+        text-decoration: none;
+        display: inline-block;
+        @include btn_secondary(100px);
+        margin: 5px;
+        vertical-align: middle;
+    }
+}
+
 
 @import "../../modules/rwd";
 @import "../../page/forum/ipad";
