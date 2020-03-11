@@ -1,42 +1,59 @@
+// ---------------------改變盒子角度、增減盒面class------------------------------------------------
 $(document).ready(function(e){
 
   $('.cube').css('transform','rotateX(-30deg) rotateY(120deg)'); //一開始要立體的角度
 
+  $('.for-rotate-cube').click(function(e){ 
+    e.preventDefault();  //取消預設行為 點了按鈕畫面才不會跳掉
+  })
+
+  // $('.for-zoom-cube').click(function(e){ 
+  //   e.preventDefault();
+  // })
+
   $('.for-front').click(function(e){ //如果label按鈕被點擊
+    e.preventDefault();
     $('.cube-face-front').siblings().removeClass('checked'); //其他同層則移除.checked
     $('.cube-face-front').addClass('checked'); //盒子的面就加上.checked
     $('.cube').css('transform','rotateX(0deg) rotateY(0deg)') //盒子旋轉到那面
   })
 
   $('.for-back').click(function(e){
+    e.preventDefault();
     $('.cube-face-back').siblings().removeClass('checked');
     $('.cube-face-back').addClass('checked');
     $('.cube').css('transform','rotateX(0deg) rotateY(180deg)')
   })
 
   $('.for-top').click(function(e){
+    e.preventDefault();
     $('.cube-face-top').siblings().removeClass('checked');
     $('.cube-face-top').addClass('checked');
     $('.cube').css('transform','rotateX(-90deg) rotateY(0deg)')
   })
 
   $('.for-bottom').click(function(e){
+    e.preventDefault();
     $('.cube-face-bottom').siblings().removeClass('checked');
     $('.cube-face-bottom').addClass('checked');
     $('.cube').css('transform','rotateX(90deg) rotateY(0deg)')
   })
 
   $('.for-left').click(function(e){
+    e.preventDefault();
     $('.cube-face-left').siblings().removeClass('checked');
     $('.cube-face-left').addClass('checked');
     $('.cube').css('transform','rotateX(0deg) rotateY(90deg)')
   })
 
   $('.for-right').click(function(e){
+    e.preventDefault();
     $('.cube-face-right').siblings().removeClass('checked');
     $('.cube-face-right').addClass('checked');
     $('.cube').css('transform','rotateX(0deg) rotateY(-90deg)')
   })
+
+  
 
 
   // $('.for-rotate-cube').click(function(e){  //旋轉的label按鈕被點擊
@@ -65,7 +82,7 @@ $(document).ready(function(e){
 
 )});
 
-
+// ---------------------盒子變色------------------------------------------------
 // 宣告顏色選擇器
 var colorPicker = new iro.ColorPicker("#picker", {
   // Set the size of the color picker
@@ -102,32 +119,47 @@ colorPicker.on('color:change', function(color) {
     right.style.backgroundColor = color.hexString;
   }
 });
+// ---------------------盒子變色------------------------------------------------
 
 
 
 
-// 圖片拖曳事件
+// ---------------------圖片拖曳------------------------------------------------
+
+var imgNum = 1;
+var arrDropedImg = [];  //放從tab放到盒子上的img，因為動態生成的元素沒有辦法被抓，所以要改成陣列操作監聽
+
 function doFirst(){
 //先跟畫面產生關聯，再建事件聆聽的功能
 
+  // 監聽：旋轉按鈕被點擊的話，就改變禮盒角度
+  let rotateBtn = document.querySelector('.for-rotate-cube');
+  rotateBtn.addEventListener('click',degChange);
 
-// 監聽：旋轉按鈕被點擊的話，就改變禮盒角度
-let rotateBtn = document.querySelector('.for-rotate-cube');
-rotateBtn.addEventListener('click',degChange);
+  //圖片上傳的change事件
+  document.getElementById('theFile').onchange = fileChange; 
 
-//圖片上傳的change事件
-document.getElementById('theFile').onchange = fileChange; 
+  // dragstart 事件(右邊tab裡的圖)
+  let files = document.querySelectorAll('.drag_img');  //抓img圖片
+  for(let i = 0; i < files.length; i++){
+    files[i].addEventListener('dragstart',dragstart);  //監聽img的dragstart事件
+  }
 
-// 拖曳事件
-let files = document.querySelectorAll('.drag_img');  //抓img圖片
-for(let i = 0; i < files.length; i++){
-  files[i].addEventListener('dragstart',dragstart);  //img圖片監聽dragstart事件
-}
-let dropAreas = document.querySelectorAll('.cube-face'); // 抓拖曳放下的區域
-for(let i =0; i < dropAreas.length; i++){
-  dropAreas[i].addEventListener('dragover',dragover); //放置區域監聽dragover事件
-  dropAreas[i].addEventListener('drop',drop);  //放置區域監聽drop事件
-}
+  // dragstart 事件(已經被放到盒子的圖)
+  // for(let i = 0; i < arrDropedImg.length; i++){
+  //   files[i].addEventListener('dragstart',dragstart2);  //監聽img的dragstart事件
+  // }
+
+  // dragover/drop 事件(右邊tab裡的圖)
+  let dropAreas = document.querySelectorAll('.cube-face'); // 抓拖曳放下的區域
+  for(let i =0; i < dropAreas.length; i++){
+    dropAreas[i].addEventListener('dragover',dragover); //放置區域監聽dragover事件
+    dropAreas[i].addEventListener('drop',drop);  //放置區域監聽drop事件
+    dropAreas[i].addEventListener('dragleave',dragleave);  
+    dropAreas[i].addEventListener('mouseenter', function wakeUp(e){
+      console.log('1234');
+    });  
+  }
 }
 
 
@@ -146,15 +178,21 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
 
 
 
-var imgNum = 1;
+
 function dragstart(e){  //e.target代表圖片的DOM本身
-let img = e.target.src;  //取得圖片路徑
+  // 分為兩種方法  1.資料單純放圖片的src，到drop再加工給更多屬性   2.將資料做成字串
+  let data = e.target.src;  //方法1
+  //--------------------------------方法2------------------------------------------------------------------------------------------------------
+  // let data = `<img width="50px" src="${img}" class="imgOnBox imgOnBox${imgNum}">`;  //製作img標籤字串(傳送的資料設定class：(將會)放在box上的圖片)
+  //--------------------------------方法2------------------------------------------------------------------------------------------------------
 
-let data = `<img width="50px" src="${img}" id="img${imgNum}">`;  //製作img標籤字串
-e.dataTransfer.setData('image/jpeg',data);
-
-imgNum++;
+  e.dataTransfer.setData('image/jpeg',data);
 }
+
+// function dragstart2(e){
+//   let data = e.target;
+//   e.dataTransfer.setData('image/jpeg',data);
+// }
 
 function dragover(e){
   e.preventDefault();
@@ -165,37 +203,48 @@ function dragover(e){
   }//使用 classList 屬性是取得元素 Class 的一種便利方式
 }
 
-
-
+function dragleave(e){
+  e.target.style.opacity = "1"; //離開盒子，盒子透明度就恢復正常
+}
 
 function drop(e){  //e.target代表放置區域的DOM本身
   e.preventDefault();
-  let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
+  
+  //要是圖片是本來就在盒子上的，就
 
-
-  e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
+    //--------------------------------字串方法----------------------------------------
+    // let data =  e.dataTransfer.getData('image/jpeg');  //抓到img標籤字串
+    // e.target.innerHTML += data; //每拖曳一個圖片，就在放置區域的DOM裡增加拖曳的img標籤字串
+    //--------------------------------字串方法----------------------------------------
+    
+    //--------------------------------新增DOM，之後appendChild方法----------------------------------------
+    var img = document.createElement('img');  //先新增DOM節點
+    img.src = e.dataTransfer.getData('image/jpeg');  //取得src資料
+    img.style.width = '50px'; //給寬度
+    img.style.position = "absolute"; //才可以被定位在盒子
+    img.style.zIndex = imgNum; 
+    img.classList.add("imgOnBox");
+    img.classList.add(`imgOnBox${imgNum}`);
+    let x = e.offsetX;  //dropX位置 ＝ 相對盒子左上的x位置
+    let y = e.offsetY; //dropY位置 ＝ 相對盒子左上的y位置
+    img.style.top = y + "px"; 
+    img.style.left = x + "px";
+    img.style.transform = 'translateX(-50%) translateY(-50%)'; //會用圖片左上角定位，要移回本身的寬高
+    this.appendChild(img);//把圖片塞進去
+    imgNum++;  //如果成功被drop，數字才會增加，這樣等等drag才會是下一個數字
+    arrDropedImg.push(img);//做一個陣列把動態添加元素的資料先存起來，之後統一操作
+    //--------------------------------新增DOM，之後appendChild方法----------------------------------------
   e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
-
-  let img = document.getElementById(`img${imgNum-1}`);
-
-
-  let x = e.offsetX;
-  let y = e.offsetY;
-  alert(x);
-  alert(y);
-
-  img.style.position = "absolute";
-  img.style.top = y;
-  img.style.left = x;
+  
 }
 
+window.addEventListener('load',doFirst);
+// ---------------------圖片拖曳------------------------------------------------
 
 
 
 
-
-
-
+//-----------------------------盒子360度旋轉----------------------------------------------------------
 var clickCount = 0;  //要先宣告在外面，才能一直被加，放在function裡執行完畢資料就會消失
 function degChange(e){
   clickCount ++; 
@@ -207,6 +256,14 @@ function degChange(e){
   let degNow = 120 + 30 * clickCount;
   cube.style.transform = `rotateX(-30deg) rotateY(${degNow}deg)`;
 }
+//-----------------------------盒子360度旋轉----------------------------------------------------------
 
 
-window.addEventListener('load',doFirst);
+
+
+
+
+
+// 抓盒子的面
+//箱子表面監聽
+    //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
