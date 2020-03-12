@@ -15,6 +15,7 @@
     <div class="wrapper_article">
         <div class="article_container">
             <div class="article_area">
+                <a href="forum.html" id="back_btn"></a>
                 <div class="post post1">
                     <div class="author">
                         <div class="author_img">
@@ -95,7 +96,7 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i class="socialBtns likeBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
@@ -125,7 +126,7 @@
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i class="socialBtns likeBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
@@ -149,7 +150,14 @@
             </div>
         </div>
 
-        <!-- popbox start -->
+        <!-- alert start -->
+        <div id="alertBox" class="alertBox hidden">
+            <span id="close_alert_btn">&times;</span>
+            <span id="alertMessage"></span>
+          </div>
+        <!-- alert end -->
+
+        <!-- report popbox start -->
         <div id="reportBox" class="reportBox hidden">
             <form method="post" action="">
                 <h5>檢舉原因</h5>
@@ -172,7 +180,7 @@
                     </div>
                     <div class="reportBox_btns">
                         <button type="submit" id="submit_report_btn">送出</button>
-                        <a href="forum_article.html" id="cancel_report_btn">取消</a>
+                        <span id="cancel_report_btn">取消</span>
                     </div>
                 </div>
             </form>
@@ -196,26 +204,56 @@
         }
 
         function socialBtnCheck(){
+            let alertBox = document.getElementById('alertBox');
+            let alertMessage = document.getElementById('alertMessage');
+            let close_alert_btn = document.getElementById('close_alert_btn');
+
             this.classList.toggle('checked');
-            if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
-                alert("收藏話題成功！");
+            alertBox.classList.remove('hidden');
+
+            if(this.classList.contains('likeBtns') && this.classList.contains('checked')){
+                alertBox.style.backgroundColor = "crimson";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
+                alertMessage.innerText = '表達愛心成功！';
+            }else if(this.classList.contains('likeBtns')){
+                alertBox.style.backgroundColor = "crimson";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
+                alertMessage.innerText = '已取消表達愛心！';
+            }else if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
+                alertBox.style.backgroundColor = "royalblue";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(65, 105, 225, 0.75)";
+                alertMessage.innerText = '收藏話題成功！';
             }else if(this.classList.contains('favoriteBtns')){
-                alert("已取消收藏話題！");
+                alertBox.style.backgroundColor = "royalblue";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(65, 105, 225, 0.75)";
+                alertMessage.innerText = '已取消收藏話題！';
             }else if(this.classList.contains('subscriptBtns') && this.classList.contains('checked')){
-                alert("訂閱作者成功！");
+                alertBox.style.backgroundColor = "darkorange";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(255, 140, 0, 0.75)";
+                alertMessage.innerText = '訂閱作者成功！';
             }else if(this.classList.contains('subscriptBtns')){
-                alert("已取消訂閱作者！");
+                alertBox.style.backgroundColor = "darkorange";
+                alertBox.style.boxShadow = "2px 2px 5px rgba(255, 140, 0, 0.75)";
+                alertMessage.innerText = '已取消訂閱作者！';
             }
+
+            close_alert_btn.addEventListener('click', function(){
+                alertBox.classList.add('hidden');
+            });
+
+            setTimeout(function(){
+                alertBox.classList.add('hidden');
+            }, 2500);
         }
 
-        function reportPost(){
-            this.classList.toggle('checked');
+        function reportPost(e){
+            e.target.classList.add('checked');
             let reportBox = document.getElementById('reportBox');
-            reportBox.classList.remove('hidden')
+            reportBox.classList.remove('hidden');
 
-            document.getElementById('cancel_report_btn').addEventListener('click', function(e){
-                reportBox.classList.add('hidden')
-                this.classList.toggle('checked');
+            document.getElementById('cancel_report_btn').addEventListener('click', function(){
+                reportBox.classList.add('hidden');
+                e.target.classList.remove('checked');
             });
         }
 
