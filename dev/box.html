@@ -34,14 +34,18 @@
                 </div>
                 <div class="step">
                     <div class="circle">3</div>
-                    <p>放置圖片至盒面</p>
+                    <p>拖曳圖片至盒面</p>
                 </div>
                 <div class="step">
                     <div class="circle">4</div>
-                    <p>添加文字</p>
+                    <p>點擊圖片</p>
                 </div>
                 <div class="step">
                     <div class="circle">5</div>
+                    <p>點擊圖片內的按鈕進行縮放、旋轉、刪除圖片</p>
+                </div>
+                <div class="step">
+                    <div class="circle">6</div>
                     <p>加入購物車</p>
                 </div>
             </div>
@@ -88,7 +92,7 @@
                 <ul class="tabs">
                     <li><a href="#tab1">顏色</a></li>
                     <li><a href="#tab2">圖片</a></li>
-                    <li><a href="#tab3">文字</a></li>
+                    <!-- <li><a href="#tab3">文字</a></li> -->
                 </ul>
         
                 <div class="tab_container">
@@ -109,13 +113,20 @@
                         </div>
                         <form action="">
                             <label for="">上傳圖片:</label>
-                            <input type="file" id="theFile"">
+                            <input type="file" id="theFile">
                         </form>
+                        <div class="btn_wrap">
+                            <img src="images/box/large.svg" alt="" id="large">
+                            <img src="images/box/small.svg" alt="" id="small">
+                            <img src="images/box/turnLeft.svg" alt="" id="turnleft">
+                            <img src="images/box/turnRight.svg" alt="" id="turnright">
+                            <img src="images/box/delete.svg" alt="" id="deletebtn">
+                        </div>
                         
                     </div>
-                    <div id="tab3" class="tab_content">    
+                    <!-- <div id="tab3" class="tab_content">    
                         <input type="button" value="新增文字">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
