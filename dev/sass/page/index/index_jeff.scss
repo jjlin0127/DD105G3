@@ -19,7 +19,7 @@ body {
 }
 
 .wrap {
-    width: 100%;
+    width:100%;
     margin: 0 auto;
 
 }
@@ -30,6 +30,9 @@ section {
 }
 
 //吉祥物
+// .happyWrap{
+//     width: 1200px;
+// }
 .choco_black {
     position: absolute;
     top: 200px;
@@ -103,12 +106,15 @@ section {
 
         //parallax
         .skyFruits {
-            width: 100%;
+            width:1200px;
             height: 100%;
+            margin:0 auto;
             position: relative;
             // border: 1px solid green;
 
             #scene {
+                width:1200px;
+                margin:0 auto;
             //    border:1px solid green;
                 //天空葡萄
                 .layer1>img {
@@ -271,7 +277,7 @@ section {
 @media all and (max-width:1440px){
     #scene {
         // border:1px solid red;
-        display:none;
+        // display:none;
 
         // 天空柿子
         .layer4>img {
