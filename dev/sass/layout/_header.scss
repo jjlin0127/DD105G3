@@ -1,13 +1,5 @@
 /* 共用的header */
 header {
-<<<<<<< HEAD
-    position:sticky;
-     top: 0;
-     z-index: 9999;
-    }
-    
-    header .header__container {
-=======
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -237,7 +229,6 @@ html.fixWindow {
 
 
     header ul {
->>>>>>> 38d459e5feed51855e31b0090414ccc97e796c5b
         width: 100%;
         display: flex;
         justify-content: center;
@@ -253,11 +244,6 @@ html.fixWindow {
         justify-content: center;
         align-items: center;
     }
-<<<<<<< HEAD
-    
-    header .header__container .logo a img {
-        width: 250px;
-=======
 
 }
 
@@ -265,7 +251,6 @@ html.fixWindow {
     header {
         width: 100%;
 
->>>>>>> 38d459e5feed51855e31b0090414ccc97e796c5b
     }
     
     header .header__container .navList {
@@ -1513,3 +1498,4 @@ html.fixWindow {
         bottom: 0;
         transform: rotate(-90deg);
     }
+}
