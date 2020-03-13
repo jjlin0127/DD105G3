@@ -24,7 +24,7 @@ div.box_for_shopping_title{
 h3.shopping_title{
     text-align:center;    
 }
-.shopping_wrapper{
+table{
     width:1200px;
     box-sizing: border-box;
     background-color: rgba(211, 235, 174, 0.85);
@@ -37,71 +37,37 @@ h3.shopping_title{
     padding:20px;
     /* padding-right: 0px; */
     flex-wrap: wrap;
-}
 
-.item_cards{
-    border: 3px dashed #956148;
-    border-radius: 10px;
-    background-color: rgb(253, 253, 219);
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-div.item_img{
-    width:40%;
-    display:inline-block;
-    box-sizing: border-box;
-    padding: 20px 10px;
-    // border: 1px solid green;
-    img{
-        width:100%;
-    }
-}
-
-
-div.item_text{
-    width:58%;
-    display:inline-block;
-    box-sizing: border-box;
-    padding: 5% 0% 0% 10%;
-    // border: 1px solid red;
-    vertical-align: top;
-    h2{
-        text-align: center;
-        //↓↓↓讓明細的品名標題往左靠
-        margin-left: -100px;
-        margin-bottom: 30px;
-    }
-    b{
-        font-weight:800;
-    }
-    div.quantity {
-        /* border: 1px solid hotpink; */
-        position: relative;
-        top:0px;
-        h3{display:inline-block;}
-        div,button{
-            font-size:2rem;
-            display:inline-block;
-            margin: 10px;
-        }
-    }
-    img{
+    td{
+      width:25%;
+      box-sizing: border-box;
+      border:1px dashed white;
+      vertical-align: middle;
+      text-align: center;
+      padding:10px;
+      img{
+        width:90%;
+        margin-top: 10%;
+        margin-left: 10%;
+      }
+      h3{
+        line-height: 1.8;
+      }
+      img.icon{
         width:30px;
-        // border:1px solid hotpink;
-        position: relative;
-        top:10px;
+      }
+      input{
+        font-size: 2.4rem;
+        width:50%;
+      }
+      input:focus{
+        border:4px solid orange;
+      }
+
     }
-
 }
 
 
-#howmany{
-    width:30px;
-    background-color:white;
-    border: 1px solid #CCCBCF;
-    padding: 10px; 
-}
 button.count{
     width:40px;
     background-color:#CCCBCF;
