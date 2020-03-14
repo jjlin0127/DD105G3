@@ -1,3 +1,32 @@
 @include respond(ipadpro){
-    
+    #box-body{
+        header{
+            position: absolute;
+            top: 0;
+        }
+        .box_contain{
+            .outer{
+                .button-wrap{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    label{
+                        margin: 10px 20px 10px 20px;
+                    }
+                }
+                .box{
+                    margin-top: 200px;
+                }
+                .tab_wrap{
+                    margin-top: 200px;
+                }
+                .step_wrap{
+                    flex-wrap: wrap;
+                    .step{
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
 }

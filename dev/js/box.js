@@ -7,9 +7,12 @@ $(document).ready(function(e){
     e.preventDefault();  //取消預設行為 點了按鈕畫面才不會跳掉
   })
 
-  // $('.for-zoom-cube').click(function(e){ 
-  //   e.preventDefault();
-  // })
+  $('.for-zoom-cube').click(function(e){ 
+    e.preventDefault();
+    // this.toggleClass('zoom');
+    $('.cube-wrap').toggleClass('zoom');
+    $('.for-zoom-cube').toggleClass('zoom');
+  })
 
   $('.for-front').click(function(e){ //如果label按鈕被點擊
     e.preventDefault();
@@ -77,7 +80,7 @@ $(document).ready(function(e){
 
 
   $('.addCartBtn').click(function(e){
-    alert('商品已加入購物車');
+    alert('商品已加入購物車，按鈕-查看購物車');
   }
 
 )});
@@ -148,7 +151,7 @@ function doFirst(){
     files[i].addEventListener('dragstart',dragstart);  //監聽img的dragstart事件
   }
 
-  // dragover/drop 事件(右邊tab裡的圖)
+  // dragover/drop 事件(放置圖片的區域)
   let dropAreas = document.querySelectorAll('.cube-face'); // 抓拖曳放下的區域
   for(let i =0; i < dropAreas.length; i++){
     dropAreas[i].addEventListener('dragover',dragover); //放置區域監聽dragover事件
@@ -159,38 +162,36 @@ function doFirst(){
       console.log('1234');
       for(let i = 0; i < arrDropedImg.length; i++){
         arrDropedImg[i].addEventListener('dragstart', function dragstart_2(e){
+          for(let i = 0; i < arrDropedImg.length; i++){  //當drag時，其他盒上圖移除select
+            arrDropedImg[i].classList.remove('select');
+          }
           e.target.classList.add('select');  //drag時，會有select
           e.dataTransfer.setData("text", "onSurface");  //在drop的時候，會用這個來判定圖片是否在盒子上
           imgOnBox = this; //沒有加var 是全域變數 什麼時候都可以用 -> drop時可以用此抓取在箱子被drag的圖片
         })
       }
       for(let i = 0; i < arrDropedImg.length; i++){
-        arrDropedImg[i].addEventListener('click',function(){  
-          e.target.classList.add('select'); 
-          
+        arrDropedImg[i].addEventListener('click',function(e){  
+          for(let i = 0; i < arrDropedImg.length; i++){  
+            arrDropedImg[i].classList.remove('select');  //當盒上圖被點擊時，所有盒上圖先移除select
+          }
+          e.target.classList.add('select');  //被點的圖再加上class
+          imgSelect = e.target;
         })
       }
-
-      imgSelect = document.querySelector('.select');
-
-      large = document.getElementById('large');
-      // small = document.getElementById('small');
-      // turnleft = document.getElementById('turnleft');
-      // turnright = document.getElementById('turnright');
-      // deletebtn = document.getElementById('deletebtn');
-
-      
-      large.addEventListener('click', larger);
-      // small.addEventListener('click', smaller);
-      // turnleft.addEventListener('click', turnLeft);
-      // turnright.addEventListener('click', turnRight);
-      // deletebtn.addEventListener('click', deleteImg);
     });  
 
-    
-    
+    largeBtn = document.getElementById('large');
+    smallBtn = document.getElementById('small');
+    turnLeftBtn = document.getElementById('turnLeft');
+    turnRightBtn = document.getElementById('turnRight');
+    deleteBtn = document.getElementById('deleteBtn');
 
-    
+    largeBtn.addEventListener('click', larger);
+    smallBtn.addEventListener('click', smaller);
+    turnLeftBtn.addEventListener('click', turnLeft);
+    turnRightBtn.addEventListener('click', turnRight);
+    deleteBtn.addEventListener('click', deleteImg);
   }
 }
 
@@ -207,9 +208,6 @@ readFile.addEventListener('load',function(){  //圖片上傳完成後，將空im
     myImg.style.maxHeight = '100px';
 });
 }
-
-
-
 
 function dragstart(e){  //e.target代表圖片的DOM本身
   // 分為兩種方法  1.資料單純放圖片的src，到drop再加工給更多屬性   2.將資料做成字串
@@ -272,24 +270,24 @@ function drop(e){  //e.target代表放置區域的DOM本身
   e.target.style.opacity = "1"; //放下圖片，盒子透明度就恢復正常
 }
 
-
-
-
-
-// ---------------------圖片拖曳-------------------------------------------------------------------------
-
-
-
 function larger(e){
-  imgSelect.width *= 1.05;
+  imgSelect.style.width = `${imgSelect.width + 5}px`;  //給予寬度: imgSelect.style.width =  "數值px";  查值: imgSelect.width;
+}
+function smaller(e){
+  imgSelect.style.width = `${imgSelect.width - 5}px`;
+}
+function turnLeft(e){
+  imgSelect.style.transform += 'rotate(-5deg)';   //嘗試出來 使用+= 可以改變角度， 但是 -= 不行
+}
+function turnRight(e){
+  imgSelect.style.transform += 'rotate(5deg)'; 
+}
+function deleteImg(e){
+  imgSelect.setAttribute('src','');
+  imgSelect.classList.remove('select');
 }
 
-
-
-
-
-
-
+// ---------------------圖片拖曳-------------------------------------------------------------------------
 
 //-----------------------------盒子360度旋轉----------------------------------------------------------
 var clickCount = 0;  //要先宣告在外面，才能一直被加，放在function裡執行完畢資料就會消失
@@ -302,13 +300,8 @@ function degChange(e){
   }
   let degNow = 120 + 30 * clickCount;
   cube.style.transform = `rotateX(-30deg) rotateY(${degNow}deg)`;
+  // cube.style.transform += `rotateY(30deg)`;  // 使用 += 改變角度
 }
 //-----------------------------盒子360度旋轉----------------------------------------------------------
-
-
-
-
-
-
 
 window.addEventListener('load',doFirst);
