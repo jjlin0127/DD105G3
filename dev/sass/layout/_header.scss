@@ -1,9 +1,11 @@
 /* 共用的header */
 
 header {
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 9999;
+
     .header__container {
         width: 100%;
         display: flex;
@@ -115,6 +117,7 @@ header .rwdHeader {
     width: 100%;
     display: none;
     position: fixed;
+    top: 0;
     background-color: rgba(255, 255, 255, 0.85);
     z-index: 999;
 }
@@ -205,6 +208,7 @@ html.fixWindow {
     width: 100%;
 } */
 
+
 @media all and (max-width: 992px) {
     header ul {
         width: 100%;
@@ -226,6 +230,8 @@ html.fixWindow {
 @media all and (max-width:1024px) {
     header {
         width: 100%;
+        position: sticky;
+        top: 0;
     }
     header .header__container .navList {
         width: 80%;
@@ -333,6 +339,7 @@ html.fixWindow {
         height: 100vh;
         position: fixed;
         right: 100%;
+        top: 80px;
         background-color: rgba(255, 255, 255, 0.85);
         transition: left 0.3s ease-in-out;
         z-index: 998;
