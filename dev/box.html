@@ -11,8 +11,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script src="js/box.js"></script>
+    <script src="js/lightbox.js"></script>
 </head>
 <body id="box-body">
+    <div class="popup">
+        <h2>客製禮盒步驟</h2>
+        <div class="step_wrap">
+            <div class="step">
+                <div class="circle">1</div>
+                <p>選擇盒面</p>
+            </div>
+            <div class="step">
+                <div class="circle">2</div>
+                <p>決定盒面顏色</p>
+            </div>
+            <div class="step">
+                <div class="circle">3</div>
+                <p>拖曳圖片至盒面</p>
+            </div>
+            <div class="step">
+                <div class="circle">4</div>
+                <p>點擊圖片</p>
+            </div>
+            <div class="step">
+                <div class="circle">5</div>
+                <p>點擊圖片內的按鈕進行縮放、旋轉、刪除圖片</p>
+            </div>
+            <div class="step">
+                <div class="circle">6</div>
+                <p>加入購物車</p>
+            </div>
+        </div>
+        <button name="close">我知道了</button>
+        </div>
+        
+    </div>
     @@include('layout/header.html',{
         "focus03" : "focus"
     })
@@ -22,33 +55,6 @@
     </h2>
     <div class="box_contain">
         <div class="outer">
-            <h4>客製禮盒步驟</h4>
-            <div class="step_wrap">
-                <div class="step">
-                    <div class="circle">1</div>
-                    <p>選擇盒面</p>
-                </div>
-                <div class="step">
-                    <div class="circle">2</div>
-                    <p>決定盒面顏色</p>
-                </div>
-                <div class="step">
-                    <div class="circle">3</div>
-                    <p>拖曳圖片至盒面</p>
-                </div>
-                <div class="step">
-                    <div class="circle">4</div>
-                    <p>點擊圖片</p>
-                </div>
-                <div class="step">
-                    <div class="circle">5</div>
-                    <p>點擊圖片內的按鈕進行縮放、旋轉、刪除圖片</p>
-                </div>
-                <div class="step">
-                    <div class="circle">6</div>
-                    <p>加入購物車</p>
-                </div>
-            </div>
             <div class="bow-knot-left">
                 <img src="images/box/bow-knot.png">
             </div>

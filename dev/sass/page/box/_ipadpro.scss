@@ -1,9 +1,16 @@
 @include respond(ipadpro){
     #box-body{
+        .popup{
+            .step_wrap{
+                .step{
+                    margin-bottom: 10px;
+                }
+            }
+        }
         header{
             position: absolute;
             top: 0;
-        }
+        }    
         .box_contain{
             .outer{
                 .button-wrap{
