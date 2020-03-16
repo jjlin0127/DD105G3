@@ -1,5 +1,5 @@
 @media all and (max-width: 1200px) {
-  .shopping_wrapper {
+  table {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 992px;
@@ -11,56 +11,30 @@
 }
 
 @media all and (max-width: 992px) {
-  .shopping_wrapper {
-    width: 768px;
+  table {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 15px;
     position: relative;
-    left: 50%;
-    margin-left: -384px;
+    left: 0%;
+    margin-left: 0px;
   }
 }
 
 @media all and (max-width: 768px) {
-  .shopping_wrapper {
-    width: 600px;
-    padding: 10px;
-    position: relative;
-    left: 50%;
-    margin-left: -300px;
+  table tr {
+    width: 100%;
   }
-  .shopping_wrapper h2 {
-    margin: 0px;
+  table td {
+    width: 160px;
   }
-  .item_img {
-    width: 50%;
-    padding: 10px 5px;
-    background-color: white;
-    border-radius: 4px;
+  table td img {
+    width: 90%;
   }
-  .item_text {
-    width: 50%;
-    padding-left: 0px;
-  }
-  .item_text p.introduce {
-    padding: 10px;
-  }
-  .quantity {
-    margin: 5px;
-  }
-  .quantity h3 {
-    font-size: 1.3rem;
-    margin: 0px;
-    display: block;
-  }
-}
-
-@media all and (max-width: 680px) {
-  .shopping_wrapper {
-    width: 570px;
-    padding: 5px;
-    position: relative;
-    left: 50%;
-    margin-left: -285px;
+  table td .icon {
+    display: none;
+    border: 1px solid hotpink;
   }
 }
 

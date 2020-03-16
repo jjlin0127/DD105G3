@@ -1,7 +1,7 @@
 var storage = sessionStorage;
 function doFirst(){
     let itemString = storage.getItem('addItemList');
-    let items = itemString.substr(0,itemString.length -2).split(',');
+    let items = itemString.substr(0,itemString.length -2).split(', ');
     console.log(items); //["A1001", "A1006", "A1005", "A1002"]
 
     //newDiv = document.createElement('div'); 
@@ -30,6 +30,8 @@ function createCartList(itemId,itemValue){
     //建立每個品項的清單區域--tr
     let trItemList = document.createElement('tr');
     trItemList.claasName = 'item';  //trItemList.setAttribute('class','item);
+    trItemList.id = itemId;
+    //↑↑↑為了因應我的表格結構，要把itemId要放到button所在的父層，這樣刪除鍵才會生效
 
     newTable.appendChild(trItemList);
 
@@ -47,7 +49,8 @@ function createCartList(itemId,itemValue){
     //建立商品名稱和價格--第二個td
     let tdTitle = document.createElement('td');
     //tdTitle.style.width = '280px';   //為了配合RWD，所以不我不打算寫寬度
-    tdTitle.id = itemId;
+    //↓↓↓由我我的表格結構長得跟老師的不一樣，所以itemId不應該放入第二個td裡面，這樣第四個td(有刪除鍵的)會抓不到itemId
+    // tdTitle.id = itemId;
     
     let hTitle = document.createElement('h3');
     hTitle.innerText = itemTitle;
@@ -66,6 +69,9 @@ function createCartList(itemId,itemValue){
     let tdItemCount = document.createElement('td');
 
     let  titleCount = document.createElement('h4');
+    titleCount.innerText = '數量:';
+    titleCount.style.textAlign = 'left';
+    titleCount.style.lineHeight = '1.3';
     let itemCount = document.createElement('input');
     itemCount.type = 'number';
     itemCount.value = 1;
@@ -84,28 +90,28 @@ function createCartList(itemId,itemValue){
     cashButton.innerText = '單筆結帳';
     cashButton.className = 'orange_btn';
     let cashIcon = document.createElement('img');
-    cashIcon.src = 'images/prdt/icon/shopping_cart.svg';
-    cashIcon.style.width = '30px';
-    cashIcon.className = 'icon';
+    //cashIcon.src = 'images/prdt/icon/shopping_cart.svg';
+    // cashIcon.style.width = '30px';
+    // cashIcon.className = 'icon';
 
     let delButton = document.createElement('button');
     delButton.innerText = '單筆刪除';
     delButton.className = 'grey_btn';
     delButton.addEventListener('click', deleteItem);
     let delIcon = document.createElement('img');
-    delIcon.src = 'images/prdt/icon/icon_remove.svg';
-    delIcon.style.width = '30px';
-    delIcon.className = 'icon';
+    // delIcon.src = 'images/prdt/icon/icon_remove.svg';
+    // delIcon.style.width = '30px';
+    // delIcon.className = 'icon';
 
     tdButton.appendChild(cashButton);
-    tdButton.appendChild(cashIcon);
+    //tdButton.appendChild(cashIcon);
     tdButton.appendChild(delButton);
-    tdButton.appendChild(delIcon);
+    //tdButton.appendChild(delIcon);
 
     trItemList.appendChild(tdButton);
 }
 function deleteItem(){
-    let itemId = this.parentNode.getAttribute('id');
+    let itemId = this.parentNode.parentNode.getAttribute('id');
     alert(itemId);
     //1.扣除總金額
     let itemValue = storage.getItem(itemId);
@@ -116,10 +122,11 @@ function deleteItem(){
 
     //2.清除storage資料
     storage.removeItem(itemId);
-    storage['addItemList'] = storage['addItemList'].replace(`${itemId},`,'');
+    storage['addItemList'] = storage['addItemList'].replace(`${itemId},`,' ');
 
     //3.刪除該筆tr
     this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+    //↑↑↑這個指令長得跟老師的不一樣。this指的是這個button，第一個parentNode是包住刪除鍵的td,第二個parentNode是tr，第三個parentNode是table。我們要remove的是tr
 }
 
 function changeItemCount(){
