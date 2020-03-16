@@ -92,7 +92,7 @@
                         <div class="social_zone">
                             <div class="likeAndComment">
                                 <i class="fas fa-heart"></i>
-                                <p class="like_count">10</p>
+                                <p class="like_count">7</p>
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
@@ -122,7 +122,7 @@
                         <div class="social_zone">
                             <div class="likeAndComment">
                                 <i class="fas fa-heart"></i>
-                                <p class="like_count">10</p>
+                                <p class="like_count">9</p>
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
@@ -215,10 +215,16 @@
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '表達愛心成功！';
+                // let plusCount = parseInt(this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].innerText);
+                // plusCount++;
+                // alert(plusCount);
             }else if(this.classList.contains('likeBtns')){
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '已取消表達愛心！';
+                // let minusCount = parseInt(this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].innerText);
+                // minusCount--;
+                // alert(minusCount);
             }else if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
                 alertBox.style.backgroundColor = "royalblue";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(65, 105, 225, 0.75)";
