@@ -1,3 +1,5 @@
+<script src="./js/hamburger.js"></script>
+<script src="./js/login.js"></script>
 <header>
     <nav class="header__container">
         <span class="logo">
@@ -12,7 +14,9 @@
             <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
         </div>
         <div class="navList_2">
-            <a id="spanLogin" class="navItem_2" href="login.html"><i class="fas fa-user-circle"></i></a>
+            <a id="memNickname" href="member2.html">&nbsp;</a>
+            <!-- 會員暱稱 -->
+            <a id="spanLogin" class="navItem_2">登入</a>
             <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </nav>
@@ -32,6 +36,15 @@
     <div id="rwdHamburgerMenu">
         <nav>
             <ul>
+                <a id="spanLogin" href="login.html">
+                    <li>登入 <i class="fas fa-user-circle"></i></li>
+                </a>
+                <!-- <a id="memNickname" href="member2.html">&nbsp;</a> -->
+                <!-- <a id="spanLogin" class="navItem_2">登入</a> -->
+                <!-- <span id="spanLogin" class="navItem_2">登入/註冊</span> -->
+                <a id="shopCart" href="shopping.html">
+                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
+                </a>
                 <a href="about.html">
                     <li>果甘物語 <i class="fas fa-seedling"></i></li>
                 </a>
@@ -50,15 +63,7 @@
                 <a href="forum.html">
                     <li>果甘話區 <i class="fas fa-leaf"></i></li>
                 </a>
-                <a id="spanLogin" href="login.html">
-                    <li>登入/註冊 <i class="fas fa-user-circle"></i></li>
-                </a>
-                <a id="shopCart"  href="shopping.html">
-                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
-                </a>
             </ul>
         </nav>
     </div>
 </header>
-
-<script src="./js/hamburger.js"></script>

@@ -5,7 +5,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 9999;
-
     .header__container {
         width: 100%;
         display: flex;
@@ -207,7 +206,6 @@ html.fixWindow {
     position: fixed;
     width: 100%;
 } */
-
 
 @media all and (max-width: 992px) {
     header ul {

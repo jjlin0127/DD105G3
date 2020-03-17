@@ -11,12 +11,6 @@ body {
     box-sizing: border-box;
     background: url('../../../images/cusFruits/full_bg.png');
     margin: 0;
-    .header__container {
-        position: sticky;
-    }
-    .rwdHeader {
-        position: sticky;
-    }
     >h2 {
         @include title(3px,
         dotted,
