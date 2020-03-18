@@ -39,9 +39,11 @@ header {
     overflow: hidden;
     -webkit-perspective: 1000;
     perspective: 1000;
-    /* border: 1px solid blue; */
+    
+        /* border: 1px solid blue; */
 
 }
+
 
 .section {
     height: 100%;
@@ -210,6 +212,10 @@ img.cloud2 {
     border-radius: 10px;
     padding: 5px;
     position: relative;
+<<<<<<< HEAD
+=======
+    margin: 0 auto;
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
 }
 
 .section__title>span {

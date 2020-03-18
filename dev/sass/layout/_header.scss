@@ -1,4 +1,5 @@
 /* 共用的header */
+<<<<<<< HEAD
 header {
     position:sticky;
      top: 0;
@@ -6,6 +7,220 @@ header {
     }
     
     header .header__container {
+=======
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    .header__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        // position: fixed;
+        height: 85px;
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        // z-index: 99;
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a img {
+                width: 250px;
+            }
+        }
+        .navList {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.navList .navItem {
+    text-decoration: none;
+    padding: 8px;
+    margin: 8px;
+    color: #8a5b41;
+    font-size: 1.4rem;
+    transition: transform .2s .1s, color .2s .1s;
+}
+
+.navList_2 {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navList_2 .navItem_2 {
+    text-decoration: none;
+    padding: 8px;
+    margin: 8px 0px;
+    color: #8a5b41;
+    font-size: 1.5rem;
+    transition: transform .2s .1s, color .2s .1s;
+}
+
+.navItem:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-bottom: 3px solid #e08c34;
+    top: 90%;
+    left: 20px;
+    transition: width .3s;
+}
+
+.navItem:hover:after {
+    width: 70px;
+    transition: width .3s .1s;
+}
+
+.navItem:hover,
+.navItem_2:hover {
+    transform: translateY(-5px) scale(1.05);
+    color: #a6c165;
+    transition: transform .2s;
+}
+
+.navItem:hover>.fa-seedling,
+.navItem:hover>.fa-apple-alt,
+.navItem:hover>.fa-gift,
+.navItem:hover>.fa-lemon,
+.navItem:hover>.fa-carrot,
+.navItem:hover>.fa-leaf {
+    animation: ss .2s linear infinite alternate;
+}
+
+@keyframes ss {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.navList .focus {
+    color: #a6c165;
+}
+
+span.logo {
+    transition: all .5s;
+}
+
+span.logo:hover {
+    transform: scale(1.1);
+}
+
+
+/* rwd */
+
+header .rwdHeader {
+    width: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 999;
+}
+
+header .rwdHeader .rwdHeaderWrap {
+    width: 100%;
+    /* position: relative; */
+}
+
+header .rwdHeader .rwdHeaderWrap #topLogo2 {
+    width: 220px;
+    margin: 0px;
+}
+
+header #topLogo2 {
+    transition: all .5s;
+}
+
+header #topLogo2:hover {
+    transform: scale(1.1);
+}
+
+header .rwdHeader .rwdHeaderWrap .hamburger {
+    width: 80px;
+    height: 80px;
+    color: #8a5b41;
+    float: right;
+}
+
+header #rwdHamburgerMenu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    right: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: left 0.3s ease-in-out;
+    z-index: 998;
+}
+
+header #rwdHamburgerMenu ul {
+    margin: 100px auto;
+    width: 300px;
+}
+
+header #rwdHamburgerMenu ul li {
+    text-align: center;
+    width: 150px;
+    margin: 25px auto;
+    font-size: 1.4rem;
+    color: #8a5b41;
+    transition: all .5s;
+}
+
+header #rwdHamburgerMenu ul li:hover {
+    transform: translateX(-5px) scale(1.05);
+    color: #a6c165;
+    transition: transform .2s;
+}
+
+header #rwdHamburgerMenu ul li:hover>.fa-seedling,
+header #rwdHamburgerMenu ul li:hover>.fa-apple-alt,
+header #rwdHamburgerMenu ul li:hover>.fa-gift,
+header #rwdHamburgerMenu ul li:hover>.fa-lemon,
+header #rwdHamburgerMenu ul li:hover>.fa-carrot,
+header #rwdHamburgerMenu ul li:hover>.fa-leaf,
+header #rwdHamburgerMenu ul li:hover>.fa-user-circle,
+header #rwdHamburgerMenu ul li:hover>.fa-shopping-cart {
+    animation: ss .2s linear infinite alternate;
+}
+
+button.hamburger {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* html.noscroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+html.fixWindow {
+    position: fixed;
+    width: 100%;
+} */
+
+
+@media all and (max-width: 992px) {
+    header ul {
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
         width: 100%;
         display: flex;
         justify-content: center;
@@ -15,22 +230,37 @@ header {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
         // z-index: 99;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header .header__container .logo {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+<<<<<<< HEAD
     
     header .header__container .logo a img {
         width: 250px;
     }
     
+=======
+}
+
+@media all and (max-width:1024px) {
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header .header__container .navList {
         width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
+<<<<<<< HEAD
     }
     
     .navList .navItem {
@@ -117,25 +347,104 @@ header {
     
     
     
+=======
+    }
+    .navList .navItem {
+        text-decoration: none;
+        padding: 8px;
+        margin: 8px;
+        color: #8a5b41;
+        font-size: 1.4rem;
+        transition: transform .2s .1s, color .2s .1s;
+    }
+    .navList_2 {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navList_2 .navItem_2 {
+        text-decoration: none;
+        padding: 8px;
+        margin: 8px 0px;
+        color: #8a5b41;
+        font-size: 1.5rem;
+        transition: transform .2s .1s, color .2s .1s;
+    }
+    .navItem:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-bottom: 3px solid #e08c34;
+        top: 90%;
+        left: 20px;
+        transition: width .3s;
+    }
+    .navItem:hover:after {
+        width: 70px;
+        transition: width .3s .1s;
+    }
+    .navItem:hover,
+    .navItem_2:hover {
+        transform: translateY(-5px) scale(1.05);
+        color: #a6c165;
+        transition: transform .2s;
+    }
+    .navItem:hover>.fa-seedling,
+    .navItem:hover>.fa-apple-alt,
+    .navItem:hover>.fa-gift,
+    .navItem:hover>.fa-lemon,
+    .navItem:hover>.fa-carrot,
+    .navItem:hover>.fa-leaf {
+        animation: ss .2s linear infinite alternate;
+    }
+    @keyframes ss {
+        0% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+    .navList .focus {
+        color: #a6c165;
+    }
+    span.logo {
+        transition: all .5s;
+    }
+    span.logo:hover {
+        transform: scale(1.1);
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     /* rwd */
     header .rwdHeader {
         width: 100%;
         display: none;
         position: fixed;
         background-color: rgba(255, 255, 255, 0.85);
+<<<<<<< HEAD
     
         z-index: 999;
     }
     
+=======
+        z-index: 999;
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header .rwdHeader .rwdHeaderWrap {
         width: 100%;
         /* position: relative; */
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header .rwdHeader .rwdHeaderWrap #topLogo2 {
         width: 220px;
         margin: 0px;
     }
+<<<<<<< HEAD
     
     header #topLogo2 {
         transition: all .5s;
@@ -145,28 +454,51 @@ header {
         transform: scale(1.1);
     }
     
+=======
+    header #topLogo2 {
+        transition: all .5s;
+    }
+    header #topLogo2:hover {
+        transform: scale(1.1);
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header .rwdHeader .rwdHeaderWrap .hamburger {
         width: 80px;
         height: 80px;
         color: #8a5b41;
         float: right;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header #rwdHamburgerMenu {
         width: 100%;
         height: 100vh;
         position: fixed;
         right: 100%;
+<<<<<<< HEAD
+=======
+        top: 80px;
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
         background-color: rgba(255, 255, 255, 0.85);
         transition: left 0.3s ease-in-out;
         z-index: 998;
     }
+<<<<<<< HEAD
     
     header #rwdHamburgerMenu ul {
         margin: 100px auto;
         width: 300px;
     }
     
+=======
+    header #rwdHamburgerMenu ul {
+        margin: 100px auto;
+        width: 300px;
+        display: contents;
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header #rwdHamburgerMenu ul li {
         text-align: center;
         width: 150px;
@@ -175,15 +507,22 @@ header {
         color: #8a5b41;
         transition: all .5s;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header #rwdHamburgerMenu ul li:hover {
         transform: translateX(-5px) scale(1.05);
         color: #a6c165;
         transition: transform .2s;
+<<<<<<< HEAD
     
     }
     
     
+=======
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     header #rwdHamburgerMenu ul li:hover>.fa-seedling,
     header #rwdHamburgerMenu ul li:hover>.fa-apple-alt,
     header #rwdHamburgerMenu ul li:hover>.fa-gift,
@@ -194,6 +533,7 @@ header {
     header #rwdHamburgerMenu ul li:hover>.fa-shopping-cart {
         animation: ss .2s linear infinite alternate;
     }
+<<<<<<< HEAD
     
     
     
@@ -214,6 +554,14 @@ header {
     
     
     
+=======
+    button.hamburger {
+        outline: none;
+    }
+    a {
+        text-decoration: none;
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     /* html.noscroll {
         position: fixed;
         overflow-y: scroll;
@@ -224,6 +572,7 @@ header {
         position: fixed;
         width: 100%;
     } */
+<<<<<<< HEAD
     
     @media all and (max-width: 992px) {
         
@@ -232,10 +581,17 @@ header {
             width: 100%;
         }
     
+=======
+    @media all and (max-width: 992px) {
+        header ul {
+            width: 100%;
+        }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
         header ul li {
             font-size: 1rem;
             // padding: 5px;
         }
+<<<<<<< HEAD
     
     }
     
@@ -249,10 +605,21 @@ header {
             display: none;
         }
     
+=======
+    }
+    @media all and (max-width:1024px) {
+        header {
+            width: 100%;
+        }
+        header .header__container {
+            display: none;
+        }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
         header .rwdHeader {
             display: block;
         }
     }
+<<<<<<< HEAD
     
     
     
@@ -268,6 +635,9 @@ header {
      * @site https://jonsuh.com/hamburgers
      * @link https://github.com/jonsuh/hamburgers
      */
+=======
+    // 以下開始是漢堡外掛
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     .hamburger {
         padding: 15px 15px;
         display: inline-block;
@@ -283,6 +653,7 @@ header {
         margin: 0;
         overflow: visible;
     }
+<<<<<<< HEAD
     
     .hamburger:hover {
         opacity: 0.7;
@@ -292,18 +663,30 @@ header {
         opacity: 0.7;
     }
     
+=======
+    .hamburger:hover {
+        opacity: 0.7;
+    }
+    .hamburger.is-active:hover {
+        opacity: 0.7;
+    }
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     .hamburger.is-active .hamburger-inner,
     .hamburger.is-active .hamburger-inner::before,
     .hamburger.is-active .hamburger-inner::after {
         background-color: #8a5b41;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     .hamburger-box {
         width: 40px;
         height: 24px;
         display: inline-block;
         position: relative;
     }
+<<<<<<< HEAD
     
     .hamburger-inner {
         display: block;
@@ -327,8 +710,65 @@ header {
     .hamburger-inner::before,
     .hamburger-inner::after {
         content: "";
+=======
+    .hamburger-inner {
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+    }
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        width: 40px;
+        height: 4px;
+        background-color: #8a5b41;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        content: "";
         display: block;
     }
+    .hamburger-inner::before {
+        top: -10px;
+    }
+    .hamburger-inner::after {
+        bottom: -10px;
+    }
+    /* Elastic */
+    .hamburger--elastic {
+        .hamburger-inner {
+            top: 2px;
+            transition-duration: 0.275s;
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            &::before {
+                top: 10px;
+                transition: opacity 0.125s 0.275s ease;
+            }
+            &::after {
+                top: 20px;
+                transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+        }
+    }
+    .hamburger--elastic.is-active .hamburger-inner {
+        transform: translate3d(0, 10px, 0) rotate(135deg);
+        transition-delay: 0.075s;
+        &::before {
+            transition-delay: 0s;
+            opacity: 0;
+        }
+        &::after {
+            transform: translate3d(0, -20px, 0) rotate(-270deg);
+            transition-delay: 0.075s;
+        }
+    }
+<<<<<<< HEAD
     
     .hamburger-inner::before {
         top: -10px;
@@ -1271,3 +1711,6 @@ header {
         bottom: 0;
         transform: rotate(-90deg);
     }
+=======
+}
+>>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
