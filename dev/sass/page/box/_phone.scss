@@ -1,0 +1,17 @@
+@include respond(phone){
+    #box-body{
+        .box_contain{
+            
+            .outer{
+                .step_wrap{
+                    .step{
+                        width: 120px;
+                        margin: 10px 0px 10px 0px;
+                    
+                    }
+               
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,15 @@
 // Felix的首頁-----------------------------------------
-
-/* -- 客製果甘------------------------------------ -- */
-
-.cust_title {
-    @include indexTitle(3px, 10px);
-    margin: 50px auto;
+@import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
+@import '../../layout/header';
+@import '../../layout/footer';
+@import '../../mixin/titleStyle';
+@import '../../modules/button';
+body {
+    box-sizing: border-box;
+    background-color: lightblue;
+    background-image: url();
 }
 
 h3 {
@@ -16,13 +21,8 @@ h4 {
     color: #4c4948;
 }
 
-h5 {
-    color: #4c4948;
-}
 
-span {
-    color: #4c4948;
-}
+/* -- 客製果甘------------------------------------ -- */
 
 @mixin content {
     right: 61px;
@@ -187,15 +187,14 @@ span {
                         position: absolute;
                         // left: 145px;
                         // top: 145px;
-                        left: 33%;
-                        top: 36.95%;
+                        left: 343.5px;
+                        top: 289.5px;
                         width: 315px;
                         height: 315px;
                         z-index: 8;
-                        background: rgba(255, 255, 255, .8);
+                        background: rgba(255, 255, 255, .5);
                         border-radius: 100%;
                         display: flex;
-                        color: #4c4948;
                         div {
                             width: 250px;
                             text-align: center;
@@ -246,7 +245,7 @@ span {
                         button {
                             font-family: Noto, Genjyuu;
                             margin: 0 10px;
-                            @include btn_primary(100px);
+                            @include btn_link(100px);
                         }
                     }
                 }
@@ -264,10 +263,18 @@ span {
         background-size: contain;
     }
     .cust_more {
+
+        font-family: Noto, Genjyuu;
+        float: right;
+        margin-right: 160px;
+        position: relative;
+        top: -255px;
+        @include btn_link(160px);
         margin: 0 auto;
         margin-top: -200px;
         margin-bottom: 80px;
         @include btn_link(170px);
         border: 0;
+
     }
 }

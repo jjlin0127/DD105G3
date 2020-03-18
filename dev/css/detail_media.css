@@ -127,5 +127,8 @@
   table.previous_and_next h4 {
     font-size: 0.8rem;
   }
+  button.green_btn {
+    margin-left: 0px;
+  }
 }
 /*# sourceMappingURL=detail_media.css.map */
