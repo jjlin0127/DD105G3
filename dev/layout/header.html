@@ -14,6 +14,7 @@
             <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
         </div>
         <div class="navList_2">
+            <input id="memNo" type="hidden" value="">
             <a id="memNickname" href="member2.html">&nbsp;</a>
             <!-- 會員暱稱 -->
             <a id="spanLogin" class="navItem_2">登入</a>
@@ -36,12 +37,13 @@
     <div id="rwdHamburgerMenu">
         <nav>
             <ul>
-                <a id="spanLogin" href="login.html">
-                    <li>登入 <i class="fas fa-user-circle"></i></li>
+                <a href="member2.html">
+                    <li id="mobilememNickname">&nbsp;</li>
                 </a>
-                <!-- <a id="memNickname" href="member2.html">&nbsp;</a> -->
-                <!-- <a id="spanLogin" class="navItem_2">登入</a> -->
-                <!-- <span id="spanLogin" class="navItem_2">登入/註冊</span> -->
+                <a id="mobileloginLink" href="login.html">
+                    <input id="memNo" type="hidden" value="">
+                    <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
+                </a>
                 <a id="shopCart" href="shopping.html">
                     <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                 </a>

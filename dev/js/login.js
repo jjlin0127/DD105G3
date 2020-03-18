@@ -27,16 +27,22 @@ function $id(id) {
 let member;
 
 function showLoginForm() {
-    if ($id('spanLogin').innerHTML == "登入" || $id('spanLogin li').innerHTML == "登入") {
+    if ($id('spanLogin').innerHTML == "登入" || $id("mobilespanLogin").innerHTML == "登入") {
         $id('spanLogin').location = location.href = "login.html";
+        $id('mobileloginLink').location = location.href = "login.html";
     } else { //登出
         $id('spanLogin').location = window.location.href;
+        $id('mobileloginLink').location = window.location.href;
         //-----------回server登出session
         let xhr = new XMLHttpRequest();
         xhr.onload = function() {
             if (xhr.status == 200) { //自server正確的登出
+                $id("memNo").value = '&nbsp';
                 $id('memNickname').innerHTML = '&nbsp';
                 $id('spanLogin').innerHTML = '登入';
+                //以下漢堡內的變化
+                $id("mobilememNickname").innerHTML = '&nbsp';
+                $id("mobilespanLogin").innerHTML = "登入";
             } else {
                 alert(xhr.status);
             }
@@ -46,49 +52,18 @@ function showLoginForm() {
     }
 } //showLoginForm
 
-function sendForm() {
-    //=====使用Ajax 回server端,取回登入者的相關資訊, 放到頁面上  
-    let memId = $id("memId").value;
-    let memPsw = $id("memPsw").value;
-    let data_info = `memId=${memId}&memPsw=${memPsw}`;
-
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        if (xhr.status == 200) {
-            member = JSON.parse(xhr.responseText);
-            $id("memNickname").innerText = member.memNickname;
-            $id("spanLogin").innerText = "登出";
-        } else {
-            alert(xhr.status);
-        }
-
-    }
-    xhr.open("Post", "ajaxLogin.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    xhr.send(data_info);
-
-    //將登入表單上的資料清空，並隱藏起來
-    $id('lightBox').style.display = 'none';
-    $id('memId').value = '';
-    $id('memPsw').value = '';
-
-}
-
-function cancelLogin() {
-    //將登入表單上的資料清空，並將燈箱隱藏起來
-    $id('lightBox').style.display = 'none';
-    $id('memId').value = '';
-    $id('memPsw').value = '';
-}
-
 function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function() {
         member = JSON.parse(xhr.responseText);
 
         if (member.memId) {
+            $id("memNo").value = member.memNo;
             $id("memNickname").innerText = member.memNickname;
             $id("spanLogin").innerText = "登出";
+            //以下漢堡內的變化
+            $id("mobilememNickname").innerText = `${member.memNickname}，您好`;
+            $id("mobilespanLogin").innerText = "登出";
         }
     }
     xhr.open("get", "dest/../php/getLoginInfo.php", true);
@@ -97,17 +72,10 @@ function getLoginInfo() {
 };
 
 window.addEventListener("load", function() {
-    //.....................................檢查是否已登入
-    // getLoginInfo();
+    //檢查是否已登入
+    getLoginInfo();
 
-    //.....................................註冊所有可執行的事件
-    //===設定spanLogin.onclick 事件處理程序是 showLoginForm
-
-    $id('spanLogin').onclick = showLoginForm; //轉跳登入頁
-
-    //===設定btnLogin.onclick 事件處理程序是 sendForm
-    // $id('btnLogin').onclick = sendForm; //登入
-
-    //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
-    // $id('btnLoginCancel').onclick = cancelLogin; //取消
+    //轉跳登入頁
+    $id('spanLogin').onclick = showLoginForm;
+    $id('mobilespanLogin').onclick = showLoginForm;
 }, false);
