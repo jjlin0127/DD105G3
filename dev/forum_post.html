@@ -28,15 +28,15 @@
                     <p>選擇話題種類 (請選擇1項)</p>
                     <div class="options_set set_post_topic"> 
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="digestion">
+                            <input type="radio" id="digestion" name="topicType" value="1">
                             <label for="digestion">幫助消化</label>
                         </div>
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="cvd">
+                            <input type="radio" id="cvd" name="topicType" value="2">
                             <label for="cvd">保護血管</label>
                         </div>
                         <div class="option">
-                            <input type="radio" name="set_topic_option" id="brain">
+                            <input type="radio" id="brain" name="topicType" value="3">
                             <label for="brain">活化大腦</label>
                         </div>
                     </div>
@@ -44,39 +44,39 @@
                     <p>選擇果甘種類 (最多選擇6項)</p>
                     <div class="options_set set_post_fruit">
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="star">
+                            <input type="checkbox" id="star" name="fruitsItems" value="">
                             <label for="star">楊桃</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="pineapple">
+                            <input type="checkbox" id="pineapple" name="fruitsItems" value="2">
                             <label for="pineapple">鳳梨</label>
                         </div>                           
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="dragon">
+                            <input type="checkbox" id="dragon" name="fruitsItems" value="3">
                             <label for="dragon">火龍果</label>
                         </div>
                         <div class="option">                                    
-                            <input type="checkbox" name="set_fruit_option" id="banana">
+                            <input type="checkbox" id="banana" name="fruitsItems" value="4">
                             <label for="banana">香蕉</label>
                         </div>
                         <div class="option">                                   
-                            <input type="checkbox" name="set_fruit_option" id="strawberry">
+                            <input type="checkbox" id="strawberry" name="fruitsItems" value="5">
                             <label for="strawberry">草莓</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="guava">
+                            <input type="checkbox" id="guava" name="fruitsItems" value="6">
                             <label for="guava">芭樂</label>
                         </div>
                         <div class="option">                                   
-                            <input type="checkbox" name="set_fruit_option" id="mango">
+                            <input type="checkbox" id="mango" name="fruitsItems" value="7">
                             <label for="mango">芒果</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="appale">
+                            <input type="checkbox" id="appale" name="fruitsItems" value="8">
                             <label for="appale">蘋果</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" name="set_fruit_option" id="blueberry">
+                            <input type="checkbox" id="blueberry" name="fruitsItems" value="9">
                             <label for="blueberry">藍莓</label>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
       </script>
       <script>
           function doFirst(){
-              checkBoxGroup = document.forms['post_form']['set_fruit_option'];			
+              checkBoxGroup = document.forms['post_form']['fruitsItems'];			
               for (let i=0; i<checkBoxGroup.length; i++){
                   checkBoxGroup[i].addEventListener('click', checkBoxLimit);
               }
