@@ -133,45 +133,57 @@ $(document).ready(function () {
             scale: 0.8,
             rotation: -20,
         })
-        // .to('.happy', 1, {
-        //     y:800,
-        //     x: 700,
-        //     scale:1,
-        //     rotation:-20,
-        //    opacity:0.8, 
-        // }).to('.happy', 1, {
-        //     y:820,
-        //     x: 750,
-        //     scale:0.8,
-        //     rotation:-20,
-        //    opacity:0.5, 
-        // }).to('.happy', 1, {
-        //     y:850,
-        //     x: 800,
-        //     scale:0.8,
-        //     rotation:-20,
-        //    opacity:0, 
-        // }).to('.happy', 1, {
-        //     y:800,
-        //     x: 700,
-        //     scale:1,
-        //     rotation:-20,
-        //    opacity:0.8,
-        // }).to('.happy', 1, {
-        //     y:820,
-        //     x: 750,
-        //     scale:0.8,
-        //     rotation:-20,
-        //    opacity:1, 
+
+
+
+
+
+        .to('.happy', 1, {
+            y:800,
+            x: 700,
+            scale:1,
+            rotation:-20,
+           opacity:0.8, 
+        }).to('.happy', 1, {
+            y:820,
+            x: 750,
+            scale:0.8,
+            rotation:-20,
+           opacity:0.5, 
+        }).to('.happy', 1, {
+            y:850,
+            x: 800,
+            scale:0.8,
+            rotation:-20,
+           opacity:0, 
+        }).to('.happy', 1, {
+            y:800,
+            x: 700,
+            scale:1,
+            rotation:-20,
+           opacity:0.8,
+        }).to('.happy', 1, {
+            y:820,
+            x: 750,
+            scale:0.8,
+            rotation:-20,
+           opacity:1, 
     
-        // })   
-        // .to('.happy', 1, {
-        //     y:1000,
-        //     x: 800,
-        //     scale:1,
-        //     rotation:-20,
-        //    opacity:0, 
-        // })
+        })   
+        .to('.happy', 1, {
+            y:1000,
+            x: 800,
+            scale:1,
+            rotation:-20,
+           opacity:0, 
+        })
+
+
+
+
+
+
+
         .to('.happy', 1, {
             y: 900,
             x: 850,
