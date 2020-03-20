@@ -23,7 +23,7 @@ header {
             }
         }
         .navList {
-            width: 80%;
+            width: 70%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,7 +33,7 @@ header {
 
 .navList .navItem {
     text-decoration: none;
-    padding: 8px;
+    padding: 6px;
     margin: 8px;
     color: #8a5b41;
     font-size: 1.4rem;
@@ -41,10 +41,19 @@ header {
 }
 
 .navList_2 {
-    width: 10%;
+    width: 13%;
+    min-width: 206px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    #memNickname {
+        max-width: 96px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #a6c165;
+        font-size: 1.5rem;
+    }
 }
 
 .navList_2 .navItem_2 {
@@ -54,6 +63,7 @@ header {
     color: #8a5b41;
     font-size: 1.5rem;
     transition: transform .2s .1s, color .2s .1s;
+    cursor: pointer;
 }
 
 .navItem:after {
@@ -159,6 +169,13 @@ header #rwdHamburgerMenu {
 header #rwdHamburgerMenu ul {
     margin: 100px auto;
     width: 300px;
+    a {
+        &:first-child {
+            li {
+                color: #a6c165;
+            }
+        }
+    }
 }
 
 header #rwdHamburgerMenu ul li {
@@ -168,6 +185,7 @@ header #rwdHamburgerMenu ul li {
     font-size: 1.4rem;
     color: #8a5b41;
     transition: all .5s;
+    cursor: pointer;
 }
 
 header #rwdHamburgerMenu ul li:hover {
@@ -400,7 +418,7 @@ html.fixWindow {
             width: 100%;
         }
         header .header__container {
-            display: none;
+            visibility: hidden;
         }
         header .rwdHeader {
             display: block;
@@ -493,6 +511,32 @@ html.fixWindow {
         &::after {
             transform: translate3d(0, -20px, 0) rotate(-270deg);
             transition-delay: 0.075s;
+        }
+    }
+}
+
+@media all and (max-width:1200px) {
+    .navList .navItem {
+        text-decoration: none;
+        padding: 0;
+        margin: 8px;
+        color: #8a5b41;
+        font-size: 1.4rem;
+        transition: transform .2s .1s, color .2s .1s;
+    }
+    .navList_2 {
+        width: 20%;
+        min-width: unset;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        #memNickname {
+            max-width: 70px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #a6c165;
+            font-size: 1.5rem;
         }
     }
 }

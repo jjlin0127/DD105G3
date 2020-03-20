@@ -11,13 +11,16 @@ body {
     box-sizing: border-box;
     background: url('../../../images/cusFruits/full_bg.png');
     margin: 0;
-    >h2 {
-        @include title(3px,
-        dotted,
-        #a6c165,
-        10px,
-        #fff);
-        margin: 50px auto;
+    .paddingtop {
+        padding-top: 100px;
+        >h2 {
+            @include title(3px,
+            dotted,
+            #a6c165,
+            10px,
+            #fff);
+            margin: 0px auto 50px;
+        }
     }
 }
 
