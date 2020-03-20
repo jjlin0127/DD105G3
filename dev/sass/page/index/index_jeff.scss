@@ -1,4 +1,5 @@
 // Jeff的首頁-----------------------------------------
+
 @import '../../base/reset';
 @import '../../base/variable';
 @import '../../base/fontSetting';
@@ -13,7 +14,7 @@
 
 
 body {
-
+    // background-color: #fff;
     // background-image: url();
     background: linear-gradient(270deg, #b0fbfb, #defcdf);
 }
@@ -30,7 +31,6 @@ section {
     border: 1px solid gray;
 }
 
-<<<<<<< HEAD
 // .index_about {
 //     position: relative;
 // }
@@ -137,16 +137,8 @@ section {
 }
 
 .land_section .fruitsInBasket>img:nth-child(6) {
-=======
-//吉祥物
-// .happyWrap{
-//     width: 1200px;
-// }
-.choco_black {
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     position: absolute;
     left: 300px;
-<<<<<<< HEAD
     width: 100px;
     z-index: 2;
     animation: fruitsInBasket 9s linear infinite alternate;
@@ -158,133 +150,21 @@ section {
     width: 125px;
     z-index: 2;
     animation: fruitsInBasket 5s linear infinite alternate;
-=======
-    z-index: 100;
-
-
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
 }
 
 
 
-<<<<<<< HEAD
 @keyframes fruitsInBasket {
     0% {
         transform: translateY(-10px);
         opacity: 0;
-=======
-.index_about {
-    .contain {
-        height: 100%;
 
-        .cloud_section img.cloud1 {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            z-index: -1;
-            animation: cloudAnimate 3s linear infinite alternate;
-        }
-
-        .cloud_section img.cloud2 {
-            position: absolute;
-            top: 12%;
-            left: 70%;
-            z-index: -1;
-            animation: cloudAnimate 2s linear infinite alternate;
-        }
-
-        #indexSection1 {
-            width:1200px;
-            margin: 0 auto;
-            position: relative;
-            padding-top: 50px;
-            border: 1px solid red;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-
-
-            .parallaxContainer {
-                width: 1200px;
-                margin: 50px auto;
-                background-attachment: fixed;
-                border: 1px solid green;
-                display: flex;
-                // flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-
-                #scene .layer {
-                    img{
-                        vertical-align: bottom;
-                    }
-                    .F1 {
-                        position: relative;
-                        left: 100px;
-                    }
-
-                    .F2 {
-                        position: relative;
-                        top:80px;
-                        left: 250px;
-                    }
-
-                    .F3 {
-                        position: relative;
-                        top:150px;
-                        left: 350px;
-                    }
-
-                    .F4 {
-                        position: relative;
-                        right:100px;
-                    }
-
-                    .F5 {
-                        position: relative;
-                        top:100px;
-                        right:250px;
-                    }
-
-                    .F6 {
-                        position: relative;
-
-                    }
-
-                }
-            }
-
-            .landSection {
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                border: 1px solid orange;
-            }
-        }
     }
 
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
-
-
-<<<<<<< HEAD
     100% {
         transform: translateY(10px);
         opacity: 1;
 
-=======
-    .contain>p {
-        text-align: center;
-        margin-top: 50px;
-        font-size: 20px;
-        color: #4c4948;
-        line-height: 1.5;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     }
 }
 
@@ -297,15 +177,10 @@ section {
 
     100% {
 
-<<<<<<< HEAD
         transform: translateY(10px);
 
     }
 }
-=======
-
-
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
 
 
 
@@ -347,7 +222,6 @@ section {
     left: 250px;
     
 
-<<<<<<< HEAD
 }
 
 // 天空柿子
@@ -401,51 +275,6 @@ a .btn {
 
 }
 
-=======
-@import "../../modules/rwd";
-
-//1440px
-@media all and (max-width:1440px) {
-    #scene {
-        // border:1px solid red;
-        // display:none;
-
-        // 天空柿子
-        .layer4>img {
-            position: absolute;
-            top: -50px;
-            left: 1000px;
-        }
-
-        // 天空水梨
-        .layer5>img {
-            position: absolute;
-            top: 100px;
-            left: 1000px;
-
-        }
-
-        // 天空酪梨
-        .layer6>img {
-            position: absolute;
-            top: 200px;
-            left: 1000px;
-
-        }
-    }
-
-
-
-}
-
-
-
-//768px
-@include respond(ipadpro) {
-    .skyFruits {
-        #scene {
-            display: none;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
 
 
 
@@ -503,7 +332,6 @@ a .btn {
 //     transform: translateX(10px);
 // }
 
-<<<<<<< HEAD
 // .game .game1 {
 //     position: fixed;
 //     top: 29px;
@@ -529,42 +357,5 @@ a .btn {
 
         transform: translateY(-10px);
 
-=======
-    .choco_black {
-        display: none;
-    }
-
-
-}
-
-
-//576px
-@include respond(ipad) {
-    .index_about .contain>p {
-        display: none;
-
-    }
-
-
-
-}
-
-@include respond(phone) {
-    // .index_about .contain>p {
-    //     display: none;
-
-    // }
-
-    .land {
-        width:100%;
-    }
-
-    img.cloud1 {
-        width: 40%;
-    }
-
-    img.cloud2 {
-        width: 40%;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
     }
 }

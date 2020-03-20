@@ -6,276 +6,232 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 @import '../../modules/rwd';
-@import '../../modules/lightbox';
 body {
     box-sizing: border-box;
-    background: url('../../../images/cusFruits/full_bg.png');
+    background: url('../../../images/sky.jpg');
     margin: 0;
     .header__container {
         position: sticky;
     }
-    .rwdHeader {
-        position: sticky;
-    }
-    >h2 {
-        @include title(3px,
-        dotted,
-        #a6c165,
-        10px,
-        #fff);
-        margin: 50px auto;
-    }
 }
 
-//--------
-.popup {
-    @include popup;
-    .guides {
-        display: flex;
-        justify-content: space-between;
-        margin: 30px;
-        line-height: 1.5;
-        div {
-            width: 31%;
-        }
-    }
+.title_cusfruits {
+    @include title(3px,
+    dotted,
+    #a6c165,
+    10px,
+    #fff);
+    margin: 50px auto;
 }
 
-//--------
 .cusfruits_wrapper {
-    display: flex;
-    flex-direction: column;
     max-width: 1200px;
     margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
     line-height: 1.5;
-    .guides_inpage {
-        display: flex;
-        justify-content: space-between;
-        max-width: 60%;
-        text-align: center;
-        margin: 20px auto;
-        &>:nth-child(even) {
-            width: 100px;
-            height: 25px;
-            border-bottom: dotted #0898A8;
-            margin: 0px 10px;
-            div {
-                margin: 0 50px;
-            }
-        }
-        &>:nth-child(odd) {
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            padding: 10px;
-        }
-    }
-    .cusfruits_inner {
-        display: flex;
-        justify-content: space-between;
-        .wrapper_left {
-            .cabinet_top {
-                width: 365px;
-                height: 65px;
-                background-image: url("../../../images/cusFruits/custfruit_cabinet_top.png");
-                background-repeat: no-repeat;
-            }
-            .cabinet_title {
-                width: 330px;
-                background: #74BAC1;
-                text-align: center;
-                color: #DDEFFB;
-                padding: 5px;
-            }
-            p {
-                line-height: 30px;
-            }
-            .fruits_window {
-                // width: 380px;
-                height: 500px;
-                background-image: url(../../../images/cusFruits/cusfruit_cabinet.png);
-                background-repeat: no-repeat;
-                div {
-                    position: relative;
-                    img {
-                        background-image: url(../../../images/cusFruits/wheel_plate.png);
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        width: 100px;
-                        height: 100px;
-                        object-fit: contain;
-                    }
-                }
-                .linktoqna {
-                    position: relative;
-                    top: 24px;
-                    text-align: right;
-                    margin-right: 35px;
-                    a {
-                        text-decoration: none;
-                        color: #DDEFFB;
-                        background: #078391;
-                        padding: 8px;
-                    }
-                }
-                .layer1 {
-                    top: 40px;
-                    left: 15px;
-                    max-width: 95%;
-                }
-                .layer2 {
-                    top: 95px;
-                    left: 15px;
-                    max-width: 95%;
-                }
-                .layer3 {
-                    top: 135px;
-                    left: 15px;
-                    max-width: 95%;
-                }
-            }
-        }
-        .wrapper_middle {
-            background-image: url("../../../images/cusFruits/cusfruit_middle@2x.png");
-            background-size: 125% 120%;
-            background-position: center;
+    .wrapper_left {
+        .cabinet_top {
+            width: 365px;
+            height: 65px;
+            background-image: url("../../../images/cusFruits/custfruit_cabinet_top.png");
             background-repeat: no-repeat;
-            width: 400px;
-            margin: 0 30px;
-            table {
-                position: relative;
-                top: 125px;
-                left: 80px;
-                width: 250px;
-                tr {
-                    text-align: right;
-                    img {
-                        width: 200px;
-                        margin: 0 auto;
-                    }
-                }
-                td {
-                    height: 70px;
-                    align-items: center;
-                    vertical-align: middle;
-                    img {
-                        width: auto;
-                        height: 75px;
-                    }
-                    .btn_s {
-                        outline: none;
-                        margin-right: 10px;
-                        border-radius: 5px;
-                        padding: 3px;
-                        font-family: "Noto Sans TC", sans-serif;
-                    }
-                }
-            }
         }
-        .wrapper_right {
-            display: flex;
-            flex-direction: column;
-            .upper {
-                width: 375px;
-                height: 375px;
-                display: flex;
-                flex-direction: column;
-                .radar_wrapper {
-                    background: url("../../../images/cusFruits/custfruit_bubble.png");
-                    background-position: center;
+        .cabinet_title {
+            width: 330px;
+            background: #74BAC1;
+            text-align: center;
+            color: #DDEFFB;
+            padding: 5px;
+        }
+        p {
+            line-height: 30px;
+        }
+        .fruits_window {
+            // width: 380px;
+            height: 500px;
+            background-image: url(../../../images/cusFruits/cusfruit_cabinet.png);
+            background-repeat: no-repeat;
+            div {
+                position: relative;
+                img {
+                    background-image: url(../../../images/cusFruits/wheel_plate.png);
                     background-size: contain;
                     background-repeat: no-repeat;
-                    margin: 10px auto;
-                    width: 300px;
-                    height: 300px;
+                    width: 100px;
+                    height: 100px;
+                    object-fit: contain;
                 }
             }
-            $primary: #11998e;
-            $secondary: #38ef7d;
-            $white: #fff;
-            $gray: #9b9b9b;
-            .lower {
+            .linktoqna {
                 position: relative;
-                width: 375px;
-                h5 {
-                    margin-bottom: 10px;
+                top: 20px;
+                text-align: right;
+                margin-right: 35px;
+                a {
+                    text-decoration: none;
+                    color: #DDEFFB;
+                    background: #078391;
+                    padding: 8px;
                 }
-                form {
-                    display: flex;
-                    justify-content: space-between;
-                    .form__group {
-                        position: relative;
-                        padding: 15px 0 0;
-                        margin-top: 10px;
-                        width: 50%;
+            }
+            .layer1 {
+                top: 40px;
+                left: 15px;
+            }
+            .layer2 {
+                top: 95px;
+                left: 15px;
+            }
+            .layer3 {
+                top: 135px;
+                left: 15px;
+            }
+        }
+    }
+    .wrapper_middle {
+        background-image: url("../../../images/cusFruits/cusfruit_middle@2x.png");
+        background-size: 125% 120%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 400px;
+        margin: 0 30px;
+        table {
+            position: relative;
+            top: 150px;
+            left: 80px;
+            width: 250px;
+            tr {
+                text-align: right;
+                img {
+                    width: 200px;
+                    margin: 0 auto;
+                }
+            }
+            td {
+                height: 70px;
+                align-items: center;
+                vertical-align: middle;
+                img {
+                    width: auto;
+                    height: 75px;
+                }
+                .btn_s {
+                    outline: none;
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    padding: 3px;
+                }
+            }
+        }
+    }
+    .wrapper_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .upper {
+            background: url("../../../images/cusFruits/custfruit_bubble.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 375px;
+            padding-bottom: 10%;
+            display: flex;
+            flex-direction: column;
+            div {
+                canvas {
+                    width: 200px;
+                }
+            }
+        }
+        $primary: #11998e;
+        $secondary: #38ef7d;
+        $white: #fff;
+        $gray: #9b9b9b;
+        .lower {
+            position: relative;
+            top: -65px;
+            width: 375px;
+            h5 {
+                margin-bottom: 10px;
+            }
+            form {
+                display: flex;
+                justify-content: space-between;
+                .form__group {
+                    position: relative;
+                    padding: 15px 0 0;
+                    margin-top: 10px;
+                    width: 50%;
+                }
+                .form__field {
+                    font-family: inherit;
+                    width: 100%;
+                    border: 0;
+                    border-bottom: 2px solid $gray;
+                    outline: 0;
+                    font-size: 1.3rem;
+                    color: $white;
+                    padding: 7px 0;
+                    background: transparent;
+                    transition: border-color 0.2s;
+                    &::placeholder {
+                        color: transparent;
                     }
-                    .form__field {
-                        font-family: inherit;
-                        width: 100%;
-                        border: 0;
-                        border-bottom: 2px solid $gray;
-                        outline: 0;
+                    &:placeholder-shown~.form__label {
                         font-size: 1.3rem;
-                        color: $white;
-                        padding: 7px 0;
-                        background: transparent;
-                        transition: border-color 0.2s;
-                        &::placeholder {
-                            color: transparent;
-                        }
-                        &:placeholder-shown~.form__label {
-                            font-size: 1.3rem;
-                            cursor: text;
-                            // top: 775px;
-                        }
-                    }
-                    .form__label {
-                        position: absolute;
+                        cursor: text;
                         // top: 775px;
+                    }
+                }
+                .form__label {
+                    position: absolute;
+                    // top: 775px;
+                    display: block;
+                    transition: 0.2s;
+                    font-size: 1rem;
+                    color: $gray;
+                }
+                .form__field:focus {
+                    ~.form__label {
+                        position: absolute;
+                        top: 40px;
                         display: block;
                         transition: 0.2s;
                         font-size: 1rem;
-                        color: $gray;
-                    }
-                    .form__field:focus {
-                        ~.form__label {
-                            position: absolute;
-                            top: 40px;
-                            display: block;
-                            transition: 0.2s;
-                            font-size: 1rem;
-                            color: $primary;
-                            font-weight: 700;
-                        }
-                        padding-bottom: 6px;
+                        color: $primary;
                         font-weight: 700;
-                        border-width: 3px;
-                        border-image: linear-gradient(to right,
-                        $primary,
-                        $secondary);
-                        border-image-slice: 1;
                     }
-                }
-                div {
-                    display: flex;
-                    justify-content: space-between;
+                    padding-bottom: 6px;
+                    font-weight: 700;
+                    border-width: 3px;
+                    border-image: linear-gradient(to right,
+                    $primary,
+                    $secondary);
+                    border-image-slice: 1;
                 }
             }
-            .buttons {
-                width: 375px;
+            div {
                 display: flex;
-                justify-content: flex-end;
-                & :nth-child(1) {
-                    @include btn_cancel(100px);
-                }
-                & :nth-child(2) {
-                    @include btn_secondary(100px);
-                    margin-left: 10px;
-                }
+                justify-content: space-between;
+            }
+        }
+        .buttons {
+            width: 375px;
+            display: flex;
+            justify-content: flex-end;
+            & :nth-child(1) {
+                @include btn_cancel(100px);
+            }
+            & :nth-child(2) {
+                @include btn_secondary(100px);
+                margin-left: 10px;
             }
         }
     }
 }
 
+@import '../../modules/rwd';
 @import '../../page/custfruits/latopbig';
 @import '../../page/custfruits/latopsmall';
 @import '../../page/custfruits/ipadpro';

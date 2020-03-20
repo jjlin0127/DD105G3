@@ -33,7 +33,11 @@
     text-align: right;
 }
 
-.cancel_post button.cancel_post_btn{
+.post_area .cancel_post > a{
+    display: inline-block;
+}
+
+.cancel_post button.cancel_btn{
     @include btn_cancel(120px);
     text-decoration: none;
 }

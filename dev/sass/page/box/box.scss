@@ -11,9 +11,13 @@
 #box-body{
     background-image: url('../../../images/box/box-bg.jpg');
     background-size: cover;
+    header{
+        position: absolute;
+        top: 0;
+    }
     h2{
         @include title(3px, dotted, #a6c165, 10px, #fff);
-        margin: 50px auto 0px auto;
+        margin: 150px auto 0px auto;
         text-align: center;
     }
     .box_contain{
@@ -21,13 +25,9 @@
         
         .outer{
             width: 80%;
-<<<<<<< HEAD
             border: 5px solid blue;
             position: relative;  
             height: 600px;
-=======
-            // height: 600px;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
             background-color: #fff;
             background-image: url('../../../images/box/box_bg_material.jpg');
             border: 3px dashed #a6c165;
@@ -35,40 +35,6 @@
             margin-top: 50px;
             display: flex;
             align-items: center;
-<<<<<<< HEAD
-=======
-            flex-wrap: wrap;
-            padding: 80px 0px 50px 0px;
-            h4{
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0px;
-            }
-            .step_wrap{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 30px;
-                .step{      
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 120px;
-                    margin: 20px 25px 20px 25px;
-                    line-height: 1.5;
-                    .circle{
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        background-color: $btnSecBgColor;
-                        text-align: center;
-                        line-height: 2;
-                        color: white;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
             .bow-knot-left{
                 width: 200px;
                 position: absolute;
@@ -89,31 +55,9 @@
                     width: 100%;
                 }
             }
-<<<<<<< HEAD
             .left_box{
                 width: 70%;        
                 // border: solid 1px red;
-=======
-            .button-wrap{
-                height: auto;
-                font-size: 0;
-                text-align: center;
-                display: flex;
-                flex-direction: column;         
-                label{
-                    margin: 5px;
-                    @include btn_primary(100px);
-                    &:hover{
-                        background-color: $btnFuncHovBgColor;
-                    }
-                }
-                .for-zoom-cube.zoom{
-                    background-color: $btnFuncHovBgColor;
-                }
-            }
-            .box{ 
-                width: 400px;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
                 .cube-wrap{
                     position: relative;
                     height: 50%;
@@ -145,7 +89,6 @@
                             background-color: #acd968;
                             outline: 1px solid rgba(0, 0, 0, 0.1);
                             outline-offset: -1px;
-<<<<<<< HEAD
                             i{
                                 position: absolute;
                                 top: 0;
@@ -159,25 +102,6 @@
                                 font-size: 36px;
                                 text-align: center;
                                 line-height: 40px;
-=======
-                            overflow: hidden;
-                            // i{
-                            //     position: absolute;
-                            //     top: 0;
-                            //     right: 0;
-                            //     bottom: 0;
-                            //     left: 0;
-                            //     width: 40px;
-                            //     height: 40px;
-                            //     margin: auto;
-                            //     color: #fff;
-                            //     font-size: 36px;
-                            //     text-align: center;
-                            //     line-height: 40px;
-                            // }
-                            img.select{
-                                border: 3px dashed $btnFuncBgColor;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
                             }
                         }
                         .cube-face-top {
@@ -270,21 +194,12 @@
                         
                     }
                 }
-                .cube-wrap.zoom{
-                    transform: scale(1.6);
-                    
-                }
                 // #rotate-cube:checked ~ .cube-wrap .cube{
                 //     transform: rotateX(-30deg) rotateY(110deg) rotateZ(0deg);
                 // }
                 #zoom-cube:checked ~ .cube-wrap{
-<<<<<<< HEAD
                     -webkit-transform: scale(1.4);
                     transform: scale(1.4);
-=======
-                    -webkit-transform: scale(1.6);
-                    transform: scale(1.6);
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
                 }
                 // #show-front:checked ~ .cube-wrap .cube{
                 //     -webkit-transform: rotateX(0) rotateY(0);
@@ -363,14 +278,9 @@
                 }
             }
             .tab_wrap{
-<<<<<<< HEAD
                 // border: solid 1px red;
                 margin-right: 5%;
                 width: 30%; 
-=======
-                width: 300px;
-                margin: 0;
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
                 .tab_container{
                     #tab1{
                         #picker{
@@ -391,10 +301,7 @@
                                 width: 60px;
                                 height: 60px;
                                 margin: 5px;
-<<<<<<< HEAD
                                 // border: 1px solid red;
-=======
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3
                                 cursor: pointer;
                                 img{
                                     width: 100%;
@@ -404,21 +311,11 @@
                         form{
                             margin-top: 10px;
                             display: flex;
-                            align-items: center;
                             label{
                                 margin-right: 5%;
                             }
                             input{
                                 width: 60%;
-                            }
-                        }
-                        .btn_wrap{
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 10px;
-                            img{
-                                width: 35px;
-                                cursor: pointer;
                             }
                         }
                         
@@ -444,31 +341,4 @@
 }
 
 @import '../../modules/rwd';
-<<<<<<< HEAD
 @import 'latop-min.scss';
-=======
-@import 'ipadpro.scss';
-@media all and (max-width: 414px) {
-    #box-body{
-        
-        .box_contain{
-            overflow-x: hidden;
-            .outer{
-                padding: 80px 30px 50px 30px;
-                .step_wrap{
-                    .step{
-                        width: 120px;
-                        margin: 10px 0px 10px 0px;
-                    
-                    }
-               
-                }
-            }
-        }
-    }
-  }
-@import 'phone.scss';
-
-
-
->>>>>>> 2da8c96558c60749e9fe63bbf99a630e393fecb3

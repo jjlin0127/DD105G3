@@ -40,7 +40,70 @@ window.addEventListener('load',function(){ // wait for document ready
 
 //
 
+//開發人員
+var works = [
+    {
+        title: "思甄",
+        description: "FOCUS",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901598/FOCUS/"
+    },
+    {
+        title: "俊富",
+        description: "雪冰",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901607/SnowIce.0107/"
+    },
+    {
+        title: "珮珊",
+        description: "Eye塔羅",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901609/tarot_green/"
+    },
+    {
+        title: "家駿",
+        description: "Cafe'Pet",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901611/PersonalSite/"
+    },
+    {
+        title: "政儒",
+        description: "Gin Bar",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901612/"
+    },
+    {
+        title: "書宜",
+        description: "Ocean Ville",
+        cover: "./imges/illust3615-281x260.png",
+        src: "http://140.115.236.71/demo-personal/DD105/web/T1901620/myProject/"
+    }
+];
 
+new Vue({
+    el: "#app",
+    data: {
+        now_index: 0,
+        works: works,
+        span: 962
+    },
+    computed: {
+        computed_left() {
+            var result = {
+                left: -this.now_index * this.span + "px"
+            };
+            return result;
+        }
+    },
+    methods: {
+        delta(d) {
+            this.now_index = (this.now_index + d + this.works.length) % this.works.length;
+        },
+        bg_css(url) {
+            return "background-image:url(" + url + ")";
+        }
+    }
+});
 
 
 //Tao 動畫

@@ -9,13 +9,6 @@ try{
   $product = $pdo->prepare($sql);
   $product->bindValue(":prodNo", $prodNo);
   $product->execute();
-
-  $sql1 = "select p.prodReviewNo, p.prodscore, p.prodMsg, p.prodMsgTime, m.memNickname from product_review p join `member` m ON(p.MemNo = m.memNo) where prodNo= :prodNo order by prodMsgTime desc;";
-  // $sql1 = "select p.prodReviewNo, p.prodscore, p.prodMsg, p.prodMsgTime, m.memNickname from product_review p join `member` m ON(p.MemNo = m.memNo) where $prodNo = $_REQUEST["prodNo"]  order by prodMsgTime desc;";
-
-$product_review = $pdo->prepare($sql1);
-$product_review->bindValue(":prodNo", $prodNo);
-$product_review->execute();
 }catch(PDOException $e){
   $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
   $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
@@ -145,21 +138,8 @@ $product_review->execute();
         </div>  <!--prdt_text的結尾標籤-->
         <table class="previous_and_next">
             <tr>
-                <td>
-                    <h4>
-                    <!-- <a href="prod_detail.php?prodNo=<?php $prodNo-1?> "> -->
-                        <a href="#" class="a_previous_and_next">
-                            <img src="images/prdt/icon/icon_previous.svg">上一筆產品
-                        </a>
-                    </h4>
-                </td>
-                <td class="prod_next">
-                    <h4>
-                        <a href="#" class="a_previous_and_next">下一筆產品
-                            <img src="images/prdt/icon/icon_next.svg">
-                        </a>
-                    </h4>
-                </td>
+                <td><h4><a href="#" class="a_previous_and_next"><img src="images/prdt/icon/icon_previous.svg">上一筆產品：香蕉</a></h4></td>
+                <td class="prod_next"><h4><a href="#" class="a_previous_and_next">下一筆產品：芭樂<img src="images/prdt/icon/icon_next.svg"></a></h4></td>
             </tr>
         </table>
         <hr size="4px" align="center" width="100%">
@@ -173,43 +153,46 @@ $product_review->execute();
 //$prodNo = 3;
 //$errMsg = "";
 //連線資料庫
-// try{
-//   require_once("connectProduct.php");
-    // $sql1 = "select p.prodReviewNo, p.prodscore, p.prodMsg, p.prodMsgTime, m.memNickname from product_review p join `member` m ON(p.MemNo = m.memNo) where prodNo= :prodNo order by prodMsgTime desc;";
-    // $sql1 = "select p.prodReviewNo, p.prodscore, p.prodMsg, p.prodMsgTime, m.memNickname from product_review p join `member` m ON(p.MemNo = m.memNo) where $prodNo = $_REQUEST["prodNo"]  order by prodMsgTime desc;";
-  //$product_review = $pdo->query($sql1);
-//   $product_review = $pdo->prepare($sql);
-//   $product_review->bindValue(":prodNo", $_REQUEST["prodNo"]);
-//   $product_review->execute();
+try{
+  require_once("connectProduct.php");
+  $sql1 = "select p.prodReviewNo, p.prodscore, p.prodMsg, p.prodMsgTime, m.memNickname from product_review p join `member` m 
+  ON(p.MemNo = m.memNo) where prodNo = 1 order by prodMsgTime desc;";
+  $product_review = $pdo->query($sql1);
+  //$product = $pdo->prepare($sql);
+  $product_review->bindValue(":prodNo", $prodNo);
+  //$product->execute();
 
 //   <?php 
 //   $artiRows = $articles->fetchAll(PDO::FETCH_ASSOC); 
 //   foreach($artiRows as $i => $artiRow){    
 // 
-// }catch(PDOException $e){
-//   $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
-//   $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
-// }
-// ?> 
+  $product_reviewRows = $product_review->fetchAll(PDO::FETCH_ASSOC);
+  foreach($product_reviewRows as $i =>$product_reviewRow)  //p.prodReviewNo
+}catch(PDOException $e){
+  $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+  $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+}
+?> 
             <center><h2>觀看評價</h2></center>
             <ul class="prtd_comment"> 
-            <?php 
-                $product_reviewRows = $product_review->fetchAll(PDO::FETCH_ASSOC);
-                foreach($product_reviewRows as $i =>$product_reviewRow) {
-            ?>
                 <li>
-                    <div><?=$product_reviewRow["memNickname"]?>於<?=$product_reviewRow["prodMsgTime"]?> 發表評價：
-                    <?=$product_reviewRow["prodMsg"]?></div>
+                    <div><?php echo $product_reviewRow->memNickname;?>於<?php echo $product_reviewRow->prodMsgTime;?> 發表評價：<?php echo $product_reviewRow->prodMsg;?></div>
                     <div class="each_comment">
-                        <img src="images/prdt/icon/stars_<?=$product_reviewRow["prodscore"];?>.svg" class="stars">
+                        <img src="images/prdt/icon/stars_<?php $product_reviewRow->prodscore;?>.svg" class="stars">
                         <button class="accuse" title="我想檢舉這篇留言">
                             檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
                         </button>
                     </div>
                 </li>
-            <?php  
-                };
-            ?> 
+                <li>
+                    <div>Ted1001於  2020.02.24  08:10 發表評價：我覺得這款果甘不錯吃，但分量有點太少。</div>
+                    <div class="each_comment">
+                        <img src="images/prdt/icon/five_stars.svg" class="stars">
+                        <button class="accuse" title="我想檢舉這篇留言">
+                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
+                        </button>
+                    </div>
+                </li>
                 <!-- <li>
                     <div>Eric0101於  2020.02.20  23:40 發表評價：還有客製化禮盒，這個我最喜歡的。</div>
                     <div class="each_comment">
