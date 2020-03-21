@@ -418,7 +418,7 @@ html.fixWindow {
             width: 100%;
         }
         header .header__container {
-            visibility: hidden;
+            display: none;
         }
         header .rwdHeader {
             display: block;

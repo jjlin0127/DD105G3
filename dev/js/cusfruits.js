@@ -1,30 +1,3 @@
-        // var data = [
-        //     { type: '幫助消化', score: '3' },
-        //     { type: '活化大腦', score: '2' },
-        //     { type: '保護血管', score: '1' },
-        // ];
-
-        // var svg = d3.select('#svg')
-        // var padding = { top: 20, right: 30, bottom: 30, left: 50 };
-
-        // var chartarea = {
-        //     "width": parseInt(svg.style("width")) - padding.left - padding.right,
-        //     "height": parseInt(svg.style("height")) - padding.top - padding.bottom,
-        // }
-        // var yScale = d3.scalelinear()
-        //     .domain([0, d3.max(data, function(d, i) { return d.score })])
-        //     .range([chartarea.height, 0]).nice();
-        // var xScale = d3.scaleband()
-        //     .domain(data.map(function(d) { return d.type }))
-        //     .range([0, chartarea.width])
-        //     .padding(.2);
-
-        // var xAxis = svg.append("g")
-        //     .classed("xAxis", true)
-        //     .attr(
-        //         'transform', 'translate(' + padding.left + ','
-        //     )
-
         //養生指數
         Chart.defaults.global.legend.display = false;
         var ctx = document.getElementById('heyChart');
@@ -73,6 +46,19 @@
 
         //------------------------------------------------------------
 
+        // $(document).ready(function() {
+        //     $('img.draggable').click(function(e) {
+        //         var currentLink = $(this);
+
+        //         // $('.droppedzone').empty() 
+        //         // remove existing img/html, if added already
+        //         //generate image tag on fly and assign src from current anchor clicked and add to div
+        //         $('<img />').attr("src", $(currentLink).attr("src")).appendTo($('.droppedzone'));
+        //         e.preventDefault();
+
+        //     })
+        // })
+
         window.addEventListener('load', function() {
             images = document.getElementsByClassName('draggable');
             for (let i = 0; i < images.length; i++) {
@@ -117,18 +103,3 @@
                 })
             }
         })
-
-        // $("#img01").draggable({
-        //     containment:"#middle01",
-        // });
-        // $("#middle01").droppable({
-        //     drop: function(event, ui) {
-        //         $(this).css('background', 'rgb(0,200,0)');
-        //     },
-        //     over: function(event, ui) {
-        //         $(this).css('background', 'orange');
-        //     },
-        //     out: function(event, ui) {
-        //         $(this).css('background', 'cyan');
-        //     }
-        // });
