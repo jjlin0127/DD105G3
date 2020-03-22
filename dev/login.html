@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
+    <title>登入 | 天然甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/login/login.css">
 
@@ -16,7 +16,6 @@
     <!-- jquery&jqueryUI -->
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/login.js"></script>
 </head>
 
 <body>
@@ -40,19 +39,18 @@
                 </div>
                 <div class="signin">
                     <h1>登入會員</h1>
-                    <form autocomplete="off">
+                    <form autocomplete="off" action="./php/login.php" method="POST">
                         <label>E-mail*:</label>
-                        <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="mem_acct" required="">
+                        <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
                         <label>密碼*:</label>
-                        <input type="password" class="mempsw" pattern="\w{5,17}$" name="mem_psw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <input type="password" class="mempsw" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
                         <a href="" class="forgetpswlightbox">忘記密碼?</a>
-                        <button type="button" class="buttonsubmitlogin loginbutton">登入</button>
+                        <button type="submit" class="buttonsubmitlogin loginbutton">登入</button>
                     </form>
                 </div>
             </div>
             <div class="leftbox">
                 <h2 class="title"><span>天然甘</span><br>新鮮水果製成果乾</h2>
-                <!-- <img class="flower smaller" src="./img/register/flower.png" alt="1357d638624297b" border="0"> -->
                 <p class="account">已經有帳號了嗎?</p>
                 <button id="signin">登入</button>
             </div>
@@ -70,13 +68,13 @@
             <li><a href="#mobilelogintab2">註冊</a></li>
         </ul>
         <div id="mobilelogintab1" class="motabinner">
-            <form autocomplete="off">
+            <form autocomplete="off" action="./php/login.php" method="POST">
                 <label>E-mail*:</label>
                 <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
                 <label>密碼*:</label>
-                <input type="password" class="mempsw" name="mem_psw">
+                <input type="password" class="mempsw" name="memPsw">
                 <a href="" class="forgetpswlightbox">忘記密碼?</a>
-                <button type="button" class="buttonsubmitlogin loginbutton">登入</button>
+                <button type="submit" class="buttonsubmitlogin loginbutton">登入</button>
             </form>
         </div>
         <div id="mobilelogintab2" class="motabinner">

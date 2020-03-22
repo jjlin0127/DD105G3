@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>發表話題 | 天然甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/vendor/summernote-lite.min.css">
     <link rel="stylesheet" href="./css/page/forum/forum_post.css">
 </head>
 <body>
@@ -39,50 +39,54 @@
                             <input type="radio" id="brain" name="topicType" value="3">
                             <label for="brain">活化大腦</label>
                         </div>
+                        <div class="option">
+                            <input type="radio" id="other" name="topicType" value="4">
+                            <label for="other">其它</label>
+                        </div>
                     </div>
 
                     <p>選擇果甘種類 (最多選擇6項)</p>
                     <div class="options_set set_post_fruit">
                         <div class="option">
-                            <input type="checkbox" id="star" name="fruitsItems" value="">
+                            <input type="checkbox" id="star" name="fruitsItems[]" value="1">
                             <label for="star">楊桃</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="pineapple" name="fruitsItems" value="2">
+                            <input type="checkbox" id="pineapple" name="fruitsItems[]" value="2">
                             <label for="pineapple">鳳梨</label>
                         </div>                           
                         <div class="option">
-                            <input type="checkbox" id="dragon" name="fruitsItems" value="3">
+                            <input type="checkbox" id="dragon" name="fruitsItems[]" value="3">
                             <label for="dragon">火龍果</label>
                         </div>
                         <div class="option">                                    
-                            <input type="checkbox" id="banana" name="fruitsItems" value="4">
+                            <input type="checkbox" id="banana" name="fruitsItems[]" value="4">
                             <label for="banana">香蕉</label>
                         </div>
                         <div class="option">                                   
-                            <input type="checkbox" id="strawberry" name="fruitsItems" value="5">
+                            <input type="checkbox" id="strawberry" name="fruitsItems[]" value="5">
                             <label for="strawberry">草莓</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="guava" name="fruitsItems" value="6">
+                            <input type="checkbox" id="guava" name="fruitsItems[]" value="6">
                             <label for="guava">芭樂</label>
                         </div>
                         <div class="option">                                   
-                            <input type="checkbox" id="mango" name="fruitsItems" value="7">
+                            <input type="checkbox" id="mango" name="fruitsItems[]" value="7">
                             <label for="mango">芒果</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="appale" name="fruitsItems" value="8">
+                            <input type="checkbox" id="appale" name="fruitsItems[]" value="8">
                             <label for="appale">蘋果</label>
                         </div>
                         <div class="option">
-                            <input type="checkbox" id="blueberry" name="fruitsItems" value="9">
+                            <input type="checkbox" id="blueberry" name="fruitsItems[]" value="9">
                             <label for="blueberry">藍莓</label>
                         </div>
                     </div>
                     <textarea id="summernote" name="editordata"></textarea>
                     <div class="post_btns">
-                        <button type="submit" class="post_submit_btn">發表話題</button>
+                        <button type="submit" class="post_submit_btn" id="post_submit_btn">發表話題</button>
                         <button type="reset" class="post_reset_btn">清除重填</button>
                     </div>
                 </form>
@@ -98,59 +102,12 @@
     </div>
     
     @@include('./layout/footer.html')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script>
-        $('#summernote').summernote({
-          placeholder: '今天想分享什麼呢？',
-          tabsize: 2,
-          minHeight: 300,
-          toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']]
-          ]
-        });
-      </script>
-      <script>
-          function doFirst(){
-              checkBoxGroup = document.forms['post_form']['fruitsItems'];			
-              for (let i=0; i<checkBoxGroup.length; i++){
-                  checkBoxGroup[i].addEventListener('click', checkBoxLimit);
-              }
-          }
-
-          function checkBoxLimit(){
-              let alertBox = document.getElementById('alertBox');
-              let alertMessage = document.getElementById('alertMessage');
-              let close_alert_btn = document.getElementById('close_alert_btn');
-              let limit = 6;
-              let checkedcount = 0;
-              
-              for (let j=0; j<checkBoxGroup.length; j++){
-                  checkedcount += (checkBoxGroup[j].checked) ? 1 : 0;
-              }
-
-              if (checkedcount > limit) {
-                  alertBox.classList.remove('hidden');					
-                  this.checked = false;
-
-                  close_alert_btn.addEventListener('click', function(){
-                      alertBox.classList.add('hidden');
-                  });
-                  
-                  setTimeout(function(){
-                      alertBox.classList.add('hidden');
-                  }, 2000);
-              }
-          }
-
-          window.addEventListener('load', doFirst);
-      </script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/vendor/summernote-lite.min.js"></script>
+    <script src="./js/vendor/all.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/forum/forum_post.js"></script>
 </body>
 </html>

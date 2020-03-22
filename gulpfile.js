@@ -66,7 +66,7 @@ gulp.task('lint', function() {
 
 gulp.task('sass', function () {
     return gulp.src(['dev/sass/*.scss', 'dev/sass/**/*.scss'])
-       .pipe(sourcemaps.init())
+    //    .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         // .pipe(cleanCSS({compatibility: 'ie9'}))
         .pipe(sourcemaps.write())

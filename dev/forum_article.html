@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/page/forum/forum_article.css">
-</head>
 <body>
     @@include('layout/header.html',{
         "focus06" : "focus"
@@ -188,122 +187,11 @@
         <!-- popbox end -->
     </div>
     @@include('./layout/footer.html') 
-    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script>
-        //  social btns toggle css-checked
-        function doFirst(){
-            let socialBtns = document.getElementsByClassName('socialBtns');
-            for(let i=0; i<socialBtns.length; i++){
-                socialBtns[i].addEventListener('click', socialBtnCheck);
-            }
-
-            let reportBtns = document.getElementsByClassName('reportBtns');
-            for(let i=0; i<reportBtns.length; i++){
-                reportBtns[i].addEventListener('click', reportPost);
-            }
-        }
-
-        function socialBtnCheck(){
-            let alertBox = document.getElementById('alertBox');
-            let alertMessage = document.getElementById('alertMessage');
-            let close_alert_btn = document.getElementById('close_alert_btn');
-
-            this.classList.toggle('checked');
-            alertBox.classList.remove('hidden');
-
-            if(this.classList.contains('likeBtns') && this.classList.contains('checked')){
-                alertBox.style.backgroundColor = "crimson";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
-                alertMessage.innerText = '表達愛心成功！';
-                // let postId = this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].id;
-                // let plusCount = parseInt(this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].innerText);
-                // plusCount++;
-                // console.log(postId);
-                // likePost(postId, plusCount);
-            }else if(this.classList.contains('likeBtns')){
-                alertBox.style.backgroundColor = "crimson";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
-                alertMessage.innerText = '已取消表達愛心！';
-                // let postId = this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].id;
-                // let minusCount = parseInt(this.parentNode.parentNode.parentNode.getElementsByClassName('like_count')[0].innerText);
-                // minusCount--;
-                // console.log(postId);
-                // likePost(postId, minusCount);
-            }else if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
-                alertBox.style.backgroundColor = "royalblue";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(65, 105, 225, 0.75)";
-                alertMessage.innerText = '收藏話題成功！';
-            }else if(this.classList.contains('favoriteBtns')){
-                alertBox.style.backgroundColor = "royalblue";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(65, 105, 225, 0.75)";
-                alertMessage.innerText = '已取消收藏話題！';
-            }else if(this.classList.contains('subscriptBtns') && this.classList.contains('checked')){
-                alertBox.style.backgroundColor = "darkorange";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(255, 140, 0, 0.75)";
-                alertMessage.innerText = '訂閱作者成功！';
-            }else if(this.classList.contains('subscriptBtns')){
-                alertBox.style.backgroundColor = "darkorange";
-                alertBox.style.boxShadow = "2px 2px 5px rgba(255, 140, 0, 0.75)";
-                alertMessage.innerText = '已取消訂閱作者！';
-            }
-
-            close_alert_btn.addEventListener('click', function(){
-                alertBox.classList.add('hidden');
-            });
-
-            setTimeout(function(){
-                alertBox.classList.add('hidden');
-            }, 2000);
-        }
-
-        function reportPost(e){
-            e.target.classList.add('checked');
-            let reportBox = document.getElementById('reportBox');
-            reportBox.classList.remove('hidden');
-
-            document.getElementById('cancel_report_btn').addEventListener('click', function(){
-                reportBox.classList.add('hidden');
-                e.target.classList.remove('checked');
-            });
-        }
-
-        function likePost(postId, postLikeCount){
-            if(postId.indexOf('articleNo') != -1){
-                let articleNo = document.getElementById('articleNo').value;
-                let data_info = `articleNo=${articleNo}&artLikeCount=${postLikeCount}`;
-                let xhr = new XMLHttpRequest();
-                xhr.onload = function(){
-                    if(xhr.status == 200){
-                        article = JSON.parse(xhr.responseText);
-                        document.getElementById(postId).innerText = article.artLikeCount;
-                    }else{
-                        alert(xhr.status);
-                        }
-                }
-                xhr.open("POST", "likeArticle.php", true);
-                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                xhr.send(data_info);
-            }else {
-                let messageNo = postId.substr(9);
-                console.log(messageNo, postLikeCount);
-                let data_info = `messageNo=${messageNo}&mesLikeCount=${postLikeCount}`;
-                let xhr = new XMLHttpRequest();
-                xhr.onload = function(){
-                    if(xhr.status == 200){
-                        message = JSON.parse(xhr.responseText);
-                        document.getElementById(postId).innerText = message.mesLikeCount;
-                    }else{
-                        alert(xhr.status);
-                        }
-                }
-                xhr.open("POST", "likeMessage.php", true);
-                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                xhr.send(data_info);
-            }
-            
-        };
-
-        window.addEventListener('load', doFirst);
-    </script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/vendor/all.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/forum/forum_article.js"></script>
 </body>
 </html>
