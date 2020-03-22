@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("connectDD105G3.php");
+  require_once("connectBooks.php");
   $sql = "select * from `member` where memId = :memId and memPsw = :memPsw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":memId", $_POST["memId"]);
@@ -22,7 +22,16 @@ try{
     $_SESSION["memPoint"] = $memRow["memPoint"];
 
     //送出登入者的姓名資料
-    header("location:../index.html");
+    $member = [
+      "memNo"=>$_SESSION["memNo"], 
+      "memId"=>$_SESSION["memId"], 
+      "memName"=>$_SESSION["memName"], 
+      "memNickname"=>$_SESSION["memNickname"],
+      "memTel"=>$_SESSION["memTel"],
+      "memPoint"=>$_SESSION["memPoint"],
+    ];
+    echo json_encode($member);
+    header("location:javascript://history.go(-1)");
   }
 }catch(PDOException $e){
   echo $e->getMessage();
