@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
+    <title>登入 | 天然甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/login/login.css">
 
@@ -16,7 +16,6 @@
     <!-- jquery&jqueryUI -->
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/login.js"></script>
 </head>
 
 <body>
@@ -69,13 +68,13 @@
             <li><a href="#mobilelogintab2">註冊</a></li>
         </ul>
         <div id="mobilelogintab1" class="motabinner">
-            <form autocomplete="off">
+            <form autocomplete="off" action="./php/login.php" method="POST">
                 <label>E-mail*:</label>
                 <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
                 <label>密碼*:</label>
-                <input type="password" class="mempsw" name="mem_psw">
+                <input type="password" class="mempsw" name="memPsw">
                 <a href="" class="forgetpswlightbox">忘記密碼?</a>
-                <button type="button" class="buttonsubmitlogin loginbutton">登入</button>
+                <button type="submit" class="buttonsubmitlogin loginbutton">登入</button>
             </form>
         </div>
         <div id="mobilelogintab2" class="motabinner">
