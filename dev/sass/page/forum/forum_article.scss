@@ -18,15 +18,24 @@ body{
 .wrapper_article .article_container{
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 150px; 
-    padding-bottom: 50px; 
+    margin: 0 auto 50px;
+    padding-top: 100px;
 }
 
 .article_container .article_area{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+}
+
+.article_area > a:before{
+    font-family: fontawesome;
+    content: '\f0a8';
+    display: inline-block;
+    padding: 15px;
+    font-size: 2rem;
+    color: $color;
+    font-style: normal;
 }
 
 .article_area .post{
@@ -132,23 +141,49 @@ body{
     display: inline-block;
     color: #aaa;
     transition: .2s;
+    &:hover{
+        color: #666;
+        animation: iShack .2s linear infinite alternate;
+    }
+    
 }
 
-.favoriteAndReport .postfunc > i:hover{
-    color: #666;
+@keyframes iShack {
+    0% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1.2) rotate(10deg);
+    }
 }
 
 .favoriteAndReport .postfunc.like > .checked{
     color: crimson;
+    animation: iScale .5s linear;
 }
 .favoriteAndReport .postfunc.favorite > .checked{
     color: royalblue;
+    animation: iScale .5s linear;
 }
 .favoriteAndReport .postfunc.subscript> .checked{       
     color: darkorange;
+    animation: iScale .5s linear;
 }
 .favoriteAndReport .postfunc.report > .checked{
     color: #000;
+    animation: iScale .5s linear;
+}
+
+@keyframes iScale{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
   
 .favoriteAndReport .postfunc.like > i:before{
@@ -211,6 +246,9 @@ body{
 .post .post_hashtag .fruit_kind3{
     background-color: sandybrown;
 }
+.post_hashtag .fruit_kind4{
+    background-color: dimgray;
+}
 
 .comments_area{
     margin-top: 40px;
@@ -248,14 +286,6 @@ body{
     text-align: center;
 }
 
-form{
-    margin: 10px 0;
-}
-
-.comment_form{
-    text-align: center;
-}
-
 .comment_form > textarea{
     box-sizing: border-box;
     width: 400px;
@@ -275,28 +305,67 @@ form{
     margin: 10px;
 }
 
+.alertBox{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 21%;
+    right: 12%;
+    overflow: hidden;
+    z-index: 4;
+    transition: all 0.3s linear;
+}
+.alertBox.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#close_alert_btn{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    line-height: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+        color: black;
+    }
+}
+
 .reportBox{
     display: block;
+    opacity: 1;
     box-sizing: border-box;
     width: 300px;
     height: 280px;
     padding: 15px;
-    border: 1px solid black;
     background-color: whitesmoke;
-    box-shadow: 2px 2px 5px rgba(150, 150, 150, 0.75);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
+    z-index: 6;
     transition: all 0.3s linear;
+    border: 5px solid #9AD3DE;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(#000000, 0.4);
+
+    div{
+        margin: 10px 0;
+    }
 }
 .reportBox.hidden{
     display: none;
-}
-
-.reportBox div{
-    margin: 10px 0;
+    opacity: 0;
+    transition: all 0.3s linear;
 }
 
 .options_set{
@@ -368,10 +437,10 @@ form{
         vertical-align: middle;
     }
     
-    a#cancel_report_btn{
+    span#cancel_report_btn{
         text-decoration: none;
         display: inline-block;
-        @include btn_secondary(100px);
+        @include btn_cancel(100px);
         margin: 5px;
         vertical-align: middle;
     }

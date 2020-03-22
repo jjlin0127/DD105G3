@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/page/forum/forum_article.css">
-</head>
 <body>
     @@include('layout/header.html',{
         "focus06" : "focus"
@@ -15,6 +14,7 @@
     <div class="wrapper_article">
         <div class="article_container">
             <div class="article_area">
+                <a href="forum.html" id="back_btn"></a>
                 <div class="post post1">
                     <div class="author">
                         <div class="author_img">
@@ -91,11 +91,11 @@
                         <div class="social_zone">
                             <div class="likeAndComment">
                                 <i class="fas fa-heart"></i>
-                                <p class="like_count">10</p>
+                                <p class="like_count">7</p>
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i class="socialBtns likeBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
@@ -121,11 +121,11 @@
                         <div class="social_zone">
                             <div class="likeAndComment">
                                 <i class="fas fa-heart"></i>
-                                <p class="like_count">10</p>
+                                <p class="like_count">9</p>
                             </div>
                             <div class="favoriteAndReport">
                                 <div class="postfunc like">
-                                    <i class="socialBtns"></i>
+                                    <i class="socialBtns likeBtns"></i>
                                     <span class="tooltiptext">愛心</span>
                                 </div>
                                 <div class="postfunc report">
@@ -149,7 +149,14 @@
             </div>
         </div>
 
-        <!-- popbox start -->
+        <!-- alert start -->
+        <div id="alertBox" class="alertBox hidden">
+            <span id="close_alert_btn">&times;</span>
+            <span id="alertMessage"></span>
+          </div>
+        <!-- alert end -->
+
+        <!-- report popbox start -->
         <div id="reportBox" class="reportBox hidden">
             <form method="post" action="">
                 <h5>檢舉原因</h5>
@@ -172,7 +179,7 @@
                     </div>
                     <div class="reportBox_btns">
                         <button type="submit" id="submit_report_btn">送出</button>
-                        <a href="forum_article.html" id="cancel_report_btn">取消</a>
+                        <span id="cancel_report_btn">取消</span>
                     </div>
                 </div>
             </form>
@@ -180,47 +187,11 @@
         <!-- popbox end -->
     </div>
     @@include('./layout/footer.html') 
-    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script>
-        //  social btns toggle css-checked
-        function doFirst(){
-            let socialBtns = document.getElementsByClassName('socialBtns');
-            for(let i=0; i<socialBtns.length; i++){
-                socialBtns[i].addEventListener('click', socialBtnCheck);
-            }
-
-            let reportBtns = document.getElementsByClassName('reportBtns');
-            for(let i=0; i<reportBtns.length; i++){
-                reportBtns[i].addEventListener('click', reportPost);
-            }
-        }
-
-        function socialBtnCheck(){
-            this.classList.toggle('checked');
-            if(this.classList.contains('favoriteBtns') && this.classList.contains('checked')){
-                alert("收藏成功！");
-            }else if(this.classList.contains('favoriteBtns')){
-                alert("已取消收藏！");
-            }else if(this.classList.contains('subscriptBtns') && this.classList.contains('checked')){
-                alert("訂閱成功！");
-            }else if(this.classList.contains('subscriptBtns')){
-                alert("已取消訂閱！");
-            }
-        }
-
-        function reportPost(){
-            this.classList.toggle('checked');
-            let reportBox = document.getElementById('reportBox');
-            reportBox.classList.remove('hidden')
-
-            document.getElementById('cancel_report_btn').addEventListener('click', function(e){
-                e.target.preventDefault();
-                reportBox.classList.add('hidden')
-                this.classList.toggle('checked');
-            });
-        }
-
-        window.addEventListener('load', doFirst);
-    </script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/vendor/all.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/forum/forum_article.js"></script>
 </body>
 </html>
