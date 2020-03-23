@@ -1,105 +1,96 @@
-        //養生指數
-        Chart.defaults.global.legend.display = false;
-        var ctx = document.getElementById('heyChart');
+//養生指數
+Chart.defaults.global.legend.display = false;
+var ctx = document.getElementById('heyChart');
 
-        data = {
-            labels: ['幫助消化', '活化大腦', '保護血管'],
-            datasets: [{
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                data: [3, 2, 1]
-            }]
+// data-pointa='幫助消化' 
+// data-pointb='活化大腦' 
+// data-pointc='保護血管'
+data = {
+    labels: ['幫助消化', '活化大腦', '保護血管'],
+    datasets: [{
+        backgroundColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(153, 102, 255, 1)'
+        ],
+        data: [3, 2, 1]
+    }]
+};
+
+options = {
+    scale: {
+        angleLines: {
+            display: true //連到三角形三點的直線
+        },
+        ticks: {
+            beginAtZero: true,
+            maxTicksLimit: 7,
+            suggestedMin: 0,
+            suggestedMax: 1,
+        },
+        gridLines: {
+            display: true,
+            circular: true,
+        },
+        pointLabels: {
+            fontSize: 18,
+            fontColor: ['#20B2AA', '#F4A460', '#FF6347'],
+            fontFamily: 'Noto Sans TC',
         }
+    }
+};
 
-        options = {
-            scale: {
-                angleLines: {
-                    display: true //連到三角形三點的直線
-                },
-                ticks: {
-                    beginAtZero: true,
-                    maxTicksLimit: 7,
-                    suggestedMin: 0,
-                    suggestedMax: 1,
-                },
-                gridLines: {
-                    display: true,
-                    circular: true,
-                },
-                pointLabels: {
-                    fontSize: 18,
-                    fontColor: ['#20B2AA', '#F4A460', '#FF6347'],
-                    fontFamily: 'Noto Sans TC',
-                }
-            }
-        };
+var heyChart = new Chart(
+    ctx, {
+        type: 'radar',
+        data: data,
+        options: options
+    });
 
-        var heyChart = new Chart(
-            ctx, {
-                type: 'radar',
-                data: data,
-                options: options
-            });
+//----------------------------------------
 
-        //------------------------------------------------------------
+//選購過程
+var state = {
+    selectedFruits: [],
+}
+var newImg = document.createElement('img');
 
-        // $(document).ready(function() {
-        //     $('img.draggable').click(function(e) {
-        //         var currentLink = $(this);
+$(document).ready(function() {
+    $('[data-fruit]').click(function(e) {
+        // 綁事件
+        var fruitId = e.target.getAttribute('data-fruit');
+        var src = e.target.getAttribute('src'); // "/build/images/foo.png"
+        newImg.src = src;
+        newImg.dataFruit = fruitId;
+        // 在#selectedTable 裡面加上 tr>td>img; img的src 為剛剛抓的 src
+        $('#selectedTable').append(`
+                    <tr>
+                        <td>
+                            <img class="shown" src="${newImg.src}" data-fruit="${newImg.dataFruit}">  
+                        </td>
+                        <td class="droppedzone">
+                            <input type="reset" value="移除" class="btn_s">
+                        </td>
+                    </tr>`);
+        state.selectedFruits.push(fruitId);
+        $('#items').text(state.selectedFruits.length)
+        $('[type="reset"]').click(removenewImg);
 
-        //         // $('.droppedzone').empty() 
-        //         // remove existing img/html, if added already
-        //         //generate image tag on fly and assign src from current anchor clicked and add to div
-        //         $('<img />').attr("src", $(currentLink).attr("src")).appendTo($('.droppedzone'));
-        //         e.preventDefault();
+    })
 
-        //     })
-        // })
+    var removedImg
 
-        window.addEventListener('load', function() {
-            images = document.getElementsByClassName('draggable');
-            for (let i = 0; i < images.length; i++) {
-                images[i].addEventListener('dragstart', function(e) {
-                    // let data = '<img src="./images/cusFruits/01_starFruit_c.png">';
-                    let data = `${images[i]}`;
-                    // let data = images[i].src;
-                    // let data = i;
-                    // console.log(images[i])
-                    console.log(data)
-
-                    e.dataTransfer.setData('image/*', data);
-                });
-            }
-
-            droppedzones = document.getElementsByClassName('droppedzone');
-            for (let j = 0; j < droppedzones.length; j++) {
-                droppedzones[j].addEventListener('dragenter', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('drop', function(e) {
-                    e.preventDefault();
-
-                    // console.log(e.target.className);
-                    // console.log(e.dataTransfer.getData('image/png'));
+    function removenewImg(e) {
+        (function() {
+            removedImg = $(this).parents('td').siblings().children('img');
+        })()
+        // alert(removedImg);
+        // $(this).parents('tr').remove();
+        // var removedItem = state.selectedFruits.indexOf(this);
+        // state.selectedFruits.push(fruitId);
+    }
 
 
-                    // var inputs = document.getElementsByTagName('input');
-                    // test.src = e.dataTransfer.getData('image/png');
-                    // this.insertBefore(test, input[j]);
-                    this.innerHTML = e.dataTransfer.getData('image/*');
+})
 
-                    var test = document.createElement('img');
-                    // e.dataTransfer.getData('text/plain');
-                    // test.src = data;
-                    // this.appendChild(test);
-
-                    // e.target.appendChild(e.dataTransfer.getData('image/*'));
-                })
-            }
-        })
+//----------------------------------------

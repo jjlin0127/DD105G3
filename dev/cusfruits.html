@@ -83,54 +83,34 @@
                         <a href="#">或是去做測驗幫您推薦</a>
                     </div>
                     <div class="layer1">
-                        <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" id="img01">
-                        <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" id="img02">
-                        <img src="./images/cusFruits/03_dragon_c.png" class="draggable" id="img03">
+                        <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1" data-pointa="1" data-pointb="0" data-pointc="0">
+                        <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2">
+                        <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3">
                     </div>
                     <div class="layer2">
-                        <img src="./images/cusFruits/04_banana_c.png" class="draggable" id="img04">
-                        <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" id="img05">
-                        <img src="./images/cusFruits/06_guava_c.png" class="draggable" id="img06">
+                        <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="4">
+                        <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="5">
+                        <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="6">
                     </div>
                     <div class="layer3">
-                        <img src="./images/cusFruits/07_mango_c.png" class="draggable" id="img07">
-                        <img src="./images/cusFruits/08_apple_c.png" class="draggable" id="img08">
-                        <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" id="img09">
+                        <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="7">
+                        <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="8">
+                        <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="9">
                     </div>
                 </div>
             </div>
             <div class="wrapper_middle">
-                <table>
+                <table id="selectedTable">
+                    <!-- 
                     <tr>
-                        <td class="droppedzone" id="middle01">
+                        <td>
+                            <img src="./images/cusFruits/02_pineapple_c.png">
+                        </td>
+                        <td class="droppedzone">
                             <input type="reset" value="移除" class="btn_s" disabled>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle02">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle03">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle04">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle05">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle06">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
+                    -->
                 </table>
             </div>
 
@@ -156,7 +136,7 @@
                             <label for="bagname" class="form__label">為您搭配好的組合命名 : </label>
                         </form>
                         <div>
-                            <p>已選: 0/6樣</p>
+                            <p>已選: <span id="items">0</span>/6樣</p>
                             <h5>目前總金額: 100元</h5>
                         </div>
                     </div>
