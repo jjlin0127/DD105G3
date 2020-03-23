@@ -11,7 +11,7 @@ try {
 	$member->bindValue(":memNickname", $_POST["memNickname"]);
 	//取得自動創號的key值
 	$memNo = $pdo->lastInsertId();
-	echo "memNo: $memNo 新增成功~";
+	echo "success";
 	$member->execute();
 	$pdo->commit();
 } catch (PDOException $e) {

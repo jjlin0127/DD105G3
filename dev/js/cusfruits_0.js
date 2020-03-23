@@ -76,17 +76,21 @@ $(document).ready(function() {
         console.log(state.selectedFruits);
         $('#items').text(state.selectedFruits.length)
         $('[type="reset"]').click(removenewImg);
+
     })
 
     // var removedImg
+    var removedItem = 0
 
+    function removenewImg(e) {
 
-    function removenewImg() {
-        // var removedItem = 0
+        // (function() {
+        //     removedImg = $(this).parents('td').siblings().children('img').attr("data-fruit");
+        // })()
+        // alert(removedImg);
         $(this).parents('tr').remove();
-
         btnData = $(this).attr("data-fruit");
-        console.log(btnData);
+        // console.log(btnData);
         removedItem = state.selectedFruits.indexOf(btnData);
         console.log(removedItem);
         state.selectedFruits = state.selectedFruits.splice(removedItem, 1);
