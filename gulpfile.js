@@ -3,14 +3,13 @@ var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
 var fileinclude = require('gulp-file-include');
 var imagemin = require('gulp-imagemin');
-var jshint = require('gulp-jshint');
-var sourcemaps = require('gulp-sourcemaps');
+var connectPhp = require('gulp-connect-php'); // 用來連結php的
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
+// 使用套件事件
 
-
-//path 路徑
+// 設定path 路徑
 var web = {
     html: [
         'dev/*.html',
@@ -18,66 +17,68 @@ var web = {
     ],
     sass: [
         'dev/sass/*.scss',
-        'dev/sass/**/*.scss',
+        'dev/sass/**/*.scss'
     ],
     js: [
         'dev/js/*.js'
     ],
     img: [
-        'dev/images/*.*',
-        'dev/images/**/*.*',
+        'dev/img/*.*',
+        'dev/img/**/*.*'
     ],
     font: [
-        'dev/font/*.*', 
-         'dev/font/**/*.*'
+        'dev/font/*.*',
+        'dev/font/**/*.*'
+    ],
+    php: [
+        'dev/php/*.*',
+        'dev/php/**/*.*'
     ]
 }
+var options = {
+    base: './dest', // 檔案位置
+    debug: true,
+    bin: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.exe', // php執行檔的路徑
+    ini: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.ini', // php的ini檔的路徑
+    port: 8080, // 自行定義端口
+};
 
 //流程
-gulp.task('concatjs', function () {
+gulp.task('concatjs', function() {
     gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'));
 });
 
-gulp.task('img', function () {
-    gulp.src(web.img).pipe(gulp.dest('dest/images'));
+gulp.task('concatphp', function() {
+    gulp.src('dev/php/*.php').pipe(gulp.dest('dest/php'));
 });
 
-gulp.task('font', function () {
+gulp.task('img', function() {
+    gulp.src(web.img).pipe(gulp.dest('dest/img'));
+});
+
+gulp.task('font', function() {
     gulp.src(web.font).pipe(gulp.dest('dest/font'));
 });
 
-
 //任務串連
-gulp.task('concatcss', ['sass'], function () {
-    return gulp.src('css/*.css')
+
+gulp.task('concatcss', ['sass'], function() { //目前沒用到
+    gulp.src('/css/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie9'
         }))
         .pipe(gulp.dest('dest/css'));
 });
 
-
-gulp.task('lint', function() {
-    return gulp.src('./dev/js/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter('default'));
-  });
-
-
-gulp.task('sass', function () {
-    return gulp.src(['dev/sass/*.scss', 'dev/sass/**/*.scss'])
-       .pipe(sourcemaps.init())
+gulp.task('sass', function() {
+    gulp.src('dev/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         // .pipe(cleanCSS({compatibility: 'ie9'}))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dest/css/'));
+        .pipe(gulp.dest('dest/css'));
 });
 
-
 //打包html
-
-
-gulp.task('fileinclude', function () {
+gulp.task('fileinclude', function() {
     gulp.src(['dev/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
@@ -86,30 +87,35 @@ gulp.task('fileinclude', function () {
         .pipe(gulp.dest('./dest'));
 });
 
-//壓縮圖片
-gulp.task('mini_img', function () {
-    return  gulp.src('dev/images/*.*')
-      .pipe(imagemin())
-      .pipe(gulp.dest('dest/mini_images/'))
-  });
+// 壓縮圖片
+gulp.task('minfly_img', function() {
+    gulp.src('dev/img/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dest/min_img'));
+})
 
-// gulp.task('watch' , function(){
-//   gulp.watch(['sass/*.scss' , 'sass/**/*.scss'], ['concatcss']);
-//   gulp.watch('js/*.js', ['concatjs']);
-//   gulp.watch(['*.html' , '**/*.html'],  ['fileinclude']);
-// });
-
-gulp.task('default', function () {
+// 和瀏覽器同步
+gulp.task('default', function() { // default 只要打gulp 即可執行
+    // browserSync.init({
+    //     server: {
+    //         baseDir: "./dest",
+    //         index: "customRoute.html"
+    //     }
+    // });
     browserSync.init({
         server: {
-            baseDir: "./dest",
-            index: "index.html"
+            baseDir: './dest',
+            proxy: 'localhost:8080', // 網址路徑必須跟php端口一樣
+            port: 3000,
+            watch: true,
+            index: "./index.html"
         }
     });
+    connectPhp.server(options); // 啟動
     gulp.watch(web.html, ['fileinclude']).on('change', reload);
     gulp.watch(web.sass, ['sass']).on('change', reload);
     gulp.watch(web.js, ['concatjs']).on('change', reload);
-    // gulp.watch(web.js, ['lint']).on('change', reload);
     gulp.watch(web.img, ['img']).on('change', reload);
     gulp.watch(web.font, ['font']).on('change', reload);
+    gulp.watch(web.php, ['concatphp']).on('change', reload);
 });
