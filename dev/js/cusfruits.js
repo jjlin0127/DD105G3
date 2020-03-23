@@ -88,7 +88,7 @@ $(document).ready(function() {
         btnData = $(this).attr("data-fruit");
         console.log(btnData);
         removedItem = state.selectedFruits.indexOf(btnData);
-        console.log(removedItem);
+        console.log(removedItem); //console.log會回傳splice兩次的結果
         state.selectedFruits = state.selectedFruits.splice(removedItem, 1);
         // if (removedItem > -1) {}
         // console.log(state.selectedFruits);
