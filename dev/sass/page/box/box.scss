@@ -11,56 +11,30 @@
 #box-body{
     background-image: url('../../../images/box/box-bg.jpg');
     background-size: cover;
+    header{
+        position: absolute;
+        top: 0;
+    }
     h2{
         @include title(3px, dotted, #a6c165, 10px, #fff);
-        margin: 50px auto 0px auto;
+        margin: 150px auto 0px auto;
         text-align: center;
     }
     .box_contain{
-        width: 100%;      
+        width: 100%;
+        
         .outer{
-            position: relative;
             width: 80%;
-            // height: 600px;
+            border: 5px solid blue;
+            position: relative;  
+            height: 600px;
             background-color: #fff;
             background-image: url('../../../images/box/box_bg_material.jpg');
             border: 3px dashed #a6c165;
             margin: 0 auto;
             margin-top: 50px;
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
-            padding: 80px 0px 50px 0px;
-            h4{
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0px;
-            }
-            .step_wrap{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 30px;
-                .step{      
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 120px;
-                    margin: 20px 25px 20px 25px;
-                    line-height: 1.5;
-                    .circle{
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        background-color: $btnSecBgColor;
-                        text-align: center;
-                        line-height: 2;
-                        color: white;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
             .bow-knot-left{
                 width: 200px;
                 position: absolute;
@@ -81,26 +55,11 @@
                     width: 100%;
                 }
             }
-            .button-wrap{
-                height: auto;
-                font-size: 0;
-                text-align: center;
-                display: flex;
-                flex-direction: column;         
-                label{
-                    margin: 5px;
-                    @include btn_primary(100px);
-                    &:hover{
-                        background-color: $btnFuncHovBgColor;
-                    }
-                }
-                .for-zoom-cube.zoom{
-                    background-color: $btnFuncHovBgColor;
-                }
-            }
-            .box{ 
-                width: 400px;
+            .left_box{
+                width: 70%;        
+                // border: solid 1px red;
                 .cube-wrap{
+                    position: relative;
                     height: 50%;
                     -webkit-transition: .6s;
                     transition: .6s;
@@ -108,8 +67,6 @@
                             perspective: 1000;
                     -webkit-perspective-origin: 50% 50%;
                     perspective-origin: 50% 50%;
-                    -webkit-transform: scale(1.3);
-                    transform: scale(1.3);
                     .cube{
                         position: absolute;
                         top: 0;
@@ -127,29 +84,24 @@
                                 transform-origin: 50% 50% -75px;
                         -webkit-backface-visibility: visible;
                                 backface-visibility: visible;
-                        
                         .cube-face{
                             position: relative;
-                            background-color: white;
+                            background-color: #acd968;
                             outline: 1px solid rgba(0, 0, 0, 0.1);
                             outline-offset: -1px;
-                            overflow: hidden;
-                            // i{
-                            //     position: absolute;
-                            //     top: 0;
-                            //     right: 0;
-                            //     bottom: 0;
-                            //     left: 0;
-                            //     width: 40px;
-                            //     height: 40px;
-                            //     margin: auto;
-                            //     color: #fff;
-                            //     font-size: 36px;
-                            //     text-align: center;
-                            //     line-height: 40px;
-                            // }
-                            img.select{
-                                border: 3px dashed $btnFuncBgColor;
+                            i{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                width: 40px;
+                                height: 40px;
+                                margin: auto;
+                                color: #fff;
+                                font-size: 36px;
+                                text-align: center;
+                                line-height: 40px;
                             }
                         }
                         .cube-face-top {
@@ -242,16 +194,12 @@
                         
                     }
                 }
-                .cube-wrap.zoom{
-                    transform: scale(1.6);
-                    
-                }
                 // #rotate-cube:checked ~ .cube-wrap .cube{
                 //     transform: rotateX(-30deg) rotateY(110deg) rotateZ(0deg);
                 // }
                 #zoom-cube:checked ~ .cube-wrap{
-                    -webkit-transform: scale(1.6);
-                    transform: scale(1.6);
+                    -webkit-transform: scale(1.4);
+                    transform: scale(1.4);
                 }
                 // #show-front:checked ~ .cube-wrap .cube{
                 //     -webkit-transform: rotateX(0) rotateY(0);
@@ -283,7 +231,41 @@
                     left: 0;
                     opacity: 0;
                 }
-                
+                .button-wrap{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    // width: 560px;
+                    height: 50px;
+                    bottom: 30px;
+                    margin: 0 auto;
+                    font-size: 0;
+                    text-align: center;
+                    label{
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        margin: 0px 5px 0px 5px;
+                        color: #ffffff;
+                        border-radius: 20px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        line-height: 52px;
+                        text-align: center;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        -webkit-transition: .3s;
+                        transition: .3s;
+                        background-color: $btnFuncBgColor;
+                        -webkit-transform: translateY(0px);
+                        transform: translateY(0px);
+                        &:hover{
+                            background-color: $btnFuncHovBgColor;
+                        }
+                    }
+                }
                 // 按鈕變色
                 #show-front:checked ~ .button-wrap .for-front,
                 #show-back:checked ~ .button-wrap .for-back,
@@ -296,8 +278,9 @@
                 }
             }
             .tab_wrap{
-                width: 300px;
-                margin: 0;
+                // border: solid 1px red;
+                margin-right: 5%;
+                width: 30%; 
                 .tab_container{
                     #tab1{
                         #picker{
@@ -318,6 +301,7 @@
                                 width: 60px;
                                 height: 60px;
                                 margin: 5px;
+                                // border: 1px solid red;
                                 cursor: pointer;
                                 img{
                                     width: 100%;
@@ -327,21 +311,11 @@
                         form{
                             margin-top: 10px;
                             display: flex;
-                            align-items: center;
                             label{
                                 margin-right: 5%;
                             }
                             input{
                                 width: 60%;
-                            }
-                        }
-                        .btn_wrap{
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 10px;
-                            img{
-                                width: 35px;
-                                cursor: pointer;
                             }
                         }
                         
@@ -355,37 +329,16 @@
                     }
                 }
             }
-            
         }
         .addCartBtn{
-            @include btn_link(150px);
-            margin:  30px auto 50px auto;
+            @include btn_primary(300px);
+            // margin-left: 50%;  //按鈕置中
+            // transform: translateX(-50%); //按鈕置中
+            // margin-top: 30px;
+            // margin-bottom: 50px;
         }
     }
 }
 
 @import '../../modules/rwd';
-@import 'ipadpro.scss';
-@media all and (max-width: 414px) {
-    #box-body{
-        
-        .box_contain{
-            overflow-x: hidden;
-            .outer{
-                padding: 80px 30px 50px 30px;
-                .step_wrap{
-                    .step{
-                        width: 120px;
-                        margin: 10px 0px 10px 0px;
-                    
-                    }
-               
-                }
-            }
-        }
-    }
-  }
-@import 'phone.scss';
-
-
-
+@import 'latop-min.scss';

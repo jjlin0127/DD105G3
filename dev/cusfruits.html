@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘</title>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/custfruits/cusfruits.css">
 
@@ -17,157 +16,235 @@
     <!-- chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
-    <!-- d3.js -->
-    <!-- <script src="https://d3js.org/d3.v3.js"></script> -->
-
     <!-- jquery&jqueryUI -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
-    <script src="./js/cusfruits.js" defer></script>
-    <script src="./js/lightbox.js" defer></script>
-
 </head>
 
 <body>
-    @@include('layout/header.html',{ "focus04" : "focus" })
+    <header>
+        <div class="header__container">
+            <span class="logo">
+                <a href="index.html"><img src="./images/Logo.svg"></a>
+            </span>
+            <div class="navList">
+                <a class="navItem" href="#">關於我們<i class="fas fa-seedling"></i></a>
+                <a class="navItem" href="#">特色果甘<i class="fas fa-apple-alt"></i></a>
+                <a class="navItem focus" href="#">客製果甘<i class="fas fa-lemon"></i></a>
+                <a class="navItem" href="#">折扣遊戲<i class="fas fa-carrot"></i></a>
+                <a class="navItem" href="#">果甘話區<i class="fas fa-leaf"></i></a>
+            </div>
+            <div class="navList_2">
+                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
+                <a class="navItem_2" href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
     <h2 class="title_cusfruits">
-        <img src="./images/index/index_felix/leaf.svg" class="leafLeft">
-        <img src="./images/index/index_felix/leaf.svg" class="leafRight"> 客製果甘
+        <img src="./images/leaf.svg" class="leafLeft">
+        <img src="./images/leaf.svg" class="leafRight"> 客製果甘
     </h2>
-    <div class="popup">
-        <h2>歡迎來到果甘自由配</h2>
-        <div class="guides">
-            <div>
-                <span>1</span>
-                <p>點擊果甘圖片添加至中間袋子中, 手機用戶則直接提示數量在果甘圖片上。</p>
-            </div>
-            <div>
-                <span>2</span>
-                <p>養生指數會提示您搭配的療效, 選擇滿6樣(可重複選購), 便可以點擊完成囉。</p>
-            </div>
-            <div>
-                <span>3</span>
-                <p>在點擊完成送出之前也可以替這次組合命名, 方便下次選購喔！</p>
-            </div>
-        </div>
-        <button name="close">我知道了</button>
-    </div>
     <div class="cusfruits_wrapper">
-        <div class="guides_inpage">
-            <div>
-                <span>1</span>
-                <p>點擊添加6樣</p>
+
+        <div class="wrapper_left">
+            <div class="cabinet_top"></div>
+            <div class="cabinet_title">
+                輕點添加選擇, 可以重複選購滿6樣即可喔！
             </div>
-            <div></div>
-            <div>
-                <span>2</span>
-                <p>查看您搭配的療效</p>
-            </div>
-            <div></div>
-            <div>
-                <span>3</span>
-                <p>完成送出</p>
+            <div class="fruits_window">
+                <div class="linktoqna">
+                    <a href="#">或是去做測驗幫您推薦</a>
+                </div>
+                <div class="layer1">
+                    <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" id="img01">
+                    <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" id="img02">
+                    <img src="./images/cusFruits/03_dragon_c.png" class="draggable" id="img03">
+                </div>
+                <div class="layer2">
+                    <img src="./images/cusFruits/04_banana_c.png" class="draggable" id="img04">
+                    <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" id="img05">
+                    <img src="./images/cusFruits/06_guava_c.png" class="draggable" id="img06">
+                </div>
+                <div class="layer3">
+                    <img src="./images/cusFruits/07_mango_c.png" class="draggable" id="img07">
+                    <img src="./images/cusFruits/08_apple_c.png" class="draggable" id="img08">
+                    <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" id="img09">
+                </div>
             </div>
         </div>
-        <div class="cusfruits_inner">
-            <div class="wrapper_left">
-                <div class="cabinet_top"></div>
-                <div class="cabinet_title">
-                    輕點添加選擇, 可以重複選購滿6樣即可喔！
-                </div>
-                <div class="fruits_window">
-                    <div class="linktoqna">
-                        <a href="#">或是去做測驗幫您推薦</a>
-                    </div>
-                    <div class="layer1">
-                        <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" id="img01">
-                        <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" id="img02">
-                        <img src="./images/cusFruits/03_dragon_c.png" class="draggable" id="img03">
-                    </div>
-                    <div class="layer2">
-                        <img src="./images/cusFruits/04_banana_c.png" class="draggable" id="img04">
-                        <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" id="img05">
-                        <img src="./images/cusFruits/06_guava_c.png" class="draggable" id="img06">
-                    </div>
-                    <div class="layer3">
-                        <img src="./images/cusFruits/07_mango_c.png" class="draggable" id="img07">
-                        <img src="./images/cusFruits/08_apple_c.png" class="draggable" id="img08">
-                        <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" id="img09">
-                    </div>
-                </div>
-            </div>
-            <div class="wrapper_middle">
-                <table>
-                    <tr>
-                        <td class="droppedzone" id="middle01">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle02">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle03">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle04">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle05">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle06">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <div class="wrapper_middle">
+            <table>
+                <tr>
+                    <td class="droppedzone" id="middle01">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="droppedzone" id="middle02">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="droppedzone" id="middle03">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="droppedzone" id="middle04">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="droppedzone" id="middle05">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="droppedzone" id="middle06">
+                        <input type="reset" value="移除" class="btn_s">
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-            <div class="wrapper_right">
-                <div class="upper">
+        <div class="wrapper_right">
+            <div class="upper">
+                <h5>
+                    <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
+                    <img src="./images/cusFruits/cusfruit_subtitle.png">
+                </h5>
+                <div>
+                    <canvas id="heyChart" width="300px" height="300px"></canvas>
+                </div>
+            </div>
+            <div class="rwd_group">
+                <div class="lower">
                     <h5>
-                        <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
+                        <img src="./images/cusFruits/cusfruit_staricon.png"> 小結
                         <img src="./images/cusFruits/cusfruit_subtitle.png">
                     </h5>
-                    <!-- <svg id="svg" width="375" height="375"></svg> -->
-                    <div class="radar_wrapper">
-                        <canvas id="heyChart" width="250" height="250"></canvas>
+                    <form action="#" method="get" class="form__group field">
+                        <input type="text" name="bagname" id="bagname" class="form__field" placeholder="Name">
+                        <label for="bagname" class="form__label">為您搭配好的組合命名 : </label>
+                    </form>
+                    <div>
+                        <p>已選: 0/6樣</p>
+                        <h5>目前總金額: 100元</h5>
                     </div>
                 </div>
-                <div class="rwd_group">
-                    <div class="lower">
-                        <h5>
-                            <img src="./images/cusFruits/cusfruit_staricon.png"> 小結
-                            <img src="./images/cusFruits/cusfruit_subtitle.png">
-                        </h5>
-                        <form action="#" method="get" class="form__group field">
-                            <input type="text" name="bagname" id="bagname" class="form__field" placeholder="Name">
-                            <label for="bagname" class="form__label">為您搭配好的組合命名 : </label>
-                        </form>
-                        <div>
-                            <p>已選: 0/6樣</p>
-                            <h5>目前總金額: 100元</h5>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <a href="index.html">取消</a>
-                        <button type="submit">完成</button>
-                    </div>
+                <div class="buttons">
+                    <a href="index.html">取消</a>
+                    <button type="submit">完成</button>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    @@include('./layout/footer.html')
+    <footer>
+        <strong>Copyright &copy; 2020 Natural Sweet</strong>
+        <i class="fas fa-leaf"></i>
+    </footer>
+    <script>
+        //養生指數
+        var ctx = document.getElementById('heyChart');
+
+        data = {
+            labels: ['幫助消化', '活化大腦', '保護血管'],
+            datasets: [{
+
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                data: [3, 2, 1]
+            }]
+        }
+
+        options = {
+            scale: {
+                angleLines: {
+                    display: true //連到三角形三點的直線
+                },
+                ticks: {
+                    suggestedMin: 3,
+                    suggestedMax: 6
+                }
+            }
+        };
+
+        var heyChart = new Chart(
+            ctx, {
+                type: 'radar',
+                data: data,
+                options: options
+            });
+    </script>
+    <script>
+        window.addEventListener('load', function() {
+            images = document.getElementsByClassName('draggable');
+            for (let i = 0; i < images.length; i++) {
+                images[i].addEventListener('dragstart', function(e) {
+                    // let data = '<img src="./images/cusFruits/01_starFruit_c.png">';
+                    let data = `${images[i]}`;
+                    // let data = images[i].src;
+                    // let data = i;
+                    // console.log(images[i])
+                    console.log(data)
+
+                    e.dataTransfer.setData('image/*', data);
+                });
+            }
+
+            droppedzones = document.getElementsByClassName('droppedzone');
+            for (let j = 0; j < droppedzones.length; j++) {
+                droppedzones[j].addEventListener('dragenter', function(e) {
+                    e.preventDefault();
+                })
+                droppedzones[j].addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                })
+                droppedzones[j].addEventListener('drop', function(e) {
+                    e.preventDefault();
+
+                    // console.log(e.target.className);
+                    // console.log(e.dataTransfer.getData('image/png'));
+
+
+                    // var inputs = document.getElementsByTagName('input');
+                    // test.src = e.dataTransfer.getData('image/png');
+                    // this.insertBefore(test, input[j]);
+                    this.innerHTML = e.dataTransfer.getData('image/*');
+
+                    var test = document.createElement('img');
+                    // e.dataTransfer.getData('text/plain');
+                    // test.src = data;
+                    // this.appendChild(test);
+
+                    // e.target.appendChild(e.dataTransfer.getData('image/*'));
+                })
+            }
+        })
+    </script>
+
+    <!-- <script>
+        $("#img01").draggable({
+            containment:"#middle01",
+        });
+        $("#middle01").droppable({
+            drop: function(event, ui) {
+                $(this).css('background', 'rgb(0,200,0)');
+            },
+            over: function(event, ui) {
+                $(this).css('background', 'orange');
+            },
+            out: function(event, ui) {
+                $(this).css('background', 'cyan');
+            }
+        });
+    </script> -->
+
+
 </body>
 
 </html>

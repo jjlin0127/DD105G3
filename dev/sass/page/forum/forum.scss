@@ -6,13 +6,10 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
-body{
-    background-image: url("../../../images/forum/sky.jpg");
-    background-size: cover;
-}
-
 .wrapper_forum{
     width: 100%;
+    background-image: url("../../../images/forum/sky.jpg");
+    background-size: cover;
 }
 
 img.balloon1{
@@ -28,7 +25,7 @@ img.balloon2{
     animation: balloonAnimate  3s linear infinite alternate;
 }
 
-@keyframes balloonAnimate{
+@keyframes balloonAnimate {
     0% {    
         transform: translateY(40px);
     }
@@ -48,11 +45,11 @@ img.balloon2{
     margin: 50px auto;
 }
 
-.wrapper_forum .hot_posts_area .hot_posts{
+.wrapper_forum .hot_posts_area .hot_posts {
     overflow: hidden;
     background-color: transparent;
 }
-.wrapper_forum .hot_post{
+.wrapper_forum .hot_post {
     margin: 0 auto;
     position: relative;
     width: 400px;
@@ -65,7 +62,7 @@ img.balloon2{
     margin-bottom: 30px; 
 }
 
-.wrapper_forum .hot_post .carousels{
+.wrapper_forum .hot_post .carousels {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -79,7 +76,7 @@ img.balloon2{
     transition: transform 1s;     
 }
 
-.wrapper_forum .hot_post .carousels .carousel{
+.wrapper_forum .hot_post .carousels .carousel {
     display: block;
     position: absolute;
     width: 100%;
@@ -100,22 +97,22 @@ img.balloon2{
     align-items: center;
 }
 
-.author .author_img{
+.author .author_img {
     width: 80px;
     border-radius: 50%;
     border: 5px solid #D35D3D;
     overflow: hidden;
 }
 
-.author .author_img > img{
+.author .author_img > img {
     width: 100%;
 }
 
-.author p.author_name{
+.author p.author_name {
     margin-left: 10px;
 }
 
-p.post_title{
+p.post_title {
     font-size: 1.5rem;
     margin-top: 20px;
 }
@@ -251,75 +248,24 @@ button#closeBtn{
 aside.sortAndFilter{
     position: sticky;
     z-index: 4;
-    top: 90px;
+    top: 100px;
     width: 200px;
     margin: 0px 10px;
     vertical-align: top;
     display: inline-block;
 }
-
-aside.sortAndFilter form{
-    width: 100%;
-    margin-bottom: 15px;
+form{
+    margin-bottom: 30px;
 }
-aside.sortAndFilter form > h5{
+form h5{
     margin-bottom: 10px;
 }
-aside.sortAndFilter form p{
-    margin: 5px 0;
+form p{
+    margin-top: 20px;
+    margin-bottom:10px;
 }
-
-// Select
-.forum_sort > form .sort_select{
-    position: relative;
-    width: 135px;
-    height: 1.5em;
-    line-height: 1.5em;
-    background: #4c4948;
-    overflow: hidden;
-    border-radius: .25em;
-
-    .sort_by{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0;
-    background: #4c4948;
-    width: 100%;
-    height: 100%;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 0 0 .5em;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .sort_by::-ms-expand{
-    display: none;
-  }
-}
-
-// Arrow 
-.sort_select::after{
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0 .5em;
-    background: #2e2e2e;
-    pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
-}
-
-// Transition 
-.sort_select:hover::after{
-    color: #e08c34;
+.topic, .fruit{
+    margin-bottom: 20px;
 }
 
 .options{
@@ -393,7 +339,7 @@ aside.sortAndFilter form p{
     margin: 5px 5px 0 0;
 }
 
-.post_zone > section{
+section{
     width: calc(100% - 240px);
     display: inline-block;
     background-color: #fff;
