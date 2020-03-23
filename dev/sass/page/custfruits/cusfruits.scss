@@ -10,8 +10,16 @@ body {
     box-sizing: border-box;
     background: url('../../../images/sky.jpg');
     margin: 0;
-    .header__container {
-        position: sticky;
+    .paddingtop {
+        padding-top: 100px;
+        >h2 {
+            @include title(3px,
+            dotted,
+            #a6c165,
+            10px,
+            #fff);
+            margin: 0px auto 50px;
+        }
     }
 }
 
@@ -134,8 +142,39 @@ body {
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            width: 375px;
-            padding-bottom: 10%;
+            width: 400px;
+            margin: 0 30px;
+            table {
+                position: relative;
+                top: 125px;
+                left: 80px;
+                width: 250px;
+                tr {
+                    text-align: right;
+                    img {
+                        width: 200px;
+                        margin: 0 auto;
+                    }
+                }
+                td {
+                    height: 70px;
+                    align-items: center;
+                    vertical-align: middle;
+                    img {
+                        width: auto;
+                        height: 60px;
+                    }
+                    .btn_s {
+                        outline: none;
+                        margin-right: 10px;
+                        border-radius: 5px;
+                        padding: 3px;
+                        font-family: "Noto Sans TC", sans-serif;
+                    }
+                }
+            }
+        }
+        .wrapper_right {
             display: flex;
             flex-direction: column;
             div {

@@ -14,8 +14,23 @@
             <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
         </div> 
         <div class="navList_2">
-            <a class="navItem_2" href="login.html"><i class="fas fa-user-circle"></i></a>
-            <a class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>               
+            <input id="memNo" type="hidden" value="">
+            <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
+            <a id="memNickname" href="member2.html">&nbsp;</a>
+            <!-- 會員暱稱 -->
+            <a id="spanLogin" class="navItem_2">登入</a>
+        </div>
+    </nav>
+    <nav class="rwdHeader">
+        <div class="rwdHeaderWrap">
+            <a href="index.html">
+                <img id="topLogo2" src="./images/Logo.svg">
+            </a>
+            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
     </nav>
 
@@ -25,8 +40,7 @@
                 <a href="member2.html">
                     <li id="mobilememNickname">&nbsp;</li>
                 </a>
-                <a id="mobileloginLink" href="login.html">
-                    <input id="memNo" type="hidden" value="">
+                <a id="mobileloginLink">
                     <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                 </a>
                 <a id="shopCart" href="shopping.html">
