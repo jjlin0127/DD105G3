@@ -1,14 +1,8 @@
 <?php
-
-// $filterSql = json_decode($_GET["filterSql"]);
-// $filterSql = $_GET["filterSql"];
-// $sqlBase = "select * from article join member on (article.memNo = member.memNo)
-// where (article.artStatus = 1)";
-// $fruitsItems = $_GET["fruitsItems"];
 try {
     require_once("connectHomeserver.php");
 
-    $sql = "select * from article join member on (article.memNo = member.memNo)
+    $sql = "select * from `article` join `member` on (article.memNo = member.memNo)
     where (article.artStatus = 1) {$_GET["filterSql"]}";
     $filterArticle = $pdo->query($sql);
     

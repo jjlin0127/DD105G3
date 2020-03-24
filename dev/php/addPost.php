@@ -30,7 +30,7 @@ try {
 
 	$articleNo = $pdo->lastInsertId();
 
-    header("location:forum_article.php?articleNo={$articleNo}");
+    header("location:../forum_article.php?articleNo={$articleNo}");
 	
 } catch (PDOException $e) {
 	$errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";

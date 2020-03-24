@@ -2,7 +2,7 @@
 try {
     require_once("connectHomeserver.php");
 
-    $sql = "select * from article join member on (article.memNo = member.memNo)
+    $sql = "select * from `article` join `member` on (article.memNo = member.memNo) 
             where (article.artStatus = 1)";
     $articles = $pdo->query($sql);
     $artiRows = $articles->fetchAll(PDO::FETCH_ASSOC);

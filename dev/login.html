@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登入 | 天然甘</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/login/login.css">
 
     <!-- fontawesome -->
-    <script src="./js/all.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
 
 
     <!-- jquery&jqueryUI -->
@@ -25,27 +26,27 @@
             <div class="whiteform" style="transform: translateX(0%);">
                 <div class="signup">
                     <h1>註冊帳號</h1>
-                    <form autocomplete="off">
+                    <form method="POST">
                         <label>暱稱</label>
-                        <input type="text" class="emailinput" name="memNickname">
+                        <input type="text" class="emailinput regisnickname" name="memNickname">
                         <label>E-mail*:</label>
-                        <input type="email" class="emailinput regiterinput" title="ENTER RIGHT" name="memId" required="">
+                        <input type="email" class="emailinput registeremail" name="memId" title="請輸入完整email地址">
                         <label>密碼*:</label>
-                        <input type="password" class="emailinput firsttimepsw regiterinput1" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <input type="password" class="emailinput firsttimepsw registerinput1" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
                         <label>確認密碼*:</label>
-                        <input type="password" class="emailinput confirmpsw regiterinput1" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
-                        <button type="button" class="loginregisterbtn">註冊</button>
+                        <input type="password" class="emailinput confirmpsw registerinput1" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <button id="btnRegis">註冊</button>
                     </form>
                 </div>
                 <div class="signin">
                     <h1>登入會員</h1>
-                    <form autocomplete="off" action="./php/login.php" method="POST">
+                    <form method="POST">
                         <label>E-mail*:</label>
-                        <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
+                        <input type="email" class="emailinput" title="請輸入完整email地址" name="memId" id="memId">
                         <label>密碼*:</label>
-                        <input type="password" class="mempsw" pattern="\w{5,17}$" name="memPsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線">
+                        <input type="password" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線" name="memPsw" id="memPsw">
                         <a href="" class="forgetpswlightbox">忘記密碼?</a>
-                        <button type="submit" class="buttonsubmitlogin loginbutton">登入</button>
+                        <button id="btnLogin">登入</button>
                     </form>
                 </div>
             </div>
@@ -68,26 +69,26 @@
             <li><a href="#mobilelogintab2">註冊</a></li>
         </ul>
         <div id="mobilelogintab1" class="motabinner">
-            <form autocomplete="off" action="./php/login.php" method="POST">
+            <form method="POST">
                 <label>E-mail*:</label>
-                <input type="email" class="emailinput memacct" title="ENTER RIGHT" name="memId" required="">
+                <input type="email" class="emailinput" title="請輸入完整email地址" name="memId" id="mobilememId">
                 <label>密碼*:</label>
-                <input type="password" class="mempsw" name="memPsw">
+                <input type="password" class="mempsw" title="字母開頭，長度在6~18間，只能包含字母、數字、下底線" name="memPsw" id="mobilememPsw">
                 <a href="" class="forgetpswlightbox">忘記密碼?</a>
-                <button type="submit" class="buttonsubmitlogin loginbutton">登入</button>
+                <button id="mobilebtnLogin">登入</button>
             </form>
         </div>
         <div id="mobilelogintab2" class="motabinner">
-            <form autocomplete="off">
+            <form method="POST">
                 <label>暱稱</label>
-                <input type="text" class="emailinput" name="memNickname">
+                <input type="text" class="emailinput regisnickname" name="memNickname">
                 <label>E-mail*:</label>
-                <input type="email" class="emailinput regiterinput" title="ENTER RIGHT" name="memId" required="">
+                <input type="email" class="emailinput registeremail" name="memId">
                 <label>密碼*:</label>
-                <input type="password" class="emailinput firsttimepsw regiterinput1" name="mem_psw">
+                <input type="password" class="emailinput firsttimepsw regiterinput1" name="memPsw">
                 <label>確認密碼*:</label>
-                <input type="password" class="emailinput confirmpsw regiterinput1" name="mem_psw">
-                <button type="button" class="loginregisterbtnMob">註冊</button>
+                <input type="password" class="emailinput confirmpsw regiterinput1" name="memPsw">
+                <button id="mobilebtnRegis">註冊</button>
             </form>
         </div>
     </div>

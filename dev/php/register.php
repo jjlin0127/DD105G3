@@ -1,7 +1,7 @@
 <?php
 $errMsg = "";
 try {
-	require_once("connectDD105G3.php");
+	require_once("connectHomeserver.php");
 	$pdo->beginTransaction();
 	$sql = "INSERT INTO `member` (`memId`, `memPsw`, `memName`, `memNickname`, `memTel`, `memStatus`, `memImgUrl`, `memPoint`) 
 			VALUES (:memId, :memPsw, NULL, :memNickname, NULL, '1', NULL, '10000')";
@@ -11,7 +11,7 @@ try {
 	$member->bindValue(":memNickname", $_POST["memNickname"]);
 	//取得自動創號的key值
 	$memNo = $pdo->lastInsertId();
-	echo "memNo: $memNo 新增成功~";
+	echo "success";
 	$member->execute();
 	$pdo->commit();
 } catch (PDOException $e) {

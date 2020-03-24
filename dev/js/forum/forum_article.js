@@ -18,7 +18,7 @@ function loadMessages(){
                          <div class="author_img">
                             <img src="./images/forum/head_shot/twuPTC.jpg" alt="">
                         </div>
-                        <p class="author_name">${mes.memName}<span class="comment_time">${mes.mesTime}</span></p>
+                        <p class="author_name">${mes.memNickname}<span class="comment_time">${mes.mesTime}</span></p>
                     </div>                    
                     <p class="comment_content">${mes.mesText}</p>
                     <div class="social_zone">
@@ -48,7 +48,7 @@ function loadMessages(){
         };
         doFirst();
     };
-    xhr.open("GET", `getMessages.php?articleNo=${articleNo}`, true);
+    xhr.open("GET", `./php/getMessages.php?articleNo=${articleNo}`, true);
     xhr.send();
 
     // check member liked messages status
@@ -77,7 +77,7 @@ function loadMessages(){
             alert(xhr1.status);
         };
     };
-    xhr1.open("GET", "checkMessagesLike.php", true);
+    xhr1.open("GET", "./php/checkMessagesLike.php", true);
     xhr1.send();
 
     // check member reported messages status
@@ -88,7 +88,7 @@ function loadMessages(){
             if(xhr2.responseText.indexOf('no data') == -1){
                 let mesRepoArr = JSON.parse(xhr2.responseText);
                 let mesReppoId = [];
-                console.log(mesRepoArr);
+                // console.log(mesRepoArr);
                 for(let l=0; l<mesRepoArr.length; l++){
                     for(let m=0; m<mesArr.length; m++){
                         if(mesRepoArr[l].messageNo == mesArr[m].messageNo){
@@ -106,7 +106,7 @@ function loadMessages(){
             alert(xhr2.status);
         };
     };
-    xhr2.open("GET", "checkMessagesRepo.php", true);
+    xhr2.open("GET", "./php/checkMessagesRepo.php", true);
     xhr2.send();
 
 };
@@ -158,7 +158,7 @@ function sendMessage(e) {
                     alert(xhr.status);
                 };
             };
-            xhr.open("POST", "addMessage.php", true);
+            xhr.open("POST", "./php/addMessage.php", true);
             xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
             xhr.send(data_info);
         };
@@ -271,6 +271,7 @@ function likePost(postId, postLikeCount){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             if(xhr.status == 200){
+                console.log(xhr.responseText);
                 let article = JSON.parse(xhr.responseText);
                 document.getElementById(postId).innerText = article.artLikeCount;
                 alertBox.classList.remove('hidden');
@@ -281,7 +282,7 @@ function likePost(postId, postLikeCount){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "likeArticle.php", true);
+        xhr.open("POST", "./php/likeArticle.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     }else {
@@ -291,6 +292,7 @@ function likePost(postId, postLikeCount){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             if(xhr.status == 200){
+                console.log(xhr.responseText);
                 let message = JSON.parse(xhr.responseText);
                 document.getElementById(postId).innerText = message.mesLikeCount;
                 alertBox.classList.remove('hidden');
@@ -301,7 +303,7 @@ function likePost(postId, postLikeCount){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "likeMessage.php", true);
+        xhr.open("POST", "./php/likeMessage.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     };
@@ -322,6 +324,7 @@ function unLikePost(postId, postLikeCount){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             if(xhr.status == 200){
+                console.log(xhr.responseText);
                 let article = JSON.parse(xhr.responseText);
                 document.getElementById(postId).innerText = article.artLikeCount;
                 alertBox.classList.remove('hidden');
@@ -332,7 +335,7 @@ function unLikePost(postId, postLikeCount){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "unLikeArticle.php", true);
+        xhr.open("POST", "./php/unLikeArticle.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     }else {
@@ -342,6 +345,7 @@ function unLikePost(postId, postLikeCount){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             if(xhr.status == 200){
+                console.log(xhr.responseText);
                 let message = JSON.parse(xhr.responseText);
                 document.getElementById(postId).innerText = message.mesLikeCount;
                 alertBox.classList.remove('hidden');
@@ -352,7 +356,7 @@ function unLikePost(postId, postLikeCount){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "unLikeMessage.php", true);
+        xhr.open("POST", "./php/unLikeMessage.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     };
@@ -405,7 +409,7 @@ function reportPost(e){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "reportArticle.php", true);
+        xhr.open("POST", "./php/reportArticle.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     }else if(reportPostNoInput.name === "messageNo"){
@@ -428,7 +432,7 @@ function reportPost(e){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "reportMessage.php", true);
+        xhr.open("POST", "./php/reportMessage.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
     };
@@ -464,7 +468,7 @@ function collectArticle(){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "collectArticle.php", true);
+        xhr.open("POST", "./php/collectArticle.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
 };
@@ -492,7 +496,7 @@ function cancelCollectArticle(){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "cancelCollectArticle.php", true);
+        xhr.open("POST", "./php/cancelCollectArticle.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
 }
@@ -522,7 +526,7 @@ function subscribeAuthor(){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "subscribeAuthor.php", true);
+        xhr.open("POST", "./php/subscribeAuthor.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
 }
@@ -551,7 +555,7 @@ function unSubscribeAuthor(){
                 alert(xhr.status);
             };
         };
-        xhr.open("POST", "unSubscribeAuthor.php", true);
+        xhr.open("POST", "./php/unSubscribeAuthor.php", true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         xhr.send(data_info);
 }
