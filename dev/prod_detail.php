@@ -32,12 +32,13 @@ $product_review->execute();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-商品詳情</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <link rel="stylesheet" href="./css/page/prod/detail.css"> 
-    <link rel="stylesheet" href="./css/page/prod/detail_media.css"> 
-    <!-- <link rel="stylesheet" href="./sass/page/prod/detail.css"> 
-    <link rel="stylesheet" href="./sass/page/prod/detail_media.css">  -->
+    <!-- <link rel="stylesheet" href="./css/page/prod/detail.css">  -->
+    <!-- <link rel="stylesheet" href="./css/page/prod/detail_media.css">  -->
+    <link rel="stylesheet" href="./sass/page/prod/detail.css">
+    <link rel="stylesheet" href="./sass/page/prod/detail_media.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    <script src="./js/shopping_cart01.js"></script>
     
 </head>
 
@@ -128,7 +129,13 @@ $product_review->execute();
             商品詳情
         </div>      
     </div>
-
+    <div style="height:100px;border:3px solid blue;overflow: scroll;" id="newItem">
+        <div id="content">
+            項目數量：<span id="itemCount">0</span>
+            <br>
+            總金額：$<span id="subtotal">0</span>
+        </div>
+    </div>
     <div class="detail_wrapper">
         <div class="prdt_img">
             <div class="large_img">
@@ -186,7 +193,21 @@ $product_review->execute();
                     <button class="count" id="add">+</button>
                 </div> -->
                 <div class="purchase">
-                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon"></label>
+                    <button class="green_btn shopping_cart_btn putin" id="putin"> 
+                        放入購物車
+                        <input type="hidden" 
+
+
+                            value="<?php echo $prodRow->prodName;?>|
+                                    <?php 
+                                        echo trim("$prodRow->prodPicPath");
+                                    ?>
+                                    
+                                    |
+                                    <?php echo $prodRow->prodPrice;?>">
+                    </button>
+                    <label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
+                    </label>
                     <br>
                     <button class="orange_btn" id="buyit">直接購買</button><label for="buyit"><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon"></label>
                 </div><!--div.purchase的結尾標籤-->
