@@ -61,7 +61,7 @@ $product_review->execute();
             <a id="memNickname" href="member2.html">&nbsp;</a>
             <!-- 會員暱稱 -->
             <a id="spanLogin" class="navItem_2">登入</a>
-            <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
+            <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </nav>
     <nav class="rwdHeader">
@@ -86,7 +86,7 @@ $product_review->execute();
                 <a id="mobileloginLink" href="login.html">
                     <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                 </a>
-                <a id="shopCart" href="shopping.html">
+                <a id="shopCart" href="prod_shopping.html">
                     <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                 </a>
                 <a href="about.html">
@@ -173,7 +173,7 @@ $product_review->execute();
             <center><h2><b><?php echo $prodRow->prodName;?></b></h2></center>
             <center>
                 <h2 class="prdt_avgscore">4.0</h2>
-                <img src="images/prdt/icon/four_stars.svg" class="star">
+                <img src="images/prdt/icon/stars_4.svg" class="star">
             </center>
 
             <p class="introduce" style="line-height: 1.4;">基本介紹：<?php echo $prodRow->prodDesc;?></p>
@@ -186,9 +186,9 @@ $product_review->execute();
                     <button class="count" id="add">+</button>
                 </div> -->
                 <div class="purchase">
-                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
+                    <button class="green_btn shopping_cart_btn" id="putin"> 放入購物車</button><label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon"></label>
                     <br>
-                    <button class="orange_btn" id="buyit">直接購買</button><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon">
+                    <button class="orange_btn" id="buyit">直接購買</button><label for="buyit"><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon"></label>
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
