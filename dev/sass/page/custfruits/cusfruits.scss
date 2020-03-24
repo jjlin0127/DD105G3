@@ -13,12 +13,8 @@ body {
     margin: 0;
     .paddingtop {
         padding-top: 100px;
-        >h2 {
-            @include title(3px,
-            dotted,
-            #a6c165,
-            10px,
-            #fff);
+        .title_cusfruits {
+            @include title(3px, dotted, #a6c165, 10px, #fff);
             margin: 0px auto 50px;
         }
     }
