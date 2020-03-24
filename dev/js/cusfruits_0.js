@@ -69,34 +69,36 @@ $(document).ready(function() {
                             <img class="shown" src="${newImg.src}" data-fruit="${newImg.dataFruit}">  
                         </td>
                         <td class="droppedzone">
-                            <input type="reset" value="移除" class="btn_s" data-btn="${newImg.dataFruit}">
+                            <input type="reset" value="移除" class="btn_s" data-fruit="${newImg.dataFruit}">
                         </td>
                     </tr>`);
         state.selectedFruits.push(fruitId);
         console.log(state.selectedFruits);
         $('#items').text(state.selectedFruits.length)
-        $('[data-btn]').click(removenewImg);
+        $('[type="reset"]').click(removenewImg);
+
     })
 
     // var removedImg
-
+    var removedItem = 0
 
     function removenewImg(e) {
-        e.stopPropagation();
-        // var removedItem = 0
 
-        btnData = $(this).attr("data-btn");
-        console.log(btnData);
-
+        // (function() {
+        //     removedImg = $(this).parents('td').siblings().children('img').attr("data-fruit");
+        // })()
+        // alert(removedImg);
+        $(this).parents('tr').remove();
+        btnData = $(this).attr("data-fruit");
+        // console.log(btnData);
         removedItem = state.selectedFruits.indexOf(btnData);
         console.log(removedItem);
-
-        state.selectedFruits.splice(removedItem, 1); //當刪中間的, console.log會回傳splice兩次的結果
-        console.log(state.selectedFruits);
-
-        $(this).parents('tr').remove();
+        state.selectedFruits = state.selectedFruits.splice(removedItem, 1);
         // if (removedItem > -1) {}
+        // console.log(state.selectedFruits);
     }
+
+
 })
 
 //----------------------------------------
