@@ -9,6 +9,26 @@
 @import '../../modules/button';
 @import '../../modules/rwd';
 
+.title_hot_topics{
+    @include title(3px,dotted,#a6c125,10px,#fff);
+    margin: 50px auto;
+  }
+  
+  img.leafLeft {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 25%;
+  }
+  
+  img.leafRight {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    width: 18%;
+    transform: rotate(245deg);
+  }
+
 .detail_wrapper{
     width:1200px;
     box-sizing: border-box;

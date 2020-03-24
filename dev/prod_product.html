@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-特色果甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <!-- <link rel="stylesheet" href="./css/page/prod/product.css"> -->
+    <link rel="stylesheet" href="./css/page/prod/product.css">
     <link rel="stylesheet" href="./css/page/prod/product_media.css">
-    <link rel="stylesheet" href="./sass/page/prod/product.css">  
+    <!-- <link rel="stylesheet" href="./sass/page/prod/product.css">   -->
     <!-- <link rel="stylesheet" href="./sass/page/product_media.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
@@ -17,12 +17,6 @@
     <!-- ↓↓↓banner輪播圖的js -->
     <script src="./js/prod_carousel.js"></script>
     <script src="./js/shopping_cart01.js"></script>
-    <script src="./js/login.js"></script>
-
-    
-    <!-- 每頁要新增這兩個js -->
-    <script src="./js/jquery-3.4.1.js"></script>
-    <script src="./js/jquery-ui.js"></script>
     
     <style>
         body {
@@ -32,19 +26,17 @@
 </head>
 
 <body>
-    <!-- ↓↓↓ 導覽列 -->
-        @@include('layout/header.html',{
-            "focus06" : "focus"
-        })
+    @@include('./layout/header.html')
+
     <!-- ↑↑↑ 導覽列 -->
     <div class="wrapper">
-        <div class="box_for_title_hot_topics">
+        <center><div class="box_for_title_hot_topics">
             <div class="title_hot_topics">
-                <img src="./images/leaf_small.svg" class="leafLeft">
-                <img src="./images/leaf_small.svg" class="leafRight">
-                特色果甘
+                <img src="./images/forum/leaf.svg" class="leafLeft">
+                <img src="./images/forum/leaf.svg" class="leafRight">
+                <h2>特色果甘</h2>
             </div>      
-        </div>
+        </div></center>
     <!-- 以下是輪播圖 -->
         <div id="prod_carousel">
             <ul id="content">
@@ -168,7 +160,7 @@
                         放入購物車
                         <input type="hidden" value="天然火龍果甘|03_dragon_c.png|360">
                     </button>
-                    <label for="putin_3"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -206,7 +198,7 @@
                         放入購物車
                         <input type="hidden" value="天然香蕉甘|04_banana_c.png|360">
                     </button>
-                    <label for="putin_4"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -245,7 +237,7 @@
                         放入購物車
                         <input type="hidden" value="天然草莓甘|05_stawberry_c.png|360">
                     </button>
-                    <label for="putin_5"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -284,7 +276,7 @@
                         放入購物車
                         <input type="hidden" value="天然芭樂甘|06_guava_c.png|360">
                     </button>
-                    <label for="putin_6"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -319,7 +311,7 @@
                         放入購物車
                         <input type="hidden" value="天然芒果甘|07_mango_c.png|360">
                     </button>
-                    <label for="putin_7"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -358,7 +350,7 @@
                         放入購物車
                         <input type="hidden" value="天然蘋果甘|08_apple_c.png|360">
                     </button>
-                    <label for="putin_8"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>
@@ -396,7 +388,7 @@
                         放入購物車
                         <input type="hidden" value="天然藍莓甘|09_blueberry_c.png|360">
                     </button>
-                    <label for="putin_9"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
+                    <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
                     <button class="orange_btn">直接購買</button>

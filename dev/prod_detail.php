@@ -32,10 +32,10 @@ $product_review->execute();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>天然甘-商品詳情</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <!-- <link rel="stylesheet" href="./css/page/prod/detail.css">  -->
-    <!-- <link rel="stylesheet" href="./css/page/prod/detail_media.css">  -->
-    <link rel="stylesheet" href="./sass/page/prod/detail.css">
-    <link rel="stylesheet" href="./sass/page/prod/detail_media.css"> 
+    <link rel="stylesheet" href="./css/page/prod/detail.css"> 
+    <link rel="stylesheet" href="./css/page/prod/detail_media.css"> 
+    <!-- <link rel="stylesheet" href="./sass/page/prod/detail.css"> -->
+    <!-- <link rel="stylesheet" href="./sass/page/prod/detail_media.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     <script src="./js/shopping_cart01.js"></script>
@@ -122,13 +122,14 @@ $product_review->execute();
         $prodRow = $product->fetchObject();
     ?>
 
-    <div class="box_for_title_hot_topics">
-        <div class="title_hot_topics">
-            <img src="./images/leaf_small.svg" class="leafLeft">
-            <img src="./images/leaf_small.svg" class="leafRight">
-            商品詳情
-        </div>      
-    </div>
+<div class="wrapper">
+        <center><div class="box_for_title_hot_topics">
+            <div class="title_hot_topics">
+                <img src="./images/forum/leaf.svg" class="leafLeft">
+                <img src="./images/forum/leaf.svg" class="leafRight">
+                <h2>商品詳情</h2>
+            </div>      
+        </div></center>
     <div style="height:100px;border:3px solid blue;overflow: scroll;" id="newItem">
         <div id="content">
             項目數量：<span id="itemCount">0</span>
@@ -198,13 +199,7 @@ $product_review->execute();
                         <input type="hidden" 
 
 
-                            value="<?php echo $prodRow->prodName;?>|
-                                    <?php 
-                                        echo trim("$prodRow->prodPicPath");
-                                    ?>
-                                    
-                                    |
-                                    <?php echo $prodRow->prodPrice;?>">
+                            value="<?php echo $prodRow->prodName;?>|<?php echo $prodRow->prodPicPath?>|<?php echo $prodRow->prodPrice;?>">
                     </button>
                     <label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
                     </label>

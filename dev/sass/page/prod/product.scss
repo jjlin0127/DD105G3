@@ -10,8 +10,15 @@ div.wrapper{
 	width:100%;
 	/* border:3px solid blue; */
 	box-sizing: border-box;
-	// overflow: hidden;
+  // overflow: hidden;
+  
 }
+
+.title_hot_topics{
+  @include title(3px,dotted,#a6c125,10px,#fff);
+  margin: 50px auto;
+}
+
 
 img.carousel{
 	width: 100%;

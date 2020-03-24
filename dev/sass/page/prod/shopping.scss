@@ -6,6 +6,11 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
+.title_hot_topics{
+  @include title(3px,dotted,#a6c125,10px,#fff);
+  margin: 50px auto;
+}
+
 h2.say_hi{
     text-align: center;
     margin-bottom: 10px;;
