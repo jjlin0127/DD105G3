@@ -132,32 +132,57 @@
             </div>
         </div>
         <div class="qna_contain">
-            <!-- <h2 class="title_page">
-                <img src="./images/01index/04index_cust_qna/leaf.svg" class="leafLeft">
-                <img src="./images/01index/04index_cust_qna/leaf.svg" class="leafRight"> 果甘測驗
-            </h2> -->
-            <div>
-                <div>
-                    <h2 class="qna_title">
-                        <!-- <img src="../../images/index/leaf6.svg" class="leafLeft">
-                        <img src="../../images/index/leaf5.svg" class="leafRight"> -->
-                        Ｑ＆Ａ
-                    </h2>
-                    <h3>讓天然甘Ｑ＆Ａ給您適合的建議吧！</h3>
+            <div id="app" class="container">
+                <!-- 進度 -->
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" :style="{width:(progress*100/quiz.length)+'%'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                       {{progress}} / {{quiz.length}}
+                    </div>
                 </div>
-                <div class="qna_paper">
-                    <div class="qna_paper_upper">
-                        <h5>Q : <span>喝咖啡、吃甜食，讓你胃食道逆流或摁摁不順暢嗎?</span></h5>
-                        <span> 1 / 6</span>
+                <!-- 題目 -->
+                <div v-if="progress < quiz.length" class="jumbotron jumbotron-fluid mt-3">
+                    <div class="container">
+                        <h5 class="dislay-4">{{quiz[progress].question}}</h5>
+                        <hr class="my-2">
+                        <!-- 選項 -->
+                        <div v-for="(item, index) in quiz[progress].options" :key="index" class="form-check my-3">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="option" v-model="answer" :value="optionsValue[index]">
+                                <span class="badge badge-pill badge-primary mx-3">
+                                    {{optionsValue[index]}}
+                                </span>
+                                {{item}}
+                            </label>
+                        </div>
+        
+                        <!-- 按鈕 -->
+                        <div class="row">
+                            <div class="col-lg-6 col-xm-12">
+                                <button v-if="progress===0" @click="prev()" type="button" class="btn btn-danger btn-lg btn-block" disabled>上一題</button>
+                                <button v-else @click="prev()" type="button" class="btn btn-danger btn-lg btn-block">上一題</button>
+                            </div>
+                            <div class="col-lg-6 col-xm-12">
+                                <button v-if="answer===''" @click="next()" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3" disabled>下一題</button>
+                                <button v-else @click="next()" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3">下一題</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="qna_paper_lower">
-                        <span><input type="radio" name="q1">還好欸，我身強體壯</span>
-                        <span><input type="radio" name="q1">有一點，最近偶爾會這樣</span>
-                        <span><input type="radio" name="q1">每天都這樣....</span>
-                    </div>
-                    <div class="qna_paper_buttons">
-                        <button type="submit">上一題</button>
-                        <button type="submit">下一題</button>
+                </div>
+                <div v-else class="result jumbotron jumbotron-fluid mt-3">
+                    <div class="container">
+                        <div>
+                            <h3 class="row justify-content-center">已完成測驗</h3>
+                            <h2 class="row justify-content-center">推薦您 {{recommend}} 的組合</h2>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-xm-12">
+                                <button @click="back()" type="button" class="btn btn-danger btn-lg btn-block">重作測驗</button>
+                            </div>
+                            <div class="col-lg-6 col-xm-12">
+                                <button @click="refreshto(url)" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3">前往自由配</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

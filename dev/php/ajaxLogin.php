@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("connectBooks.php");
+  require_once("connectHomeserver.php");
   $sql = "select * from `member` where memId = :memId and memPsw = :memPsw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":memId", $_POST["memId"]);
@@ -31,7 +31,7 @@ try{
       "memPoint"=>$_SESSION["memPoint"],
     ];
     echo json_encode($member);
-    header("location:javascript://history.go(-1)");
+    // header("location:javascript://history.go(-1)");
   }
 }catch(PDOException $e){
   echo $e->getMessage();

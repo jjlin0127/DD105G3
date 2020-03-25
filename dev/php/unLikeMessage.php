@@ -2,14 +2,13 @@
 try {
 	require_once("connectHomeserver.php");
 
-	$sql1 = "DELETE FROM `message_likes` 
-			where (messageNo = :messageNo) and (memNo = :memNo)";
+	$sql1 = "DELETE FROM `message_likes` where (messageNo = :messageNo) and (memNo = :memNo)";
 	$Message = $pdo->prepare($sql1);
     $Message -> bindValue(":messageNo", $_POST["messageNo"]);
     $Message -> bindValue(":memNo", $_POST["memNo"]);
     $Message -> execute();
 
-	$sql2 = "update message set (mesLikeCount = :mesLikeCount) 
+	$sql2 = "update message set mesLikeCount = :mesLikeCount 
 			where (messageNo = :messageNo)";
 	$message = $pdo->prepare($sql2);
 	$message -> bindValue(":messageNo", $_POST["messageNo"]);

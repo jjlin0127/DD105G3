@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>發表話題 | 天然甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
-    <link rel="stylesheet" href="./css/vendor/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/vendor/summernote-lite.min.css">
     <link rel="stylesheet" href="./css/page/forum/forum_post.css">
 </head>
 <body>
     @@include('layout/header.html',{
         "focus06" : "focus"
     })
+
     <div class="wrapper_post">
         <div class="post_container">
             <div class="post_area">
                 <div class="cancel_post">
-                    <button class="cancel_post_btn" onclick="location.href='forum.html'">取消發表</button>
+                    <button class="cancel_post_btn" onclick="location.href='forum.php'">取消發表</button>
                 </div>
-                <form method="post" class="post_form" name="post_form">
+                <form action="./php/addPost.php" method="POST" name="post_form" class="post_form" id="post_form">
                     <div class="set_post_title">
                         <label for="post_title">標題</label>
-                        <input type="text" name="post_title" id="post_title" autofocus>
+                        <input type="text" name="artTitle" id="post_title" autofocus>
                     </div>
 
                     <p>選擇話題種類 (請選擇1項)</p>
@@ -96,12 +97,12 @@
         <!-- alert start -->
         <div id="alertBox" class="alertBox hidden">
             <span id="close_alert_btn">&times;</span>
-            <span id="alertMessage">最多選擇6樣！</span>
+            <span id="alertMessage"></span>
           </div>
         <!-- alert end -->
     </div>
-    
-    @@include('./layout/footer.html')
+  
+    @@include('./layout/footer.html') 
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/vendor/summernote-lite.min.js"></script>

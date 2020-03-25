@@ -2,14 +2,14 @@
 try {
 	require_once("connectHomeserver.php");
 
-	$sql1 = "DELETE FROM `article_likes` 
+	$sql1 = "DELETE FROM article_likes 
 			where (articleNo = :articleNo) and (memNo = :memNo)";
 	$Article = $pdo->prepare($sql1);
     $Article -> bindValue(":articleNo", $_POST["articleNo"]);
     $Article -> bindValue(":memNo", $_POST["memNo"]);
     $Article -> execute();
 	
-	$sql2 = "update article set (artLikeCount = :artLikeCount) 
+	$sql2 = "update article set artLikeCount = :artLikeCount 
 			where (articleNo = :articleNo)";
 	$article = $pdo->prepare($sql2);
 	$article -> bindValue(":articleNo", $_POST["articleNo"]);

@@ -11,7 +11,14 @@ function doFirst(){
     for (let i=0; i<fruitsItemsGroup.length; i++){
         fruitsItemsGroup[i].addEventListener('click', checkBoxLimit);
     };
-    document.getElementById('reset_btn').addEventListener('click', loadArticles);
+    document.getElementById('reset_btn').addEventListener('click', function(){
+        document.getElementsByTagName('h2')[1].scrollIntoView({
+            behavior: "smooth", 
+            block: "start", 
+            inline: "nearest"
+        });
+        loadArticles();
+    });
     document.getElementById('search_btn').addEventListener('click', filterArticles);
 };
 
@@ -44,12 +51,15 @@ function loadArticles(){
             // deep copy
             artiArrCopy = JSON.parse(JSON.stringify(artiOriArr));
             // console.log(artiArr);
+            artiArrCopy.sort(function(a, b){
+                return b.articleNo - a.articleNo;
+            });
             readInArticles(artiArrCopy);
         // }else{
         //     alert(xhr.status);
         // };
     };
-    xhr.open("GET", "getArticles.php", true);
+    xhr.open("GET", "./php/getArticles.php", true);
     xhr.send();
 };
 
@@ -162,7 +172,7 @@ function readInArticles(artiArr){
                     <div class="author_img">
                         <img src="./images/forum/head_shot/mwyqpL.jpg" alt="">
                     </div>
-                    <p class="author_name">${arti.memName}</p>
+                    <p class="author_name">${arti.memNickname}</p>
                 </div>
                 <p class="post_title">${arti.artTitle}</p>` + 
                 topicTypeStr + 
@@ -254,12 +264,24 @@ function filterArticles(e){
             alert(xhr1.status);
         };
     };
-    xhr1.open("GET", `filterArticles.php?filterSql=${filterSql}`, true);
+    xhr1.open("GET", `./php/filterArticles.php?filterSql=${filterSql}`, true);
     xhr1.send();
 
+    document.getElementsByTagName('h2')[1].scrollIntoView({
+        behavior: "smooth", 
+        block: "start", 
+        inline: "nearest"
+    });
 };
 
 function sortArticles(){
+    for(let i=0; i<topicTypeGroup.length; i++){
+        topicTypeGroup[i].checked = false;
+    };
+    for(let j=0; j<fruitsItemsGroup.length; j++){
+        fruitsItemsGroup[j].checked = false;
+    };
+
     let result = artiArrCopy;
     if(sort_by.value === "like"){
         result.sort(function(a, b){
@@ -269,11 +291,20 @@ function sortArticles(){
         result.sort(function(a, b){
             return b.artMesCount - a.artMesCount;
         });
+    }else if(sort_by.value === "time"){
+        result.sort(function(a, b){
+            return a.articleNo - b.articleNo;
+        });
     }else{
         result.sort(function(a, b){
-            return a.artTime - b.artTime;
-        }).reverse();
-    };
+            return b.articleNo - a.articleNo;
+        });
+    }
+    document.getElementsByTagName('h2')[1].scrollIntoView({
+        behavior: "smooth", 
+        block: "start", 
+        inline: "nearest"
+    });
     readInArticles(result);
 };
 

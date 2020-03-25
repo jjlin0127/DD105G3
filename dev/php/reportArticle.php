@@ -2,13 +2,13 @@
 try {
 	require_once("connectHomeserver.php");
 	
-	$sql = "INSERT INTO `article_report` (`articleNo`, `memNo`, `reportReason`) 
+	$sql = "INSERT INTO article_report (articleNo, memNo, reportReason) 
 			values(:articleNo, :memNo, :reportReason)";
 	$articleReport = $pdo->prepare($sql);
-    $articleReport->bindValue(":articleNo", $_POST["articleNo"]);
-    $articleReport->bindValue(":memNo", $_POST["memNo"]);
-	$articleReport->bindValue(":reportReason", $_POST["reportReason"]);
-    $articleReport->execute();
+    $articleReport -> bindValue(":articleNo", $_POST["articleNo"]);
+    $articleReport -> bindValue(":memNo", $_POST["memNo"]);
+	$articleReport -> bindValue(":reportReason", $_POST["reportReason"]);
+    $articleReport -> execute();
 	
 } catch (PDOException $e) {
 	echo "錯誤行號 : " . $e->getLine() . "<br>";

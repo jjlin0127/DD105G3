@@ -1,11 +1,11 @@
 <?php
-ini_set("display_errors","On");
-error_reporting(E_ALL);
+// ini_set("display_errors","On");
+// error_reporting(E_ALL);
 
 try {
 	require_once("connectHomeserver.php");
 	
-	$sql = "INSERT INTO `message_report` (`messageNo`, `memNo`, `reportReason`) 
+	$sql = "INSERT INTO message_report (messageNo, memNo, reportReason) 
 			values(:messageNo, :memNo, :reportReason)";
 	$messageReport = $pdo->prepare($sql);
     $messageReport->bindValue(":messageNo", $_POST["messageNo"]);

@@ -2,14 +2,14 @@
 try {
 	require_once("connectHomeserver.php");
 
-	$sql1 = "INSERT INTO `message_likes` (messageNo, `memNo`) 
+	$sql1 = "INSERT INTO message_likes (messageNo, memNo) 
 			values(:messageNo, :memNo)";
 	$Message = $pdo->prepare($sql1);
     $Message -> bindValue(":messageNo", $_POST["messageNo"]);
     $Message -> bindValue(":memNo", $_POST["memNo"]);
     $Message -> execute();
 
-	$sql2 = "update message set (mesLikeCount = :mesLikeCount) 
+	$sql2 = "update `message` set mesLikeCount = :mesLikeCount 
 			where (messageNo = :messageNo)";
 	$message = $pdo->prepare($sql2);
 	$message -> bindValue(":messageNo", $_POST["messageNo"]);

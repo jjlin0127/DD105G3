@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("./php/connectHomeserver.php");
     $sql = "select * from article join member on (article.memNo = member.memNo)
             where (article.artStatus = 1)
             order by article.artLikeCount desc
@@ -36,14 +36,14 @@ try {
                 <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
                 <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
                 <!-- <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a> -->
-                <a class="navItem focus" href="forum.php">果甘話區 <i class="fas fa-leaf"></i></a>
+                <a class="navItem focus" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
             </div>
             <div class="navList_2">
                 <input id="memNo" type="hidden" value="">
+                <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
                 <a id="memNickname" href="member2.html">&nbsp;</a>
                 <!-- 會員暱稱 -->
                 <a id="spanLogin" class="navItem_2">登入</a>
-                <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </nav>
         <nav class="rwdHeader">
@@ -65,7 +65,7 @@ try {
                     <a href="member2.html">
                         <li id="mobilememNickname">&nbsp;</li>
                     </a>
-                    <a id="mobileloginLink" href="login.html">
+                    <a id="mobileloginLink">
                         <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                     </a>
                     <a id="shopCart" href="shopping.html">
@@ -120,7 +120,7 @@ try {
                                     <div class="author_img">
                                         <img src="./images/forum/head_shot/mwyqpL.jpg" alt="">
                                     </div>
-                                    <p class="author_name"><?=$artiRow["memName"]?></p>
+                                    <p class="author_name"><?=$artiRow["memNickname"]?></p>
                                 </div>
                                 <p class="post_title"><?=$artiRow["artTitle"]?></p>
                                 

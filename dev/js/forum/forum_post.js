@@ -25,16 +25,6 @@ $('#summernote').summernote({
 
     post_submit_btn = document.getElementById('post_submit_btn');
     post_submit_btn.addEventListener('click', checkPostForm);
-
-    // let memNo = document.getElementById('memNo').value;
-    // console.log(memNo);
-    // // let memNoInput = document.createElement('input');
-    // // memNoInput.name = 'memNo';
-    // // memNoInput.type = 'hidden';
-    // // memNoInput.value = memNo;
-    // // document.getElementById('post_form').appendChild(memNoInput);
-    // // document.getElementById('post_form').action = `postInsert.php?memNo=${memNo}`;
-    // document.getElementsByClassName('post_form')[0].action = `postInsert.php?memNo=${memNo}`;
 }
 
 function checkBoxLimit(){
@@ -47,7 +37,7 @@ function checkBoxLimit(){
 
     if(checkedCount > limit) {
         alertBox.classList.remove('hidden');
-        alertMessage.innerText = '最多選擇6樣！';					
+        alertMessage.innerText = '最多選擇6項！';					
         this.checked = false;
           
         setTimeout(function(){

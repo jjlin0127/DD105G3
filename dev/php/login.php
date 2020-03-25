@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("connectDD105G3.php");
+  require_once("connectHomeserver.php");
   $sql = "select * from `member` where memId = :memId and memPsw = :memPsw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":memId", $_POST["memId"]);
@@ -22,7 +22,7 @@ try{
     $_SESSION["memPoint"] = $memRow["memPoint"];
 
     //送出登入者的姓名資料
-    header("location:../index.html");
+    header("location:./index.html");
   }
 }catch(PDOException $e){
   echo $e->getMessage();
