@@ -114,16 +114,64 @@ body {
                     top: 40px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
                 .layer2 {
                     top: 95px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
                 .layer3 {
                     top: 135px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
             }
         }
