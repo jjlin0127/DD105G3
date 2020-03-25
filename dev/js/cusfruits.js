@@ -61,6 +61,7 @@ var state = {
   healthyValue3 : 0
 }
 var newImg = document.createElement('img');
+var storage = sessionStorage;
 
 $(document).ready(function() {
 
@@ -196,7 +197,6 @@ $(document).ready(function() {
     return
   }
   
-
   function updateData(){
     heyChart.data.datasets[0].data[0] = Number(state.healthyValue1);
     heyChart.data.datasets[0].data[1] = Number(state.healthyValue2);
@@ -204,26 +204,25 @@ $(document).ready(function() {
     heyChart.update();
   }
 
-$('[type="submit"]').click(function(){
-  var storage = sessionStorage;
-  var checkPoint = $('#items').text()
-  var cusFruitsName = $('[name="bagname"]').val()
-  if(checkPoint==6){
-    storage['cusFruitsName'] = cusFruitsName;
-    debugger;
-    storage['prodNo1'] = state.selectedFruits[0];
-    storage['prodNo2'] = state.selectedFruits[1];
-    storage['prodNo3'] = state.selectedFruits[2];
-    storage['prodNo4'] = state.selectedFruits[3];
-    storage['prodNo5'] = state.selectedFruits[4];
-    storage['prodNo6'] = state.selectedFruits[5];
-    storage['cusFruitsPrice'] = state.totalPrice;
+  $('[type="submit"]').click(function(){
 
-  }else{
-    alert("您尚未添齊 6 種水果喔! 請再添購")
-  }
+    var checkPoint = $('#items').text()
+    var cusFruitsName = $('[name="bagname"]').val()
+    if(checkPoint==6){
+      storage['cusFruitsName'] = cusFruitsName;
+      storage['prodNo1'] = state.selectedFruits[0];
+      storage['prodNo2'] = state.selectedFruits[1];
+      storage['prodNo3'] = state.selectedFruits[2];
+      storage['prodNo4'] = state.selectedFruits[3];
+      storage['prodNo5'] = state.selectedFruits[4];
+      storage['prodNo6'] = state.selectedFruits[5];
+      storage['cusFruitsPrice'] = state.totalPrice;
 
+    }else{
+      alert("您尚未添齊 6 種水果喔! 請再添購")
+    }
+  })
 })
 
-})
 //----------------------------------------
+

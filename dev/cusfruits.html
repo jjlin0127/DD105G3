@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/page/custfruits/cusfruits.css">
 
     <!-- fontawesome -->
-    <!-- <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script> -->
+    <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
     <!-- chart.js -->
@@ -25,6 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
     <script src="./js/cusfruits.js" defer></script>
+    <script src="./js/getRecommendation.js"></script>
     <script src="./js/lightbox.js" defer></script>
 
 </head>
@@ -56,6 +57,17 @@
         <button name="close">我知道了</button>
     </div>
     <div class="cusfruits_wrapper">
+        <div class="recommended">
+            <p>根據問答小測驗，天然甘發現您需要{活化大腦}，如果可以來點 {保護血管} 或 {幫助消化} 也不錯！</p>
+            <p>建議果乾組合: 
+                <span id="prodNo1"></span>
+                <span id="prodNo2"></span>
+                <span id="prodNo3"></span>
+                <span id="prodNo4"></span>
+                <span id="prodNo5"></span>
+                <span id="prodNo6"></span>
+            </p>
+        </div>
         <div class="guides_inpage">
             <div>
                 <span>1</span>
