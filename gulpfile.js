@@ -70,7 +70,7 @@ gulp.task('concatcss', ['sass'], function() { //目前沒用到
         .pipe(gulp.dest('dest/css'));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', function() { 
     gulp.src(['dev/sass/*.scss', 'dev/sass/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
         // .pipe(cleanCSS({compatibility: 'ie9'}))
