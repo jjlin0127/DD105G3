@@ -1,7 +1,7 @@
 <?php
 try{
-  require_once("connectHomeserver.php");
-  $sql = "select * from `member` where memId = :memId and memPsw = :memPsw";
+  require_once("connectDD105G3.php");
+  $sql = "SELECT * FROM `member` WHERE memId = :memId AND memPsw = :memPsw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":memId", $_POST["memId"]);
   $member->bindValue(":memPsw", $_POST["memPsw"]);

@@ -1,7 +1,7 @@
 <?php
 $errMsg = "";
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectDD105G3.php");
 	$pdo->beginTransaction();
 	$sql = "INSERT INTO `member` (`memId`, `memPsw`, `memName`, `memNickname`, `memTel`, `memStatus`, `memImgUrl`, `memPoint`) 
 			VALUES (:memId, :memPsw, NULL, :memNickname, NULL, '1', NULL, '10000')";

@@ -1,134 +1,236 @@
-        // var data = [
-        //     { type: '幫助消化', score: '3' },
-        //     { type: '活化大腦', score: '2' },
-        //     { type: '保護血管', score: '1' },
-        // ];
+//養生指數
+Chart.defaults.global.legend.display = false;
+var ctx = document.getElementById('heyChart');
 
-        // var svg = d3.select('#svg')
-        // var padding = { top: 20, right: 30, bottom: 30, left: 50 };
+datas = {
+  labels: ['幫助消化', '活化大腦', '保護血管'],
+  // 1：幫助消化 2：活化大腦 3：保護血管
 
-        // var chartarea = {
-        //     "width": parseInt(svg.style("width")) - padding.left - padding.right,
-        //     "height": parseInt(svg.style("height")) - padding.top - padding.bottom,
-        // }
-        // var yScale = d3.scalelinear()
-        //     .domain([0, d3.max(data, function(d, i) { return d.score })])
-        //     .range([chartarea.height, 0]).nice();
-        // var xScale = d3.scaleband()
-        //     .domain(data.map(function(d) { return d.type }))
-        //     .range([0, chartarea.width])
-        //     .padding(.2);
+  datasets: [
+    {
+      backgroundColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(153, 102, 255, 1)'
+      ],
+      data: [0, 0, 0],
+    }
+  ]
+};
 
-        // var xAxis = svg.append("g")
-        //     .classed("xAxis", true)
-        //     .attr(
-        //         'transform', 'translate(' + padding.left + ','
-        //     )
+options = {
+  scale: {
+    angleLines: {
+      display: true //連到三角形三點的直線
+    },
+    ticks: {
+      beginAtZero: true,
+      maxTicksLimit: 7,
+      suggestedMin: 0,
+      suggestedMax: 3,
+    },
+    gridLines: {
+      display: true,
+      circular: true,
+    },
+    pointLabels: {
+      fontSize: 18,
+      fontColor: ['#20B2AA', '#F4A460', '#FF6347'],
+      fontFamily: 'Noto Sans TC',
+    }
+  }
+};
 
-        //養生指數
-        Chart.defaults.global.legend.display = false;
-        var ctx = document.getElementById('heyChart');
+var heyChart = new Chart(
+  ctx,
+  {
+    type: 'radar',
+    data: datas,
+    options: options
+  }
+);
 
-        data = {
-            labels: ['幫助消化', '活化大腦', '保護血管'],
-            datasets: [{
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                data: [3, 2, 1]
-            }]
-        }
+//----------------------------------------
 
-        options = {
-            scale: {
-                angleLines: {
-                    display: true //連到三角形三點的直線
-                },
-                ticks: {
-                    beginAtZero: true,
-                    maxTicksLimit: 7,
-                    suggestedMin: 0,
-                    suggestedMax: 1,
-                },
-                gridLines: {
-                    display: true,
-                    circular: true,
-                },
-                pointLabels: {
-                    fontSize: 18,
-                    fontColor: ['#20B2AA', '#F4A460', '#FF6347'],
-                    fontFamily: 'Noto Sans TC',
-                }
-            }
-        };
+//選購過程
+var state = {
+  selectedFruits: [],
+  totalPrice: 0,
+  healthyValue1 : 0, 
+  healthyValue2 : 0, 
+  healthyValue3 : 0
+}
+var newImg = document.createElement('img');
+var storage = sessionStorage;
 
-        var heyChart = new Chart(
-            ctx, {
-                type: 'radar',
-                data: data,
-                options: options
-            });
+$(document).ready(function() {
 
-        //------------------------------------------------------------
+  $('[data-fruit]').click(function(e) {
+    if(state.selectedFruits.length<6) {
+      var src = $(this).attr('src'); // "/build/images/foo.png"
+      var fruitId = $(this).attr('data-fruit');
+      var unitPrice = $(this).attr('data-price');
+      var healthyValue1 = $(this).attr('data-point1');
+      var healthyValue2 = $(this).attr('data-point2');
+      var healthyValue3 = $(this).attr('data-point3');
+      newImg.src = src;
+      newImg.dataFruit = fruitId;
+      newImg.price = unitPrice;
+      newImg.healthyIndex1 = healthyValue1;
+      newImg.healthyIndex2 = healthyValue2;
+      newImg.healthyIndex3 = healthyValue3;
+      state.selectedFruits.push(fruitId);
+      
+      updateItemTotal()
+      plusCountEach(state.selectedFruits,newImg.dataFruit)
+      plusItemPrice()
+      plusHealthyIndex1()
+      plusHealthyIndex2()
+      plusHealthyIndex3()
+      updateData()
+      
+      $('#selectedTable').append(
+        `<tr>
+           <td>
+             <img class="shown" src="${newImg.src}" data-fruit="${newImg.dataFruit}" data-price="${newImg.price}"
+              data-point1="${newImg.healthyIndex1}" data-point2="${newImg.healthyIndex2}" data-point3="${newImg.healthyIndex3}">
+           </td>
+           <td class="droppedzone">
+             <input type="reset" value="移除" class="btn_s" data-btn="${newImg.dataFruit}">
+           </td>
+         </tr>`
+      );
 
-        window.addEventListener('load', function() {
-            images = document.getElementsByClassName('draggable');
-            for (let i = 0; i < images.length; i++) {
-                images[i].addEventListener('dragstart', function(e) {
-                    // let data = '<img src="./images/cusFruits/01_starFruit_c.png">';
-                    let data = `${images[i]}`;
-                    // let data = images[i].src;
-                    // let data = i;
-                    // console.log(images[i])
-                    console.log(data)
+      $(`[data-btn="${newImg.dataFruit}"]`).unbind('click').click(removeNewImg);
+    } else {
+      setTimeout(function(){
+        alert("太多好吃果甘讓你心動嗎? 但是不好意思^_^\" 只能選擇6樣喔!");
+      },0)
+    }
+  })
 
-                    e.dataTransfer.setData('image/*', data);
-                });
-            }
+  function removeNewImg(e) {
+    e.preventDefault();
 
-            droppedzones = document.getElementsByClassName('droppedzone');
-            for (let j = 0; j < droppedzones.length; j++) {
-                droppedzones[j].addEventListener('dragenter', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('drop', function(e) {
-                    e.preventDefault();
+    toBeRemovedFruitId = $(this).attr('data-btn');
+    itemIndex = state.selectedFruits.indexOf(toBeRemovedFruitId);
+    state.selectedFruits.splice(itemIndex, 1);
 
-                    // console.log(e.target.className);
-                    // console.log(e.dataTransfer.getData('image/png'));
+    toBeMinusedIndex1 = $(`[data-btn="${toBeRemovedFruitId}"]`).parent('td').siblings().children('img').attr('data-point1');
+    toBeMinusedIndex2 = $(`[data-btn="${toBeRemovedFruitId}"]`).parent('td').siblings().children('img').attr('data-point2');
+    toBeMinusedIndex3 = $(`[data-btn="${toBeRemovedFruitId}"]`).parent('td').siblings().children('img').attr('data-point3');
 
+    updateItemTotal()
+    minusCountEach(toBeRemovedFruitId)
+    minusItemPrice()
+    minusHealthyIndex1(toBeMinusedIndex1)
+    minusHealthyIndex2(toBeMinusedIndex2)
+    minusHealthyIndex3(toBeMinusedIndex3)
+    updateData()
 
-                    // var inputs = document.getElementsByTagName('input');
-                    // test.src = e.dataTransfer.getData('image/png');
-                    // this.insertBefore(test, input[j]);
-                    this.innerHTML = e.dataTransfer.getData('image/*');
+    $(this).parent('td').parent('tr').remove();
+    console.log(state.selectedFruits);
+  }
 
-                    var test = document.createElement('img');
-                    // e.dataTransfer.getData('text/plain');
-                    // test.src = data;
-                    // this.appendChild(test);
+  function plusCountEach(array,value){
+    var n = 0;
+    $(`[data-fruit="${value}"]`).siblings().addClass("imgClicked");
+    for(i = 0; i < array.length; i++){
+        if(array[i] == value){n++}
+    }
+    $(`[data-fruit="${value}"]`).siblings().text(n);
+    return n;
+  }
 
-                    // e.target.appendChild(e.dataTransfer.getData('image/*'));
-                })
-            }
-        })
+  function minusCountEach(value){
+    var n = $(`[data-fruit="${value}"]`).siblings().text();
+    if(n>1){
+      n--;
+      $(`[data-fruit="${value}"]`).siblings().text(n);
+    }else if(n<=1){
+      $(`[data-fruit="${value}"]`).siblings().removeClass("imgClicked");
+      $(`[data-fruit="${value}"]`).siblings().text("")
+    }
+  }
 
-        // $("#img01").draggable({
-        //     containment:"#middle01",
-        // });
-        // $("#middle01").droppable({
-        //     drop: function(event, ui) {
-        //         $(this).css('background', 'rgb(0,200,0)');
-        //     },
-        //     over: function(event, ui) {
-        //         $(this).css('background', 'orange');
-        //     },
-        //     out: function(event, ui) {
-        //         $(this).css('background', 'cyan');
-        //     }
-        // });
+  function updateItemTotal() {
+    $('#items').text(state.selectedFruits.length);
+  }
+
+  function plusItemPrice(){
+    state.totalPrice += Number(newImg.price);
+    $('#totalPrice').text(state.totalPrice); 
+  }
+
+  function minusItemPrice(){
+    state.totalPrice -= Number(newImg.price);
+    $('#totalPrice').text(state.totalPrice); 
+  }
+
+  function plusHealthyIndex1(){
+    state.healthyValue1 += Number(newImg.healthyIndex1);
+    return
+  }
+
+  function plusHealthyIndex2(){
+    state.healthyValue2 += Number(newImg.healthyIndex2);
+    return
+  }
+
+  function plusHealthyIndex3(){
+    state.healthyValue3 += Number(newImg.healthyIndex3);
+    return
+  }
+
+  function minusHealthyIndex1(a){
+    state.healthyValue1 -= Number(a);
+    return
+  }
+
+  function minusHealthyIndex2(b){
+    state.healthyValue2 -= Number(b);
+    return
+  }
+
+  function minusHealthyIndex3(c){
+    state.healthyValue3 -= Number(c);
+    return
+  }
+  
+  function updateData(){
+    heyChart.data.datasets[0].data[0] = Number(state.healthyValue1);
+    heyChart.data.datasets[0].data[1] = Number(state.healthyValue2);
+    heyChart.data.datasets[0].data[2] = Number(state.healthyValue3);
+    heyChart.update();
+  }
+
+  $('[type="submit"]').click(function(){
+
+    var checkPoint = $('#items').text()
+    var cusFruitsName = $('[name="bagname"]').val()
+    if(checkPoint==6){
+      storage['cusFruitsName'] = cusFruitsName;
+      storage['prodNo1'] = state.selectedFruits[0];
+      storage['prodNo2'] = state.selectedFruits[1];
+      storage['prodNo3'] = state.selectedFruits[2];
+      storage['prodNo4'] = state.selectedFruits[3];
+      storage['prodNo5'] = state.selectedFruits[4];
+      storage['prodNo6'] = state.selectedFruits[5];
+      storage['cusFruitsPrice'] = state.totalPrice;
+
+    }else{
+      alert("您尚未添齊 6 種水果喔! 請再添購")
+    }
+  })
+})
+
+//----------------------------------------
+
+//燈箱關閉後執行推薦結果bounce in
+
+$('[name="close"]').click(function(){
+  $('.recommended').css('display','block').addClass('bounce-in-top');
+})
+
+//----------------------------------------
+

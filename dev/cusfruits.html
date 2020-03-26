@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>天然甘</title>
+    <title>客製果甘 | 天然甘</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/custfruits/cusfruits.css">
@@ -17,24 +17,24 @@
     <!-- chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
-    <!-- d3.js -->
-    <!-- <script src="https://d3js.org/d3.v3.js"></script> -->
-
     <!-- jquery&jqueryUI -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
     <script src="./js/cusfruits.js" defer></script>
+    <script src="./js/getRecommendation.js"></script>
     <script src="./js/lightbox.js" defer></script>
 
 </head>
 
 <body>
     @@include('layout/header.html',{ "focus04" : "focus" })
-    <h2 class="title_cusfruits">
-        <img src="./images/index/index_felix/leaf.svg" class="leafLeft">
-        <img src="./images/index/index_felix/leaf.svg" class="leafRight"> 客製果甘
-    </h2>
+    <div class="paddingtop">
+        <h2 class="title_cusfruits">
+            <img src="./images/index/index_felix/leaf.svg" class="leafLeft">
+            <img src="./images/index/index_felix/leaf.svg" class="leafRight"> 客製果甘
+        </h2>
+    </div>
     <div class="popup">
         <h2>歡迎來到果甘自由配</h2>
         <div class="guides">
@@ -54,6 +54,19 @@
         <button name="close">我知道了</button>
     </div>
     <div class="cusfruits_wrapper">
+        <div class="recommended">
+            <p>根據問答小測驗，天然甘推薦您
+                <span id="cusFruitsName"></span>
+                組合, 也會適度搭配其他果甘並重喔！</p>
+            <p>建議果乾組合: 
+                <span id="prodNo1"></span>
+                <span id="prodNo2"></span>
+                <span id="prodNo3"></span>
+                <span id="prodNo4"></span>
+                <span id="prodNo5"></span>
+                <span id="prodNo6"></span>
+            </p>
+        </div>
         <div class="guides_inpage">
             <div>
                 <span>1</span>
@@ -80,55 +93,72 @@
                     <div class="linktoqna">
                         <a href="#">或是去做測驗幫您推薦</a>
                     </div>
+                    <!-- 1：幫助消化 2：活化大腦 3：保護血管 -->
                     <div class="layer1">
-                        <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" id="img01">
-                        <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" id="img02">
-                        <img src="./images/cusFruits/03_dragon_c.png" class="draggable" id="img03">
+                        <div>
+                            <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
                     </div>
                     <div class="layer2">
-                        <img src="./images/cusFruits/04_banana_c.png" class="draggable" id="img04">
-                        <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" id="img05">
-                        <img src="./images/cusFruits/06_guava_c.png" class="draggable" id="img06">
+                        <div>
+                            <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="4"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="5"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="6"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
                     </div>
                     <div class="layer3">
-                        <img src="./images/cusFruits/07_mango_c.png" class="draggable" id="img07">
-                        <img src="./images/cusFruits/08_apple_c.png" class="draggable" id="img08">
-                        <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" id="img09">
+                        <div>
+                            <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="7"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="8"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="9"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="wrapper_middle">
-                <table>
+                <table id="selectedTable">
+                    <!-- 
                     <tr>
-                        <td class="droppedzone" id="middle01">
+                        <td>
+                            <img src="./images/cusFruits/02_pineapple_c.png">
+                        </td>
+                        <td class="droppedzone">
                             <input type="reset" value="移除" class="btn_s" disabled>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle02">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle03">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle04">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle05">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="droppedzone" id="middle06">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
+                    -->
                 </table>
             </div>
 
@@ -154,8 +184,8 @@
                             <label for="bagname" class="form__label">為您搭配好的組合命名 : </label>
                         </form>
                         <div>
-                            <p>已選: 0/6樣</p>
-                            <h5>目前總金額: 100元</h5>
+                            <p>已選: <span id="items">0</span>/6樣</p>
+                            <h5>目前總金額: <span id="totalPrice">0</span>元</h5>
                         </div>
                     </div>
                     <div class="buttons">

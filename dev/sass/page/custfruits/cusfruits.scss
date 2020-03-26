@@ -11,19 +11,12 @@ body {
     box-sizing: border-box;
     background: url('../../../images/cusFruits/full_bg.png');
     margin: 0;
-    .header__container {
-        position: sticky;
-    }
-    .rwdHeader {
-        position: sticky;
-    }
-    >h2 {
-        @include title(3px,
-        dotted,
-        #a6c165,
-        10px,
-        #fff);
-        margin: 50px auto;
+    .paddingtop {
+        padding-top: 100px;
+        .title_cusfruits {
+            @include title(3px, dotted, #a6c165, 10px, #fff);
+            margin: 0px auto 50px;
+        }
     }
 }
 
@@ -48,6 +41,14 @@ body {
     max-width: 1200px;
     margin: 50px auto;
     line-height: 1.5;
+    .recommended{
+        display: none;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 60%;
+        margin: 0 auto;
+    }
     .guides_inpage {
         display: flex;
         justify-content: space-between;
@@ -121,16 +122,64 @@ body {
                     top: 40px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
                 .layer2 {
                     top: 95px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
                 .layer3 {
                     top: 135px;
                     left: 15px;
                     max-width: 95%;
+                    display: flex;
+                    span{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 40px;
+                        top: 40px;
+                        border-radius: 100%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 25px;
+                        color: wheat;
+                    }
+                    .imgClicked{
+                        background: rgba(0, 0, 0, 0.5);
+                    }
                 }
             }
         }
@@ -159,7 +208,7 @@ body {
                     vertical-align: middle;
                     img {
                         width: auto;
-                        height: 75px;
+                        height: 60px;
                     }
                     .btn_s {
                         outline: none;
@@ -273,6 +322,49 @@ body {
                 }
             }
         }
+    }
+}
+
+//動畫效果
+.bounce-in-top {
+    -webkit-animation: bounce-in-top 1.1s both;
+            animation: bounce-in-top 1.1s both;
+}
+
+@keyframes bounce-in-top {
+    0% {
+        transform: translateY(-500px);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    38% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    55% {
+        transform: translateY(-65px);
+        animation-timing-function: ease-in;
+    }
+    72% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+    }
+    81% {
+        transform: translateY(-28px);
+        animation-timing-function: ease-in;
+    }
+    90% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+    }
+    95% {
+        transform: translateY(-8px);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
     }
 }
 
