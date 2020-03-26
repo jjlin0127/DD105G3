@@ -1,45 +1,48 @@
 <?php 
 $articleNo = $_REQUEST["articleNo"];
-session_start();
-$memNo = $_SESSION["memNo"];
 try {
     require_once("./php/connectHomeserver.php");
     
     $sql1 = "select * from article join member on (article.memNo = member.memNo)
-             where (article.articleNo = :articleNo)";
+        where (article.articleNo = :articleNo)";
     $articles = $pdo->prepare($sql1);
     $articles -> bindValue(":articleNo", $articleNo);
     $articles -> execute();
     $artiRow = $articles->fetch(PDO::FETCH_ASSOC);
 
-    $sql2 = "select * from article_likes 
-             where (memNo = :memNo) and (articleNo = :articleNo)";
-    $articleLikes = $pdo->prepare($sql2);
-    $articleLikes -> bindValue(":memNo", $memNo);
-    $articleLikes -> bindValue(":articleNo", $articleNo);
-    $articleLikes -> execute();
+    session_start();
+    if(isset($_SESSION["memNo"])){
+        $memNo = $_SESSION["memNo"];
 
-    $sql3 = "select * from article_collect 
+        $sql2 = "select * from article_likes 
              where (memNo = :memNo) and (articleNo = :articleNo)";
-    $articleCollect = $pdo->prepare($sql3);
-    $articleCollect -> bindValue(":memNo", $memNo);
-    $articleCollect -> bindValue(":articleNo", $articleNo);
-    $articleCollect -> execute();
+        $articleLikes = $pdo->prepare($sql2);
+        $articleLikes -> bindValue(":memNo", $memNo);
+        $articleLikes -> bindValue(":articleNo", $articleNo);
+        $articleLikes -> execute();
 
-    $authorNo = $artiRow["memNo"];
-    $sql4 = "select * from author_subscription 
-             where (memNo = :memNo) and (authorNo = :authorNo)";
-    $authorSub = $pdo->prepare($sql4);
-    $authorSub -> bindValue(":memNo", $memNo);
-    $authorSub -> bindValue(":authorNo", $authorNo);
-    $authorSub -> execute();
+        $sql3 = "select * from article_collect 
+                where (memNo = :memNo) and (articleNo = :articleNo)";
+        $articleCollect = $pdo->prepare($sql3);
+        $articleCollect -> bindValue(":memNo", $memNo);
+        $articleCollect -> bindValue(":articleNo", $articleNo);
+        $articleCollect -> execute();
 
-    $sql5 = "select * from article_report 
-             where (memNo = :memNo) and (articleNo = :articleNo)";
-    $authorReport = $pdo->prepare($sql5);
-    $authorReport -> bindValue(":memNo", $memNo);
-    $authorReport -> bindValue(":articleNo", $articleNo);
-    $authorReport -> execute();
+        $authorNo = $artiRow["memNo"];
+        $sql4 = "select * from author_subscription 
+                where (memNo = :memNo) and (authorNo = :authorNo)";
+        $authorSub = $pdo->prepare($sql4);
+        $authorSub -> bindValue(":memNo", $memNo);
+        $authorSub -> bindValue(":authorNo", $authorNo);
+        $authorSub -> execute();
+
+        $sql5 = "select * from article_report 
+                where (memNo = :memNo) and (articleNo = :articleNo)";
+        $authorReport = $pdo->prepare($sql5);
+        $authorReport -> bindValue(":memNo", $memNo);
+        $authorReport -> bindValue(":articleNo", $articleNo);
+        $authorReport -> execute();
+    };
 
 } catch (PDOException $e) {
 	echo "錯誤行號 : " . $e->getLine() . "<br>";
@@ -182,7 +185,7 @@ try {
                     ?> 
                         <span class="post_time"><?=$artiRow["artTime"]?></span>
                     </div>
-                    <p class="post_content"><?=$artiRow["artText"]?></p>
+                    <div class="post_content"><?=$artiRow["artText"]?></div>
                     <div class="post_hashtag">
 
                     <?php
@@ -240,7 +243,7 @@ try {
                             <?php  
                             };
                         };
-                            ?>                   
+                            ?>                
 
                     </div>
                     <div class="social_zone">
@@ -253,11 +256,11 @@ try {
                         <div class="favoriteAndReport">
                             <div class="postfunc like">
                             <?php 
-                            if($articleLikes -> rowCount() == 0){
-                            ?>  <i class="socialBtns likeBtns"></i>
+                            if(isset($_SESSION["memNo"]) && ($articleLikes -> rowCount() != 0)){
+                            ?>  <i class="socialBtns likeBtns checked"></i>
                             <?php 
                             }else{
-                            ?>  <i class="socialBtns likeBtns checked"></i>
+                            ?>  <i class="socialBtns likeBtns"></i>
                             <?php 
                             }
                             ?>
@@ -265,11 +268,11 @@ try {
                             </div>
                             <div class="postfunc favorite">
                             <?php 
-                            if($articleCollect -> rowCount() == 0){
-                            ?>  <i class="socialBtns favoriteBtns"></i>
+                            if(isset($_SESSION["memNo"]) && ($articleCollect -> rowCount() != 0)){
+                            ?>  <i class="socialBtns favoriteBtns checked"></i>
                             <?php 
                             }else{
-                            ?>  <i class="socialBtns favoriteBtns checked"></i>
+                            ?>  <i class="socialBtns favoriteBtns"></i>
                             <?php 
                             }
                             ?>
@@ -277,11 +280,11 @@ try {
                             </div>
                             <div class="postfunc subscript">
                             <?php 
-                            if($authorSub -> rowCount() == 0){
-                            ?>  <i class="socialBtns subscriptBtns"></i>
+                            if(isset($_SESSION["memNo"]) && ($authorSub -> rowCount() != 0)){
+                            ?>  <i class="socialBtns subscriptBtns checked"></i>
                             <?php 
                             }else{
-                            ?>  <i class="socialBtns subscriptBtns checked"></i>
+                            ?>  <i class="socialBtns subscriptBtns"></i>
                             <?php 
                             }
                             ?>
@@ -289,11 +292,11 @@ try {
                             </div>
                             <div class="postfunc report">
                             <?php 
-                            if($authorReport -> rowCount() == 0){
-                            ?>  <i class="socialBtns reportBtns"></i>
+                            if(isset($_SESSION["memNo"]) && ($authorReport -> rowCount() != 0)){
+                            ?>  <i class="socialBtns reportBtns checked"></i>
                             <?php 
                             }else{
-                            ?>  <i class="socialBtns reportBtns checked"></i>
+                            ?>  <i class="socialBtns reportBtns"></i>
                             <?php 
                             }
                             ?>
