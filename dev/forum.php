@@ -36,7 +36,7 @@ try {
                 <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
                 <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
                 <!-- <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a> -->
-                <a class="navItem focus" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
+                <a class="navItem focus" href="forum.php">果甘話區 <i class="fas fa-leaf"></i></a>
             </div>
             <div class="navList_2">
                 <input id="memNo" type="hidden" value="">
@@ -118,7 +118,7 @@ try {
                             <div class="carousel item<?=$i+1?>">
                                 <div class="author">
                                     <div class="author_img">
-                                        <img src="./images/forum/head_shot/mwyqpL.jpg" alt="">
+                                        <img src="./images/member/headShot/<?=$artiRow["memImgUrl"]?>" alt="隱藏的頭像">
                                     </div>
                                     <p class="author_name"><?=$artiRow["memNickname"]?></p>
                                 </div>

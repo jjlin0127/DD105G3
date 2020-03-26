@@ -2,7 +2,6 @@ function doFirst(){
     document.getElementById('angle_left').addEventListener('click', showPrev);
     document.getElementById('angle_right').addEventListener('click', showNext);
     document.getElementById('panelBtn').addEventListener('click', showPanel);
-
     
     sort_by = document.getElementById('sort_by');
     sort_by.addEventListener('change', sortArticles);
@@ -50,7 +49,7 @@ function loadArticles(){
             var artiOriArr = JSON.parse(xhr.responseText);
             // deep copy
             artiArrCopy = JSON.parse(JSON.stringify(artiOriArr));
-            // console.log(artiArr);
+            console.log(artiArrCopy);
             artiArrCopy.sort(function(a, b){
                 return b.articleNo - a.articleNo;
             });
@@ -170,7 +169,7 @@ function readInArticles(artiArr){
             <div class="post">
                 <div class="author">
                     <div class="author_img">
-                        <img src="./images/forum/head_shot/mwyqpL.jpg" alt="">
+                        <img src="./images/member/headShot/${arti.memImgUrl}" alt="隱藏的頭像">
                     </div>
                     <p class="author_name">${arti.memNickname}</p>
                 </div>
@@ -215,6 +214,7 @@ function checkBoxLimit(){
 
 function filterArticles(e){
     e.preventDefault();
+    sort_by.options.selectedIndex = 0;
     let topicTypeValue = 0;
     for(let i=0; i<topicTypeGroup.length; i++){
         if(topicTypeGroup[i].checked){
