@@ -110,7 +110,9 @@ span.logo:hover {
     transform: scale(1.1);
 }
 
-
+#spanLogin:hover{
+    color: #a6c165;
+}
 /* rwd */
 
 header .rwdHeader {
@@ -194,6 +196,7 @@ button.hamburger {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -376,6 +379,7 @@ html.fixWindow {
         outline: none;
     }
     a {
+        cursor: pointer;
         text-decoration: none;
     }
     /* html.noscroll {
