@@ -14,8 +14,13 @@ function loadRecommendation(){
       if(xhr.status==200){
         recommendation = xhr.responseText;
         if (recommendation == "error") {
-            alert("沒有傳回建議組合")
+            $('[name="close"]').click(function(){
+                $('.recommended').css('display','none');
+            })            
         } else {
+            $('[name="close"]').click(function(){
+                $('.recommended').css('display','block').addClass('bounce-in-top');
+            })
             success = JSON.parse(xhr.responseText);
             switch(success.prodNo1){
                 case "1": prodNo1 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
@@ -88,6 +93,7 @@ function loadRecommendation(){
                 case "活化大腦": cusFruitsName = "<span style='color: #F4AB6C;'>活化大腦</span>"; break;
                 case "保護血管": cusFruitsName = "<span style='color: #FC8D7A;'>保護血管</span>"; break;
             }
+
             $id("prodNo1").innerHTML = prodNo1;
             $id("prodNo2").innerHTML = prodNo2;
             $id("prodNo3").innerHTML = prodNo3;
@@ -106,3 +112,6 @@ function loadRecommendation(){
 $(document).ready(function(){
     loadRecommendation();
 })
+
+
+

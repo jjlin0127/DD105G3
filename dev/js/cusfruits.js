@@ -217,7 +217,6 @@ $(document).ready(function() {
       storage['prodNo5'] = state.selectedFruits[4];
       storage['prodNo6'] = state.selectedFruits[5];
       storage['cusFruitsPrice'] = state.totalPrice;
-
     }else{
       alert("您尚未添齊 6 種水果喔! 請再添購")
     }
@@ -225,12 +224,3 @@ $(document).ready(function() {
 })
 
 //----------------------------------------
-
-//燈箱關閉後執行推薦結果bounce in
-
-$('[name="close"]').click(function(){
-  $('.recommended').css('display','block').addClass('bounce-in-top');
-})
-
-//----------------------------------------
-

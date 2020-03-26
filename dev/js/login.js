@@ -125,7 +125,7 @@ function getLoginInfo() {
     }
     xhr.open("get", "dest/../php/getLoginInfo.php", true);
     xhr.send(null);
-
+    
 };
 //以上登入登出結束
 
