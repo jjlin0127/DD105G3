@@ -226,3 +226,11 @@ $(document).ready(function() {
 
 //----------------------------------------
 
+//燈箱關閉後執行推薦結果bounce in
+
+$('[name="close"]').click(function(){
+  $('.recommended').css('display','block').addClass('bounce-in-top');
+})
+
+//----------------------------------------
+

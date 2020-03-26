@@ -18,84 +18,89 @@ function loadRecommendation(){
         } else {
             success = JSON.parse(xhr.responseText);
             switch(success.prodNo1){
-                case "1": prodNo1 = "楊桃";break;
-                case "2": prodNo1 = "鳳梨";break;
-                case "3": prodNo1 = "火龍果";break;
-                case "4": prodNo1 = "香蕉";break;
-                case "5": prodNo1 = "草莓";break;
-                case "6": prodNo1 = "芭樂";break;
-                case "7": prodNo1 = "芒果";break;
-                case "8": prodNo1 = "蘋果";break;
-                case "9": prodNo1 = "藍莓";break;
+                case "1": prodNo1 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo1 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo1 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo1 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo1 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo1 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo1 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo1 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo1 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
             switch(success.prodNo2){
-                case "1": prodNo2 = "楊桃";break;
-                case "2": prodNo2 = "鳳梨";break;
-                case "3": prodNo2 = "火龍果";break;
-                case "4": prodNo2 = "香蕉";break;
-                case "5": prodNo2 = "草莓";break;
-                case "6": prodNo2 = "芭樂";break;
-                case "7": prodNo2 = "芒果";break;
-                case "8": prodNo2 = "蘋果";break;
-                case "9": prodNo2 = "藍莓";break;
+                case "1": prodNo2 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo2 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo2 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo2 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo2 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo2 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo2 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo2 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo2 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
             switch(success.prodNo3){
-                case "1": prodNo3 = "楊桃";break;
-                case "2": prodNo3 = "鳳梨";break;
-                case "3": prodNo3 = "火龍果";break;
-                case "4": prodNo3 = "香蕉";break;
-                case "5": prodNo3 = "草莓";break;
-                case "6": prodNo3 = "芭樂";break;
-                case "7": prodNo3 = "芒果";break;
-                case "8": prodNo3 = "蘋果";break;
-                case "9": prodNo3 = "藍莓";break;
+                case "1": prodNo3 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo3 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo3 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo3 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo3 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo3 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo3 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo3 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo3 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
             switch(success.prodNo4){
-                case "1": prodNo4 = "楊桃";break;
-                case "2": prodNo4 = "鳳梨";break;
-                case "3": prodNo4 = "火龍果";break;
-                case "4": prodNo4 = "香蕉";break;
-                case "5": prodNo4 = "草莓";break;
-                case "6": prodNo4 = "芭樂";break;
-                case "7": prodNo4 = "芒果";break;
-                case "8": prodNo4 = "蘋果";break;
-                case "9": prodNo4 = "藍莓";break;
+                case "1": prodNo4 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo4 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo4 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo4 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo4 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo4 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo4 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo4 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo4 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
             switch(success.prodNo5){
-                case "1": prodNo5 = "楊桃";break;
-                case "2": prodNo5 = "鳳梨";break;
-                case "3": prodNo5 = "火龍果";break;
-                case "4": prodNo5 = "香蕉";break;
-                case "5": prodNo5 = "草莓";break;
-                case "6": prodNo5 = "芭樂";break;
-                case "7": prodNo5 = "芒果";break;
-                case "8": prodNo5 = "蘋果";break;
-                case "9": prodNo5 = "藍莓";break;
+                case "1": prodNo5 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo5 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo5 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo5 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo5 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo5 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo5 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo5 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo5 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
             switch(success.prodNo6){
-                case "1": prodNo6 = "楊桃";break;
-                case "2": prodNo6 = "鳳梨";break;
-                case "3": prodNo6 = "火龍果";break;
-                case "4": prodNo6 = "香蕉";break;
-                case "5": prodNo6 = "草莓";break;
-                case "6": prodNo6 = "芭樂";break;
-                case "7": prodNo6 = "芒果";break;
-                case "8": prodNo6 = "蘋果";break;
-                case "9": prodNo6 = "藍莓";break;
+                case "1": prodNo6 = "<span style='color: #5BC6C2;'>楊桃</span>";  break;
+                case "2": prodNo6 = "<span style='color: #5BC6C2;'>鳳梨</span>"; break;
+                case "3": prodNo6 = "<span style='color: #5BC6C2;'>火龍果</span>"; break;
+                case "4": prodNo6 = "<span style='color: #FC8D7A;'>香蕉</span>"; break;
+                case "5": prodNo6 = "<span style='color: #FC8D7A;'>草莓</span>"; break;
+                case "6": prodNo6 = "<span style='color: #FC8D7A;'>芭樂</span>"; break;
+                case "7": prodNo6 = "<span style='color: #F4AB6C;'>芒果</span>"; break;
+                case "8": prodNo6 = "<span style='color: #F4AB6C;'>蘋果</span>"; break;
+                case "9": prodNo6 = "<span style='color: #F4AB6C;'>藍莓</span>"; break;
             }
-            $id("prodNo1").innerText = prodNo1;
-            $id("prodNo2").innerText = prodNo2;
-            $id("prodNo3").innerText = prodNo3;
-            $id("prodNo4").innerText = prodNo4;
-            $id("prodNo5").innerText = prodNo5;
-            $id("prodNo6").innerText = prodNo6;
+            switch(success.cusFruitsName){
+                case "幫助消化": cusFruitsName = "<span style='color: #5BC6C2;'>幫助消化</span>";  break;
+                case "活化大腦": cusFruitsName = "<span style='color: #F4AB6C;'>活化大腦</span>"; break;
+                case "保護血管": cusFruitsName = "<span style='color: #FC8D7A;'>保護血管</span>"; break;
+            }
+            $id("prodNo1").innerHTML = prodNo1;
+            $id("prodNo2").innerHTML = prodNo2;
+            $id("prodNo3").innerHTML = prodNo3;
+            $id("prodNo4").innerHTML = prodNo4;
+            $id("prodNo5").innerHTML = prodNo5;
+            $id("prodNo6").innerHTML = prodNo6;
+            $id("cusFruitsName").innerHTML = cusFruitsName;
         }
       } else { alert(xhr.status); }
     }
     xhr.open("POST", "dest/../php/getRecommendation.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     xhr.send(data_info);
-
 };
 
 $(document).ready(function(){

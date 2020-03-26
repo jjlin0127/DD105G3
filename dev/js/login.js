@@ -16,9 +16,7 @@ $(document).ready(function() {
         $(".signup").css("display", "none");
         $(".signin").css("display", "");
     });
-    $("#mobilelogintab").tabs({
-        active: 1
-    });
+    $("#mobilelogintab").tabs();
 
 });
 
