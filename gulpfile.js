@@ -24,8 +24,8 @@ var web = {
         'dev/js/**/*.js',
     ],
     img: [
-        'dev/img/*.*',
-        'dev/img/**/*.*'
+        'dev/images/*.*',
+        'dev/images/**/*.*'
     ],
     font: [
         'dev/font/*.*',
@@ -47,8 +47,8 @@ var options = {
 var options = {
     base: './dest', // 檔案位置
     debug: true, 
-    bin: '/Applications/MAMP/bin/php/php7.4.1/bin/php', // php執行檔的路徑
-    ini: '/Applications/MAMP/bin/php/php7.4.1/conf/php.ini', // php的ini檔的路徑
+    bin: 'C:/php-7.4.3-nts-Win32-vc15-x64/php', // php執行檔的路徑
+    ini: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.ini', // php的ini檔的路徑
     port: 8080,  // 自行定義端口
 };
 
@@ -62,7 +62,7 @@ gulp.task('concatphp', function() {
 });
 
 gulp.task('img', function() {
-    gulp.src(web.img).pipe(gulp.dest('dest/img'));
+    gulp.src(web.img).pipe(gulp.dest('dest/images'));
 });
 
 gulp.task('font', function() {
