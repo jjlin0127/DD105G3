@@ -17,14 +17,13 @@ body{
 
 img.balloon1{
     width: 150px;
-    margin-top: 100px;
     margin-left: 15%;
     animation: balloonAnimate 5s linear infinite alternate;
 }
 
 img.balloon2{
     width: 110px;
-    margin-top: 100px;
+    margin-top: 5px;
     margin-left: 45%;
     animation: balloonAnimate  3s linear infinite alternate;
 }
@@ -57,7 +56,7 @@ img.balloon2{
     margin: 0 auto;
     position: relative;
     width: 400px;
-    height: 430px;
+    height: 400px;
     perspective: 4000px;
     // -webkit-perspective: 4000px;
     // -moz-perspective: 4000px;
@@ -154,6 +153,15 @@ span.post_time{
 p.post_content{
     line-height: 1.5rem;
     margin-top: 20px;
+}
+
+.carousel .post_content{
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp: 5;      
+    -webkit-box-orient: vertical;
+    max-height: 7.5rem;      
 }
 
 .social_zone{
@@ -317,7 +325,8 @@ aside.sortAndFilter form p{
 .options{
     margin-bottom: 10px;
     
-    input[type="checkbox"]{
+    input[type="checkbox"],
+    input[type="radio"]{
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -351,7 +360,8 @@ aside.sortAndFilter form p{
     }
 
     /* Checked */
-    input[type="checkbox"]:checked + label{
+    input[type="checkbox"]:checked + label,
+    input[type="radio"]:checked + label{
         padding-left: 1em;
         color: white;
         &:before {
@@ -371,14 +381,18 @@ aside.sortAndFilter form p{
     }
 }
 
-.search_btn{
+.reset_btn, .search_btn{
     color: #fff;
     background: #2c3e50;
     border: 0;
     border-radius: .25em;
-    width: 135px;
+    width: 55px;
     font-size: 1rem;
     cursor: pointer;
+    padding: 5px;
+    margin: 5px 5px 0 0;
+    outline: none;
+    border: transparent;
 }
 
 .post_zone > section{
@@ -387,6 +401,7 @@ aside.sortAndFilter form p{
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+    overflow: hidden;
 }
 
 .wrapper_forum .all_posts_area .post_zone .all_posts{
@@ -399,6 +414,15 @@ a.post_link{
     display: inline-block;
     text-decoration: none;
     color: #4c4948;
+    transition: all .5s ease-in-out; 
+ 
+    &:hover {
+        background-color: rgba(250,235,215,0.5);
+        .post .post_content{
+        -webkit-line-clamp: 4;      
+        max-height: 6rem;
+        }
+    }
 }
 
 .wrapper_forum .all_posts_area .post_zone .all_posts .post{
@@ -413,8 +437,8 @@ a.post_link{
     text-overflow:ellipsis;
     -webkit-line-clamp: 2;      
     -webkit-box-orient: vertical;
-    line-height: 1.5rem;
-    max-height: 3rem;      
+    max-height: 3rem;
+    transition: all .5s ease-in-out;  
 }
 
 .post_hashtag{
@@ -436,6 +460,9 @@ a.post_link{
 }
 .post_hashtag .fruit_kind3{
     background-color: sandybrown;
+}
+.post_hashtag .fruit_kind4{
+    background-color: dimgray;
 }
 
 .pagination_block{
@@ -483,6 +510,44 @@ a.post_link{
 .pagination_block > ul.pagination > li > a:hover{
     background-color: #e9ecef;
     color: #f85f35;
+}
+
+.alertBox{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cornflowerblue;
+    box-shadow: 2px 2px 5px rgba(100, 149, 237, 0.75);
+    overflow: hidden;
+    z-index: 4;
+    transition: all 0.3s linear;
+}
+.alertBox.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#close_alert_btn{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    line-height: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#close_alert_btn:hover{
+    color: black;
 }
 
 @import "../../modules/rwd";

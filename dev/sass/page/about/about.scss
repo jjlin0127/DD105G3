@@ -5,6 +5,7 @@
 @import '../../layout/footer';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
+@import '../../layout/loading';
 
 
 
@@ -90,6 +91,7 @@ header {
 } */
 
 .sections {
+    // overflow: hidden;
     width: 500%;
     height: 100%;
 }
@@ -245,8 +247,8 @@ img.cloud2 {
 
 .land {
     position: absolute;
-    left: 15%;
-    top: 25%;
+    left: 18%;
+    top: 23%;
     animation: land 2s linear infinite alternate;
 }
 
