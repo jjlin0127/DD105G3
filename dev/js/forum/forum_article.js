@@ -114,7 +114,7 @@ function loadMessages(){
 //  ajax add comment
 function sendMessage(e) {
     e.preventDefault();
-    if ($id('spanLogin').innerHTML === "登入" || $id("mobilespanLogin").innerHTML === "登入"){
+    if (document.getElementById('spanLogin').innerHTML === "登入" || document.getElementById("mobilespanLogin").innerHTML === "登入"){
         e?e.preventDefault():event.returnValue=false;
         alertBox.classList.remove('hidden');
         alertBox.style.backgroundColor = "firebrick";
@@ -181,7 +181,7 @@ function socialBtnCheck(e){
     var alertMessage = document.getElementById('alertMessage');
     var close_alert_btn = document.getElementById('close_alert_btn');
 
-    if ($id('spanLogin').innerHTML == "登入" || $id("mobilespanLogin").innerHTML == "登入"){
+    if (document.getElementById('spanLogin').innerHTML == "登入" || document.getElementById("mobilespanLogin").innerHTML == "登入"){
         e?e.preventDefault():event.returnValue=false;
         alertBox.classList.remove('hidden');
         alertBox.style.backgroundColor = "firebrick";

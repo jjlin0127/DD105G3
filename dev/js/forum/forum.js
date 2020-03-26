@@ -49,7 +49,7 @@ function loadArticles(){
             var artiOriArr = JSON.parse(xhr.responseText);
             // deep copy
             artiArrCopy = JSON.parse(JSON.stringify(artiOriArr));
-            console.log(artiArrCopy);
+            // console.log(artiArrCopy);
             artiArrCopy.sort(function(a, b){
                 return b.articleNo - a.articleNo;
             });
@@ -74,7 +74,7 @@ function readInArticles(artiArr){
                 <span class="topic1">幫助消化</span>
                 <span class="post_time">${arti.artTime}</span>
             </div>
-            <p class="post_content">${arti.artText}</p>
+            <div class="post_content">${arti.artText}</div>
             <div class="post_hashtag">`;
             break;
             case "2":
@@ -84,7 +84,7 @@ function readInArticles(artiArr){
                 <span class="topic2">保護血管</span>
                 <span class="post_time">${arti.artTime}</span>
             </div>
-            <p class="post_content">${arti.artText}</p>
+            <div class="post_content">${arti.artText}</div>
             <div class="post_hashtag">`;
             break;
             case "3":
@@ -94,7 +94,7 @@ function readInArticles(artiArr){
                 <span class="topic3">活化大腦</span>
                 <span class="post_time">${arti.artTime}</span>
             </div>
-            <p class="post_content">${arti.artText}</p>
+            <div class="post_content">${arti.artText}</div>
             <div class="post_hashtag">`;
             break;
             case "4":
@@ -104,7 +104,7 @@ function readInArticles(artiArr){
                 <span class="topic4">其它</span>
                 <span class="post_time">${arti.artTime}</span>
             </div>
-            <p class="post_content">${arti.artText}</p>
+            <div class="post_content">${arti.artText}</div>
             <div class="post_hashtag">`;
             break;
             default:
@@ -114,7 +114,7 @@ function readInArticles(artiArr){
                 <span class="topic5">未選擇主題</span>
                 <span class="post_time">${arti.artTime}</span>
             </div>
-            <p class="post_content">${arti.artText}</p>
+            <div class="post_content">${arti.artText}</div>
             <div class="post_hashtag">`;
         };
 
@@ -191,6 +191,7 @@ function readInArticles(artiArr){
     });
     let allPosts = document.getElementById('allPosts');
     allPosts.innerHTML = artiStr;
+    doFirst();
 };
 
 function checkBoxLimit(){

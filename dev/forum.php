@@ -164,7 +164,7 @@ try {
                                 ?> 
                                     <span class="post_time"><?=$artiRow["artTime"]?></span>
                                 </div>
-                                <p class="post_content"><?=$artiRow["artText"]?></p>
+                                <div class="post_content"><?=$artiRow["artText"]?></div>
                                 <div class="post_hashtag">
 
                                 <?php
