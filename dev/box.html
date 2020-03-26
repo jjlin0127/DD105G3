@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script src="js/box.js"></script>
     <script src="js/lightbox.js"></script>
+    <script src="js/shopping_cart01.js"></script>
+    <script src="js/login.js"></script>
 </head>
 <body id="box-body">
     <div class="popup">
@@ -43,8 +45,7 @@
             </div>
         </div>
         <button name="close">我知道了</button>
-        </div>
-        
+    </div>
     </div>
     @@include('layout/header.html',{
         "focus03" : "focus"
@@ -136,12 +137,32 @@
                 </div>
             </div>
         </div>
-        <div class="addCartBtn">加入購物車</div>
+        
+        <!-- 一定要用button去，不能用div，否則沒法按 然後button的class名稱裡面要加'putin'，然後加一個id名稱'put_10'-->
+        <button class="addCartBtn putin" id="putin_10">放入購物車
+            <input type="hidden" value="客製禮盒|boxInCart.png|200">
+        </button>
+        <!-- 再傳送到購物車之前，客製禮盒的購買紀錄會先存到底下這個"newItem"這個div裡面" -->
+        <div style="display:none;" id="newItem">
+        <!-- <div style="height:100px;border:3px solid blue;overflow: scroll;" id="newItem"> -->
+            <div id="content">
+                項目數量：<span id="itemCount">0</span>
+                <br>
+                總金額：$<span id="subtotal">0</span>
+            </div>
+        </div>
+        
     </div>
-    <footer> 
+    <!-- <div class="addCartAlert">
+        已加入購物車
+    </div> -->
+
+
+    <!-- <footer> 
         <strong>Copyright &copy; 2020 Natural Sweet</srong>
         <i class="fas fa-leaf"></i>
-    </footer>
+    </footer> -->
+    @@include('./layout/footer.html');
 </body>
 </html>
 

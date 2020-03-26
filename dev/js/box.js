@@ -80,7 +80,7 @@ $(document).ready(function(e){
 
 
   $('.addCartBtn').click(function(e){
-    alert('商品已加入購物車，按鈕-查看購物車');
+    // alert('商品已加入購物車，按鈕-查看購物車');
   }
 
 )});
