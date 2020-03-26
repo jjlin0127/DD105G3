@@ -16,7 +16,7 @@ function loadMessages(){
                 <div class="comment">
                     <div class="author">
                          <div class="author_img">
-                            <img src="./images/forum/head_shot/twuPTC.jpg" alt="">
+                            <img src="./images/member/headShot/${mes.memImgUrl}" alt="隱藏的頭像">
                         </div>
                         <p class="author_name">${mes.memNickname}<span class="comment_time">${mes.mesTime}</span></p>
                     </div>                    
@@ -278,6 +278,14 @@ function likePost(postId, postLikeCount){
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '表達愛心成功！';
+
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
             }else{
                 alert(xhr.status);
             };
@@ -299,6 +307,14 @@ function likePost(postId, postLikeCount){
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '表達愛心成功！';
+
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
             }else{
                 alert(xhr.status);
             };
@@ -331,6 +347,14 @@ function unLikePost(postId, postLikeCount){
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '已取消表達愛心！';
+
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
             }else{
                 alert(xhr.status);
             };
@@ -352,6 +376,14 @@ function unLikePost(postId, postLikeCount){
                 alertBox.style.backgroundColor = "crimson";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(220, 20, 60, 0.75)";
                 alertMessage.innerText = '已取消表達愛心！';
+
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
             }else{
                 alert(xhr.status);
             };
@@ -401,6 +433,14 @@ function reportPost(e){
                 alertBox.style.boxShadow = "2px 2px 5px rgba(105, 105, 105, 0.75)";
                 alertMessage.innerText = '已檢舉，待審查！';
 
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
+
                 for(let i=0; i<reportReasons.length; i++){
                     reportReasons[i].checked = false;
                 };
@@ -424,6 +464,14 @@ function reportPost(e){
                 alertBox.style.backgroundColor = "dimgrey";
                 alertBox.style.boxShadow = "2px 2px 5px rgba(105, 105, 105, 0.75)";
                 alertMessage.innerText = '已檢舉，待審查！';
+
+                close_alert_btn.addEventListener('click', function(){
+                    alertBox.classList.add('hidden');
+                });
+    
+                setTimeout(function(){
+                    alertBox.classList.add('hidden');
+                }, 2000);
 
                 for(let i=0; i<reportReasons.length; i++){
                     reportReasons[i].checked = false;
