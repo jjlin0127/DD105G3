@@ -98,7 +98,7 @@ gulp.task('fileinclude', function() {
 
 // 壓縮圖片
 gulp.task('minfly_img', function() {
-    gulp.src('dev/img/*.*')
+    gulp.src('dev/images/*.*')
         .pipe(imagemin())
         .pipe(gulp.dest('dest/min_img'));
 })
