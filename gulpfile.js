@@ -24,8 +24,8 @@ var web = {
         'dev/js/**/*.js',
     ],
     img: [
-        'dev/img/*.*',
-        'dev/img/**/*.*'
+        'dev/images/*.*',
+        'dev/images/**/*.*'
     ],
     font: [
         'dev/font/*.*',
@@ -62,7 +62,7 @@ gulp.task('concatphp', function() {
 });
 
 gulp.task('img', function() {
-    gulp.src(web.img).pipe(gulp.dest('dest/img'));
+    gulp.src(web.img).pipe(gulp.dest('dest/images'));
 });
 
 gulp.task('font', function() {
