@@ -1,0 +1,50 @@
+// @import '../../base/fontSetting';
+
+.indexBanner {
+    position: relative;
+    font-weight: 900;
+    font-size: 5em;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .indexBanner .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .indexBanner .letter {
+    display: inline-block;
+    line-height: 1em;
+    color: #fff;
+    font-family: $indexBannerFont6;
+    letter-spacing: .5rem;
+  }
+
+  h1 {
+    text-align: center;
+    color:#fff;
+  }
+
+  @import "../../modules/rwd";
+  
+     // //index_banner
+     @include respond(phone) {
+      //index_banner
+      .indexBanner {
+        font-size: 2.75rem;
+      }
+    
+      h1 {
+        font-size: 1.55rem;
+      }
+  
+    }
+  
+
+
+  

@@ -37,7 +37,7 @@
 // ----------------------------------------------
 //首頁使用的title
 @mixin indexTitle($border-w, $border-r) {
-    width: 300px;
+    width: 320px;
     text-align: center;
     letter-spacing: .1rem;
     padding: 10px;
@@ -101,3 +101,38 @@
         transform: rotate(65deg);
     }
 }
+
+// ----------------------------------------------
+//分頁可引用的title
+@mixin newTitle($border-w, $border-r, $width, $bgc) {
+    width: $width;
+    text-align: center;
+    letter-spacing: .1rem;
+    padding: 10px;
+    position: relative;    
+    
+    border-width: $border-w;
+    border-style: solid;
+    border-color: #af7342;
+    border-radius: 10px;
+    
+
+    background-image: $bgc;
+    //linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+    img.leafLeft {
+        position: absolute;
+        top: -25px;
+        left: -25px;
+        width: 16%;
+    
+    }
+    img.leafRight {
+        position: absolute;
+        top: -15px;
+        right: -20px;
+        width: 12%;
+        transform: rotate(65deg);
+    }
+}
+

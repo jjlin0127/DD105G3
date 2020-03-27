@@ -1,14 +1,13 @@
 // 珮珊的首頁-----------------------------------------
 
 /* -- 特色果甘------------------------------------ -- */
-
 .prod_title{
     @include indexTitle(3px, 10px);
     margin: 50px auto;
 }
 
 .prod_the_grey_title {
-    /*↓↓↓轉手機螢幕會變成1.75rem*/
+
     font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
@@ -27,20 +26,20 @@ table.prod_leaderboard {
         top:90px;
     }
     td.prod_colorful_balloon_left {
-        border: 1px solid red;
+        // border: 1px solid red;
         width: 8%;
         img{
             width:80%;
         }
 
         img:nth-child(1) {
-            border: 1px solid #fa0;
+            // border: 1px solid #fa0;
             position: relative;
             top: -290px;
         }
 
         img:nth-child(2) {
-            border: 1px solid deeppink;
+            // border: 1px solid deeppink;
             position: relative;
             top: 0px;
             right: -80px;
@@ -49,24 +48,24 @@ table.prod_leaderboard {
     }
 
     td.prod_leaderboard {
-        border: 1px solid blue;
-        // border:1px solid #800080;
+        // border: 1px solid blue;
         width:26%;
         position: relative;
+        
 
         img {
-            width:90%;
+            width: 65%;
             margin: 0 auto;
+            margin-top: 10%;
+            margin-left: 20%;
         }
 
         div.prod_introduce {
-            border: 1px solid green;
-            width: 100px;
+            // border: 1px solid green;
             position: absolute;
-            top: 18px;
+            top: 60px;
             width: 60%;
             left: 80px;
-            z-index: 2;
 
             display: flex;
             flex-direction: column;
@@ -84,6 +83,7 @@ table.prod_leaderboard {
 
                     img {
                         width: 100%;
+                        margin-top: 0;
                         margin-left: 0;
                     }
     
@@ -105,183 +105,222 @@ table.prod_leaderboard {
                 }
 
                 img {
-                    width: 60%;
+                    width: 50%;
+                    margin-top: 0;
                     // text-align: center;
                 }
             }
-
-            // h2,h3{
-            //     text-align: center;
-            // }
-
-            // img.prod_stars{
-            //     width:60%;
-            //     margin-left: 20%;
-            //     // border:2px dashed blue;
-            // }
         }
     }
-}
-
-// div.box_for_balloon {
-//     width: 78%;
-//     margin: 0 auto;
-//     border: 1px solid green;
-//     box-sizing: border-box;
-// }
-
-// div.prod_wrapper_3balloon {
-//     border:1px solid blueviolet;
-//     width: 79%;
-//     display: inline-block;
-// }
-
-
-div.prod_white_line {
-    position: relative;
-    /* border: 1px solid yellowgreen; */
-    box-sizing: border-box;
-    width: 79%;
-    margin: 0 auto;
-    display: inline-block;
-}
-
-img.the_line {
-    width: 100%;
-    position: relative;
-    top: -50px;
-    opacity: 0.5;
-}
-
-button,
-input {
-    outline: none;
-}
-
-.prod_btn {
-    width: 200px;
-    background: #e08c34;
-    border: none;
-    border-radius: 100px;
-    padding: 15px 30px;
-    color: #ffffff;
-    display: inline-block;
-    font-size: 1.25rem;
-    font-family: Noto;
-    text-align: center;
-    transition: all .5s;
-    cursor: pointer;
-    border: 2px solid #e08c34;
-}
-
-.prod_btn:hover {
-    background-color: #ffffff;
-    color: #e08c34;
-    border: 2px solid #e08c34;
-}
-
-@media screen and (max-width:575px) {
-    h2.prod_the_grey_title {
-        font-size: 1.75rem;
-    }
-    td.prod_colorful_balloon{
-        display:none;
-    }
-    td.prod_leaderboard{
-        width:33%;
-    }
-    div.prod_introduce{
-        h2,h3 {
-        line-height: 1.2;
-        }
-    }
-    div.prod_introduce>h3 {
-        font-size: 0.9rem;
-        /* border: 1px solid green; */
-    }
-    div.prod_introduce>h2 {
-        font-size: 1rem;
-    }
-    center.prod_center{
-        // transform: scale(0.7);
-        h4{
-            font-size: 0.7rem;
-        }
-    }
-    button.prod_btn{
-        width: 80%;
-        padding: 5px 10px;
-        font-size: 1.0rem;        
-    }
-}
-
-
-/* @media (min-width: 1100px) and (max-width: 1280px) {
-    div.prod_white_line{
-        left:-25px;
-    }
-} */
-
-
-/* @media (min-width: 769px) and (max-width: 1109px) {
-    div.prod_white_line{
-        left:-27px;
-    }
-} */
-
-@media (min-width: 768px) and (max-width: 1280px) {
-    div.prod_a_balloon>div.prod_introduce {
-        bottom: 6%;
-    }
-    div.prod_introduce>h2,
-    h3 {
-        line-height: 1.6;
-    }
-    div.prod_introduce>h3 {
-        font-size: 1.5rem;
-        /* border: 1px solid black; */
-    }
-    div.prod_introduce>h2 {
-        font-size: 2rem;
-    }
-    div.prod_box_for_balloons {
+    td.prod_colorful_balloon_right {
+        // border: 1px solid red;
         width: 8%;
-    }
+        img{
+            width:80%;
+        }
 
+        img:nth-child(1) {
+            // border: 1px solid #fa0;
+            position: relative;
+            top: -290px;
+        }
+
+        img:nth-child(2) {
+            // border: 1px solid deeppink;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+    }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    div.prod_a_balloon>div.prod_introduce {
-        bottom: 3%;
+.prod_btn{
+    @include btn_link(170px);
+    margin: 50 auto;
+}
+
+.card {
+    display: none;
+}
+
+.prod_phone_btn{
+  display: none;
+}
+
+
+// -------手機版----------------------------------------
+@include respond(phone) {
+    .prod_title {
+      @include indexTitle(3px, 10px);
+      width: 250px;
+      margin: 50px auto;
+    }  
+
+    .prod_phone_wrap {
+      width: 100%;
     }
-    div.prod_introduce>h2,
-    h3 {
-        line-height: 1.4;
-    }
-    div.prod_introduce>h3 {
-        font-size: 1.3rem;
-        /* border: 1px solid brown; */
-    }
-    div.prod_introduce>h2 {
-        font-size: 1.75rem;
-    }
-    div.prod_box_for_balloons {
-        width: 5%;
-    }
-    .prod_btn {
-        width: 180px;
-        background: #e08c34;
-        border: none;
-        border-radius: 100px;
-        padding: 13px 27px;
-        color: #ffffff;
-        display: inline-block;
-        font-size: 1.25rem;
-        font-family: Noto;
-        text-align: center;
-        transition: all .5s;
-        cursor: pointer;
-        border: 2px solid #e08c34;
+    
+    .prod_leaderboard {
+      display: none;
     }
 
+    .card {
+      display: block;
+      border: 2px solid #CEA45A;
+    }
+    
+body {
+    // background: #d18b49;
+    // color: rgba(0, 0, 0, 0.6);
+    // font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  
+  .btn {
+    border-radius: 2px;
+    padding: 8px 12px;
+    color: #d18b49;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255,.1);
+    max-width: 90%;
+    margin: 50px auto;
+    border-radius: 15px;
+    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-sizing: border-box;
+    padding: 48px;
+    text-align: center;
+  }
+  
+  .products {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  
+  .product {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  .product.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .thumbnail {
+    // border: 1px solid green;
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow: hidden;   
+  }
+
+  .prod_pics{
+    // border: 1px solid red;
+    width: 103%;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .prod_stars{
+    // border: 1px solid #fff;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  .title {
+    margin: 0 0 12px;
+    color: #f5642b;
+    font-size: 1.5rem;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  
+  .description {
+    margin: 0 0 48px;
+  }
+  
+  .footer {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    margin: 0 -12px -12px;
+  }
+  
+  [ripple] {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  [ripple] .ripple {
+    position: absolute;
+    background: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: ripple 2s;
+            animation: ripple 2s;
+  }
+
+  .prod_phone_btn {
+    @include btn_link(170px);
+    margin: 50 auto;
+  }
+  
+  @-webkit-keyframes ripple {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 0.2;
+    }
+    100% {
+      -webkit-transform: scale(20);
+              transform: scale(20);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 0.2;
+    }
+    100% {
+      -webkit-transform: scale(20);
+              transform: scale(20);
+      opacity: 0;
+    }
+  }
+  
 }

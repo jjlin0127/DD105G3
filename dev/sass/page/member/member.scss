@@ -5,16 +5,76 @@
 @import '../../layout/footer';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
-// @import '../../layout/tab';
-// @import '../../page/member/order';
+@import '../../page/member/star';
+@import '../../page/member/member_info';
+@import '../../page/member/member_tab';
+@import '../../page/member/member_tab3';
+@import '../../page/member/order';
 
-* {
-    box-sizing: border-box;
-}
-
+  
 body {
-    @include bgc_img(index_bgc_evening2);
+    @include bgc_img(index_bgc_nightblue4);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 105%;
+    // background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);  
+    font-family: $fontFamily;
 }
+
+h1 {
+    font-size: 2rem;
+    color: $indexTitleFontColor;
+}
+h2 {
+    font-size: 1.75rem;
+    color: $indexTitleFontColor;
+}
+h3 {
+    font-size: 1.5rem;
+    color: $indexFontColor;
+}
+h4 {
+    font-size: 1.25rem;
+    color: $indexFontColor;
+}
+h5 {
+    font-size: 1.15rem;
+    color: $indexTitleFontColor;
+}
+
+  .member_contain {
+      border: 1px solid orange;
+    //   display: flex;
+    //   align-items: flex-start;
+    //   justify-content: center;
+      overflow: hidden;
+      position: relative;
+
+      .member_title {
+        @include newTitle(3px, 10px, 400px, linear-gradient(to top, #dfe9f3 0%, white 100%));
+        margin: 50px auto;
+    }
+  }
+
+  .member_content {
+      transform: rotateZ(-45deg);
+      margin-top: 180px;
+      
+      .island {
+          position: relative;
+          z-index: -1;
+
+          img {
+          width: 600px;
+          }
+       }
+  }
+
+  .tab {
+    transform: rotateZ(-45deg);
+  }
+  
+//   body, html {
+//     height: 100vh;
+//     margin: 0;
+//   }

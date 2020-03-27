@@ -141,6 +141,13 @@ section.index_box{
 
 @include rwd(small){
     section.index_box{
+        height: 650px;
+
+        .box_title{
+            @include indexTitle(3px, 10px);
+            width: 250px;
+            margin: 50px auto;
+        }
         div.contain{
             div.index_box_outer{
                 width: 200px;

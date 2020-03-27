@@ -1,0 +1,50 @@
+.mem_info_container{
+    border: 1px solid red;
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    
+    .selfie_container {
+        border: 1px solid red;
+        width: 80%;
+        
+    }
+
+    .selfie {
+        border: 1px solid blue;
+        width: 30%;
+        height: 200px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            border: 1px solid rgb(12, 12, 68);
+        }
+    }
+   
+    form {
+        border: 1px solid green;
+        width: 70%;
+        // margin: 0 auto;
+        padding: 5px;
+    }
+ 
+    input {
+        border: 1px solid rgb(144, 144, 243);
+        width: 70%;
+        padding: 5px;
+        margin: 5px;
+    }
+    
+    .member_info_btn{
+        @include btn_secondary(150px);
+        display: block;
+        margin: 50px auto;
+    }
+
+    
+}

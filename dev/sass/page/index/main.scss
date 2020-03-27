@@ -1,6 +1,11 @@
+
 // 首頁主檔-------------------------------------------
-@import '../../page/index/index_public';
+@import '../../page/index/index_public.scss';
+
 //分屏
+/* -- Banner------------------------------------ -- */
+
+@import '../../page/index/index_banner.scss';
 
 /* -- 關於我們------------------------------------ -- */
 
@@ -12,7 +17,7 @@
 
 /* -- 客製禮盒------------------------------------ -- */
 
-@import '../../page/index/_index_sizhen.scss';
+@import '../../page/index/index_sizhen.scss';
 
 /* -- 客製果甘------------------------------------ -- */
 

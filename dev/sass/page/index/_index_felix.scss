@@ -271,3 +271,92 @@ span {
         border: 0;
     }
 }
+
+
+// ---------行動版----------------------------------------
+@include respond(phone) {
+    .cust_title {
+        @include indexTitle(3px, 10px);
+        width: 250px;
+        margin: 50px auto;
+      }  
+      
+      .cust_contain_off {
+          display: none;
+      } 
+      
+      .cust_phone_contain {
+          display: block;
+        
+          .qna_p_title {
+            @include indexQaTitle(3px, 10px);
+            width: 100px;
+            margin: 0px auto;
+            color: #D35D3D;
+        }
+    
+        .qna_p_contain {
+            display: block;
+            width: 100%;
+            display: flex;
+            margin: 0 auto;
+            line-height: 1.5;
+
+            h3 {
+                font-size: 1.25rem;
+                text-align: center;
+              }
+
+            .title_p_page {
+                @include title(3px,
+                dotted,
+                #a6c165,
+                10px,
+                #fff);
+                height: 55px;
+                margin: 0px 30px;
+
+                // h2 {
+                //     font-size: 1rem;
+                // }
+            }
+            .qna_p_paper {
+                width: 90%;
+                height: 350px;
+                margin: 0 auto;
+                margin-top: 15px;
+                margin-bottom: 50px;
+                border-radius: 20px;
+                border: 4px solid #CEA45A;
+                // background: #fff;
+                background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    
+    
+                .qna_p_paper_upper {
+                    margin: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .qna_p_paper_lower {
+                    margin-top: 100px;
+                    margin: 30px;
+                    
+                    span {
+                        display: block;
+                        margin: 30px;
+                        color: #000;
+                    }
+                }
+                .qna_p_paper_buttons {
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        font-family: Noto, Genjyuu;
+                        margin: 0 10px;
+                        @include btn_primary(100px);
+                    }
+                }
+            }
+        }
+    }
+}
