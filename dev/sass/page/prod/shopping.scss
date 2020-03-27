@@ -3,35 +3,40 @@
 @import '../../base/fontSetting';
 @import '../../layout/header';
 @import '../../layout/footer';
-// @import '../../layout/login';
-@import '../../layout/tab';
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
-@import '../../modules/rwd';
+
+body {
+  background-image: url(../../../images/forum/sky.jpg);
+}
+.title_hot_topics{
+  @include title(3px,dotted,#a6c125,10px,#fff);
+  margin: 50px auto;
+}
 
 h2.say_hi{
     text-align: center;
     margin-bottom: 10px;;
 }
 div.box_for_shopping_title{
-    background-color: #CAE7BC;
+    background-color: #D6EDBF;
     width:300px;
     position: relative;
     left:50%;
     margin-top: 60px;
     margin-left:-190px;
-    padding:20px 40px;
-    border-radius: 10px 10px 0px 0px;
+    padding:20px 40px 0px 40px;
+    border-radius: 24px 24px 0px 0px;
 }
 
 h3.shopping_title{
     text-align:center;    
 }
-.shopping_wrapper{
+table{
     width:1200px;
     box-sizing: border-box;
     background-color: rgba(211, 235, 174, 0.85);
-    border:3px solid #A2C070;
+    // border:3px solid #A2C070;
     border-radius:10px;
     position:relative;
     left: 50%;
@@ -40,103 +45,316 @@ h3.shopping_title{
     padding:20px;
     /* padding-right: 0px; */
     flex-wrap: wrap;
-}
-table.purchase_list{
-    width:100%;
-    border:1px solid blue;
+
+    td{
+      width:25%;
+      box-sizing: border-box;
+      border:1px dashed white;
+      vertical-align: middle;
+      text-align: center;
+      padding:10px;
+      img{
+        width:90%;
+        margin-top: 10%;
+        margin-left: 10%;
+      }
+      h3{
+        line-height: 1.8;
+      }
+      img.icon{
+        width:30px;
+      }
+      input{
+        font-size: 2.4rem;
+        width:50%;
+      }
+      input:focus{
+        border:4px solid orange;
+      }
+
+    }
 }
 
-th{
-    padding:10px 30px;
-    color:white;
-    font-size:1.25rem;
-    background-color: #377039;
-    border: 3px solid rgba(211, 235, 174, 0.85);
-}
 
-tr{
-    border: 1px solid purple;
-    vertical-align: baseline;
-}
-
-td{
-    border: 3px dotted grey;
-    position: relative;
-    height:100px;
-    vertical-align: middle;
-}
-
-td > img {
-    width:250px;
-    height:210px;
-}
-
-td > div.quantity {
-    /* border: 1px solid hotpink; */
-    position: relative;
-    top:0px;
-}
-
-button.test_btn,button.remove_btn{
-    float:right;
-}
-
-.quantity > h4{display:inline-block;}
-.quantity > div,button{
-    font-size:2rem;
-    display:inline-block;
-    margin: 10px;
-}
-#howmany{
-    width:30px;
-    background-color:white;
-    border: 1px solid #CCCBCF;
-    padding: 10px; 
-}
 button.count{
     width:40px;
     background-color:#CCCBCF;
     padding: 5px 10px; 
 }
 
+.shopping_sum{
+    button{
+        margin: 20px;
+    }
+}
 
-/*從政儒discuss.css的boutton.test_btn去改*/
-button.remove_btn {
+//以下的.grey_btn是複製政儒的 cancel_btn
+.grey_btn{
+    text-align: right;
     display: inline-block;
+  }
+  
+  .grey_btn{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
     text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-
-    /*↓↓↓可以考慮改成width:100px*/
-    width: 100px;
-    border: 3px solid #e08c34;
-    box-sizing: border-box;
-    padding: 15px 30px;
-    color: grey;  /*#ffffff*/
-    background-color: rgb(200,200,200);  /*#e08c34*/
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 100px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-}
-
-button.remove_btn:hover{
-    background-color: rgb(255,255,255);
-}
-
-
-div.shopping_sum{
-    margin-top: 20px;
+    overflow: hidden;
     position: relative;
-    left:50%;
-    margin-left: -385px;
-}
-
-div.shopping_sum > h2,button{
-    display: inline;
-}
-
-
-
-
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #141414;
+    background-color: #A8A8A8;
+    -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+            box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  .grey_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .grey_btn:hover {
+    text-indent: 30px;
+  }
+  
+  .grey_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+  
+  //以下的orange_btn是複製政儒的.post_btn
+  
+  .orange_btn {
+    text-align: center;
+  }  
+  
+  .orange_btn {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #D35D3D;
+    -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+            box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+    
+    .orange_btn:before {
+      content: "\f054";
+      font-family: FontAwesome;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      height: 100%;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0 50% 50% 0;
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+      -webkit-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
+    }
+    
+    .orange_btn:hover {
+      text-indent: 30px;
+    }
+    
+    .orange_btn:hover:before {
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1);
+      text-indent: 0;
+    }
+    
+  
+  //以下的green_btn是複製政儒的post_rest_btn
+  .green_btn {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #1F7962;
+    -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+            box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .green_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .green_btn:hover {
+    text-indent: 30px;
+  }
+  .shopping_cart_btn:hover{
+    //↓↓↓針對放入購物車的按鈕
+        font-size: 18px;
+        padding: 11.5px 0px;
+  }
+  .green_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    text-indent: 0;
+  }
+  
+  //另類方法生產
+  .link_btn {
+    text-align: center;
+  }  
+  
+  .link_btn {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    min-width: 120px;
+    width: 120px;
+    color: #ffffff;
+    background-color: #E08C34;
+    -webkit-box-shadow: 2px 2px 5px rgba(244, 140, 52, 0.5);
+            box-shadow: 2px 2px 5px rgba(244, 140, 52, 0.5);
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+    margin: 10px;
+  }
+    
+    .link_btn:before {
+      content: "\f054";
+      font-family: FontAwesome;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0px;
+      height: 100%;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0 50% 50% 0;
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      -webkit-transform-origin: left center;
+              transform-origin: left center;
+      -webkit-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
+    }
+    
+    .link_btn:hover {
+      text-indent: 30px;
+    }
+    
+    .link_btn:hover:before {
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1);
+      text-indent: 0;
+    }
+  
+  @import "../../modules/rwd";
+  @import "../../page/forum/ipadpro";
+  @import "../../page/forum/ipad";
+  @import "../../page/forum/phone";
