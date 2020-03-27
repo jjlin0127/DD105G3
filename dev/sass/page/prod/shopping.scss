@@ -6,6 +6,9 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 
+body {
+  background-image: url(../../../images/forum/sky.jpg);
+}
 .title_hot_topics{
   @include title(3px,dotted,#a6c125,10px,#fff);
   margin: 50px auto;

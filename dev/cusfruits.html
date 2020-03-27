@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>天然甘</title>
+    <title>客製果甘 | 天然甘</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/custfruits/cusfruits.css">
 
@@ -16,14 +17,91 @@
     <!-- chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
+    <!-- d3.js -->
+    <!-- <script src="https://d3js.org/d3.v3.js"></script> -->
+
     <!-- jquery&jqueryUI -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
+    <script src="./js/cusfruits.js" defer></script>
+    <script src="./js/lightbox.js" defer></script>
+    <!-- <script src="./js/shopping_cart01.js"></script> -->
+    <script src="./js/shopping_cart01_1.js"></script>
+
 </head>
 
 <body>
-    @@include('layout/header.html',{ "focus04" : "focus" })
+    <script src="./js/hamburger.js"></script>
+<script src="./js/login.js"></script>
+<header>
+    <nav class="header__container">
+        <span class="logo">
+            <a href="index.html"><img src="./images/Logo.svg"></a>
+        </span>
+        <div class="navList">
+            <a class="navItem @@focus01" href="about.html">果甘物語 <i class="fas fa-seedling"></i></a>
+            <a class="navItem @@focus02" href="prod_product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
+            <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
+            <a class="navItem focus" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
+            <!-- <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a> -->
+            <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
+        </div>
+        <div class="navList_2">
+            <input id="memNo" type="hidden" value="">
+            <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
+            <a id="memNickname" href="member2.html">&nbsp;</a>
+            <!-- 會員暱稱 -->
+            <a id="spanLogin" class="navItem_2">登入</a>
+        </div>
+    </nav>
+    <nav class="rwdHeader">
+        <div class="rwdHeaderWrap">
+            <a href="index.html">
+                <img id="topLogo2" src="./images/Logo.svg">
+            </a>
+            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="rwdHamburgerMenu">
+        <nav>
+            <ul>
+                <a href="member2.html">
+                    <li id="mobilememNickname">&nbsp;</li>
+                </a>
+                <a id="mobileloginLink">
+                    <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
+                </a>
+                <a id="shopCart" href="prod_shopping.html">
+                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
+                </a>
+                <a href="about.html">
+                    <li>果甘物語 <i class="fas fa-seedling"></i></li>
+                </a>
+                <a href="prod_product.html">
+                    <li>特色果甘 <i class="fas fa-apple-alt"></i></li>
+                </a>
+                <a href="box.html">
+                    <li>客製禮盒 <i class="fas fa-gift"></i></li>
+                </a>
+                <a href="cusfruits.html">
+                    <li>客製果甘 <i class="fas fa-lemon"></i></li>
+                </a>
+                <!-- <a href="#">
+                    <li>折扣遊戲 <i class="fas fa-carrot"></i></li>
+                </a> -->
+                <a href="forum.html">
+                    <li>果甘話區 <i class="fas fa-leaf"></i></li>
+                </a>
+            </ul>
+        </nav>
+    </div>
+</header>
     <div class="paddingtop">
         <h2 class="title_cusfruits">
             <img src="./images/index/index_felix/leaf.svg" class="leafLeft">
@@ -41,45 +119,91 @@
                 <span>2</span>
                 <p>養生指數會提示您搭配的療效, 選擇滿6樣(可重複選購), 便可以點擊完成囉。</p>
             </div>
-            <div class="navList_2">
-                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
-                <a class="navItem_2" href="#"><i class="fas fa-shopping-cart"></i></a>
+            <div>
+                <span>3</span>
+                <p>在點擊完成送出之前也可以替這次組合命名, 方便下次選購喔！</p>
             </div>
         </div>
-    </header>
-    <h2 class="title_cusfruits">
-        <img src="./images/leaf.svg" class="leafLeft">
-        <img src="./images/leaf.svg" class="leafRight"> 客製果甘
-    </h2>
+        <button name="close">我知道了</button>
+    </div>
     <div class="cusfruits_wrapper">
-
-        <div class="wrapper_left">
-            <div class="cabinet_top"></div>
-            <div class="cabinet_title">
-                輕點添加選擇, 可以重複選購滿6樣即可喔！
+        <div class="guides_inpage">
+            <div>
+                <span>1</span>
+                <p>點擊添加6樣</p>
             </div>
-            <div class="fruits_window">
-                <div class="linktoqna">
-                    <a href="#">或是去做測驗幫您推薦</a>
+            <div></div>
+            <div>
+                <span>2</span>
+                <p>查看您搭配的療效</p>
+            </div>
+            <div></div>
+            <div>
+                <span>3</span>
+                <p>完成送出</p>
+            </div>
+        </div>
+        <div class="cusfruits_inner">
+            <div class="wrapper_left">
+                <div class="cabinet_top"></div>
+                <div class="cabinet_title">
+                    輕點添加選擇, 可以重複選購滿6樣即可喔！
                 </div>
                 <div class="fruits_window">
                     <div class="linktoqna">
                         <a href="#">或是去做測驗幫您推薦</a>
                     </div>
+                    <!-- 1：幫助消化 2：活化大腦 3：保護血管 -->
                     <div class="layer1">
-                        <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1" data-pointa="1" data-pointb="0" data-pointc="0">
-                        <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2">
-                        <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3">
+                        <div>
+                            <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3"
+                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
+                            <span></span>
+                        </div>
                     </div>
                     <div class="layer2">
-                        <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="4">
-                        <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="5">
-                        <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="6">
+                        <div>
+                            <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="4"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="5"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="6"
+                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
+                            <span></span>
+                        </div>
                     </div>
                     <div class="layer3">
-                        <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="7">
-                        <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="8">
-                        <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="9">
+                        <div>
+                            <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="7"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="8"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="9"
+                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,29 +222,15 @@
                 </table>
             </div>
 
-        <div class="wrapper_right">
-            <div class="upper">
-                <h5>
-                    <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
-                    <img src="./images/cusFruits/cusfruit_subtitle.png">
-                </h5>
-                <div>
-                    <canvas id="heyChart" width="300px" height="300px"></canvas>
-                </div>
-            </div>
-            <div class="rwd_group">
-                <div class="lower">
+            <div class="wrapper_right">
+                <div class="upper">
                     <h5>
-                        <img src="./images/cusFruits/cusfruit_staricon.png"> 小結
+                        <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
                         <img src="./images/cusFruits/cusfruit_subtitle.png">
                     </h5>
-                    <form action="#" method="get" class="form__group field">
-                        <input type="text" name="bagname" id="bagname" class="form__field" placeholder="Name">
-                        <label for="bagname" class="form__label">為您搭配好的組合命名 : </label>
-                    </form>
-                    <div>
-                        <p>已選: 0/6樣</p>
-                        <h5>目前總金額: 100元</h5>
+                    <!-- <svg id="svg" width="375" height="375"></svg> -->
+                    <div class="radar_wrapper">
+                        <canvas id="heyChart" width="250" height="250"></canvas>
                     </div>
                 </div>
                 <div class="rwd_group">
@@ -135,7 +245,7 @@
                         </form>
                         <div>
                             <p>已選: <span id="items">0</span>/6樣</p>
-                            <h5>目前總金額: 100元</h5>
+                            <h5>目前總金額: <span id="totalPrice">0</span>元</h5>
                         </div>
                     </div>
                     <div class="buttons">
@@ -146,111 +256,29 @@
             </div>
         </div>
     </div>
+        <!-- 一定要用button去，不能用div，否則沒法按 然後button的class名稱裡面要加'putin'，然後加一個id名稱'put_10'-->
+        <button class="addCartBtn putin" id="putin_11">放入購物車
+            <!-- 凡是有可能會被放進購物車的東西，在custFruit裡面就一定要有圖片，不然抓不到 -->
+            <!-- 我臨時找了一個varFruit的圖片 -->
+            <input type="hidden" value="客製果甘|varFruit.jpg|360">
+        </button>
+        <!-- 再傳送到購物車之前，客製禮盒的購買紀錄會先存到底下這個id叫做"newItem"這個藍色框框裡面" -->
+        <!-- 你可以選擇把它 display:none 掉 -->
+        <!-- <div style="display:none;" id="newItem"> -->
+        <div style="height:100px;" id="newItem">
+            <div id="content">
+                項目數量：<span id="itemCount">&nbsp;</span>
+                <br>
+                總金額：$<span id="subtotal">0</span>
+            </div>
+        </div>
+    </div>
     <footer>
-        <strong>Copyright &copy; 2020 Natural Sweet</strong>
-        <i class="fas fa-leaf"></i>
-    </footer>
-    <script>
-        //養生指數
-        var ctx = document.getElementById('heyChart');
-
-        data = {
-            labels: ['幫助消化', '活化大腦', '保護血管'],
-            datasets: [{
-
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                data: [3, 2, 1]
-            }]
-        }
-
-        options = {
-            scale: {
-                angleLines: {
-                    display: true //連到三角形三點的直線
-                },
-                ticks: {
-                    suggestedMin: 3,
-                    suggestedMax: 6
-                }
-            }
-        };
-
-        var heyChart = new Chart(
-            ctx, {
-                type: 'radar',
-                data: data,
-                options: options
-            });
-    </script>
-    <script>
-        window.addEventListener('load', function() {
-            images = document.getElementsByClassName('draggable');
-            for (let i = 0; i < images.length; i++) {
-                images[i].addEventListener('dragstart', function(e) {
-                    // let data = '<img src="./images/cusFruits/01_starFruit_c.png">';
-                    let data = `${images[i]}`;
-                    // let data = images[i].src;
-                    // let data = i;
-                    // console.log(images[i])
-                    console.log(data)
-
-                    e.dataTransfer.setData('image/*', data);
-                });
-            }
-
-            droppedzones = document.getElementsByClassName('droppedzone');
-            for (let j = 0; j < droppedzones.length; j++) {
-                droppedzones[j].addEventListener('dragenter', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                })
-                droppedzones[j].addEventListener('drop', function(e) {
-                    e.preventDefault();
-
-                    // console.log(e.target.className);
-                    // console.log(e.dataTransfer.getData('image/png'));
-
-
-                    // var inputs = document.getElementsByTagName('input');
-                    // test.src = e.dataTransfer.getData('image/png');
-                    // this.insertBefore(test, input[j]);
-                    this.innerHTML = e.dataTransfer.getData('image/*');
-
-                    var test = document.createElement('img');
-                    // e.dataTransfer.getData('text/plain');
-                    // test.src = data;
-                    // this.appendChild(test);
-
-                    // e.target.appendChild(e.dataTransfer.getData('image/*'));
-                })
-            }
-        })
-    </script>
-
-    <!-- <script>
-        $("#img01").draggable({
-            containment:"#middle01",
-        });
-        $("#middle01").droppable({
-            drop: function(event, ui) {
-                $(this).css('background', 'rgb(0,200,0)');
-            },
-            over: function(event, ui) {
-                $(this).css('background', 'orange');
-            },
-            out: function(event, ui) {
-                $(this).css('background', 'cyan');
-            }
-        });
-    </script> -->
-
-
+    <div class="footer_content">
+        <strong>Copyright &copy; 2020 Natural Sweet</srong>
+            <i class="fas fa-leaf"></i>
+    </div>
+</footer>
 </body>
 
 </html>

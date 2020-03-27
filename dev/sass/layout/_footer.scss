@@ -1,29 +1,39 @@
+@import '../../sass/mixin/bgc_img';
+
 //共用的footer
 footer {
-    height:85px;
-    background-color: #4b823d;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-size:1rem;
+    height:80vh;
+    // background-color: #4b823d;
+
+    @include footer_bgc_img(bgc3);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.footer_content { 
+    padding: 40px;
 }
 
 
- //平板
+//平板
 // @include respond(medium){
 //     footer {
 //         width: 600px;
 //         background-color: #3bfc00;
 //      }
 //     }
-    
-    
+
+
 //     //手機版
 //     @include respond(small){
 //         footer {
 //             width: 200px;
 //             background-color: #3bfc00;
 //          }
-    
+
 //     }

@@ -9,6 +9,10 @@
 @import '../../modules/button';
 @import '../../modules/rwd';
 
+body {
+    background-image: url(../../../images/forum/sky.jpg);
+}
+
 .title_hot_topics{
     @include title(3px,dotted,#a6c125,10px,#fff);
     margin: 50px auto;
@@ -64,7 +68,7 @@
         box-sizing:border-box;
         width:100%;
         img.sm_photo{
-            width:24%;
+            width:23%;
         }
     }
 }

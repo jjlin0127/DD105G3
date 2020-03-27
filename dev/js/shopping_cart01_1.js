@@ -23,29 +23,20 @@ function addItem(itemId,itemValue){
 
     let title = document.createElement('span');
     //讓產生的span元素有個綠色邊框
-    title.style = 'margin:0px 10px;border:1px solid green';
+    title.style = 'border:1px solid green';
     title.innerText = itemValue.split('|')[0];
 
     let price = document.createElement('span');
     price.innerText = parseInt(itemValue.split('|')[2]);
 
     let newItem = document.getElementById('newItem');
-
-
-
-
-
-
-
-
-
-    newItem.appendChild(image);
-    newItem.appendChild(title);
-    newItem.appendChild(price);
+    //newItem.appendChild(image);
+    //newItem.appendChild(title);
+    //newItem.appendChild(price);
 
     //存入storage
     if(storage[itemId]){
-        alert('您的購物車已經有這項商品了！');
+        //alert('您的購物車已經有這項商品了！');
     }else{
         //storage['addItemList'] += itemId + ', ';
         storage['addItemList'] += `${itemId}, `;
@@ -68,5 +59,7 @@ function addItem(itemId,itemValue){
 
     document.getElementById('itemCount').innerText = items.length;
     document.getElementById('subtotal').innerText = subtotal;
+    document.getElementById('a_count').innerText = items.length;
+    document.getElementById('b_count').innerText = items.length;
 }
-window.addEventListener('load',doFirst);
+window.addEventListener('load',doFirst)

@@ -13,18 +13,13 @@
     <!-- <link rel="stylesheet" href="./sass/page/prod/shopping_media.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="./js/shopping_cart02.js"></script>
-    <style>
-        body {
-            background-image: url(./images/forum/sky.jpg);
-        }
-    </style>
 </head>
 
 <body>
     <!-- ↓↓↓ 導覽列 -->
     @@include('layout/header.html',{
-        "focus06" : "focus"
     })
     <center><div class="box_for_title_hot_topics">
         <div class="title_hot_topics">
@@ -34,7 +29,7 @@
             </h2>
         </div>      
     </div></center>
-    <h2 class="say_hi">Peggy1001, 您好！您目前可使用的折扣點數：<span style="font-weight: 600;">3000  點</span></h2>
+    <h2 class="say_hi">, 您好！您目前可使用的折扣點數：<span style="font-weight: 600;">3000  點</span></h2>
     <div class="box_for_shopping_title">
         <h3 class="shopping_title">購物明細</h3>
     </div>
@@ -102,8 +97,5 @@
 </div> 
 
 </body>
-<footer>
-    <strong>Copyright &copy; 2020 Natural Sweet</srong>
-    <i class="fas fa-leaf"></i>
-</footer>
+    @@include('./layout/footer.html')
 </html>

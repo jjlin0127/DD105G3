@@ -258,24 +258,24 @@
                         cursor: pointer;
                         -webkit-transition: .3s;
                         transition: .3s;
-                        background-color: $btnFuncBgColor;
+                        //background-color: $btnFuncBgColor;
                         -webkit-transform: translateY(0px);
                         transform: translateY(0px);
-                        &:hover{
-                            background-color: $btnFuncHovBgColor;
-                        }
+                        // &:hover{
+                        //     background-color: $btnFuncHovBgColor;
+                        // }
                     }
                 }
                 // 按鈕變色
-                #show-front:checked ~ .button-wrap .for-front,
-                #show-back:checked ~ .button-wrap .for-back,
-                #show-left:checked ~ .button-wrap .for-left,
-                #show-right:checked ~ .button-wrap .for-right,
-                #show-top:checked ~ .button-wrap .for-top,
-                #show-bottom:checked ~ .button-wrap .for-bottom,
-                #zoom-cube:checked ~ .button-wrap .for-zoom-cube {
-                    background-color: $btnFuncHovBgColor;
-                }
+                //#show-front:checked ~ .button-wrap .for-front,
+                // #show-back:checked ~ .button-wrap .for-back,
+                // #show-left:checked ~ .button-wrap .for-left,
+                // #show-right:checked ~ .button-wrap .for-right,
+                // #show-top:checked ~ .button-wrap .for-top,
+                // #show-bottom:checked ~ .button-wrap .for-bottom,
+                // #zoom-cube:checked ~ .button-wrap .for-zoom-cube {
+                //     background-color: $btnFuncHovBgColor;
+                // }
             }
             .tab_wrap{
                 // border: solid 1px red;

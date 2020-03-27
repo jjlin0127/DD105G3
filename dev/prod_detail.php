@@ -38,31 +38,38 @@ $product_review->execute();
     <!-- <link rel="stylesheet" href="./sass/page/prod/detail_media.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script src="./js/shopping_cart01.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>		
+    <script src="./js/shopping_cart01_1.js"></script>
     
 </head>
 
-<body style="background-color:#B9D7EA ;">
+<body>
     <!-- ↓↓↓ 導覽列 -->
-    <header>
-    <nav class="header__container">
+    <script src="./js/hamburger.js"></script>
+<script src="./js/login.js"></script>
+<header>
+    <div class="header__container">
         <span class="logo">
             <a href="index.html"><img src="./images/Logo.svg"></a>
         </span>
         <div class="navList">
-            <a class="navItem @@focus01" href="about.html">果甘物語 <i class="fas fa-seedling"></i></a>
+            <a class="navItem @@focus01" href="about.html">關於我們 <i class="fas fa-seedling"></i></a>
             <a class="navItem @@focus02" href="prod_product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
             <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
             <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
             <!-- <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a> -->
-            <a class="navItem focus" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
-        </div>
+            <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
+        </div> 
         <div class="navList_2">
             <input id="memNo" type="hidden" value="">
+            <!-- 在購物車的a標籤內加一個span標籤，id為acx-count -->
+            <a id="shopCart" class="navItem_2" href="prod_shopping.html">
+            <!-- ↓↓↓珮珊加的：購物車icon的旁邊要加項目數量 -->
+                <span id="a_count" ></span><i class="fas fa-shopping-cart"></i>
+            </a>
             <a id="memNickname" href="member2.html">&nbsp;</a>
             <!-- 會員暱稱 -->
             <a id="spanLogin" class="navItem_2">登入</a>
-            <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </nav>
     <nav class="rwdHeader">
@@ -84,10 +91,12 @@ $product_review->execute();
                 <a href="member2.html">
                     <li id="mobilememNickname">&nbsp;</li>
                 </a>
-                <a id="mobileloginLink" href="login.html">
+                <a id="mobileloginLink">
                     <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                 </a>
                 <a id="shopCart" href="prod_shopping.html">
+                    <!-- ↓↓↓珮珊加的：購物車icon的旁邊要加項目數量 -->
+                    <span id="b_count" ></span>
                     <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                 </a>
                 <a href="about.html">
@@ -108,11 +117,16 @@ $product_review->execute();
                 <a href="forum.html">
                     <li>果甘話區 <i class="fas fa-leaf"></i></li>
                 </a>
+                <a id="spanLogin" href="login.html">
+                    <li>登入/註冊 <i class="fas fa-user-circle"></i></li>
+                </a>
+                <a id="shopCart"  href="shopping.html"><span id="a_count" style="color:red;"></span>
+                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
+                </a>
             </ul>
         </nav>
     </div>
 </header>
-    <!-- ↑↑↑ 導覽列 -->
     <?php 
     if( $errMsg != ""){ //例外
     echo "<div><center>$errMsg</center></div>";
@@ -130,13 +144,6 @@ $product_review->execute();
                 <h2>商品詳情</h2>
             </div>      
         </div></center>
-    <div style="height:100px;border:3px solid blue;overflow: scroll;" id="newItem">
-        <div id="content">
-            項目數量：<span id="itemCount">0</span>
-            <br>
-            總金額：$<span id="subtotal">0</span>
-        </div>
-    </div>
     <div class="detail_wrapper">
         <div class="prdt_img">
             <div class="large_img">
@@ -194,7 +201,7 @@ $product_review->execute();
                     <button class="count" id="add">+</button>
                 </div> -->
                 <div class="purchase">
-                    <button class="green_btn shopping_cart_btn putin" id="putin"> 
+                    <button class="green_btn shopping_cart_btn putin" id="putin_<?php echo $prodRow->prodNo;?>"> 
                         放入購物車
                         <input type="hidden" 
 
@@ -204,7 +211,7 @@ $product_review->execute();
                     <label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
                     </label>
                     <br>
-                    <button class="orange_btn" id="buyit">直接購買</button><label for="buyit"><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon"></label>
+                    <button class="orange_btn buyit" id="buyit">直接購買</button><label for="buyit"><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon"></label>
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
         </div>  <!--prdt_text的結尾標籤-->
@@ -227,8 +234,13 @@ $product_review->execute();
                 </td>
             </tr>
         </table>
-        <hr size="4px" align="center" width="100%">
-
+        <div id="newItem">
+            <div id="content">
+                項目數量：<span id="itemCount">0</span>
+                <br>
+                總金額：$<span id="subtotal">0</span>
+            </div>
+        </div>
     </div> <!--第一個 div.detail_wrapper的結尾標籤-->
 
     <div class="detail_wrapper">

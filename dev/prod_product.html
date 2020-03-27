@@ -8,26 +8,21 @@
     <title>天然甘-特色果甘</title>
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/prod/product.css">
-    <link rel="stylesheet" href="./css/page/prod/product_media.css">
-    <!-- <link rel="stylesheet" href="./sass/page/prod/product.css">   -->
-    <!-- <link rel="stylesheet" href="./sass/page/product_media.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>		
     <!-- ↓↓↓banner輪播圖的js -->
     <script src="./js/prod_carousel.js"></script>
-    <script src="./js/shopping_cart01.js"></script>
-    
-    <style>
-        body {
-            background-image: url(./images/forum/sky.jpg);
-        }
-    </style>
+    <!-- <script src="./js/shopping_cart01.js"></script> -->
+    <script src="./js/shopping_cart01_1.js"></script>
+    <!-- google字型 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    @@include('./layout/header.html')
-
+    @@include('layout/header.html',{
+        "focus02" : "focus"
+    })
     <!-- ↑↑↑ 導覽列 -->
     <div class="wrapper">
         <center><div class="box_for_title_hot_topics">
@@ -52,10 +47,9 @@
         <center><button class="link_btn">心理測驗</button></center>
         <div style="height:10px;"></div>
     </div>   <!--div.wrapper的結尾標籤-->
-    <hr>
-    <div style="height:80px;"></div>
     <h2 style="text-align: center;">果甘促進身體健康</h2>
 
+    <!-- <a href="./prod_shopping.html">察看購物車</a> -->
     <ul class="wrapper_cards">
 
         <a href="prod_detail.php?prodNo=1">
@@ -88,7 +82,7 @@
                     <label for="putin_1"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -125,7 +119,7 @@
                     <label for="putin_2"><img src="images/prdt/icon/shopping_cart.svg" class="icon"></label>
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -163,7 +157,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -201,7 +195,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -240,7 +234,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -279,7 +273,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -314,7 +308,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div>
@@ -353,7 +347,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center>
             </div> <!--div.text_oncard的指令-->
@@ -391,7 +385,7 @@
                     <img src="images/prdt/icon/shopping_cart.svg" class="icon">
                 </center>
                 <center>
-                    <button class="orange_btn">直接購買</button>
+                    <button class="orange_btn buyit">直接購買</button>
                     <img src="images/prdt/icon/icon_money.svg" class="icon">
                 </center> 
             </div> <!--div.text_oncard的指令-->
@@ -404,18 +398,19 @@
         <button class="link_btn" onclick="javascript:location.href='./box.html'">客製禮盒</button>
     </center>
     <button class="green_btn" onclick="javascript:location.href='./prod_shopping.html'">查看購物車</button>
-    <!-- <a href="./prod_shopping.html">察看購物車</a> -->
-    <div style="height:100px;border:3px solid blue;overflow: scroll;" id="newItem">
+    <div id="newItem">
         <div id="content">
-            項目數量：<span id="itemCount">0</span>
+            項目數量：<span id="itemCount">&nbsp;</span>
             <br>
-            總金額：$<span id="subtotal">0</span>
+            累計點數：<span id="subtotal">&nbsp;</span>
         </div>
     </div>
-
+    <!-- alert start -->
+    <div id="alertBox" class="alertBox hidden">
+        <span id="close_alert_btn">&times;</span>
+        <span id="alertMessage">請先登入會員！</span>
+    </div>
+    <!-- alert end -->
 </body>
-<footer>
-    <strong>Copyright &copy; 2020 Natural Sweet</srong>
-    <i class="fas fa-leaf"></i>
-</footer>
+    @@include('./layout/footer.html')
 </html>
