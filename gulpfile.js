@@ -39,8 +39,8 @@ var web = {
 var options = {
     base: './dest', // 檔案位置
     debug: true,
-    bin: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.exe', // php執行檔的路徑
-    ini: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.ini', // php的ini檔的路徑
+    bin: '/Applications/MAMP/bin/php/php7.2.1/bin/php', // php執行檔的路徑
+    ini: '/Applications/MAMP/bin/php/php7.2.1/conf/php.ini', // php的ini檔的路徑
     port: 8080, // 自行定義端口
 };
 
