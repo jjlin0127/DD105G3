@@ -10,30 +10,12 @@
     <!-- <link rel="stylesheet" href="./discuss.css"> -->
     <link rel="stylesheet" href="./css/page/prod/shopping.css">
     <script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    
+
 </head>
 
 <body>
     <!-- ↓↓↓ 導覽列 -->
-    <header>
-        <div class="header__container">
-            <span class="logo">
-                <a href="index.html"><img src="./images/logo2.png"></a>
-            </span>
-            <div class="navList">
-                <a class="navItem" href="#">關於我們<i class="fas fa-seedling"></i></a>
-                <a class="navItem focus" href="product.html">特色果甘<i class="fas fa-apple-alt"></i></a>
-                <a class="navItem" href="#">客製果甘<i class="fas fa-lemon"></i></a>
-                <a class="navItem" href="#">折扣遊戲<i class="fas fa-carrot"></i></a>
-                <a class="navItem" href="#">果甘話區<i class="fas fa-leaf"></i></a>
-            </div>
-            
-            <div class="navList_2">
-                <a class="navItem_2" href="#"><i class="fas fa-user-circle"></i></a>
-                <a class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>                
-            </div>
-        </div>
-    </header>
+    @@include('layout/header.html')
     <!-- ↑↑↑ 導覽列 -->
 
     <div class="box_for_title_hot_topics">
@@ -41,15 +23,19 @@
             <img src="./images/leaf_small.svg" class="leafLeft">
             <img src="./images/leaf_small.svg" class="leafRight">
             購物車
-        </div>      
+        </div>
     </div>
-    <h2 class="say_hi">Peggy1001, 您好！您目前可使用的折扣點數為：<span style="font-weight: 600;">3000  點</span></h2>
+    <h2 class="say_hi">Peggy1001, 您好！您目前可使用的折扣點數為：<span style="font-weight: 600;">3000 點</span></h2>
     <div class="box_for_shopping_title">
         <h3 class="shopping_title">購物明細</h3>
     </div>
     <div class="shopping_wrapper">
         <table class="purchase_list" style="vertical-align: top;">
-            <tr><th colspan="2" style="width:50%;">商品明細</th><th>數量</th><th>變更明細</th></tr>
+            <tr>
+                <th colspan="2" style="width:50%;">商品明細</th>
+                <th>數量</th>
+                <th>變更明細</th>
+            </tr>
             <tr>
                 <td style="width:25%;">
                     <img src="images/prdt/mango03.jpg">
@@ -57,7 +43,7 @@
                 <td style="font-size: 18pt;line-height: 36pt;padding: 10px;">
                     <div class="quantity">品名：天然芒果甘<br>價格：350點</div>
                 </td>
-                <td>                
+                <td>
                     <div class="quantity">
                         <button class="count" id="minus">-</button>
                         <div calss="amount" id="howmany">1</div>
@@ -77,7 +63,7 @@
                 <td style="font-size: 18pt;line-height: 36pt;padding: 10px;">
                     <div class="quantity">品名：天然草莓甘<br>價格：340點</div>
                 </td>
-                <td>                
+                <td>
                     <div class="quantity">
                         <button class="count" id="minus">-</button>
                         <div calss="amount" id="howmany">1</div>
@@ -93,16 +79,17 @@
         </table>
 
         <div class="shopping_sum">
-            <h2 class="sum">目前總共所需要的點數為：<span style="font-weight: 600;">690  點</span></h2><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span>
+            <h2 class="sum">目前總共所需要的點數為：<span style="font-weight: 600;">690 點</span></h2>
+            <span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span><span>&nbsp</span>
             <button class="game_btn for_buyit" id="buyit">結帳</button>
             <button class="middle_btn for_buyit" id="buy_more" onclick="location.href='./product.html'">繼續購物</button>
-        </div>  <!--shopping_sum的結尾標籤-->
-  
-    </div> <!--shopping_wrapper的結尾標籤-->
+        </div>
+        <!--shopping_sum的結尾標籤-->
+
+    </div>
+    <!--shopping_wrapper的結尾標籤-->
 
 </body>
-<footer>
-    <strong>Copyright &copy; 2020 Natural Sweet</srong>
-    <i class="fas fa-leaf"></i>
-</footer>
+@@include('./layout/footer.html')
+
 </html>

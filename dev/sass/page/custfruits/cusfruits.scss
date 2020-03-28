@@ -317,7 +317,7 @@ body {
                     @include btn_cancel(100px);
                 }
                 & :nth-child(2) {
-                    @include btn_secondary(100px);
+                    @include btn_secondary(150px);
                     margin-left: 10px;
                 }
             }
