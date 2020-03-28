@@ -10,7 +10,7 @@ $('#summernote').summernote({
     ]
   });
 
-  function doFirst(){
+function doFirst(){
     alertBox = document.getElementById('alertBox');
     alertMessage = document.getElementById('alertMessage');
     close_alert_btn = document.getElementById('close_alert_btn');
