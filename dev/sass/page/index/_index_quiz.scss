@@ -1,0 +1,70 @@
+/* -- 問答------------------------------------ -- */
+#app {
+  width: 480px;
+  background-color: antiquewhite;
+  border: 5px solid peru;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+  color: $color;
+  font-size: 1.2rem;
+}
+
+.qustions,
+.recommend {
+  height: 120px;
+  background: #add0c9;
+  h5 {
+    color: #8a5b41;
+    padding: 10px;
+  }
+}
+
+.recommend {
+  text-align: center;
+}
+
+.quizOptions {
+  height: 50px;
+  margin: 10px 0;
+  vertical-align: middle;
+  .form-check-label {
+    display: flex;
+    align-items: baseline;
+    .quizText {
+      margin: 0px 0px 0px 5px;
+      width: 85%;
+      display: inline-flex;
+    }
+  }
+}
+
+.quizOption {
+  line-height: 1rem;
+  background: #a8d4d5;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.btn-next,
+.btn-go {
+  @include btn_primary(150px);
+  display: block;
+  margin: 15px;
+}
+
+.btn-prev,
+.btn-back {
+  @include btn_secondary(150px);
+  display: block;
+  margin: 15px;
+}
