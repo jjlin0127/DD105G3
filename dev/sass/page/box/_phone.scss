@@ -1,5 +1,8 @@
 @include respond(phone){
     #box-body{
+        h2{
+            margin: 120px auto 0px auto;
+        }
         .popup{
             .step_wrap{
                 .step{
