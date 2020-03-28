@@ -66,7 +66,7 @@ try {
     <header>
         <nav class="header__container">
             <span class="logo">
-                <a href="index.html"><img src="./images/Logo.svg"></a>
+                <a href="home.html"><img src="./images/Logo.svg"></a>
             </span>
             <div class="navList">
                 <a class="navItem @@focus01" href="about.html">果甘物語 <i class="fas fa-seedling"></i></a>
@@ -86,7 +86,7 @@ try {
         </nav>
         <nav class="rwdHeader">
             <div class="rwdHeaderWrap">
-                <a href="index.html">
+                <a href="home.html">
                     <img id="topLogo2" src="./images/Logo.svg">
                 </a>
                 <button class="hamburger hamburger--elastic" id="hamburger" type="button">
@@ -372,9 +372,9 @@ try {
     </footer> 
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/vendor/all.js"></script>
+    <script src="./js/all.js"></script>
     <script src="./js/hamburger.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/forum/forum_article.js"></script>
+    <script src="./js/login_common.js"></script>
+    <script src="./js/forum_article.js"></script>
 </body>
 </html>

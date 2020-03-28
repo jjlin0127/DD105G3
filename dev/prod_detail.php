@@ -51,7 +51,7 @@ $product_review->execute();
 <header>
     <div class="header__container">
         <span class="logo">
-            <a href="index.html"><img src="./images/Logo.svg"></a>
+            <a href="home.html"><img src="./images/Logo.svg"></a>
         </span>
         <div class="navList">
             <a class="navItem @@focus01" href="about.html">關於我們 <i class="fas fa-seedling"></i></a>
@@ -75,7 +75,7 @@ $product_review->execute();
     </nav>
     <nav class="rwdHeader">
         <div class="rwdHeaderWrap">
-            <a href="index.html">
+            <a href="home.html">
                 <img id="topLogo2" src="./images/Logo.svg">
             </a>
             <button class="hamburger hamburger--elastic" id="hamburger" type="button">
