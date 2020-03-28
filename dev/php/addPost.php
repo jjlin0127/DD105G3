@@ -2,7 +2,7 @@
 session_start();
 $memNo = $_SESSION["memNo"];
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 
 	if($_POST["topicType"]){
 		$topicType = $_POST["topicType"];

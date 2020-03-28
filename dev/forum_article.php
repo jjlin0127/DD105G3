@@ -1,7 +1,7 @@
 <?php 
 $articleNo = $_REQUEST["articleNo"];
 try {
-    require_once("./php/connectHomeserver.php");
+    require_once("./php/connectSchoolServer.php");
     
     $sql1 = "select * from article join member on (article.memNo = member.memNo)
         where (article.articleNo = :articleNo)";

@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 	
 	$sql1 = "INSERT INTO `message` (`articleNo`, `memNo`, `mesText`) values(:articleNo, :memNo, :mesText)";
 	$message = $pdo->prepare($sql1);

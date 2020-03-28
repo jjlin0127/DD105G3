@@ -3,7 +3,7 @@
 // error_reporting(E_ALL);
 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 	
 	$sql = "INSERT INTO message_report (messageNo, memNo, reportReason) 
 			values(:messageNo, :memNo, :reportReason)";

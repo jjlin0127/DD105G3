@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 
 	$sql1 = "DELETE FROM article_likes 
 			where (articleNo = :articleNo) and (memNo = :memNo)";
