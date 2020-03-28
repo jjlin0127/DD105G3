@@ -90,42 +90,58 @@
                 <div id="center">
                     <div id="one">
                         <h4>楊桃甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="two">
                         <h4>鳳梨甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="three">
                         <h4>火龍果甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="four">
                         <h4>香蕉甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="five">
                         <h4>草莓甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="six">
                         <h4>芭樂甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="seven">
                         <h4>芒果甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                     <div id="eight">
                         <h4>蘋果甘</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit, quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt vero tenetur ullam eum illo.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, inventore quaerat quos velit,
+                            quas saepe magnam delectus voluptate doloremque consectetur fuga dolorem minus, tempora sunt
+                            vero tenetur ullam eum illo.
                         </p>
                     </div>
                 </div>
@@ -143,37 +159,47 @@
                 <div v-if="progress < quiz.length">
                     <div class="quiz">
                         <div class="qustions">
-                             <h5>{{quiz[progress].question}}</h5>
+                            <h5>{{quiz[progress].question}}</h5>
+                        </div>
+                        <div class="progressbar">
+                            <div class="progressbar text-center"
+                                style="background-color: green; margin: 0; color: white;"
+                                :style="{width:(progress*100/quiz.length)+'%'}">
+                                <!-- {{ progress }} -->
+                            </div>
                         </div>
                         <hr>
                         <!-- 選項 -->
-                        <div v-for="(item, index) in quiz[progress].options" :key="index"  class="quizOptions">
+                        <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="option" v-model="answer" :value="optionsValue[index]">
+                                <input type="radio" class="form-check-input" name="option" v-model="answer"
+                                    :value="optionsValue[index]">
                                 <span class="quizOption">
                                     {{optionsValue[index]}}
                                 </span>
                                 <span class="quizText">
                                     {{item}}
-                                </span>                                
+                                </span>
                             </label>
                         </div>
-        
+
                         <!-- 按鈕 -->
-                        <div  class="button-row">
+                        <div class="button-row">
                             <div>
-                                <button v-if="progress===0" @click="prev()" type="button" class="btn-prev" disabled>上一題</button>
+                                <button v-if="progress===0" @click="prev()" type="button" class="btn-prev"
+                                    disabled>上一題</button>
                                 <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
                             </div>
                             <div>
-                                <button v-if="answer===''" @click="next()" type="button" class="btn-next" disabled>下一題</button>
+                                <button v-if="answer===''" @click="next()" type="button" class="btn-next"
+                                    disabled>下一題</button>
                                 <button v-else @click="next()" type="button" class="btn-next">下一題</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div v-else >
-                    <div >
+                <div v-else>
+                    <div>
                         <div class="recommend">
                             <h3>已完成測驗</h3>
                             <h2>推薦您 {{recommend}} 的組合</h2>
@@ -183,7 +209,7 @@
                             <div>
                                 <button @click="back()" type="button" class="btn-back">重作測驗</button>
                             </div>
-                            <div >
+                            <div>
                                 <button @click="refreshto(url)" type="button" class="btn-go">前往自由配</button>
                             </div>
                         </div>
