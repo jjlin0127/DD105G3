@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 
 	$sql1 = "DELETE FROM `message_likes` where (messageNo = :messageNo) and (memNo = :memNo)";
 	$Message = $pdo->prepare($sql1);

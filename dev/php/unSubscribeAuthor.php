@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 	
 	$sql = "DELETE FROM `author_subscription` 
 			where (authorNo = :authorNo) and (memNo = :memNo)";

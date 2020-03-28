@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("./php/connectHomeserver.php");
+	require_once("./php/connectSchoolServer.php");
     $sql = "select * from article join member on (article.memNo = member.memNo)
             where (article.artStatus = 1)
             order by article.artLikeCount desc

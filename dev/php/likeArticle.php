@@ -1,6 +1,6 @@
 <?php 
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectSchoolServer.php");
 
 	$sql1 = "INSERT INTO `article_likes` (`articleNo`, `memNo`) 
 			values(:articleNo, :memNo)";

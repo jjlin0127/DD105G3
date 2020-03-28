@@ -3,7 +3,7 @@
 // error_reporting(E_ALL);
 
 try {
-    require_once("connectHomeserver.php");
+    require_once("connectSchoolServer.php");
 
     $sql = "select * from message join member on (message.memNo = member.memNo)
                                   join article on (message.articleNo = article.articleNo)

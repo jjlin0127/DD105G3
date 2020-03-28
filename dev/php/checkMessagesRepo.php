@@ -2,7 +2,7 @@
 session_start();
 $memNo = $_SESSION["memNo"];
 try {
-    require_once("connectHomeserver.php");
+    require_once("connectSchoolServer.php");
 
     $sql = "select * from message_report 
             where (memNo = :memNo)";
