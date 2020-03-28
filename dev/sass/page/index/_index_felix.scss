@@ -24,9 +24,9 @@ span {
     color: #4c4948;
 }
 
-@mixin content {
-    right: 61px;
-    top: 146px;
+@mixin content($right: 61px, $top: 146px) {
+    right: $right;
+    top: $top;
     transform: rotate(-135deg);
     border: 4px solid #CEA45A;
     //------------------------
@@ -165,14 +165,14 @@ span {
                             z-index: 7;
                             transform: rotate(338deg);
                             .content {
-                                @include content;
+                                @include content(65px,146px);
                             }
                         }
                         .item8 {
                             z-index: 8;
                             transform: rotate(23deg);
                             .content {
-                                @include content;
+                                @include content(65px,146px);
                             }
                         }
                         #wrapper8 {
@@ -201,6 +201,9 @@ span {
                             text-align: center;
                             margin: auto;
                             line-height: 1.25;
+                            p{
+                                line-height: 1.7;
+                            }
                         }
                     }
                 }
@@ -214,41 +217,18 @@ span {
                 display: flex;
                 margin: 30px 200px 0px 0px;
                 line-height: 1.5;
-                .title_page {
-                    @include title(3px, dotted, #a6c165, 10px, #fff);
-                    height: 55px;
-                    margin: 0px 30px;
-                }
-                .qna_paper {
-                    width: 500px;
-                    height: 350px;
-                    margin-top: 15px;
-                    border-radius: 20px;
-                    border: 4px solid #CEA45A;
-                    // background: #fff;
-                    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-                    .qna_paper_upper {
-                        margin: 30px;
-                        display: flex;
-                        justify-content: space-between;
+                #app{
+                    min-width: 375px;
+                    max-width: 485px;
+                    .qna_paper{
+                        border-radius: 20px;
+                        border: 4px solid #CEA45A;
+                        background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+                    }   
+                    label{
+                        color: #91664E;
                     }
-                    .qna_paper_lower {
-                        margin-top: 100px;
-                        margin: 30px;
-                        span {
-                            display: block;
-                            margin: 30px;
-                        }
-                    }
-                    .qna_paper_buttons {
-                        display: flex;
-                        justify-content: center;
-                        button {
-                            font-family: Noto, Genjyuu;
-                            margin: 0 10px;
-                            @include btn_primary(100px);
-                        }
-                    }
+
                 }
             }
         }
