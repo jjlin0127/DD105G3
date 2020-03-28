@@ -272,6 +272,9 @@ span {
     }
 }
 
+.qna_p_contain {
+    display: none;
+}
 
 // ---------行動版----------------------------------------
 @include respond(phone) {
