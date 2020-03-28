@@ -1,4 +1,6 @@
 @import '../../base/reset';
+@import '../../base/variable';
+@import '../../base/fontSetting';
 
 
 
@@ -172,7 +174,7 @@ body {
 
 .show .aside .item .box a h1,
 .show .aside .item .box a h2 {
-    font: 4vw "PingFang";
+    font: 4vw;
     text-shadow: 1px 1px 3px #949494;
     line-height: 4.5;
     color: #8a5b41;
@@ -186,7 +188,7 @@ body {
     .show .aside .item .box a h1,
     .show .aside .item .box a h2 {
         color: #8a5b41;
-        font: 40px "PingFang";
+        font: 40px;
         transition: all .5s;
     }
 }

@@ -30,7 +30,8 @@ $product_review->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>天然甘-商品詳情</title>
+    <title>商品詳情 | 天然甘</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="./css/page/prod/detail.css"> 
     <link rel="stylesheet" href="./css/page/prod/detail_media.css"> 
@@ -116,12 +117,6 @@ $product_review->execute();
                 </a> -->
                 <a href="forum.html">
                     <li>果甘話區 <i class="fas fa-leaf"></i></li>
-                </a>
-                <a id="spanLogin" href="login.html">
-                    <li>登入/註冊 <i class="fas fa-user-circle"></i></li>
-                </a>
-                <a id="shopCart"  href="shopping.html"><span id="a_count" style="color:red;"></span>
-                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                 </a>
             </ul>
         </nav>

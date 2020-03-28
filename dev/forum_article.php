@@ -57,6 +57,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>果甘話區話題 | 天然甘</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/shortIcon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/page/forum/forum_article.css">
@@ -77,7 +78,7 @@ try {
             </div>
             <div class="navList_2">
                 <input id="memNo" type="hidden" value="">
-                <a id="shopCart" class="navItem_2" href="shopping.html"><i class="fas fa-shopping-cart"></i></a>
+                <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
                 <a id="memNickname" href="member2.html">&nbsp;</a>
                 <!-- 會員暱稱 -->
                 <a id="spanLogin" class="navItem_2">登入</a>
@@ -105,7 +106,7 @@ try {
                     <a id="mobileloginLink">
                         <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                     </a>
-                    <a id="shopCart" href="shopping.html">
+                    <a id="shopCart" href="prod_shopping.html">
                         <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                     </a>
                     <a href="about.html">
