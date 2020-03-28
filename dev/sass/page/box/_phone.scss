@@ -1,15 +1,25 @@
 @include respond(phone){
     #box-body{
-        .box_contain{
-            
-            .outer{
-                .step_wrap{
-                    .step{
-                        width: 120px;
-                        margin: 10px 0px 10px 0px;
-                    
+        .popup{
+            .step_wrap{
+                .step{
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: center;
+                    .circle{
+                        margin-right: 20px;
                     }
-               
+                    p{
+                        width: 180px;
+                        text-align: left; 
+                    }
+                }
+            }
+        }
+        .box_contain{
+            .outer{
+                .bow-knot-left,.bow-knot-right{
+                    width: 150px;
                 }
             }
         }

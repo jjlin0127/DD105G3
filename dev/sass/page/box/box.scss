@@ -6,11 +6,52 @@
 @import '../../mixin/titleStyle';
 @import '../../modules/button';
 @import '../../layout/tab';
+@import '../../modules/lightbox';
 
 
 #box-body{
     background-image: url('../../../images/box/box-bg.jpg');
     background-size: cover;
+    .popup{
+        @include popup;
+        >div{
+            max-width: 1000px;
+            width: 70%; //燈箱內容寬度
+        }
+        h2{
+            border: none;
+            width: 100%;
+            margin: 0px;
+        }
+        .step_wrap{
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            .step{      
+                display: flex;
+                width: 150px;
+                flex-direction: column;
+                align-items: center;
+                // border: 1px solid;
+                margin: 0px 5px 0px 5px;
+                .circle{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: $btnSecBgColor;
+                    text-align: center;
+                    line-height: 2;
+                    color: white;
+                    margin-bottom: 10px;
+                }
+                p{
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
     h2{
         @include title(3px, dotted, #a6c165, 10px, #fff);
         margin: 50px auto 0px auto;
@@ -36,30 +77,6 @@
                 width: 100%;
                 text-align: center;
                 margin-bottom: 0px;
-            }
-            .step_wrap{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 30px;
-                .step{      
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 120px;
-                    margin: 20px 25px 20px 25px;
-                    line-height: 1.5;
-                    .circle{
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        background-color: $btnSecBgColor;
-                        text-align: center;
-                        line-height: 2;
-                        color: white;
-                        margin-bottom: 5px;
-                    }
-                }
             }
             .bow-knot-left{
                 width: 200px;
@@ -362,7 +379,18 @@
             margin:  30px auto 50px auto;
         }
     }
+    // .addCartAlert{
+    //     display: inline-block;
+    //     padding: 20px;
+    //     margin-left: 50%;
+    //     transform: translateX(-50%);
+    //     text-align: center;
+    //     background-color: #fff;
+    //     display: none;
+    // }
 }
+
+
 
 @import '../../modules/rwd';
 @import 'ipadpro.scss';
