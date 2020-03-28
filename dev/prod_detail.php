@@ -4,7 +4,8 @@ $prodNo = $_REQUEST["prodNo"];
 $errMsg = "";
 //連線資料庫
 try{
-  require_once("connectProduct.php");
+  //require_once("connectProduct.php");
+  require_once("./php/connectProduct.php");
   $sql = "select * from product where prodNo = :prodNo";
   $product = $pdo->prepare($sql);
   $product->bindValue(":prodNo", $prodNo);
@@ -116,12 +117,6 @@ $product_review->execute();
                 </a> -->
                 <a href="forum.html">
                     <li>果甘話區 <i class="fas fa-leaf"></i></li>
-                </a>
-                <a id="spanLogin" href="login.html">
-                    <li>登入/註冊 <i class="fas fa-user-circle"></i></li>
-                </a>
-                <a id="shopCart"  href="shopping.html"><span id="a_count" style="color:red;"></span>
-                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
                 </a>
             </ul>
         </nav>

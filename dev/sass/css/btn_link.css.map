@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../modules/btn_link.scss"
-    ],
-    "names": [],
-    "file": "btn_link.css"
-}
