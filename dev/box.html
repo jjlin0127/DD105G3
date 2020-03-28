@@ -12,9 +12,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script src="js/box.js"></script>
-    <script src="js/lightbox.js"></script>
+    
     <script src="js/shopping_cart01.js"></script>
-
+    <!-- <link rel="stylesheet" href="js/default.css"> -->
+    <script src="js/index.js"></script>
+    <!--optional import of scroll behaviour-->
+    <script src="js/scroll-behaviour.js"></script>
+    <script>
+        // options are optional ;)
+        MobileDragDrop.polyfill({
+            // use this to make use of the scroll behaviour
+            dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+        });
+    </script>
+    <script src="js/lightbox.js"></script>
 </head>
 <body id="box-body">
     <div class="popup">
@@ -47,7 +58,7 @@
         </div>
         <button name="close">我知道了</button>
     </div>
-    </div>
+    <!-- </div> -->
     @@include('layout/header.html',{
         "focus03" : "focus"
     })
@@ -154,20 +165,7 @@
         </div>
         
     </div>
-<<<<<<< HEAD
-    <!-- <div class="addCartAlert">
-        已加入購物車
-    </div> -->
-
-
-    <!-- <footer> 
-        <strong>Copyright &copy; 2020 Natural Sweet</srong>
-        <i class="fas fa-leaf"></i>
-    </footer> -->
-    @@include('./layout/footer.html');
-=======
     @@include('./layout/footer.html')
->>>>>>> dev
 </body>
 </html>
 

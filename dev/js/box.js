@@ -157,6 +157,7 @@ function doFirst(){
     dropAreas[i].addEventListener('dragover',dragover); //放置區域監聽dragover事件
     dropAreas[i].addEventListener('drop',drop);  //放置區域監聽drop事件
     dropAreas[i].addEventListener('dragleave',dragleave);  
+    dropAreas[i].addEventListener('dragenter',dragenter); 
 
     dropAreas[i].addEventListener('mouseenter', function wakeUp(e){ //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
       console.log('1234');
@@ -221,7 +222,9 @@ function dragstart(e){  //e.target代表圖片的DOM本身
 
 
 function dragover(e){
-  e.preventDefault();
+  e.preventDefault(); //設了才可以讓手機板圖片可以拖曳、被放在盒子上
+  // e.stopPropagation();
+
   e.target.style.opacity = "0.8";  //圖片移到盒子上，盒子就變透明
    //新增加的元素可以直接被事件觸發，透過for迴圈去抓元素的方式不行
   if (e.target.classList.contains("drag_img") == true) {//contains一個droped_img使
@@ -231,10 +234,17 @@ function dragover(e){
 
 function dragleave(e){
   e.target.style.opacity = "1"; //離開盒子，盒子透明度就恢復正常
+  // e.stopPropagation();
+}
+
+function dragenter(e){
+  e.preventDefault(); //設了才可以讓手機板圖片可以拖曳、被放在盒子上
+  // e.stopPropagation();
 }
 
 function drop(e){  //e.target代表放置區域的DOM本身
   e.preventDefault();
+  // e.stopPropagation();
 
   if (e.dataTransfer.getData('text') == "onSurface"){ //要是圖片是本來就在盒子上的，就執行這段
     let x = e.offsetX;
