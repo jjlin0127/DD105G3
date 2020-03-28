@@ -47,7 +47,7 @@ $product_review->execute();
 <body>
     <!-- ↓↓↓ 導覽列 -->
     <script src="./js/hamburger.js"></script>
-<script src="./js/login.js"></script>
+    <script src="./js/login_common.js"></script>
 <header>
     <div class="header__container">
         <span class="logo">
