@@ -7,6 +7,7 @@
 @import '../../modules/button';
 @import '../../modules/rwd';
 @import '../../modules/lightbox';
+@import'../../page/index/index_quiz';
 body {
     box-sizing: border-box;
     background: url('../../../images/cusFruits/full_bg.png');
@@ -32,6 +33,10 @@ body {
             width: 31%;
         }
     }
+}
+
+.popup2 {
+    @include popup;
 }
 
 //--------
