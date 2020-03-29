@@ -8,6 +8,7 @@
 @import '../../mixin/titleStyle';
 @import '../../mixin/bgc_img';
 @import '../../modules/button';
+@import '../../modules/rwd';
 
 body {
     box-sizing: border-box;
@@ -15,6 +16,7 @@ body {
     color: $indexFontColor;
     @include bgc_img(index_bgc_nightblue2);
     background-size: cover;
+    font-family: $fontFamily;
 }
 
 .wrap {
@@ -51,6 +53,16 @@ h4 {
 h5 {
     font-size: 1.15rem;
     color: $indexTitleFontColor;
+}
+
+// -------手機版----------------------------------------
+@include respond(phone) {
+    //手機都寫在裡面
+    section {
+        width: 100%;
+        // border: 1px solid gray;
+        overflow: hidden;
+    }
 }
 
 

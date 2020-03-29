@@ -1,9 +1,9 @@
-<h2 class="cust_title">
+<h2 class="cust_title wow bounce">
     <img src="./images/index/leaf6.svg" class="leafLeft">
     <img src="./images/index/leaf5.svg" class="leafRight"> 果甘自由配
 </h2>
 
-<div class="contain">
+<div class="contain cust_contain_off">
     <h3>不想總是一成不變嗎？
         <br>歡迎來到果甘自由配^0^
     </h3>
@@ -219,36 +219,131 @@
         </div>
     </div>
     <div class="cust_platform"></div>
-    <button class="cust_more">開始自由配→</button>
+    <button class="cust_more wow jackInTheBox">開始自由配→</button>
 </div>
 
 
 <!-- ------行動版--------------------------------------- -->
-<div class="cust_phone_contain">
-    <div class="cust_p_content"></div>
-    <div class="qna_p_contain">
-        <div>
-            <div>
-                <h2 class="qna_p_title">
-                    Ｑ＆Ａ
-                </h2>
-                <h3>讓天然甘Ｑ＆Ａ給您適合的建議吧！</h3>
+<!-- ------行動版Tab----------------------------- -->
+<div class="cust_phone_h3">
+<h3>歡迎來到自由配</h3>
+<br>
+<h3>自由選擇，不受限</h3>
+<br>
+<br>
+</div>
+<div class="cust_phone_wrap">
+<div class="cust_wphone_content">
+    <label class="tab wow bounceInLeft" for="tab-starfruit">楊桃甘</label>
+    <label class="tab wow bounceInDown" for="tab-pineapple">鳳梨甘</label>
+    <label class="tab wow bounceInUp" for="tab-dragonfruit">火龍果甘</label>
+    <label class="tab wow bounceInRight" for="tab-banana">香蕉甘</label>
+    
+    <input type="radio" name="tabs" id="tab-starfruit">
+    <input type="radio" name="tabs" id="tab-pineapple">
+    <input type="radio" name="tabs" id="tab-dragonfruit">
+    <input type="radio" name="tabs" id="tab-banana">
+  
+    <div class="cube wow swing">
+      <div class="tab-content">
+        <h1>楊桃甘</h1>
+        <p>楊桃富含豐富的檸檬酸、草酸、蘋果酸等元素能有效的提高胃液的酸度，從而快速促進食物的消化已達到和健胃消食的作用。胸悶欲嘔、消化不良、腹脹打嗝，只要多吃楊桃，症狀便能逐漸減輕。</p>
+      </div>
+      <div class="tab-content">
+        <h1>鳳梨甘</h1>
+        <p>含有大部分人體中所需的維生素、礦物質，能有效幫助消化吸收，此外，鳳梨中的鳳梨酵素，能有效分解食物蛋白質，促進腸胃蠕動，幫助排便。</p>
+      </div>
+      <div class="tab-content">
+        <h1>火龍果甘</h1>
+        <p>火龍果有助於潤腸通便，還具有解除重金屬中毒、抗自由基等功效。</p>
+      </div>
+      <div class="tab-content">
+        <h1>香蕉甘</h1>
+        <p>有研究指出香蕉能有效降低腦部血管阻塞風險。研究回顧了從60年代開始的11個文獻後指出，每天三餐各吃一根香蕉，可有效降低腦部血管阻塞風險達21％。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ------行動版問答---------------------------->
+<div class="qna_contain qna_phone_contain">
+    <h2 class="cust_title_qna wow bounce"> Ｑ＆Ａ</h2>
+    <h3>不知道怎麼選</h3>
+    <br>
+    <h3>做個問答題吧</h3>
+    <br>
+    <div id="app" class="wow slideInLeft">
+        <!-- 進度 -->
+        <!-- <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" :style="{width:(progress*100/quiz.length)+'%'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+               {{progress}} / {{quiz.length}}
             </div>
-            <div class="qna_p_paper">
-                <div class="qna_p_paper_upper">
-                    <h5>Q : <span>喝咖啡、吃甜食，讓你胃食道逆流或摁摁不順暢嗎?</span></h5>
-                    <span> 1 / 6</span>
+        </div> -->
+        <!-- 題目 -->
+        <div v-if="progress < quiz.length">
+            <div class="quiz">
+                <div class="qustions">
+                    <h5>{{quiz[progress].question}}</h5>
                 </div>
-                <div class="qna_p_paper_lower">
-                    <span><input type="radio" name="q1">還好欸，我身強體壯</span>
-                    <span><input type="radio" name="q1">有一點，最近偶爾會這樣</span>
-                    <span><input type="radio" name="q1">每天都這樣....</span>
+                <div class="progressbar">
+                    <div class="progressbar text-center"
+                        style="background-color: green; margin: 0; color: white;"
+                        :style="{width:(progress*100/quiz.length)+'%'}">
+                        <!-- {{ progress }} -->
+                    </div>
                 </div>
-                <div class="qna_p_paper_buttons">
-                    <button type="submit">上一題</button>
-                    <button type="submit">下一題</button>
+                <hr>
+                <!-- 選項 -->
+                <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="option" v-model="answer"
+                            :value="optionsValue[index]">
+                        <span class="quizOption">
+                            {{optionsValue[index]}}
+                        </span>
+                        <span class="quizText">
+                            {{item}}
+                        </span>
+                    </label>
+                </div>
+
+                <!-- 按鈕 -->
+                <div class="button-row">
+                    <div>
+                        <button v-if="progress===0" @click="prev()" type="button" class="btn-prev"
+                            disabled>上一題</button>
+                        <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
+                    </div>
+                    <div>
+                        <button v-if="answer===''" @click="next()" type="button" class="btn-next"
+                            disabled>下一題</button>
+                        <button v-else @click="next()" type="button" class="btn-next">下一題</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <div>
+                <div class="recommend">
+                    <h3>已完成測驗</h3>
+                    <h2>推薦您 {{recommend}} 的組合</h2>
+                </div>
+                <hr>
+                <div class="button-row">
+                    <div>
+                        <button @click="back()" type="button" class="btn-back">重作測驗</button>
+                    </div>
+                    <div>
+                        <button @click="refreshto(url)" type="button" class="btn-go">前往自由配</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- ------行動版按鈕---------------------------->
+<div class="cust_pbtn_more">
+    <button class="cust_more cust_pbtn wow jackInTheBox">開始自由配→</button>
 </div>

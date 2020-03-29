@@ -68,9 +68,9 @@ table.prod_leaderboard {
     div.prod_introduce {
       // border: 1px solid green;
       position: absolute;
-      top: 60px;
-      width: 60%;
-      left: 80px;
+      top: 50px;
+      width: 55%;
+      left: 90px;
 
       display: flex;
       flex-direction: column;
@@ -102,11 +102,12 @@ table.prod_leaderboard {
         color: $indexSecFontColor;
 
         p {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
+          margin-bottom: 0px;
         }
 
         span {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
         }
 
         img {
@@ -147,6 +148,7 @@ table.prod_leaderboard {
 .prod_btn {
   @include btn_link(170px);
   margin: 50 auto;
+  text-decoration: none;
 }
 
 .card {
@@ -171,6 +173,10 @@ table.prod_leaderboard {
   }
 
   .prod_leaderboard {
+    display: none;
+  }
+
+  .prod_btn {
     display: none;
   }
 
@@ -303,11 +309,6 @@ table.prod_leaderboard {
     animation: ripple 2s;
   }
 
-  .prod_phone_btn {
-    @include btn_link(170px);
-    margin: 50 auto;
-  }
-
   @-webkit-keyframes ripple {
     0% {
       -webkit-transform: scale(0);
@@ -335,22 +336,23 @@ table.prod_leaderboard {
       opacity: 0;
     }
   }
-
+  .prod_phone_btn {
+    @include btn_link(170px);
+    left: 28%;
+  }
 }
 
 //氣球動畫
 @keyframes ball {
   0% {
-
     transform: translateY(-100px);
     opacity: 0.5;
-
   }
 
   100% {
     opacity: 1;
-    transform: translateY(100px) scale(1.5);
-   
-
+    transform: translateY(100px) 
+               scale(1.5);
   }
 }
+
