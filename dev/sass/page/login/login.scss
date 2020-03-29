@@ -163,7 +163,7 @@ body {
                 }
             }
             button {
-                margin-top: 102px;
+                margin-top: 209px;
             }
         }
     }
@@ -179,6 +179,12 @@ body {
             button {
                 margin-top: 29px;
             }
+        }
+        form{
+           button{
+            position: relative;
+            top: 18px;   
+           } 
         }
     }
     button {

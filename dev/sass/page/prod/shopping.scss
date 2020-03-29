@@ -57,6 +57,7 @@ table{
         width:90%;
         margin-top: 10%;
         margin-left: 10%;
+        min-width: 70px;
       }
       h3{
         line-height: 1.8;
@@ -76,16 +77,20 @@ table{
 }
 
 
-button.count{
-    width:40px;
-    background-color:#CCCBCF;
-    padding: 5px 10px; 
-}
+
 
 .shopping_sum{
     button{
         margin: 20px;
+        text-align: center;
     }
+    h4{
+      text-align: center;
+    }
+}
+
+button{
+  
 }
 
 //以下的.grey_btn是複製政儒的 cancel_btn
@@ -354,6 +359,44 @@ button.count{
       text-indent: 0;
     }
   
+  //↓↓↓和登入會員有關
+.alertBox {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  color: white;
+  //background-color: hotpink;
+  background-color: firebrick;
+  box-shadow:2px 2px 5px rgba(178, 34, 34, 0.75);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 4;
+  transition: all 0.3s linear; }
+
+.alertBox.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear; }
+
+#close_alert_btn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.3s; }
+
+#close_alert_btn:hover {
+  color: black; }
+
+
   @import "../../modules/rwd";
   @import "../../page/forum/ipadpro";
   @import "../../page/forum/ipad";

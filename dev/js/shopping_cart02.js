@@ -1,10 +1,19 @@
 var storage = sessionStorage;
 //var storage = localStorage;
+let cartItems = [];
 function doFirst(){
     let itemString = storage.getItem('addItemList');
     let items = itemString.substr(0,itemString.length -2).split(', ');
     console.log(items); //["A1001", "A1006", "A1005", "A1002"]
-
+    console.log("------------1");
+    //-----------
+    for(let i=0; i<items.length; i++){
+        console.log(i, ":", items[i].substr(6));
+        cartItems[i] = {};
+        cartItems[i].prodNo = items[i].substr(6);
+    }
+    console.log("------------2");
+    //-------------
     //newDiv = document.createElement('div'); 
     newTable = document.createElement('table');
     //老師是將table放進div，再將div放進cartList裡；我這邊是直接把newTable放進cartList裡面
@@ -18,9 +27,43 @@ function doFirst(){
         createCartList(items[key],itemInfo);
 
         let itemPrice = parseInt(itemInfo.split('|')[2]);
+        cartItems[key].price = itemPrice;
         total += itemPrice;
     }
     document.getElementById('total').innerText = total;
+
+    //...................btnSendOrder
+    document.getElementById("btnSendOrder").onclick = function(e){
+        alert("buy")
+        //-----------get all input
+        let qtys = document.getElementsByName("qty");
+        for(let i=0; i<qtys.length; i++){
+            cartItems[i].qty = qtys[i].value;
+        }
+
+        //--------------------send data to server
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            alert(xhr.responseText);
+            if( xhr.responseText.indexOf("OK")!=-1){ //OK
+                storage.clear();
+                document.getElementById("cartList").innerHTML = "";
+                document.getElementsByClassName("sum")[0].innerHTML = "";
+                document.getElementById("btnSendOrder").style.display ="none";
+                alert("天然甘感謝您的購買！");
+            }else{
+                alert("請登入會員");
+            }
+        }
+
+        let cartStr = JSON.stringify(cartItems);
+        let url = "php/putOrder.php?cartItems=" + cartStr + "&total=" + document.getElementById("total").innerText;
+        console.log("cart : ", url);
+        xhr.open("get", url, true);
+        xhr.send(null);
+
+    }
+
 }
 function createCartList(itemId,itemValue){
     //alert(`${itemId} : ${itemValue}`);
@@ -77,6 +120,7 @@ function createCartList(itemId,itemValue){
     itemCount.type = 'number';
     itemCount.value = 1;
     itemCount.min = 1;
+    itemCount.name="qty";
     
     let pSubtotal = document.createElement('p');
     pSubtotal.className = 'p_subtotal';
@@ -92,24 +136,17 @@ function createCartList(itemId,itemValue){
     let tdButton = document.createElement('td');
     tdButton.className = 'td_button';
 
-    let cashButton = document.createElement('button');
-    cashButton.innerText = '單筆結帳';
-    cashButton.className = 'orange_btn';
-    let cashIcon = document.createElement('img');
-    //cashIcon.src = 'images/prdt/icon/shopping_cart.svg';
-    // cashIcon.style.width = '30px';
-    // cashIcon.className = 'icon';
+    // let cashButton = document.createElement('button');
+    // cashButton.innerText = '單筆結帳';
+    // cashButton.className = 'orange_btn';
 
     let delButton = document.createElement('button');
     delButton.innerText = '單筆刪除';
     delButton.className = 'grey_btn';
     delButton.addEventListener('click', deleteItem);
     let delIcon = document.createElement('img');
-    // delIcon.src = 'images/prdt/icon/icon_remove.svg';
-    // delIcon.style.width = '30px';
-    // delIcon.className = 'icon';
 
-    tdButton.appendChild(cashButton);
+   // tdButton.appendChild(cashButton);
     //tdButton.appendChild(cashIcon);
     tdButton.appendChild(delButton);
     //tdButton.appendChild(delIcon);
