@@ -372,9 +372,9 @@ try {
     </footer> 
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/all.js"></script>
+    <script src="./js/vendor/all.js"></script>
     <script src="./js/hamburger.js"></script>
     <script src="./js/login_common.js"></script>
-    <script src="./js/forum_article.js"></script>
+    <script src="./js/forum/forum_article.js"></script>
 </body>
 </html>

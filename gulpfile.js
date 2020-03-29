@@ -54,7 +54,7 @@ var options = {
 
 //流程
 gulp.task('concatjs', function() {
-    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'));
+    gulp.src(['dev/js/*.js','dev/js/**/*.js']).pipe(gulp.dest('dest/js'));
 });
 
 gulp.task('concatphp', function() {
