@@ -208,29 +208,88 @@ span {
                     }
                 }
             }
-            .qna_title {
-                @include indexQaTitle(3px, 10px);
-                margin: 0px auto;
-                color: #D35D3D;
-            }
-            .qna_contain {
-                display: flex;
-                margin: 30px 200px 0px 0px;
-                line-height: 1.5;
-                #app{
-                    min-width: 375px;
-                    max-width: 485px;
-                    .qna_paper{
-                        border-radius: 20px;
-                        border: 4px solid #CEA45A;
-                        background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-                    }   
-                    label{
-                        color: #91664E;
-                    }
-
+            // .qna_title {
+            //     @include indexQaTitle(3px, 10px);
+            //     margin: 0px auto;
+            //     color: #D35D3D;
+            // }
+            #app {
+                width: 480px;
+                background-color: antiquewhite;
+                border: 5px solid peru;
+                border-radius: 25px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+                padding: 15px;
+                color: $color;
+                font-size: 1.2rem;
+                .progressbar {
+                  width: 100%;
+                  height: 8px;
+                  background-color: #eee;
+                  margin: 0.8em auto;
+                  transition: width 500ms;
+                  border-radius: 10px;
                 }
-            }
+              }
+              
+              .qustions,
+              .recommend {
+                height: 120px;
+                background: #add0c9;
+                h5 {
+                  color: #8a5b41;
+                  padding: 10px;
+                }
+              }
+              
+              .recommend {
+                text-align: center;
+              }
+              
+              .quizOptions {
+                height: 50px;
+                margin: 10px 0;
+                vertical-align: middle;
+                .form-check-label {
+                  display: flex;
+                  align-items: baseline;
+                  .quizText {
+                    margin: 0px 0px 0px 5px;
+                    width: 85%;
+                    display: inline-flex;
+                  }
+                }
+              }
+              
+              .quizOption {
+                line-height: 1rem;
+                background: #a8d4d5;
+                border-radius: 100%;
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+                display: inline-block;
+              }
+              
+              .button-row {
+                display: flex;
+                justify-content: space-around;
+                margin: 15px;
+              }
+              
+              .btn-next,
+              .btn-go {
+                @include btn_primary(150px);
+                display: block;
+                margin: 15px;
+              }
+              
+              .btn-prev,
+              .btn-back {
+                @include btn_secondary(150px);
+                display: block;
+                margin: 15px;
+              }
         }
     }
     .cust_platform {
@@ -252,7 +311,21 @@ span {
     }
 }
 
-.qna_p_contain {
+
+// ------滿版none------------------------------------
+.cust_phone_wrap {
+    display: none;
+}
+
+.qna_phone_contain {
+    display: none;
+}
+
+.cust_pbtn_more{
+    display: none;
+}
+
+.cust_phone_h3 {
     display: none;
 }
 
@@ -266,80 +339,269 @@ span {
       
       .cust_contain_off {
           display: none;
-      } 
-      
-      .cust_phone_contain {
-          display: block;
-        
-          .qna_p_title {
-            @include indexQaTitle(3px, 10px);
-            width: 100px;
-            margin: 0px auto;
-            color: #D35D3D;
-        }
-    
-        .qna_p_contain {
-            display: block;
-            width: 100%;
-            display: flex;
-            margin: 0 auto;
-            line-height: 1.5;
+      }
 
-            h3 {
-                font-size: 1.25rem;
+
+      .cust_phone_wrap {
+        // border: 1px solid red;
+        display: block;
+        width: 100%;
+        margin-top: 100px;
+      }
+    
+      .qna_p_title {
+        @include indexQaTitle(3px, 10px);
+        width: 100px;
+        margin: 0px auto;
+        color: #D35D3D;
+        }
+
+        .cust_wphone_content {
+            // border: 1px solid;
+            perspective: 200rem;
+            perspective-origin: 50% 90%;
+          width: 100%;
+          margin: 90px auto;
+          color: #fff;
+          text-align: center;
+        }
+        input {
+          display: none;
+        }
+        .tab {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          border-radius: 50%;
+          color: #575454;
+          
+          &:nth-child(1) { 
+            top: -130px;
+            left: 10px;
+            background: #06D6A0;
+            background-image: url('../../../images/cusFruits/wheel_plate.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+          &:nth-child(2) {
+            top: -130px;
+            left: 98px;
+            background: #1B9AAA;
+            background-image: url('../../../images/cusFruits/wheel_plate.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+          &:nth-child(3) {
+            top: -130px;
+            left: 190px;
+            background: #EF476F;
+            background-image: url('../../../images/cusFruits/wheel_plate.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+          &:nth-child(4) {
+            top: -130px;
+            left: 280px;
+            background: #efb447;
+            background-image: url('../../../images/cusFruits/wheel_plate.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+        
+        .cube {
+          // border: 1px solid blue;
+          position: relative;
+          margin: 60px auto 0;
+          width: 300px;
+          height: 200px;
+          color: #000;
+          transform-origin: 0 100px;
+          transform-style: preserve-3d;
+          transition: transform 0.5s ease-in;
+        }
+        .tab-content {
+          width: 300px;
+          height: 200px;
+          position: absolute;
+          
+          h1 {
+            font-size: 25px;
+            margin: 20px 0 10px;
+            font-weight: 300;
+            color: #000;
+          }
+          p {
+            font-size: 1rem;
+          }
+      
+      
+          &:nth-child(1) {
+              transform: rotateX(-270deg)
+                         translateY(-100px);
+              transform-origin: top left;
+            //   background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+              background-image: url('../../../images/index/index_addPics/index_starfruit6.JPG');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+            }
+          &:nth-child(2) {
+              transform: translateZ(100px);
+            // background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+              background-image: url('../../../images/index/index_addPics/index_pineapple3.JPG');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+            }
+          &:nth-child(3) {
+              transform: rotateX(-90deg)
+                         translateY(100px);
+              transform-origin: bottom center;
+            //   background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+              background-image: url('../../../images/index/index_addPics/index_dragonfruit3.JPG');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+            } 
+          &:nth-child(4) {
+              transform: rotateX(180deg)
+                         translateZ(100px);
+            //   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background-image: url('../../../images/index/index_addPics/index_banana5.JPG');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          } 
+        }
+        
+        #tab-starfruit:checked ~ .cube {
+          transform: rotateX(-90deg);
+        }
+        #tab-pineapple:checked ~ .cube {
+          transform: rotateX(0deg);
+        }
+        #tab-dragonfruit:checked ~ .cube {
+          transform: rotateX(90deg);
+        }
+        #tab-banana:checked ~ .cube {
+          transform: rotateX(180deg);
+        }
+
+//-------行動版問答--------------------------------
+        .qna_phone_contain {
+            display: block;
+            // border: 1px solid blue;
+            width: 375px;
+            
+            .cust_title_qna {
+                border: 3px solid #af7342;
+                width: 40%;
+                height: 50px;
+                line-height: 28px;
+                border-radius: 10px;
+                background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+                margin: 0px auto;
+                margin-bottom: 30px;
+                padding: 5px;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            #app {
+                width: 95%;
+                background: rgba(255, 255, 255, .1);
+                border: 2px solid #CEA45A;
+                border-radius: 25px;
+                padding: 15px;
+                margin: 0 auto;
+                color: $color;
+                font-size: 1.2rem;
+                .progressbar {
+                  width: 100%;
+                  height: 8px;
+                  background-color: #eee;
+                  margin: 0.8em auto;
+                  transition: width 500ms;
+                  border-radius: 10px;
+                }
+              }
+              
+              .qustions,
+              .recommend {
+                height: 120px;
+                background: #add0c9;
+                h5 {
+                  color: #8a5b41;
+                  padding: 10px;
+                }
+              }
+              
+              .recommend {
                 text-align: center;
               }
-
-            .title_p_page {
-                @include title(3px,
-                dotted,
-                #a6c165,
-                10px,
-                #fff);
-                height: 55px;
-                margin: 0px 30px;
-
-                // h2 {
-                //     font-size: 1rem;
-                // }
-            }
-            .qna_p_paper {
-                width: 90%;
-                height: 350px;
-                margin: 0 auto;
-                margin-top: 15px;
-                margin-bottom: 50px;
-                border-radius: 20px;
-                border: 4px solid #CEA45A;
-                // background: #fff;
-                background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    
-    
-                .qna_p_paper_upper {
-                    margin: 30px;
-                    display: flex;
-                    justify-content: space-between;
+              
+              .quizOptions {
+                height: 50px;
+                margin: 10px 0;
+                vertical-align: middle;
+                .form-check-label {
+                  display: flex;
+                  align-items: baseline;
+                  .quizText {
+                    margin: 0px 0px 0px 5px;
+                    width: 85%;
+                    display: inline-flex;
+                  }
                 }
-                .qna_p_paper_lower {
-                    margin-top: 100px;
-                    margin: 30px;
-                    
-                    span {
-                        display: block;
-                        margin: 30px;
-                        color: #000;
-                    }
-                }
-                .qna_p_paper_buttons {
-                    display: flex;
-                    justify-content: center;
-                    button {
-                        font-family: Noto, Genjyuu;
-                        margin: 0 10px;
-                        @include btn_primary(100px);
-                    }
-                }
-            }
+              }
+              
+              .quizOption {
+                line-height: 1rem;
+                background: #a8d4d5;
+                border-radius: 100%;
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+                display: inline-block;
+              }
+              
+              .button-row {
+                display: flex;
+                justify-content: space-around;
+                margin: 15px;
+              }
+              
+              .btn-next,
+              .btn-go {
+                @include btn_primary(150px);
+                display: block;
+                margin: 15px;
+              }
+              
+              .btn-prev,
+              .btn-back {
+                @include btn_secondary(150px);
+                display: block;
+                margin: 15px;
+              }
+            
         }
+
+        .cust_pbtn_more {
+            display: block;
+            margin-top: 225px;
+        }
+
+        .cust_pbtn {
+            margin: 30px auto;
+            margin-bottom: 100px;
+            @include btn_link(170px);
+        }
+
     }
-}
