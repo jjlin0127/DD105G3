@@ -10,3 +10,7 @@
     background-image: url('../../../images/bgc/#{$url_files}.svg');
 }
 
+@mixin index_cust_bgc_png($url_files) {
+    background-image: url('../../images/cusFruits/{$url_files}.png');
+}
+
