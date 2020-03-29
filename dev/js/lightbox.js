@@ -28,4 +28,7 @@ function popupOpenClose(popup) {
 
 $(document).ready(function() {
     popupOpenClose($(".popup"));
+    // $('.linktoqna').click(function(){
+    //     popupOpenClose($(".popup2"))
+    // });
 });
