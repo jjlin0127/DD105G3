@@ -75,15 +75,21 @@ h3.under_carousel{
 }
 
 div.text_oncard{
+  //border:1px solid green;
+  margin: 0 auto;
+  margin-top: 10px;
   padding: 0px 20px;
 	font-size: 18px;
   line-height: 1.4;
-  span.name{
-    margin-right: 20px;
+  a{
+    color:#87553A;
   }
-  span{
-    font-size:22px;
+  h5{
+    text-align: center;
+    line-height: 0.5;
+    font-size: 1.3rem;
   }
+
   img.icon{
     width:30px;
     position: relative;
@@ -100,7 +106,7 @@ ul.wrapper_cards{
   box-sizing: border-box;
   display:flex;   /*每個商品卡並排*/
   flex-wrap:wrap; 
-  justify-content: space-around;
+  justify-content:space-around;
 }
 
 li.cards{
@@ -110,7 +116,7 @@ li.cards{
   border:3px solid #e08c34;
   border-radius: 20px;
   background-color: white;
-  margin: 20px 0px;
+  margin: 20px 10px;
   padding: 10px;
   overflow: hidden;
   position: relative;
@@ -126,10 +132,10 @@ img.fresh_fruit{
 }
 
 img.dried_fruit{
-  // border: 1px solid red;
+  //border: 1px solid red;
   width:50%;
   position: absolute;
-  bottom: 20%;
+  bottom: 35%;
   left:0%;
 }
 
@@ -148,6 +154,7 @@ div.pic_rada{
   transition: all 0.4s ease 0.1s;
   h4{
     margin-bottom: 10px;
+    text-align: center;
     color:white;
   }
   p{
@@ -385,10 +392,8 @@ div.fresh_fruit:hover img.dried_fruit{
   text-indent: 0;
 }
 
+
 //另類方法生產
-.link_btn {
-  text-align: center;
-}  
 
 .link_btn {
   display: block;
@@ -451,6 +456,9 @@ div.fresh_fruit:hover img.dried_fruit{
     text-indent: 0;
   }
 
+  h5.align_center{
+    text-align:center;
+  }
 /*購物車上方的紅色數字*/
   div.newItem{
     border: 1px solid red;

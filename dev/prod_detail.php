@@ -189,12 +189,6 @@ $product_review->execute();
             <p class="introduce" style="line-height: 1.4;">基本介紹：<?php echo $prodRow->prodDesc;?></p>
             <div class="buy">
                 <h4>售價:<span class="price_label"><?php echo $prodRow->prodPrice;?></span></h4>
-                <!-- <div class="quantity">
-                    <h4>數量:</h4>
-                    <button class="count" id="minus">-</button>
-                    <div calss="amount" id="howmany">1</div>
-                    <button class="count" id="add">+</button>
-                </div> -->
                 <div class="purchase">
                     <button class="green_btn shopping_cart_btn putin" id="putin_<?php echo $prodRow->prodNo;?>"> 
                         放入購物車
@@ -206,36 +200,36 @@ $product_review->execute();
                     <label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
                     </label>
                     <br>
-                    <button class="orange_btn buyit" id="buyit">直接購買</button><label for="buyit"><img src="images/prdt/icon/icon_money.svg"  class="purchase_icon"></label>
+                    <div id="newItem" style="visibility: hidden;">
+                        <div id="content">
+                            項目數量：<span id="itemCount">0</span>
+                            <br>
+                            總金額：$<span id="subtotal">0</span>
+                        </div>
+                    </div>
                 </div><!--div.purchase的結尾標籤-->
             </div>  <!--div.buy的結尾標籤-->
+            <table class="previous_and_next">
+                <tr>
+                    <td>
+                        <h4>
+                            <a href="prod_detail.php?prodNo=<?=$prodNo-1?>" class="a_previous_and_next">
+                                <img src="images/prdt/icon/icon_previous.svg">上一筆產品
+                            </a>
+                        </h4>
+                    </td>
+                    <td class="prod_next">
+                        <h4>
+                            <a href="prod_detail.php?prodNo=<?=$prodNo+1?>" class="a_previous_and_next">下一筆產品
+                                <img src="images/prdt/icon/icon_next.svg">
+                            </a>
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </div>  <!--prdt_text的結尾標籤-->
-        <table class="previous_and_next">
-            <tr>
-                <td>
-                    <h4>
-                    <!-- <a href="prod_detail.php?prodNo=<?php $prodNo-1?> "> -->
-                        <a href="#" class="a_previous_and_next">
-                            <img src="images/prdt/icon/icon_previous.svg">上一筆產品
-                        </a>
-                    </h4>
-                </td>
-                <td class="prod_next">
-                    <h4>
-                        <a href="#" class="a_previous_and_next">下一筆產品
-                            <img src="images/prdt/icon/icon_next.svg">
-                        </a>
-                    </h4>
-                </td>
-            </tr>
-        </table>
-        <div id="newItem">
-            <div id="content">
-                項目數量：<span id="itemCount">0</span>
-                <br>
-                總金額：$<span id="subtotal">0</span>
-            </div>
-        </div>
+        
+
     </div> <!--第一個 div.detail_wrapper的結尾標籤-->
 
     <div class="detail_wrapper">
@@ -274,69 +268,15 @@ $product_review->execute();
                     <?=$product_reviewRow["prodMsg"]?></div>
                     <div class="each_comment">
                         <img src="images/prdt/icon/stars_<?=$product_reviewRow["prodscore"];?>.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
+                        <!-- <button class="accuse" title="我想檢舉這篇留言">
                             檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
+                        </button> -->
                     </div>
                 </li>
             <?php  
                 };
             ?> 
-                <!-- <li>
-                    <div>Eric0101於  2020.02.20  23:40 發表評價：還有客製化禮盒，這個我最喜歡的。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div>Hellen1001於  2020.02.16  13:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div>Peggy1001於  2020.02.26  23:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div>Ted1001於  2020.02.24  08:10 發表評價：我覺得這款果甘不錯吃，但分量有點太少。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div>Eric0101於  2020.02.20  23:40 發表評價：還有客製化禮盒，這個我最喜歡的。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <div>Hellen1001於  2020.02.16  13:40 發表評價：我覺得這款果甘不錯吃，有點甜，又不會太甜，下次還會再買。</div>
-                    <div class="each_comment">
-                        <img src="images/prdt/icon/five_stars.svg" class="stars">
-                        <button class="accuse" title="我想檢舉這篇留言">
-                            檢舉<img src="images/prdt/icon/icon_accuse.svg" class="accuse_icon">
-                        </button>
-                    </div>
-                </li> -->
-
+            
             </ul>  <!--ul.prdt_comment的結尾標籤-->
         <!--</div>--> <!--see_comment的結尾標籤-->
     </div> <!--detail_wrapper的結尾標籤-->

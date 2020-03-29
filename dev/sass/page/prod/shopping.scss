@@ -57,6 +57,7 @@ table{
         width:90%;
         margin-top: 10%;
         margin-left: 10%;
+        min-width: 70px;
       }
       h3{
         line-height: 1.8;
@@ -76,16 +77,20 @@ table{
 }
 
 
-button.count{
-    width:40px;
-    background-color:#CCCBCF;
-    padding: 5px 10px; 
-}
+
 
 .shopping_sum{
     button{
         margin: 20px;
+        text-align: center;
     }
+    h4{
+      text-align: center;
+    }
+}
+
+button{
+  
 }
 
 //以下的.grey_btn是複製政儒的 cancel_btn

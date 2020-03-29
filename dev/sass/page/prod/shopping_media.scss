@@ -32,12 +32,14 @@
         }
         td{
             width:160px;
+            h3{
+                line-height: 1.3;
+              }
             img{
                 width:90%;
             }
             .icon{
                 display: none;
-                border: 1px solid hotpink;
             }
         }
     }
@@ -45,6 +47,12 @@
 }
 
 @media all and (max-width: 680px){
+    h3{
+        font-size: 1.75rem;
+    }
+    h4{
+        font-size:1.25rem;
+    }
 }
 
 
@@ -72,16 +80,26 @@
             }
         }
     }
-    
-    // .quantity{
-    //     margin: 5px;
-    //     h3{
-    //         font-size:1.3rem;
-    //         margin: 0px;
-    //         display:block;
-    //     }
-    // }
+    h3{
+        font-size: 1.25rem;
+    }
 
+    h4{
+        font-size: 1.0rem;
+    }
+
+    //以下的.grey_btn是複製政儒的 cancel_btn
+
+  
+  .grey_btn{
+    padding: 10px 0px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 1.0rem;
+    width: 40px;
+    min-width: 40px;
+  }
+  
 }
 
 @media all and (max-width: 480px){
