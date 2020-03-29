@@ -1,0 +1,74 @@
+<style>
+    .progressbar {
+        width: 100%;
+        height: 5px;
+        background-color: #eee;
+        margin: 1em auto;
+        transition: width 500ms;
+    }
+</style>
+<div class="qna_contain">
+    <div id="app">
+        <!-- 進度 -->
+        <!-- <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" :style="{width:(progress*100/quiz.length)+'%'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+               {{progress}} / {{quiz.length}}
+            </div>
+        </div> -->
+        <!-- 題目 -->
+        <div v-if="progress < quiz.length">
+            <div class="quiz">
+                <div class="qustions">
+                    <h5>{{quiz[progress].question}}</h5>
+                </div>
+                <div class="progressbar">
+                    <div class="progressbar text-center" style="background-color: green; margin: 0; color: white;"
+                    :style="{width:(progress*100/quiz.length)+'%'}">
+                        {{ progress }}
+                    </div>
+                </div>
+                <hr>
+                <!-- 選項 -->
+                <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="option" v-model="answer"
+                            :value="optionsValue[index]">
+                        <span class="quizOption">
+                            {{optionsValue[index]}}
+                        </span>
+                        {{item}}
+                    </label>
+                </div>
+
+                <!-- 按鈕 -->
+                <div class="button-row">
+                    <div>
+                        <button v-if="progress===0" @click="prev()" type="button" class="btn-prev" disabled>上一題</button>
+                        <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
+                    </div>
+                    <div>
+                        <button v-if="answer===''" @click="next()" type="button" class="btn-next" disabled>下一題</button>
+                        <button v-else @click="next()" type="button" class="btn-next">下一題</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <div>
+                <div class="recommend">
+                    <h3>已完成測驗</h3>
+                    <h2>推薦您 {{recommend}} 的組合</h2>
+                </div>
+                <hr>
+                <div class="button-row">
+                    <div>
+                        <button @click="back()" type="button" class="btn-back">重作測驗</button>
+                    </div>
+                    <div>
+                        <button @click="refreshto(url)" type="button" class="btn-go">前往自由配</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

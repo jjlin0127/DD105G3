@@ -22,7 +22,11 @@
 /* -- 客製果甘------------------------------------ -- */
 
 @import '../../page/index/index_felix.scss';
+@import '../../page/index/index_quiz';
 
 /* -- 果甘話區------------------------------------ -- */
 
 @import '../../page/index/index_jerry.scss';
+
+// loading效果
+@import'../../layout/loading.scss';

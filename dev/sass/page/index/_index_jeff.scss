@@ -1,11 +1,11 @@
 // Jeff的首頁-----------------------------------------
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
+// @import '../../base/reset';
+// @import '../../base/variable';
+// @import '../../base/fontSetting';
+// @import '../../layout/header';
+// @import '../../layout/footer';
+// @import '../../mixin/titleStyle';
+// @import '../../modules/button';
 
 * {
     box-sizing: border-box;
@@ -26,9 +26,9 @@ section {
 .happy {
     width: 260px;
     position: absolute;
-    top:40%;
+    top:30%;
     left: 10%;
-    z-index: 100;
+    z-index: 9999;
 
 
 }
@@ -137,7 +137,7 @@ section {
     }
 
     .about_btn {
-        @include btn_link(120px);
+        @include btn_link(150px);
         margin: 50px auto;
     }
 

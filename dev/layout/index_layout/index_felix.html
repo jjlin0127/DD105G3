@@ -8,8 +8,8 @@
         <br>歡迎來客製果甘^0^
     </h3>
     <div class="cust_qna_contain">
-        <div class="cust_contain">
-            <div class="cust_wheelset">
+        <div class="cust_contain cust_contain_off">
+            <div class="cust_wheelset wow slideInLeft">
                 <div class="cust_wheelstick"></div>
                 <ul class="cust_wheel" id="tabs">
                     <div class="item1 item">
@@ -132,55 +132,69 @@
             </div>
         </div>
         <div class="qna_contain">
-            <div id="app" class="container">
+            <div id="app">
                 <!-- 進度 -->
-                <div class="progress">
+                <!-- <div class="progress">
                     <div class="progress-bar bg-warning" role="progressbar" :style="{width:(progress*100/quiz.length)+'%'}" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                        {{progress}} / {{quiz.length}}
                     </div>
-                </div>
+                </div> -->
                 <!-- 題目 -->
-                <div v-if="progress < quiz.length" class="jumbotron jumbotron-fluid mt-3 qna_paper">
-                    <div class="container">
-                        <h5 class="dislay-4">{{quiz[progress].question}}</h5>
-                        <hr class="my-2">
+                <div v-if="progress < quiz.length">
+                    <div class="quiz">
+                        <div class="qustions">
+                            <h5>{{quiz[progress].question}}</h5>
+                        </div>
+                        <div class="progressbar">
+                            <div class="progressbar text-center"
+                                style="background-color: green; margin: 0; color: white;"
+                                :style="{width:(progress*100/quiz.length)+'%'}">
+                                <!-- {{ progress }} -->
+                            </div>
+                        </div>
+                        <hr>
                         <!-- 選項 -->
-                        <div v-for="(item, index) in quiz[progress].options" :key="index" class="form-check my-3">
+                        <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="option" v-model="answer" :value="optionsValue[index]">
-                                <span class="badge badge-pill badge-primary mx-3">
+                                <input type="radio" class="form-check-input" name="option" v-model="answer"
+                                    :value="optionsValue[index]">
+                                <span class="quizOption">
                                     {{optionsValue[index]}}
                                 </span>
-                                {{item}}
+                                <span class="quizText">
+                                    {{item}}
+                                </span>
                             </label>
                         </div>
-        
+
                         <!-- 按鈕 -->
-                        <div class="row">
-                            <div class="col-lg-6 col-xm-12">
-                                <button v-if="progress===0" @click="prev()" type="button" class="btn btn-danger btn-lg btn-block" disabled>上一題</button>
-                                <button v-else @click="prev()" type="button" class="btn btn-danger btn-lg btn-block">上一題</button>
+                        <div class="button-row">
+                            <div>
+                                <button v-if="progress===0" @click="prev()" type="button" class="btn-prev"
+                                    disabled>上一題</button>
+                                <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
                             </div>
-                            <div class="col-lg-6 col-xm-12">
-                                <button v-if="answer===''" @click="next()" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3" disabled>下一題</button>
-                                <button v-else @click="next()" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3">下一題</button>
+                            <div>
+                                <button v-if="answer===''" @click="next()" type="button" class="btn-next"
+                                    disabled>下一題</button>
+                                <button v-else @click="next()" type="button" class="btn-next">下一題</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div v-else class="result jumbotron jumbotron-fluid mt-3">
-                    <div class="container">
-                        <div>
-                            <h3 class="row justify-content-center">已完成測驗</h3>
-                            <h2 class="row justify-content-center">推薦您 {{recommend}} 的組合</h2>
+                <div v-else>
+                    <div>
+                        <div class="recommend">
+                            <h3>已完成測驗</h3>
+                            <h2>推薦您 {{recommend}} 的組合</h2>
                         </div>
-                        <hr class="my-2">
-                        <div class="row">
-                            <div class="col-lg-6 col-xm-12">
-                                <button @click="back()" type="button" class="btn btn-danger btn-lg btn-block">重作測驗</button>
+                        <hr>
+                        <div class="button-row">
+                            <div>
+                                <button @click="back()" type="button" class="btn-back">重作測驗</button>
                             </div>
-                            <div class="col-lg-6 col-xm-12">
-                                <button @click="refreshto(url)" type="button" class="btn btn-primary btn-lg btn-block mt-lg-0 mt-3">前往客製果甘</button>
+                            <div>
+                                <button @click="refreshto(url)" type="button" class="btn-go">前往客製果甘</button>
                             </div>
                         </div>
                     </div>
@@ -189,5 +203,36 @@
         </div>
     </div>
     <div class="cust_platform"></div>
-    <button class="cust_more">開始客製果甘→</button>
+    <button class="cust_more">開始自由配→</button>
+</div>
+
+
+<!-- ------行動版--------------------------------------- -->
+<div class="cust_phone_contain">
+    <div class="cust_p_content"></div>
+    <div class="qna_p_contain">
+        <div>
+            <div>
+                <h2 class="qna_p_title">
+                    Ｑ＆Ａ
+                </h2>
+                <h3>讓天然甘Ｑ＆Ａ給您適合的建議吧！</h3>
+            </div>
+            <div class="qna_p_paper">
+                <div class="qna_p_paper_upper">
+                    <h5>Q : <span>喝咖啡、吃甜食，讓你胃食道逆流或摁摁不順暢嗎?</span></h5>
+                    <span> 1 / 6</span>
+                </div>
+                <div class="qna_p_paper_lower">
+                    <span><input type="radio" name="q1">還好欸，我身強體壯</span>
+                    <span><input type="radio" name="q1">有一點，最近偶爾會這樣</span>
+                    <span><input type="radio" name="q1">每天都這樣....</span>
+                </div>
+                <div class="qna_p_paper_buttons">
+                    <button type="submit">上一題</button>
+                    <button type="submit">下一題</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
