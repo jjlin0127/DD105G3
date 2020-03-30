@@ -6,7 +6,8 @@ $ordName = $_SESSION["memName"];
 $ordaddr = "";
 $ordtel = $_SESSION["memTel"];
 try {
-	require_once("connectHomeserver.php");
+	require_once("connectDD105G3.php");
+	//require_once("connectHomeserver.php");
 	$cartItems = json_decode($_GET["cartItems"]);
 	$total = $_GET["total"];
     // $str = '[{"prodNo":"4","price":360,"qty":"1"},{"prodNo":"5","price":360,"qty":"2"},{"prodNo":"3","price":360,"qty":"3"}]';
