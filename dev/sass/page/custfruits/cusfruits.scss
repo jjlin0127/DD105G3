@@ -31,6 +31,15 @@ body {
         line-height: 1.5;
         div {
             width: 31%;
+            span{
+                display: inline-block;
+                border: solid 2px lawngreen;
+                border-radius: 100%;
+                width: 25px;
+            }
+            p{
+                margin: 10px 0;
+            }
         }
     }
 }

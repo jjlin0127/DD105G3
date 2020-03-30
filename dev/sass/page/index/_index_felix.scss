@@ -3,606 +3,520 @@
 /* -- 客製果甘------------------------------------ -- */
 
 .cust_title {
-    @include indexTitle(3px, 10px);
-    margin: 50px auto;
+  @include indexTitle(3px, 10px);
+  margin: 50px auto;
 }
 
 h3 {
-    text-align: center;
-    color: #fff;
+  text-align: center;
+  color: #fff;
 }
 
 h4 {
-    color: #4c4948;
+  color: #4c4948;
 }
 
 h5 {
-    color: #4c4948;
+  color: #4c4948;
 }
 
 span {
-    color: #4c4948;
+  color: #4c4948;
 }
 
 @mixin content($right: 61px, $top: 146px) {
-    right: $right;
-    top: $top;
-    transform: rotate(-135deg);
-    border: 4px solid #CEA45A;
-    //------------------------
-    position: absolute;
+  right: $right;
+  top: $top;
+  transform: rotate(-135deg);
+  border: 4px solid #cea45a;
+  //------------------------
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &:hover {
+    background: #eee;
+  }
+  &:hover > a {
+    color: #4c4948;
+  }
+  .wheel_plate {
+    background: url(../../../images/index/index_felix/wheel_plate.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120px;
+    width: 100%;
+    top: -405px;
+    right: 65px;
+    img {
+      width: 110px;
+      height: 110px;
+      position: relative;
+      top: -165px;
+      left: 5px;
+    }
+  }
+  a {
     width: 100%;
     height: 100%;
-    &:hover {
-        background: #eee;
-    }
-    &:hover>a {
-        color: #4c4948;
-    }
-    .wheel_plate {
-        background: url(../../../images/index/index_felix/wheel_plate.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: relative;
-        height: 120px;
-        width: 100%;
-        top: -405px;
-        right: 65px;
-        img {
-            width: 110px;
-            height: 110px;
-            position: relative;
-            top: -165px;
-            left: 5px;
-        }
-    }
-    a {
-        width: 100%;
-        height: 100%;
-        line-height: 545px;
-        left: 210px;
-        display: block;
-        position: absolute;
-        text-decoration: none;
-        color: #fff;
-    }
+    line-height: 545px;
+    left: 210px;
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 .index_cust {
-    .contain {
-        .title_index {
-            @include title(3.5px, solid, #a6c165, 10px);
-            margin: 50px auto;
-        }
-        h2 {
-            text-align: center;
-        }
-        h3 {
-            line-height: 2rem;
-        }
-        .cust_qna_contain {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            .cust_contain {
-                margin-top: -130px;
-                
-                .cust_wheelset {
-                    position: relative;
-                    .cust_wheelstick {
-                        position: relative;
-                        left: -65px;
-                        bottom: -430px;
-                        z-index: 1;
-                        height: 48px;
-                        background-image: url(../../../images/index/index_felix/wheel_stick.png);
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                    }
-                    .cust_wheel {
-                        border-radius: 100%;
-                        position: relative;
-                        z-index: 2;
-                        left: 50px;
-                        bottom: -50px;
-                        height: 600px;
-                        width: 600px;
-                        overflow: hidden;
-                        // background-image: url(../images/index_cust/wheel.png);
-                        background: #987845;
-                        border: 4px solid #CEA45A;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        .item {
-                            overflow: hidden;
-                            position: absolute;
-                            width: 300px;
-                            height: 300px;
-                            transform-origin: 100% 100%;
-                        }
-                        .item1 {
-                            z-index: 1;
-                            transform: rotate(68deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item2 {
-                            z-index: 2;
-                            transform: rotate(113deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item3 {
-                            z-index: 3;
-                            transform: rotate(158deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item4 {
-                            z-index: 4;
-                            transform: rotate(203deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item5 {
-                            z-index: 5;
-                            transform: rotate(248deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item6 {
-                            z-index: 6;
-                            transform: rotate(293deg);
-                            .content {
-                                @include content;
-                            }
-                        }
-                        .item7 {
-                            z-index: 7;
-                            transform: rotate(338deg);
-                            .content {
-                                @include content(65px,146px);
-                            }
-                        }
-                        .item8 {
-                            z-index: 8;
-                            transform: rotate(23deg);
-                            .content {
-                                @include content(65px,146px);
-                            }
-                        }
-                        #wrapper8 {
-                            position: absolute;
-                            width: 300px;
-                            height: 300px;
-                            overflow: hidden;
-                            transform-origin: 100% 100%;
-                        }
-                    }
-                    #center {
-                        position: absolute;
-                        // left: 145px;
-                        // top: 145px;
-                        left: 33%;
-                        top: 36.95%;
-                        width: 315px;
-                        height: 315px;
-                        z-index: 8;
-                        background: rgba(255, 255, 255, .8);
-                        border-radius: 100%;
-                        display: flex;
-                        color: #4c4948;
-                        div {
-                            width: 250px;
-                            text-align: center;
-                            margin: auto;
-                            line-height: 1.25;
-                            p{
-                                line-height: 1.7;
-                            }
-                        }
-                    }
-                }
-            }
-            // .qna_title {
-            //     @include indexQaTitle(3px, 10px);
-            //     margin: 0px auto;
-            //     color: #D35D3D;
-            // }
-            #app {
-                width: 480px;
-                background-color: antiquewhite;
-                border: 5px solid peru;
-                border-radius: 25px;
-                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
-                padding: 15px;
-                color: $color;
-                font-size: 1.2rem;
-                .progressbar {
-                  width: 100%;
-                  height: 8px;
-                  background-color: #eee;
-                  margin: 0.8em auto;
-                  transition: width 500ms;
-                  border-radius: 10px;
-                }
-              }
-              
-              .qustions,
-              .recommend {
-                height: 120px;
-                background: #add0c9;
-                h5 {
-                  color: #8a5b41;
-                  padding: 10px;
-                }
-              }
-              
-              .recommend {
-                text-align: center;
-              }
-              
-              .quizOptions {
-                height: 50px;
-                margin: 10px 0;
-                vertical-align: middle;
-                .form-check-label {
-                  display: flex;
-                  align-items: baseline;
-                  .quizText {
-                    margin: 0px 0px 0px 5px;
-                    width: 85%;
-                    display: inline-flex;
-                  }
-                }
-              }
-              
-              .quizOption {
-                line-height: 1rem;
-                background: #a8d4d5;
-                border-radius: 100%;
-                width: 25px;
-                height: 25px;
-                padding: 5px;
-                display: inline-block;
-              }
-              
-              .button-row {
-                display: flex;
-                justify-content: space-around;
-                margin: 15px;
-              }
-              
-              .btn-next,
-              .btn-go {
-                @include btn_primary(150px);
-                display: block;
-                margin: 15px;
-              }
-              
-              .btn-prev,
-              .btn-back {
-                @include btn_secondary(150px);
-                display: block;
-                margin: 15px;
-              }
-        }
+  .contain {
+    .title_index {
+      @include title(3.5px, solid, #a6c165, 10px);
+      margin: 50px auto;
     }
-    .cust_platform {
-        margin-top: -130px;
-        z-index: -1;
-        position: relative;
-        left: -166px;
-        height: 488px;
-        background-image: url(../../../images/index/index_felix/cust_platform.png);
-        background-repeat: no-repeat;
-        background-size: contain;
+    h2 {
+      text-align: center;
     }
-    .cust_more {
-        margin: 0 auto;
-        margin-top: -200px;
-        margin-bottom: 80px;
-        @include btn_link(170px);
-        border: 0;
+    h3 {
+      line-height: 2rem;
     }
-}
+    .cust_qna_contain {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
 
+      .cust_contain {
+        margin-top: -130px;
+        .cust_wheelset {
+          position: relative;
+          .cust_wheelstick {
+            position: relative;
+            left: -65px;
+            bottom: -430px;
+            z-index: 1;
+            height: 48px;
+            background-image: url(../../../images/index/index_felix/wheel_stick.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+          .cust_wheel {
+            border-radius: 100%;
+            position: relative;
+            z-index: 2;
+            left: 50px;
+            bottom: -50px;
+            height: 600px;
+            width: 600px;
+            overflow: hidden;
+            // background-image: url(../images/index_cust/wheel.png);
+            background: #987845;
+            border: 4px solid #cea45a;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .item {
+              overflow: hidden;
+              position: absolute;
+              width: 300px;
+              height: 300px;
+              transform-origin: 100% 100%;
+            }
+            .item1 {
+              z-index: 1;
+              transform: rotate(68deg);
+              .content {
+                @include content;
+              }
+            }
+            .item2 {
+              z-index: 2;
+              transform: rotate(113deg);
+              .content {
+                @include content;
+              }
+            }
+            .item3 {
+              z-index: 3;
+              transform: rotate(158deg);
+              .content {
+                @include content;
+              }
+            }
+            .item4 {
+              z-index: 4;
+              transform: rotate(203deg);
+              .content {
+                @include content;
+              }
+            }
+            .item5 {
+              z-index: 5;
+              transform: rotate(248deg);
+              .content {
+                @include content;
+              }
+            }
+            .item6 {
+              z-index: 6;
+              transform: rotate(293deg);
+              .content {
+                @include content;
+              }
+            }
+            .item7 {
+              z-index: 7;
+              transform: rotate(338deg);
+              .content {
+                @include content(65px, 146px);
+              }
+            }
+            .item8 {
+              z-index: 8;
+              transform: rotate(23deg);
+              .content {
+                @include content(65px, 146px);
+              }
+            }
+            #wrapper8 {
+              position: absolute;
+              width: 300px;
+              height: 300px;
+              overflow: hidden;
+              transform-origin: 100% 100%;
+            }
+          }
+          #center {
+            position: absolute;
+            // left: 145px;
+            // top: 145px;
+            left: 33%;
+            top: 36.95%;
+            width: 315px;
+            height: 315px;
+            z-index: 8;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 100%;
+            display: flex;
+            color: #4c4948;
+            div {
+              width: 250px;
+              text-align: center;
+              margin: auto;
+              line-height: 1.25;
+              p {
+                line-height: 1.7;
+              }
+            }
+          }
+        }
+      }
+      .qna_contain {
+        padding-right: 50px;
+      }
+    }
+  }
+  .cust_platform {
+    margin-top: -130px;
+    z-index: -1;
+    position: relative;
+    left: -166px;
+    height: 488px;
+    background-image: url(../../../images/index/index_felix/cust_platform.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .cust_more {
+    margin: 0 auto;
+    margin-top: -200px;
+    margin-bottom: 80px;
+    @include btn_link(170px);
+    border: 0;
+  }
+}
 
 // ------滿版none------------------------------------
 .cust_phone_wrap {
-    display: none;
+  display: none;
 }
 
 .qna_phone_contain {
-    display: none;
+  display: none;
 }
 
-.cust_pbtn_more{
-    display: none;
+.cust_pbtn_more {
+  display: none;
 }
 
 .cust_phone_h3 {
-    display: none;
+  display: none;
 }
 
 // ---------行動版----------------------------------------
 @include respond(phone) {
-    .cust_title {
-        @include indexTitle(3px, 10px);
-        width: 250px;
-        margin: 50px auto;
-      }  
-      
-      .cust_contain_off {
-          display: none;
-      }
+  .cust_title {
+    @include indexTitle(3px, 10px);
+    width: 250px;
+    margin: 50px auto;
+  }
 
+  .cust_contain_off {
+    display: none;
+  }
 
-      .cust_phone_wrap {
-        // border: 1px solid red;
-        display: block;
-        width: 100%;
-        margin-top: 150px;
-      }
-    
-      .qna_p_title {
-        @include indexQaTitle(3px, 10px);
-        width: 100px;
-        margin: 0px auto;
-        color: #D35D3D;
-        }
+  .cust_phone_wrap {
+    // border: 1px solid red;
+    display: block;
+    width: 100%;
+    margin-top: 150px;
+  }
 
-        .cust_wphone_content {
-            // border: 1px solid;
-            perspective: 200rem;
-            perspective-origin: 50% 90%;
-          width: 100%;
-          margin: 90px auto;
-          color: #fff;
-          text-align: center;
-        }
-        input {
-          display: none;
-        }
-        .tab {
-          position: absolute;
-          width: 80px;
-          height: 80px;
-          line-height: 80px;
-          border-radius: 50%;
-          color: #575454;
-          
-          &:nth-child(1) { 
-            top: -130px;
-            left: 10px;
-            background: #06D6A0;
-            background-image: url('../../../images/cusFruits/wheel_plate.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-          }
-          &:nth-child(2) {
-            top: -130px;
-            left: 98px;
-            background: #1B9AAA;
-            background-image: url('../../../images/cusFruits/wheel_plate.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-          }
-          &:nth-child(3) {
-            top: -130px;
-            left: 190px;
-            background: #EF476F;
-            background-image: url('../../../images/cusFruits/wheel_plate.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-          }
-          &:nth-child(4) {
-            top: -130px;
-            left: 280px;
-            background: #efb447;
-            background-image: url('../../../images/cusFruits/wheel_plate.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-          }
-        }
-        
-        .cube {
-          // border: 1px solid blue;
-          position: relative;
-          margin: 60px auto 0;
-          width: 300px;
-          height: 200px;
-          color: #000;
-          transform-origin: 0 100px;
-          transform-style: preserve-3d;
-          transition: transform 0.5s ease-in;
-        }
-        .tab-content {
-          width: 300px;
-          height: 200px;
-          position: absolute;
-          
-          h1 {
-            font-size: 25px;
-            margin: 20px 0 10px;
-            font-weight: 300;
-            color: #000;
-          }
-          p {
-            font-size: 1rem;
-          }
-      
-      
-          &:nth-child(1) {
-              transform: rotateX(-270deg)
-                         translateY(-100px);
-              transform-origin: top left;
-            //   background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-              background-image: url('../../../images/index/index_addPics/index_starfruit6.JPG');
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-            }
-          &:nth-child(2) {
-              transform: translateZ(100px);
-            // background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
-              background-image: url('../../../images/index/index_addPics/index_pineapple3.JPG');
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-            }
-          &:nth-child(3) {
-              transform: rotateX(-90deg)
-                         translateY(100px);
-              transform-origin: bottom center;
-            //   background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
-              background-image: url('../../../images/index/index_addPics/index_dragonfruit3.JPG');
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-            } 
-          &:nth-child(4) {
-              transform: rotateX(180deg)
-                         translateZ(100px);
-            //   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            background-image: url('../../../images/index/index_addPics/index_banana5.JPG');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-          } 
-        }
-        
-        #tab-starfruit:checked ~ .cube {
-          transform: rotateX(-90deg);
-        }
-        #tab-pineapple:checked ~ .cube {
-          transform: rotateX(0deg);
-        }
-        #tab-dragonfruit:checked ~ .cube {
-          transform: rotateX(90deg);
-        }
-        #tab-banana:checked ~ .cube {
-          transform: rotateX(180deg);
-        }
+  .qna_p_title {
+    @include indexQaTitle(3px, 10px);
+    width: 100px;
+    margin: 0px auto;
+    color: #d35d3d;
+  }
 
-//-------行動版問答--------------------------------
-        .qna_phone_contain {
-            display: block;
-            // border: 1px solid blue;
-            width: 375px;
-            
-            .cust_title_qna {
-                border: 3px solid #af7342;
-                width: 40%;
-                height: 50px;
-                line-height: 28px;
-                border-radius: 10px;
-                background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-                margin: 0px auto;
-                margin-bottom: 30px;
-                padding: 5px;
-                font-size: 2rem;
-                text-align: center;
-            }
+  .cust_wphone_content {
+    // border: 1px solid;
+    perspective: 200rem;
+    perspective-origin: 50% 90%;
+    width: 100%;
+    margin: 90px auto;
+    color: #fff;
+    text-align: center;
+  }
+  .tab {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    color: #575454;
 
-            #app2 {
-                width: 95%;
-                background-color: antiquewhite;
-                border: 2px solid #CEA45A;
-                border-radius: 25px;
-                padding: 15px;
-                margin: 0 auto;
-                color: $color;
-                font-size: 1.2rem;
-                .progressbar {
-                  width: 100%;
-                  height: 8px;
-                  background-color: #eee;
-                  margin: 0.8em auto;
-                  transition: width 500ms;
-                  border-radius: 10px;
-                }
-              }
-              
-              .qustions,
-              .recommend {
-                height: 120px;
-                background: #add0c9;
-                h5 {
-                  color: #8a5b41;
-                  padding: 10px;
-                }
-              }
-              
-              .recommend {
-                text-align: center;
-              }
-              
-              .quizOptions {
-                height: 50px;
-                margin: 10px 0;
-                vertical-align: middle;
-                .form-check-label {
-                  display: flex;
-                  align-items: baseline;
-                  .quizText {
-                    margin: 0px 0px 0px 5px;
-                    width: 85%;
-                    display: inline-flex;
-                  }
-                }
-              }
-              
-              .quizOption {
-                line-height: 1rem;
-                background: #a8d4d5;
-                border-radius: 100%;
-                width: 25px;
-                height: 25px;
-                padding: 5px;
-                display: inline-block;
-              }
-              
-              .button-row {
-                display: flex;
-                justify-content: space-around;
-                margin: 15px;
-              }
-              
-              .btn-next,
-              .btn-go {
-                @include btn_primary(150px);
-                display: block;
-                margin: 15px;
-              }
-              
-              .btn-prev,
-              .btn-back {
-                @include btn_secondary(150px);
-                display: block;
-                margin: 15px;
-              }
-            
-        }
-
-        .cust_pbtn_more {
-            display: block;
-            margin-top: 225px;
-        }
-
-        .cust_pbtn {
-            margin: 30px auto;
-            margin-bottom: 100px;
-            @include btn_link(170px);
-        }
-
+    &:nth-child(1) {
+      top: -130px;
+      left: 10px;
+      background: #06d6a0;
+      background-image: url("../../../images/cusFruits/wheel_plate.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
+    &:nth-child(2) {
+      top: -130px;
+      left: 98px;
+      background: #1b9aaa;
+      background-image: url("../../../images/cusFruits/wheel_plate.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(3) {
+      top: -130px;
+      left: 190px;
+      background: #ef476f;
+      background-image: url("../../../images/cusFruits/wheel_plate.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(4) {
+      top: -130px;
+      left: 280px;
+      background: #efb447;
+      background-image: url("../../../images/cusFruits/wheel_plate.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .cube {
+    // border: 1px solid blue;
+    position: relative;
+    margin: 60px auto 0;
+    width: 300px;
+    height: 200px;
+    color: #000;
+    transform-origin: 0 100px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+  }
+  .tab-content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+
+    h1 {
+      font-size: 25px;
+      margin: 20px 0 10px;
+      font-weight: 300;
+      color: #000;
+    }
+    p {
+      font-size: 1rem;
+    }
+
+    &:nth-child(1) {
+      transform: rotateX(-270deg) translateY(-100px);
+      transform-origin: top left;
+      //   background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+      background-image: url("../../../images/index/index_addPics/index_starfruit6.JPG");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      transform: translateZ(100px);
+      // background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+      background-image: url("../../../images/index/index_addPics/index_pineapple3.JPG");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(3) {
+      transform: rotateX(-90deg) translateY(100px);
+      transform-origin: bottom center;
+      //   background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+      background-image: url("../../../images/index/index_addPics/index_dragonfruit3.JPG");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(4) {
+      transform: rotateX(180deg) translateZ(100px);
+      //   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      background-image: url("../../../images/index/index_addPics/index_banana5.JPG");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  #tab-starfruit:checked ~ .cube {
+    transform: rotateX(-90deg);
+  }
+  #tab-pineapple:checked ~ .cube {
+    transform: rotateX(0deg);
+  }
+  #tab-dragonfruit:checked ~ .cube {
+    transform: rotateX(90deg);
+  }
+  #tab-banana:checked ~ .cube {
+    transform: rotateX(180deg);
+  }
+
+  //-------行動版問答--------------------------------
+  .qna_phone_contain {
+    display: block;
+    // border: 1px solid blue;
+    width: 375px;
+
+    .cust_title_qna {
+      border: 3px solid #af7342;
+      width: 40%;
+      height: 50px;
+      line-height: 28px;
+      border-radius: 10px;
+      background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+      margin: 0px auto;
+      margin-bottom: 30px;
+      padding: 5px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    #app2 {
+      width: 95%;
+      background-color: antiquewhite;
+      border: 2px solid #cea45a;
+      border-radius: 25px;
+      padding: 15px;
+      margin: 0 auto;
+      color: $color;
+      font-size: 1.2rem;
+      .progressbar {
+        width: 100%;
+        height: 8px;
+        background-color: #eee;
+        margin: 0.8em auto;
+        transition: width 500ms;
+        border-radius: 10px;
+      }
+    }
+
+    .qustions,
+    .recommend {
+      height: 120px;
+      background: #add0c9;
+      h5 {
+        color: #8a5b41;
+        padding: 10px;
+      }
+    }
+
+    .recommend {
+      text-align: center;
+      .recommend_content {
+        color: #8a5b41;
+      }
+    }
+
+    .quizOptions {
+      height: 50px;
+      margin: 10px 0;
+      vertical-align: middle;
+      .form-check-label {
+        display: flex;
+        align-items: baseline;
+        .quizText {
+          margin: 0px 0px 0px 5px;
+          width: 85%;
+          display: inline-flex;
+          line-height: 1.3;
+        }
+      }
+    }
+
+    .quizOption {
+      line-height: 1rem;
+      background: #a8d4d5;
+      border-radius: 100%;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+      display: inline-block;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px;
+    }
+
+    .btn-next,
+    .btn-go {
+      @include btn_primary(150px);
+      display: block;
+      margin: 15px;
+    }
+
+    .btn-prev,
+    .btn-back {
+      @include btn_secondary(150px);
+      display: block;
+      margin: 15px;
+    }
+  }
+
+  .cust_pbtn_more {
+    display: block;
+    margin-top: 225px;
+  }
+
+  .cust_pbtn {
+    margin: 30px auto;
+    margin-bottom: 100px;
+    @include btn_link(170px);
+  }
+}

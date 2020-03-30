@@ -8,6 +8,13 @@
   padding: 15px;
   color: $color;
   font-size: 1.2rem;
+  .recommend {
+    text-align: center;
+    line-height: 1.3;
+    .recommend_content {
+      color: #8a5b41;
+    }
+  }
   .progressbar {
     width: 100%;
     height: 8px;
@@ -21,15 +28,12 @@
 .qustions,
 .recommend {
   height: 120px;
+  line-height: 1.3;
   background: #add0c9;
   h5 {
     color: #8a5b41;
     padding: 10px;
   }
-}
-
-.recommend {
-  text-align: center;
 }
 
 .quizOptions {
@@ -43,6 +47,7 @@
       margin: 0px 0px 0px 5px;
       width: 85%;
       display: inline-flex;
+      line-height: 1.3;
     }
   }
 }

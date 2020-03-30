@@ -22,15 +22,12 @@ $(document).ready(function() {
     var pswType = $('[name="memPsw"]');
     var imgSrc = $('.showText');
     $('.showText').click(function(){
-        // imgSrc.removeClass("shake-vertical")
         if(pswType.attr("type") == "password"){
             pswType.attr("type","text");
             imgSrc.attr("src","./images/login/showPasswd.jpg");
-            // imgSrc.addClass("shake-vertical")
         }else{
             pswType.attr("type","password");
             imgSrc.attr("src","./images/login/hidePasswd.jpg");
-            // imgSrc.addClass("shake-vertical")
         }
     })
 

@@ -9,8 +9,10 @@
         >div {
             .guides {
                 flex-direction: column;
+                margin: 0;
                 div {
                     width: 100%;
+                    margin: 10px 0;
                 }
             }
         }
