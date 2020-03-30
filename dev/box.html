@@ -28,6 +28,9 @@
     <script src="js/lightbox.js"></script>
 </head>
 <body id="box-body">
+    @@include('layout/header.html',{
+        "focus03" : "focus"
+    })
     <div class="popup">
         <h2>客製禮盒步驟</h2>
         <div class="step_wrap">
@@ -59,12 +62,12 @@
         <button name="close">我知道了</button>
     </div>
     <!-- </div> -->
-    @@include('layout/header.html',{
+    <!-- @@include('layout/header.html',{
         "focus03" : "focus"
-    })
+    }) -->
     <h2>客製禮盒
-        <img src="images/box/leaf.svg" alt="" class="leafLeft">
-        <img src="images/box/leaf.svg" alt="" class="leafRight">
+        <img src="./images/index/leaf6.svg" class="leafLeft">
+        <img src="./images/index/leaf5.svg" class="leafRight">
     </h2>
     <div class="box_contain">
         <div class="outer">

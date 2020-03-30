@@ -530,3 +530,11 @@
     .bbs_article2{
       display: none; }
 }
+
+@include respond(phone) {
+    .bbs_title {
+      @include indexTitle(3px, 10px);
+      width: 250px;
+      margin: 50px auto;
+    }
+}

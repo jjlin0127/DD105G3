@@ -1,6 +1,11 @@
 @include respond(phone) {
     //手機都寫在裡面
     //forum
+    .bbs_title {
+      @include indexTitle(3px, 10px);
+      width: 250px;
+      margin: 50px auto;
+    }
     img.balloon1{
       width: 110px;
       margin-left: 5%;}
