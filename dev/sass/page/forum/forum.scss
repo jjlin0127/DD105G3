@@ -117,7 +117,14 @@ img.balloon2{
 
 p.post_title{
     font-size: 1.5rem;
+    line-height: 1.5rem;
     margin-top: 20px;
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp: 2;      
+    -webkit-box-orient: vertical;
+    max-height: 3rem;  
 }
 
 .post_topic{
