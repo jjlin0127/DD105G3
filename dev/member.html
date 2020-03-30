@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>會員中心</title>
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="./css/page/member/member.css">
-    <script src="./js/all.js"></script>
-    <!-- <script src="./js/jquery-3.4.1.js"></script>
-    <script src="./js/tab.js"></script>
-    <script src="./js/order.js"></script> -->
+  <title>會員中心</title>
+  @@include('./layout/member_layout/head.html')
 </head>
+
 <body>
-    
+  <!-- header---------------------------------- -->
+  @@include('layout/header.html')
+
+  <div class="member_contain">
+    <!-- Title------------------------------- -->
+    <h2 class="member_title">
+      <img src="./images/index/leaf6.svg" class="leafLeft">
+      <img src="./images/index/leaf5.svg" class="leafRight">
+      歡迎來到會員中心
+    </h2>
+    <!-- bgc---------------------------------- -->
+    <div class="sky-container">
+      @@include('./layout/member_layout/sky.html')
+    </div>
+    <div class="member_wrap">
+      <div class="member_content">
+        @@include('./layout/member_layout/content.html')
+      </div>
+      <div class="tab">
+        @@include('./layout/member_layout/tab.html')
+      </div>
+    </div>
+  </div>
+
+  <!-- footer---------------------------------- -->
+  @@include('layout/footer.html')
+
 </body>
+
 </html>

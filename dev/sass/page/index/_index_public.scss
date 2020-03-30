@@ -58,6 +58,14 @@ h5 {
 // -------手機版----------------------------------------
 @include respond(phone) {
     //手機都寫在裡面
+    body {
+        box-sizing: border-box;
+        // background-color: #fff;
+        color: $indexFontColor;
+        @include bgc_img(index_bgc_darkblue);
+        background-size: cover;
+        font-family: $fontFamily;
+    }
     section {
         width: 100%;
         // border: 1px solid gray;

@@ -8,7 +8,6 @@
 @import '../../layout/tab';
 @import '../../modules/lightbox';
 
-
 #box-body{
     background-image: url('../../../images/box/box-bg.jpg');
     background-size: cover;
@@ -53,9 +52,14 @@
         }
     }
     h2{
-        @include title(3px, dotted, #a6c165, 10px, #fff);
-        margin: 50px auto 0px auto;
+        @include newTitle(3px, 10px, 300px, linear-gradient(to top, #dfe9f3 0%, white 100%));
+        margin: 50px auto;
         text-align: center;
+
+        // .member_title {
+        //     @include newTitle(3px, 10px, 400px, linear-gradient(to top, #dfe9f3 0%, white 100%));
+        //     margin: 50px auto;
+        // }
     }
     .box_contain{
         width: 100%;      
