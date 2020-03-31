@@ -48,28 +48,24 @@ $product_review->execute();
 <body>
     <!-- ↓↓↓ 導覽列 -->
     <script src="./js/hamburger.js"></script>
-    <!-- <script src="./js/login.js"></script> -->
 <script src="./js/login_common.js"></script>
 <header>
-    <div class="header__container">
+    <nav class="header__container">
         <span class="logo">
             <a href="home.html"><img src="./images/Logo.svg"></a>
         </span>
         <div class="navList">
-            <a class="navItem @@focus01" href="about.html">關於我們 <i class="fas fa-seedling"></i></a>
-            <a class="navItem @@focus02" href="prod_product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
+            <a class="navItem @@focus01" href="about.html">果甘物語 <i class="fas fa-seedling"></i></a>
+            <a class="navItem focus" href="prod_product.html">特色果甘 <i class="fas fa-apple-alt"></i></a>
             <a class="navItem @@focus03" href="box.html">客製禮盒 <i class="fas fa-gift"></i></a>
             <a class="navItem @@focus04" href="cusfruits.html">客製果甘 <i class="fas fa-lemon"></i></a>
             <!-- <a class="navItem @@focus05" href="#">折扣遊戲 <i class="fas fa-carrot"></i></a> -->
-            <a class="navItem @@focus06" href="forum.html">果甘話區 <i class="fas fa-leaf"></i></a>
-        </div> 
+            <a class="navItem @@focus06" href="forum.php">果甘話區 <i class="fas fa-leaf"></i></a>
+        </div>
         <div class="navList_2">
             <input id="memNo" type="hidden" value="">
-            <!-- 在購物車的a標籤內加一個span標籤，id為acx-count -->
             <a id="shopCart" class="navItem_2" href="prod_shopping.html">
-            <!-- ↓↓↓珮珊加的：購物車icon的旁邊要加項目數量 -->
-                <span id="a_count" ></span><i class="fas fa-shopping-cart"></i>
-            </a>
+                <i class="fas fa-shopping-cart"></i><span id="a_count"></span></a>
             <a id="memNickname" href="member2.html">&nbsp;</a>
             <!-- 會員暱稱 -->
             <a id="spanLogin" class="navItem_2">登入</a>
@@ -98,9 +94,8 @@ $product_review->execute();
                     <li id="mobilespanLogin">登入 <i class="fas fa-user-circle"></i></li>
                 </a>
                 <a id="shopCart" href="prod_shopping.html">
-                    <!-- ↓↓↓珮珊加的：購物車icon的旁邊要加項目數量 -->
-                    <span id="b_count" ></span>
-                    <li>購物車 <i class="fas fa-shopping-cart"></i></li>
+                    
+                    <li>購物車<i class="fas fa-shopping-cart"></i><span id="b_count"></span></li>
                 </a>
                 <a href="about.html">
                     <li>果甘物語 <i class="fas fa-seedling"></i></li>
@@ -117,7 +112,7 @@ $product_review->execute();
                 <!-- <a href="#">
                     <li>折扣遊戲 <i class="fas fa-carrot"></i></li>
                 </a> -->
-                <a href="forum.html">
+                <a href="forum.php">
                     <li>果甘話區 <i class="fas fa-leaf"></i></li>
                 </a>
             </ul>
@@ -134,13 +129,13 @@ $product_review->execute();
     ?>
 
 <div class="wrapper">
-        <center><div class="box_for_title_hot_topics">
+        <div class="box_for_title_hot_topics">
             <div class="title_hot_topics">
-                <img src="./images/forum/leaf.svg" class="leafLeft">
-                <img src="./images/forum/leaf.svg" class="leafRight">
+                <img src="./images/index/leaf6.svg" class="leafLeft">
+                <img src="./images/index/leaf5.svg" class="leafRight">
                 <h2>商品詳情</h2>
             </div>      
-        </div></center>
+        </div>
     <div class="detail_wrapper">
         <div class="prdt_img">
             <div class="large_img">
@@ -202,35 +197,34 @@ $product_review->execute();
                     <label for="putin"><img src="images/prdt/icon/shopping_cart.svg" class="purchase_icon">
                     </label>
                     <br>
-                    <div id="newItem" style="visibility: hidden;">
-                        <div id="content">
-                            項目數量：<span id="itemCount">0</span>
-                            <br>
-                            總金額：$<span id="subtotal">0</span>
-                        </div>
-                    </div>
                 </div><!--div.purchase的結尾標籤-->
+                <div id="newItem" style="visibility: hidden;">
+                    <div id="content">
+                        項目數量：<span id="itemCount">0</span>
+                        <br>
+                        總金額：$<span id="subtotal">0</span>
+                    </div>
+                </div>
             </div>  <!--div.buy的結尾標籤-->
-            <table class="previous_and_next">
-                <tr>
-                    <td>
-                        <h4>
-                            <a href="prod_detail.php?prodNo=<?=$prodNo-1?>" class="a_previous_and_next">
-                                <img src="images/prdt/icon/icon_previous.svg">上一筆產品
-                            </a>
-                        </h4>
-                    </td>
-                    <td class="prod_next">
-                        <h4>
-                            <a href="prod_detail.php?prodNo=<?=$prodNo+1?>" class="a_previous_and_next">下一筆產品
-                                <img src="images/prdt/icon/icon_next.svg">
-                            </a>
-                        </h4>
-                    </td>
-                </tr>
-            </table>
         </div>  <!--prdt_text的結尾標籤-->
-        
+        <table class="previous_and_next">
+            <tr>
+                <td>
+                    <h4>
+                        <a href="prod_detail.php?prodNo=<?=$prodNo-1?>" class="a_previous_and_next">
+                            <img src="images/prdt/icon/icon_previous.svg">上一筆產品
+                        </a>
+                    </h4>
+                </td>
+                <td class="prod_next">
+                    <h4>
+                        <a href="prod_detail.php?prodNo=<?=$prodNo+1?>" class="a_previous_and_next">下一筆產品
+                            <img src="images/prdt/icon/icon_next.svg">
+                        </a>
+                    </h4>
+                </td>
+            </tr>
+        </table>
 
     </div> <!--第一個 div.detail_wrapper的結尾標籤-->
 
