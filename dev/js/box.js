@@ -1,3 +1,36 @@
+// ajax 連接資料庫
+getBoxImg();
+
+function getBoxImg(){
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if(xhr.status == 200){
+      
+      var boxImgOriArr = JSON.parse(xhr.responseText);
+      console.log(boxImgOriArr);
+      // var boxImgCopyArr = JSON.parse(JSON.stringify(boxImgOriArr));
+
+      let boxStr = '';
+      boxImgOriArr.forEach(function(box){
+        boxStr += `
+        <div class="item"><img src="images/box/${box.boxImgPath}" alt="" class="drag_img"></div>
+        `
+      });
+      boxStr += `<div class="item"><img src="" alt="" id="myImg" class="drag_img"></div>`
+      let boxImgContent = document.getElementById('boxImgContent');
+      boxImgContent.innerHTML = boxStr;
+    }else{
+      alert(xhr.status);
+    }
+    
+  }
+  xhr.open("GET",`./php/getBoxImg.php`,true);
+  xhr.send(null);
+}
+
+
+
+
 // ---------------------改變盒子角度、增減盒面class------------------------------------------------
 $(document).ready(function(e){
 
@@ -270,7 +303,15 @@ function drop(e){  //e.target代表放置區域的DOM本身
     let y = e.offsetY; //dropY位置 ＝ 相對盒子左上的y位置
     img.style.top = y + "px"; 
     img.style.left = x + "px";
-    img.style.transform = 'translateX(-50%) translateY(-50%)'; //會用圖片左上角定位，要移回本身的寬高
+
+    //判斷螢幕寬度
+    var screenWidth = window.screen.width;  //獲取當前螢幕解析度
+    if (screenWidth <= 414){
+      img.style.transform = 'translateX(-100%) translateY(-100%)';  //手機版不知為何會再往右下偏移，因此判斷螢幕尺寸，再修改圖片偏移自身位置
+    }else{
+      img.style.transform = 'translateX(-50%) translateY(-50%)'; //會用圖片左上角定位，要移回本身的寬高
+    }
+    
     this.appendChild(img);//把圖片塞進去
     dropCount++;  //如果成功被drop，數字才會增加，這樣等等drag才會是下一個數字
     arrDropedImg.push(img);//做一個陣列把動態添加元素的資料先存起來，之後統一操作

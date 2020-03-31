@@ -13,11 +13,7 @@
     background-size: cover;
     .popup{
         @include popup;
-        >div{
-            max-width: 1000px;
-            width: 70%; //燈箱內容寬度
-        }
-        h2{
+        h3{
             border: none;
             width: 100%;
             margin: 0px;
