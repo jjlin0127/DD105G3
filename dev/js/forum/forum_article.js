@@ -130,7 +130,7 @@ function sendMessage(e) {
         }, 2000);
         return;
     }else{
-        let mesText = document.getElementById('comment_textarea').value;
+        var mesText = document.getElementById('comment_textarea').value;
         if(mesText === ''){
             alertBox.classList.remove('hidden');
             alertBox.style.backgroundColor = "firebrick";
