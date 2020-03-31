@@ -105,12 +105,6 @@ gulp.task('minfly_img', function() {
 
 // 和瀏覽器同步
 gulp.task('default', function() { // default 只要打gulp 即可執行
-    // browserSync.init({
-    //     server: {
-    //         baseDir: "./dest",
-    //         index: "customRoute.html"
-    //     }
-    // });
     browserSync.init({
         server: {
             baseDir: './dest',
