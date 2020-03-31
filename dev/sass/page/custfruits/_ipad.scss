@@ -53,6 +53,10 @@
         .cusfruits_inner {
             position: relative;
             top: -100px;
+            .wrapper_left{
+                position: relative;
+                left: 3%;
+            }
             .wrapper_right {
                 .upper {
                     max-width: 90%;
