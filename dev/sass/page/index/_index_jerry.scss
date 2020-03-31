@@ -202,7 +202,7 @@
 }
 
 .bbs_article_contain .post p.post_title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.5rem;
     margin-top: 20px;
     display:-webkit-box;
@@ -301,20 +301,39 @@
 
 @import "../../modules/rwd";
 
-@include respond(ipadpro) {
+@include respond(latop-max) {
     .bbs_article1 > img{
-        top: -51%;
+        top: -52%;
     }
 
+    .bbs_article2 > img{
+        top: -42%;
+    }
+
+    .bbs_article3 > img{
+        top: -46%;
+    }
+}
+
+@include respond(ipadpro) {
+    .bbs_article1 > img{
+        top: -52%;
+    }
     .bbs_article3{
-      display: none; }
+        display: none; }
 }
 
 @include respond(ipad) {
     .bbs_article1 > img{
-        top: -48%;
+        top: -51%;
     }
 
     .bbs_article2{
       display: none; }
+}
+
+@include respond(phone) {
+    .bbs_article1 > img{
+        top: -49%;
+    }
 }

@@ -44,7 +44,7 @@ img.balloon2{
 }
 
 .wrapper_forum .hot_posts_area .title_hot_posts{
-    @include title(3px, dotted, #a6c165, 10px, #fff);
+    @include newTitle(3px, 10px, 300px, linear-gradient(to top, #dfe9f3 0%, white 100%));
     margin: 50px auto;
 }
 
