@@ -68,7 +68,7 @@ function sendForm(e) {
                     $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
         
                     $id("alertBox").classList.remove('hidden');
-                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: dd105g3@gmail.com";
+                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: DD105G3@gmail.com";
     
                     setTimeout(function(){
                         $id("alertBox").classList.add('hidden');
@@ -113,7 +113,7 @@ function mobilesendForm(e) {
                     $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
         
                     $id("alertBox").classList.remove('hidden');
-                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: dd105g3@gmail.com";
+                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: DD105G3@gmail.com";
                     
                     setTimeout(function(){
                         $id("alertBox").classList.add('hidden');
