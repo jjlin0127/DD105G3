@@ -94,6 +94,8 @@ body {
     justify-content: space-between;
     .wrapper_left {
       .cabinet_top {
+        position: relative;
+        left: -10px;
         width: 365px;
         height: 65px;
         background-image: url("../../../images/cusFruits/custfruit_cabinet_top.png");

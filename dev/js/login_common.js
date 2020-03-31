@@ -364,9 +364,8 @@ window.addEventListener("load", function() {
         $id('mobilebtnLogin').onclick = mobilesendForm;
         $id('btnRegis').onclick = registerfun;
         $id('mobilebtnRegis').onclick = mobileregisterfun;
+        $id('close_alert_btn').addEventListener('click', function(){
+            $id("alertBox").classList.add('hidden');
+        });
     }
-
-    $id('close_alert_btn').addEventListener('click', function(){
-        $id("alertBox").classList.add('hidden');
-    });
 }, false);
