@@ -22,7 +22,15 @@ function showLoginForm() {
                 $id("mobilememNickname").innerHTML = '&nbsp';
                 $id("mobilespanLogin").innerHTML = "登入";
             } else {
-                alert(xhr.status);
+                $id("alertBox").style.backgroundColor = "firebrick";
+                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+    
+                $id("alertBox").classList.remove('hidden');
+                $id("alertMessage").innerText = xhr.status;
+
+                setTimeout(function(){
+                    $id("alertBox").classList.add('hidden');
+                }, 2000);
             }
         }
         xhr.open("get", "dest/../php/logout.php", true);
@@ -40,16 +48,34 @@ function sendForm(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             member = xhr.responseText;
             if (member == "error") {
-                alert("帳密錯誤請重新輸入");
+                $id("alertBox").style.backgroundColor = "firebrick";
+                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+    
+                $id("alertBox").classList.remove('hidden');
+                $id("alertMessage").innerText = "帳密錯誤請重新輸入";
+                
+                setTimeout(function(){
+                    $id("alertBox").classList.add('hidden');
+                }, 2000);
             } else {
-                success = JSON.parse(xhr.responseText)
-                $id("memNickname").innerText = member.memNickname;
-                $id("spanLogin").innerText = "登出";
-                window.history.back();
+                memberParseLogin = JSON.parse(member)
+                if(memberParseLogin.memStatus == "1"){
+                    $id("memNickname").innerText = memberParseLogin.memNickname;
+                    $id("spanLogin").innerText = "登出";
+                    window.history.back();    
+                } else{
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: dd105g3@gmail.com";
+    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 4000);
+                }               
             }
-
         } else { alert(xhr.status); }
-
     }
     xhr.open("Post", "dest/../php/ajaxLogin.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
@@ -67,12 +93,32 @@ function mobilesendForm(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             mobileMember = xhr.responseText;
             if (mobileMember == "error") {
-                alert("帳密錯誤請重新輸入");
+                $id("alertBox").style.backgroundColor = "firebrick";
+                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+    
+                $id("alertBox").classList.remove('hidden');    
+                $id("alertMessage").innerText = "帳密錯誤請重新輸入";
+                
+                setTimeout(function(){
+                    $id("alertBox").classList.add('hidden');
+                }, 2000);
             } else {
-                success = JSON.parse(xhr.responseText)
-                $id("memNickname").innerText = mobileMember.memNickname;
-                $id("spanLogin").innerText = "登出";
-                window.history.back();
+                memberParseLogin = JSON.parse(mobileMember);
+                if(memberParseLogin.memStatus == "1"){
+                    $id("memNickname").innerText = memberParseLogin.memNickname;
+                    $id("spanLogin").innerText = "登出";
+                    window.history.back();    
+                } else{
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerHTML = "不好意思, 您已經被停權, 請聯繫天然甘了解詳情。<br>Email: dd105g3@gmail.com";
+                    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 4000);
+                }               
             }
         } else { alert(xhr.status); }
     }
@@ -106,7 +152,7 @@ function getLoginInfo() {
 function registerfun(e) {
     e.preventDefault();
     emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
-    pswRule = /\w{5,17}$/;
+    pswRule = /\w{6,17}$/;
     if ($('.registeremail').val() != "" &&
         $('.firsttimepsw').val() != "" &&
         $('.confirmpsw').val() != "" &&
@@ -118,12 +164,37 @@ function registerfun(e) {
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4) {
                             if (xhr.responseText == 'success') { //恭喜經過一切驗證, 終成天然甘會員
-                                alert('註冊成功! 歡迎加入天然甘, 請重新登入');
-                                $(location).attr('href', './login.html');
+                                $id("alertBox").style.backgroundColor = "#96DF73";
+                                $id("alertBox").style.boxShadow = "2px 2px 5px #699c50";
+                    
+                                $id("alertBox").classList.remove('hidden');
+                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入。";
+                                
+                                setTimeout(function(){
+                                    $id("alertBox").classList.add('hidden');
+                                    $(location).attr('href', './login.html');
+                                }, 2000);
+                                
                             } else if (xhr.responseText.match('23000')) {
-                                alert('Email已存在, 請重新輸入!');
+                                $id("alertBox").style.backgroundColor = "firebrick";
+                                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+                    
+                                $id("alertBox").classList.remove('hidden');
+                                $id("alertMessage").innerText = "Email已存在, 請重新輸入!";
+                                
+                                setTimeout(function(){
+                                    $id("alertBox").classList.add('hidden');
+                                }, 2000);
                             } else {
-                                alert(xhr.responseText);
+                                $id("alertBox").style.backgroundColor = "firebrick";
+                                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+                    
+                                $id("alertBox").classList.remove('hidden');
+                                $id("alertMessage").innerText = xhr.responseText;
+                                
+                                setTimeout(function(){
+                                    $id("alertBox").classList.add('hidden');
+                                }, 2000);
                             }
                         }
                     }
@@ -136,18 +207,50 @@ function registerfun(e) {
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     xhr.send(member_data);
                 } else {
-                    alert('請檢查兩次密碼輸入是否一致');
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerText = "請檢查兩次密碼輸入是否一致";
+
                     $('.whiteform .firsttimepsw').val('').focus();
                     $('.whiteform .confirmpsw').val('');
+                    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 2000);
                 }
             } else {
-                alert('密碼須為字母開頭，長度在6~18間，只能包含字母、數字、下底線')
+                $id("alertBox").style.backgroundColor = "firebrick";
+                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+    
+                $id("alertBox").classList.remove('hidden');
+                $id("alertMessage").innerHTML = "密碼請輸入6-18碼英文、數字。";
+                
+                setTimeout(function(){
+                    $id("alertBox").classList.add('hidden');
+                }, 2000);
             }
         } else {
-            alert('請檢查您輸入的email是否正確')
+            $id("alertBox").style.backgroundColor = "firebrick";
+            $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+
+            $id("alertBox").classList.remove('hidden');
+            $id("alertMessage").innerText = "請檢查您輸入的email是否正確";
+            
+            setTimeout(function(){
+                $id("alertBox").classList.add('hidden');
+            }, 2000);
         }
     } else {
-        alert('請輸入完整訊息再送出!');
+        $id("alertBox").style.backgroundColor = "firebrick";
+        $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        $id("alertBox").classList.remove('hidden');
+        $id("alertMessage").innerText = "請輸入完整訊息再送出!";
+        
+        setTimeout(function(){
+            $id("alertBox").classList.add('hidden');
+        }, 2000);
     }
 
 }
@@ -167,10 +270,26 @@ function mobileregisterfun(e) {
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4) {
                             if (xhr.responseText == 'success') { //恭喜經過一切驗證, 終成天然甘會員
-                                alert('註冊成功! 歡迎加入天然甘, 請重新登入');
-                                $(location).attr('href', './login.html');
+                                $id("alertBox").style.backgroundColor = "#96DF73";
+                                $id("alertBox").style.boxShadow = "2px 2px 5px #699c50";                        
+                                $id("alertBox").classList.remove('hidden');
+                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入";
+                                
+                                setTimeout(function(){
+                                    $id("alertBox").classList.add('hidden');
+                                    $(location).attr('href', './login.html');
+                                }, 2000);
+                                
                             } else if (xhr.responseText.match('23000')) {
-                                alert('Email已存在, 請重新輸入!');
+                                $id("alertBox").style.backgroundColor = "firebrick";
+                                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+                        
+                                $id("alertBox").classList.remove('hidden');
+                                $id("alertMessage").innerHTML = "Email已存在, 請重新輸入!";
+                                
+                                setTimeout(function(){
+                                    $id("alertBox").classList.add('hidden');
+                                }, 2000);
                             } else {
                                 alert(xhr.responseText);
                             }
@@ -185,18 +304,50 @@ function mobileregisterfun(e) {
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     xhr.send(member_data);
                 } else {
-                    alert('請檢查兩次密碼輸入是否一致');
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+            
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerHTML = "請檢查兩次密碼輸入是否一致";
                     $('#mobilelogintab2 .firsttimepsw').val('').focus();
                     $('#mobilelogintab2 .confirmpsw').val('');
+                    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 2000);
                 }
             } else {
-                alert('密碼須為字母開頭，長度在6~18間，只能包含字母、數字、下底線')
+                $id("alertBox").style.backgroundColor = "firebrick";
+                $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                $id("alertBox").classList.remove('hidden');
+                $id("alertMessage").innerHTML = "密碼請輸入6-18碼英文、數字。";
+                
+                setTimeout(function(){
+                    $id("alertBox").classList.add('hidden');
+                }, 2000);
             }
         } else {
-            alert('請檢查您輸入的email是否正確')
+            $id("alertBox").style.backgroundColor = "firebrick";
+            $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+    
+            $id("alertBox").classList.remove('hidden');
+            $id("alertMessage").innerHTML = "請檢查您輸入的email是否正確";
+            
+            setTimeout(function(){
+                $id("alertBox").classList.add('hidden');
+            }, 2000);
         }
     } else {
-        alert('請輸入完整訊息再送出!');
+        $id("alertBox").style.backgroundColor = "firebrick";
+        $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+
+        $id("alertBox").classList.remove('hidden');
+        $id("alertMessage").innerHTML = "請輸入完整訊息再送出!";
+        
+        setTimeout(function(){
+            $id("alertBox").classList.add('hidden');
+        }, 2000);
     }
 }
 
@@ -214,4 +365,8 @@ window.addEventListener("load", function() {
         $id('btnRegis').onclick = registerfun;
         $id('mobilebtnRegis').onclick = mobileregisterfun;
     }
+
+    $id('close_alert_btn').addEventListener('click', function(){
+        $id("alertBox").classList.add('hidden');
+    });
 }, false);
