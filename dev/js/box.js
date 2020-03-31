@@ -5,9 +5,9 @@ function getBoxImg(){
   let xhr = new XMLHttpRequest();
   xhr.onload = function(){
     if(xhr.status == 200){
-      
+      // console.log(xhr.responseText);
       var boxImgOriArr = JSON.parse(xhr.responseText);
-      console.log(boxImgOriArr);
+      
       // var boxImgCopyArr = JSON.parse(JSON.stringify(boxImgOriArr));
 
       let boxStr = '';
@@ -130,7 +130,7 @@ var colorPicker = new iro.ColorPicker("#picker", {
 // 如果選擇器的顏色改變了，就執行function
 colorPicker.on('color:change', function(color) {
   // log the current color as a HEX string
-  console.log(color.hexString);
+  // console.log(color.hexString);
   
   // 選擇盒子的六個面
   var front = document.querySelector('.cube-face-front');
@@ -193,7 +193,7 @@ function doFirst(){
     dropAreas[i].addEventListener('dragenter',dragenter); 
 
     dropAreas[i].addEventListener('mouseenter', function wakeUp(e){ //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
-      console.log('1234');
+      // console.log('1234');
       for(let i = 0; i < arrDropedImg.length; i++){
         arrDropedImg[i].addEventListener('dragstart', function dragstart_2(e){
           for(let i = 0; i < arrDropedImg.length; i++){  //當drag時，其他盒上圖移除select

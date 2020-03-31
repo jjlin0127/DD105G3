@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectHomeserver.php");
+    require_once("connectSchoolServer.php");
 
     $sql = "select * from `boximg` where boxImgStatus = 1 order by boxImgNo desc limit 8 ";
     $boxes = $pdo->query($sql);

@@ -1,7 +1,7 @@
 @include respond(phone){
     #box-body{
         h2{
-            margin: 120px auto 0px auto;
+            margin: 50px auto 50px auto;
         }
         .popup{
             .step_wrap{
@@ -21,6 +21,7 @@
         }
         .box_contain{
             .outer{
+                margin-top: 0px;
                 .bow-knot-left,.bow-knot-right{
                     width: 150px;
                 }
