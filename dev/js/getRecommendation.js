@@ -92,6 +92,10 @@ function loadRecommendation(){
                 case "幫助消化": cusFruitsName = "<span style='color: #5BC6C2;'>幫助消化</span>";  break;
                 case "活化大腦": cusFruitsName = "<span style='color: #F4AB6C;'>活化大腦</span>"; break;
                 case "保護血管": cusFruitsName = "<span style='color: #FC8D7A;'>保護血管</span>"; break;
+                case "幫助消化與活化大腦": cusFruitsName = "<span style='color: #5BC6C2;'>幫助消化</span>與<span style='color: #F4AB6C;'>活化大腦</span>"; break;
+                case "幫助消化與保護血管": cusFruitsName = "<span style='color: #5BC6C2;'>幫助消化</span>與<span style='color: #FC8D7A;'>保護血管</span>"; break;
+                case "活化大腦與保護血管": cusFruitsName = "<span style='color: #F4AB6C;'>活化大腦</span>與<span style='color: #FC8D7A;'>保護血管</span>"; break;
+                case "均衡療效": cusFruitsName = "<span style='color: #006992;'>均衡療效</span>"; break;
             }
 
             $id("prodNo1").innerHTML = prodNo1;
@@ -99,7 +103,7 @@ function loadRecommendation(){
             $id("prodNo3").innerHTML = prodNo3;
             $id("prodNo4").innerHTML = prodNo4;
             $id("prodNo5").innerHTML = prodNo5;
-            $id("prodNo6").innerHTML = prodNo6;
+            $id("prodNo6").innerHTML = prodNo6;            
             $id("cusFruitsName").innerHTML = cusFruitsName;
         }
       } else { alert(xhr.status); }

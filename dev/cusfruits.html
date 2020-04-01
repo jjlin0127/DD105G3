@@ -21,16 +21,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
-    <!-- Vue.js -->
-    <script src="./js/vue.min.js"></script>
-    <script src="./js/index_qna.js"></script>
-
-    <script src="./js/cusfruits.js" defer></script>
-    <script src="./js/getRecommendation.js"></script>
     <script src="./js/lightbox.js" defer></script>
-    <script src="./js/shopping_cart01.js"></script>
-    
-
+    <script src="./js/getRecommendation.js" defer></script>
+    <script src="./js/getCusfruits.js" defer></script>
+    <script src="./js/cusfruits.js" defer></script>
+    <script src="./js/shopping_cart01.js" defer></script>
 </head>
 
 <body>
@@ -58,70 +53,6 @@
             </div>
         </div>
         <button name="close">我知道了</button>
-    </div>
-    <div class="popup2">
-        <div id="app">
-            <!-- 題目 -->
-            <div v-if="progress < quiz.length">
-                <div class="quiz">
-                    <div class="qustions">
-                        <h5>{{quiz[progress].question}}</h5>
-                    </div>
-                    <div class="progressbar">
-                        <div class="progressbar text-center"
-                            style="background-color: green; margin: 0; color: white;"
-                            :style="{width:(progress*100/quiz.length)+'%'}">
-                            <!-- {{ progress }} -->
-                        </div>
-                    </div>
-                    <hr>
-                    <!-- 選項 -->
-                    <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="option" v-model="answer"
-                                :value="optionsValue[index]">
-                            <span class="quizOption">
-                                {{optionsValue[index]}}
-                            </span>
-                            <span class="quizText">
-                                {{item}}
-                            </span>
-                        </label>
-                    </div>
-
-                    <!-- 按鈕 -->
-                    <div class="button-row">
-                        <div>
-                            <button v-if="progress===0" @click="prev()" type="button" class="btn-prev"
-                                disabled>上一題</button>
-                            <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
-                        </div>
-                        <div>
-                            <button v-if="answer===''" @click="next()" type="button" class="btn-next"
-                                disabled>下一題</button>
-                            <button v-else @click="next()" type="button" class="btn-next">下一題</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div v-else>
-                <div>
-                    <div class="recommend">
-                        <h3>已完成測驗</h3>
-                        <h2>推薦您 {{recommend}} 的組合</h2>
-                    </div>
-                    <hr>
-                    <div class="button-row">
-                        <div>
-                            <button @click="back()" type="button" class="btn-back">重作測驗</button>
-                        </div>
-                        <div>
-                            <button @click="refreshto(url)" type="button" class="btn-go">前往客製果甘</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="cusfruits_wrapper">
         <div class="recommended">
@@ -159,76 +90,18 @@
                 <div class="cabinet_title">
                     輕點添加選擇, 可以重複選購滿6樣即可喔！
                 </div>
-                <div class="fruits_window">
-                    <!-- <div class="linktoqna">
-                        或是去做測驗幫您推薦
-                    </div> -->
+                <div class="fruits_window" id="fruits_window">
                     <!-- 1：幫助消化 2：活化大腦 3：保護血管 -->
-                    <div class="layer1">
-                        <div>
-                            <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
+                    <div class="layer1" id="layer1">
                     </div>
-                    <div class="layer2">
-                        <div>
-                            <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="4"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="5"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="6"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
+                    <div class="layer2" id="layer2">
                     </div>
-                    <div class="layer3">
-                        <div>
-                            <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="7"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="8"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="9"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
+                    <div class="layer3" id="layer3">
                     </div>
                 </div>
             </div>
             <div class="wrapper_middle">
                 <table id="selectedTable">
-                    <!-- 
-                    <tr>
-                        <td>
-                            <img src="./images/cusFruits/02_pineapple_c.png">
-                        </td>
-                        <td class="droppedzone">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    -->
                 </table>
             </div>
 
@@ -238,7 +111,6 @@
                         <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
                         <img src="./images/cusFruits/cusfruit_subtitle.png">
                     </h5>
-                    <!-- <svg id="svg" width="375" height="375"></svg> -->
                     <div class="radar_wrapper">
                         <canvas id="heyChart" width="250" height="250"></canvas>
                     </div>
