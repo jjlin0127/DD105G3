@@ -96,12 +96,21 @@ function addImg(e){
           </td>
         </tr>`
     );
+
+    if(state.selectedFruits.length >= 6){
+      $('[type="submit"]').removeClass("disabled");
+    }
   
     $(`[data-btn="${newImg.dataFruit}"]`).unbind('click').click(removeNewImg);
   } else {
+    $("#alertBox").css("backgroundColor","firebrick").
+                   css("boxShadow","2px 2px 5px rgba(178, 34, 34, 0.75)");
+    $("#alertBox").removeClass('hidden');
+    $("#alertMessage").html("太多好吃果甘讓你心動嗎? <br>但是不好意思^_^\" 只能選擇6樣喔!");
+
     setTimeout(function(){
-      alert("太多好吃果甘讓你心動嗎? 但是不好意思^_^\" 只能選擇6樣喔!");
-    },0)
+        $("#alertBox").addClass('hidden');
+    }, 2000);
   }
 }
 
@@ -126,6 +135,7 @@ function removeNewImg(e) {
   updateData()
 
   $(this).parent('td').parent('tr').remove();
+  $('[type="submit"]').addClass("disabled");
 }
 
 function plusCountEach(array,value){
@@ -213,6 +223,13 @@ $('[type="submit"]').click(function(){
     storage['prodNo6'] = state.selectedFruits[5];
     storage['cusFruitsPrice'] = state.totalPrice;
   }else{
-    alert("您尚未添齊 6 種水果喔! 請再添購")
+    $("#alertBox").css("backgroundColor","firebrick").
+                   css("boxShadow","2px 2px 5px rgba(178, 34, 34, 0.75)");
+    $("#alertBox").removeClass('hidden');
+    $("#alertMessage").text("尚未添齊 6 種水果喔! 請再添購");
+
+    setTimeout(function(){
+    $("#alertBox").addClass('hidden');
+    }, 2000);
   }
 })

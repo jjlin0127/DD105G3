@@ -21,15 +21,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
+    <script src="./js/getCusfruits.js" defer></script>
     <script src="./js/lightbox.js" defer></script>
     <script src="./js/getRecommendation.js" defer></script>
-    <script src="./js/getCusfruits.js" defer></script>
     <script src="./js/cusfruits.js" defer></script>
     <script src="./js/shopping_cart01.js" defer></script>
 </head>
 
 <body>
     @@include('layout/header.html',{ "focus04" : "focus" })
+
+    <!-- alert start -->
+    <div id="alertBox" class="alertBox hidden">
+        <span id="close_alert_btn">&times;</span>
+        <span id="alertMessage"></span>
+    </div>
+    <!-- alert end -->
+
     <div class="paddingtop">
         <h2 class="title_cusfruits">
             <img src="./images/index/leaf6.svg" class="leafLeft">
@@ -59,7 +67,7 @@
             <p>根據問答小測驗，天然甘推薦您
                 <span id="cusFruitsName"></span>
                 組合, 也會適度搭配其他果甘並重喔！</p>
-            <p>建議果乾組合: 
+            <p>建議果乾組合:
                 <span id="prodNo1"></span>
                 <span id="prodNo2"></span>
                 <span id="prodNo3"></span>
@@ -93,10 +101,13 @@
                 <div class="fruits_window" id="fruits_window">
                     <!-- 1：幫助消化 2：活化大腦 3：保護血管 -->
                     <div class="layer1" id="layer1">
+                        <p class="layer1Label">幫助消化</p>
                     </div>
                     <div class="layer2" id="layer2">
+                        <p class="layer2Label">活化大腦</p>
                     </div>
                     <div class="layer3" id="layer3">
+                        <p class="layer3Label">保護血管</p>
                     </div>
                 </div>
             </div>
@@ -132,9 +143,9 @@
                     </div>
                     <div class="buttons">
                         <a href="index.html">取消</a>
-                        <button type="submit" class="addCartBtn putin" id="putin_11">放入購物車
+                        <button type="submit" class="addCartBtn putin disabled" id="putin_11">放入購物車
                             <input type="hidden" value="客製果甘|varFruits.png|360">
-                        </button>                        
+                        </button>
                     </div>
                 </div>
             </div>

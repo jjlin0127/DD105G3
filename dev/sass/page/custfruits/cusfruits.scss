@@ -48,11 +48,42 @@ body {
     }
   }
 }
-
-.popup2 {
-  @include popup;
+//--------
+.alertBox {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 425px;
+  line-height: 1.5;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 4;
+  transition: all 0.3s linear;
+}
+.alertBox.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
+#close_alert_btn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: black;
+  }
+}
 //--------
 .cusfruits_wrapper {
   display: flex;
@@ -144,6 +175,14 @@ body {
           left: 15px;
           max-width: 95%;
           display: flex;
+          .layer1Label {
+            position: absolute;
+            left: -4px;
+            top: -44px;
+            color: #63c9c5;
+            background-color: #03444b;
+            padding: 3px 5px;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -165,6 +204,14 @@ body {
           left: 15px;
           max-width: 95%;
           display: flex;
+          .layer2Label {
+            position: absolute;
+            left: -4px;
+            top: -39px;
+            color: #E3BD9C;
+            background-color: #03444b;
+            padding: 3px 5px;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -182,10 +229,19 @@ body {
           }
         }
         .layer3 {
-          top: 165px;
+          top: 170px;
           left: 15px;
           max-width: 95%;
           display: flex;
+          .layer3Label{
+            position: absolute;
+            left: -4px;
+            top: -33px;
+            color: #FF6347;
+            background-color: #03444b;
+            padding: 3px 5px;
+            z-index: 2;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -338,6 +394,9 @@ body {
         & :nth-child(2) {
           @include btn_secondary(150px);
           margin-left: 10px;
+        }
+        .disabled {
+          background-color: #404946;
         }
       }
     }
