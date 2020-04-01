@@ -414,7 +414,7 @@ $(document).ready(function () {
             scale: 1.3,
             rotation: -20,
             opacity: 1,
-        })
+        });
     
     
     var scene_01 = new ScrollMagic.Scene({
