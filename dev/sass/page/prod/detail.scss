@@ -13,171 +13,189 @@ body {
     background-image: url(../../../images/forum/sky.jpg);
 }
 
-.title_hot_topics{
-    @include title(3px,dotted,#a6c125,10px,#fff);
+.title_hot_topics {
+    @include newTitle(3px, 10px, 300px, linear-gradient(to top, #dfe9f3 0%, white 100%));
     margin: 50px auto;
-  }
-  
-  img.leafLeft {
+}
+
+img.leafLeft {
     position: absolute;
     top: -25px;
     left: -25px;
     width: 25%;
-  }
-  
-  img.leafRight {
+}
+
+img.leafRight {
     position: absolute;
     top: -15px;
     right: -20px;
     width: 18%;
     transform: rotate(245deg);
-  }
+}
 
-.detail_wrapper{
-    width:1200px;
+.detail_wrapper {
+    width: 1200px;
     box-sizing: border-box;
-    background: linear-gradient(90deg,rgb(250, 250, 192), rgb(240, 240, 221));
-    border:3px solid #FEBD7B; 
+    background: linear-gradient(90deg, rgb(250, 250, 192), rgb(240, 240, 221));
+    border: 3px solid #FEBD7B;
     //#A2C070
-    border-radius:10px;
-    position:relative;
+    border-radius: 10px;
+    position: relative;
     left: 50%;
-    margin-left:-600px;
+    margin-left: -600px;
     margin-bottom: 40px;
-    padding:20px;
+    padding: 20px;
     padding-right: 0px;
     flex-wrap: wrap;
 }
 
-.detail_wrapper > .prdt_img{
-    width:40%;
+.detail_wrapper>.prdt_img {
+    width: 40%;
     // border:1px solid red; 
     background-color: white;
     border-radius: 4px;
     float: left;
 }
-.large_img > img{
-    width:100%;
+
+.large_img>img {
+    width: 100%;
 }
 
-.prdt_img > .small_img{
-    width:100%;
+.prdt_img>.small_img {
+    width: 100%;
     background-color: white;
-    div.small_imgs_list{
+
+    div.small_imgs_list {
         // border: 1px solid green;
-        box-sizing:border-box;
-        width:100%;
-        img.sm_photo{
-            width:23%;
+        box-sizing: border-box;
+        width: 100%;
+
+        img.sm_photo {
+            width: 23%;
         }
     }
 }
 
-.prdt_text{
-    float:right;
-    width:50%;
+.prdt_text {
+    float: right;
+    width: 50%;
     margin: 5%;
 }
 
-.prdt_text{
-    h2{
+.prdt_text {
+    h2 {
         line-height: 1.5;
     }
-    h2.prdt_avgscore{
-       display: inline-block;
-       text-decoration: underline;
-       margin-right: 10px;
-    }
-    img.star{
+
+    h2.prdt_avgscore {
         display: inline-block;
-        width:40%;
+        text-decoration: underline;
+        margin-right: 10px;
+    }
+
+    img.star {
+        display: inline-block;
+        width: 40%;
         position: relative;
-        top:6px;
+        top: 6px;
     }
 }
 
 
-p.introduce{
+p.introduce {
     margin: 10px 0px;
-    font-size:18px;
+    font-size: 18px;
 }
-.quantity > h4{
+
+.quantity>h4 {
     // color:red;
-    display:inline-block;
+    display: inline-block;
 }
-.quantity{
-    div,button{
-        font-size:2rem;
-        display:inline-block;
+
+.quantity {
+
+    div,
+    button {
+        font-size: 2rem;
+        display: inline-block;
         margin: 0px;
     }
 }
-input#howmany{
-    width:40px;
+
+input#howmany {
+    width: 40px;
     font-size: 26px;
     // border: 1px solid red;
-    padding: 10px; 
+    padding: 10px;
 }
-button.count{
-    width:40px;
+
+button.count {
+    width: 40px;
     // background-color:red;
-    padding: 5px 10px; 
+    padding: 5px 10px;
 }
 
 
-div.buy{
+div.buy {
     width: 98%;
     margin: 1%;
     border: 2px dashed #007864;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 10px 20px;
-    h4{
+
+    h4 {
         margin: 10px;
     }
-    img{
-        display:inline-block;
-        width:40px;
+
+    img {
+        display: inline-block;
+        width: 40px;
         position: relative;
-        top:12px;
+        top: 12px;
     }
 
-    span.price_label{
+    span.price_label {
         font-weight: bolder;
     }
 }
 
-table.previous_and_next{
+table.previous_and_next {
     width: 100%;
+
     //border: 1px solid red;
-    a{
+    a {
         color: #935B43;
         text-decoration: none;
     }
-    td.prod_next{
+
+    td.prod_next {
         text-align: right;
-        padding-right:20px;
+        padding-right: 20px;
     }
-    img{
+
+    img {
         // border: 1px solid red;
-        width:30px;
+        width: 30px;
         position: relative;
-        top:3px;
+        top: 3px;
     }
-    #putin{
+
+    #putin {
         margin: 0px 5px;
     }
-    #buyit{
+
+    #buyit {
         margin: 0px 5px;
     }
-    
+
 }
 
-ul.prtd_comment{
-    width:90%;
-    height:600px;
+ul.prtd_comment {
+    width: 90%;
+    height: 600px;
     overflow: auto;
-    margin:10px auto;
+    margin: 10px auto;
     padding: 10px;
     box-sizing: border-box;
     line-height: 1.4;
@@ -185,49 +203,53 @@ ul.prtd_comment{
     border-radius: 20px;
 }
 
-ul.prtd_comment > li{
-    width:100%;
+ul.prtd_comment>li {
+    width: 100%;
     border-bottom: 2px dotted black;
     position: relative;
     line-height: 1.4;
 }
-ul.prtd_comment > li > div{
-    width:100%;
+
+ul.prtd_comment>li>div {
+    width: 100%;
     margin: 10px;
 }
 
-div.each_comment{
+div.each_comment {
     // border: 1px solid hotpink;
     box-sizing: border-box;
-    .accuse{
-        font-size:1rem;
+
+    .accuse {
+        font-size: 1rem;
         border-radius: 10px;
-        float:right;
+        float: right;
     }
-    img.stars{
+
+    img.stars {
         margin: 0px 10px;
-        width:150px;
+        width: 150px;
         display: inline-block;
     }
-    img.accuse_icon{
+
+    img.accuse_icon {
         margin-left: 4px;
-        width:20px;
+        width: 20px;
         position: relative;
-        top:3px;
+        top: 3px;
     }
 }
 
 
 
 //以下的.grey_btn是複製政儒的 cancel_btn
-.grey_btn{
+.grey_btn {
     text-align: right;
     display: inline-block;
-  }
-  
-  .grey_btn{
+}
+
+.grey_btn {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     text-decoration: none;
     text-align: center;
     overflow: hidden;
@@ -241,24 +263,24 @@ div.each_comment{
     color: #141414;
     background-color: #A8A8A8;
     -webkit-box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
-            box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
+    box-shadow: 2px 2px 5px rgba(168, 168, 168, 0.5);
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
     text-decoration: none;
-  }
-  
-  .grey_btn:before {
+}
+
+.grey_btn:before {
     content: "\f054";
     font-family: FontAwesome;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0px;
@@ -267,34 +289,34 @@ div.each_comment{
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 0 50% 50% 0;
     -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
+    transform: scale(0, 1);
     -webkit-transform-origin: left center;
-            transform-origin: left center;
+    transform-origin: left center;
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
-  }
-  
-  .grey_btn:hover {
+}
+
+.grey_btn:hover {
     text-indent: 30px;
-  }
-  
-  .grey_btn:hover:before {
+}
+
+.grey_btn:hover:before {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     text-indent: 0;
-  }
-  
-  
-  //以下的orange_btn是複製政儒的.post_btn
-  
-  .orange_btn {
+}
+
+
+//以下的orange_btn是複製政儒的.post_btn
+
+.orange_btn {
     text-align: center;
-  }  
-  
-  .orange_btn {
+}
+
+.orange_btn {
     display: block;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     text-decoration: none;
     text-align: center;
     overflow: hidden;
@@ -308,55 +330,55 @@ div.each_comment{
     color: #ffffff;
     background-color: #D35D3D;
     -webkit-box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
-            box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
+    box-shadow: 2px 2px 5px rgba(211, 93, 61, 0.5);
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
     display: inline-block;
     margin: 10px;
-  }
-    
-    .orange_btn:before {
-      content: "\f054";
-      font-family: FontAwesome;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      position: absolute;
-      top: 0;
-      left: 0px;
-      height: 100%;
-      width: 20px;
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 0 50% 50% 0;
-      -webkit-transform: scale(0, 1);
-              transform: scale(0, 1);
-      -webkit-transform-origin: left center;
-              transform-origin: left center;
-      -webkit-transition: all 0.2s linear 0s;
-      transition: all 0.2s linear 0s;
-    }
-    
-    .orange_btn:hover {
-      text-indent: 30px;
-    }
-    
-    .orange_btn:hover:before {
-      -webkit-transform: scale(1, 1);
-              transform: scale(1, 1);
-      text-indent: 0;
-    }
-    
-  
-  //以下的green_btn是複製政儒的post_rest_btn
-  .green_btn {
+}
+
+.orange_btn:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+
+.orange_btn:hover {
+    text-indent: 30px;
+}
+
+.orange_btn:hover:before {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    text-indent: 0;
+}
+
+
+//以下的green_btn是複製政儒的post_rest_btn
+.green_btn {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     text-decoration: none;
     text-align: center;
     overflow: hidden;
@@ -370,25 +392,25 @@ div.each_comment{
     color: #ffffff;
     background-color: #1F7962;
     -webkit-box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
-            box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
+    box-shadow: 2px 2px 5px rgba(31, 121, 98, 0.5);
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
     display: inline-block;
     margin: 10px;
-  }
-  
-  .green_btn:before {
+}
+
+.green_btn:before {
     content: "\f054";
     font-family: FontAwesome;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0px;
@@ -397,20 +419,20 @@ div.each_comment{
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 0 50% 50% 0;
     -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
+    transform: scale(0, 1);
     -webkit-transform-origin: left center;
-            transform-origin: left center;
+    transform-origin: left center;
     -webkit-transition: all 0.2s linear 0s;
     transition: all 0.2s linear 0s;
-  }
-  
-  .green_btn:hover {
+}
+
+.green_btn:hover {
     text-indent: 30px;
     // padding: 12px 0px;
-  }
+}
 
-  .green_btn:hover:before {
+.green_btn:hover:before {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
     text-indent: 0;
-  }
+}
