@@ -19,6 +19,8 @@ try{
     $_SESSION["memName"] = $memRow["memName"];
     $_SESSION["memNickname"] = $memRow["memNickname"];
     $_SESSION["memTel"] = $memRow["memTel"];
+    $_SESSION["memStatus"] = $memRow["memStatus"];
+    $_SESSION["memImgUrl"] = $memRow["memImgUrl"];
     $_SESSION["memPoint"] = $memRow["memPoint"];
 
     //送出登入者的姓名資料
@@ -28,10 +30,11 @@ try{
       "memName"=>$_SESSION["memName"], 
       "memNickname"=>$_SESSION["memNickname"],
       "memTel"=>$_SESSION["memTel"],
+      "memStatus"=>$_SESSION["memStatus"],
+      "memImgUrl"=>$_SESSION["memImgUrl"],
       "memPoint"=>$_SESSION["memPoint"],
     ];
     echo json_encode($member);
-    // header("location:javascript://history.go(-1)");
   }
 }catch(PDOException $e){
   echo $e->getMessage();

@@ -24,14 +24,6 @@ body {
 //--------
 .popup {
   @include popup;
-  h2 {
-    @include newTitle(3px, 10px, 300px, linear-gradient(to top, #dfe9f3 0%, white 100%));
-    margin: 50px auto;
-    text-align: center;
-    border: none;
-    width: 100%;
-    margin: 0px;
-  }
   .guides {
     display: flex;
     justify-content: space-between;
@@ -102,6 +94,8 @@ body {
     justify-content: space-between;
     .wrapper_left {
       .cabinet_top {
+        position: relative;
+        left: -10px;
         width: 365px;
         height: 65px;
         background-image: url("../../../images/cusFruits/custfruit_cabinet_top.png");

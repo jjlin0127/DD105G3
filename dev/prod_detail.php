@@ -279,7 +279,12 @@ $product_review->execute();
 
 </body>
 <footer>
-    <strong>Copyright &copy; 2020 Natural Sweet</srong>
-    <i class="fas fa-leaf"></i>
+    <div class="footer_content">
+        <strong>地址：320 桃園市中壢區中大路300號<br></strong>
+        <strong>電話：03-4257387<br></strong>
+        <strong>信箱：DD105G3@gmail.com<br></strong>
+        <strong>Copyright &copy; 2020 Natural Sweet</srong>
+            <i class="fas fa-leaf"></i>
+    </div>
 </footer>
 </html>

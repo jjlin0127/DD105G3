@@ -1,5 +1,8 @@
 // $phone: 376px;
 @include respond(phone) {
+    .alertBox{
+        width: 95%;
+    }
     .signupcontainer {
         display: none;
         .imageblock {
