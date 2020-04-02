@@ -92,16 +92,22 @@ function addImg(e){
             data-point1="${newImg.healthyIndex1}" data-point2="${newImg.healthyIndex2}" data-point3="${newImg.healthyIndex3}">
           </td>
           <td class="droppedzone">
-            <input type="reset" value="移除" class="btn_s" data-btn="${newImg.dataFruit}">
+            <input type="reset" value="" class="btn_s" data-btn="${newImg.dataFruit}">
           </td>
         </tr>`
     );
 
+    // $(this).siblings('span').append(
+    //   `
+    //   <input type="reset" value="" class="btn_s" data-btn="${newImg.dataFruit}">
+    //   `
+    // );
+
+    $(`[data-btn="${newImg.dataFruit}"]`).unbind('click').click(removeNewImg);
+
     if(state.selectedFruits.length >= 6){
       $('[type="submit"]').removeClass("disabled");
     }
-  
-    $(`[data-btn="${newImg.dataFruit}"]`).unbind('click').click(removeNewImg);
   } else {
     $("#alertBox").css("backgroundColor","firebrick").
                    css("boxShadow","2px 2px 5px rgba(178, 34, 34, 0.75)");

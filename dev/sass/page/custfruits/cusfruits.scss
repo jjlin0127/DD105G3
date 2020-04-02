@@ -197,6 +197,16 @@ body {
           }
           .imgClicked {
             background: rgba(0, 0, 0, 0.5);
+            .btn_s {
+              background-image: url(../../../images/cusFruits/delete_icon.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+              height: 30px;
+              width: 30px;
+              outline: none;
+              margin-right: 10px;
+              border-radius: 50%;
+            }
           }
         }
         .layer2 {
@@ -208,7 +218,7 @@ body {
             position: absolute;
             left: -4px;
             top: -39px;
-            color: #E3BD9C;
+            color: #e3bd9c;
             background-color: #03444b;
             padding: 3px 5px;
           }
@@ -233,11 +243,11 @@ body {
           left: 15px;
           max-width: 95%;
           display: flex;
-          .layer3Label{
+          .layer3Label {
             position: absolute;
             left: -4px;
             top: -33px;
-            color: #FF6347;
+            color: #ff6347;
             background-color: #03444b;
             padding: 3px 5px;
             z-index: 2;
@@ -288,11 +298,14 @@ body {
             height: 60px;
           }
           .btn_s {
+            background-image: url(../../../images/cusFruits/delete_icon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
             outline: none;
             margin-right: 10px;
-            border-radius: 5px;
-            padding: 3px;
-            font-family: "Noto Sans TC", sans-serif;
+            border-radius: 50%;
           }
         }
       }
@@ -324,6 +337,10 @@ body {
         width: 375px;
         h5 {
           margin-bottom: 10px;
+          #totalPrice {
+            font-size: 2rem;
+            color: #8a5b41;
+          }
         }
         form {
           display: flex;
@@ -341,8 +358,8 @@ body {
             border-bottom: 2px solid $gray;
             outline: 0;
             font-size: 1.3rem;
-            color: $white;
-            padding: 7px 0;
+            color: #8A5B41;
+            padding: 20px 0 0;
             background: transparent;
             transition: border-color 0.2s;
             &::placeholder {
@@ -382,6 +399,10 @@ body {
         div {
           display: flex;
           justify-content: space-between;
+          #items {
+            font-size: 2rem;
+            color: #8a5b41;
+          }
         }
       }
       .buttons {
