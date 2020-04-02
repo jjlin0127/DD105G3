@@ -28,26 +28,9 @@ $(function(){
         return false;
         
 	}).find('a').focus(function(){
-		this.blur();
+		this.blur()
 	});
 });
 
-// -----------------------------------
-// $(document).ready(function () {
-//     // console.log(123);
-//     //展開訂單明細
-//     $('.orderList_btn').on('click', function () {
-//         // console.log(321);
-//         if ($(this).text() == "訂單明細 v") {
-//             // console.log('oop');
-//             $('.orderLis_content').removeClass('show');
-//             let tar = $(this).next().next(); //吃結構
-//             tar.addClass('show');
-//             $(this).text("訂單明細 ^");
-//         } else {
-//             $('.orderLis_content').removeClass('show');
-//             $(this).text("訂單明細 v");
-//         }
-//     });
-// });
+// ----------------------------------------------------
 
