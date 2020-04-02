@@ -59,7 +59,10 @@ $green: #d0d6d6;
 }
 
 body {
-    background: url('../../../images/login/full_bg.png');
+    // background: url('../../../images/login/full_bg.png');
+    @include bgc_img(index_bgc_nightblue2);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .title_cusfruits {

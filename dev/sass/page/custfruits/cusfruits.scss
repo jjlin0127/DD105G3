@@ -10,7 +10,10 @@
 @import "../../page/index/index_quiz";
 body {
   box-sizing: border-box;
-  background: url("../../../images/cusFruits/full_bg.png");
+  // background: url("../../../images/cusFruits/full_bg.png");
+  @include bgc_img(index_bgc_nightblue2);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   .paddingtop {
     // padding-top: 100px;
@@ -108,7 +111,7 @@ body {
     & > :nth-child(even) {
       width: 100px;
       height: 25px;
-      border-bottom: dotted #0898a8;
+      border-bottom: dotted orange;
       margin: 0px 10px;
       div {
         margin: 0 50px;
@@ -318,6 +321,9 @@ body {
         height: 375px;
         display: flex;
         flex-direction: column;
+        h5 {
+          color: whitesmoke;
+        }
         .radar_wrapper {
           background: url("../../../images/cusFruits/custfruit_bubble.png");
           background-position: center;
@@ -328,18 +334,19 @@ body {
           height: 300px;
         }
       }
-      $primary: #11998e;
-      $secondary: #38ef7d;
+      $primary: #f7ff00;
+      $secondary: #db36a4;
       $white: #fff;
-      $gray: #9b9b9b;
+      $gray: #d5d5d5;
       .lower {
         position: relative;
         width: 375px;
         h5 {
+          color: whitesmoke;
           margin-bottom: 10px;
           #totalPrice {
             font-size: 2rem;
-            color: #8a5b41;
+            color: orange;
           }
         }
         form {
@@ -358,7 +365,7 @@ body {
             border-bottom: 2px solid $gray;
             outline: 0;
             font-size: 1.3rem;
-            color: #8A5B41;
+            color: #8a5b41;
             padding: 20px 0 0;
             background: transparent;
             transition: border-color 0.2s;
@@ -399,9 +406,12 @@ body {
         div {
           display: flex;
           justify-content: space-between;
-          #items {
-            font-size: 2rem;
-            color: #8a5b41;
+          p{
+            color: whitesmoke;
+            #items {
+              font-size: 2rem;
+              color: orange;
+            }
           }
         }
       }

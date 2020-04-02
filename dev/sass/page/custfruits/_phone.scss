@@ -1,2 +1,20 @@
-// $phone: 376px;
-@include respond(phone) {}
+// $phone: 414px;
+@include respond(phone) {
+    body {
+        @include bgc_img(index_bgc_darkblue);
+        background-size: cover;
+        background-repeat: no-repeat;
+        .alertBox {
+            width: 95%;
+        }
+        .cusfruits_wrapper {
+            .cusfruits_inner {
+                .wrapper_middle {
+                    table {
+                        left: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
