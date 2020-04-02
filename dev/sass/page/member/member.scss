@@ -10,6 +10,7 @@
 @import '../../page/member/member_tab';
 @import '../../page/member/member_tab3';
 @import '../../page/member/order';
+@import '../../page/member/lightbox';
 
   
 body {
@@ -17,7 +18,6 @@ body {
     background-repeat: repeat;
     background-position: top;
     background-size: 105%;
-    // background: linear-gradient(125deg, #00103a 0%, #3e5f77 100%);  
     font-family: $fontFamily;
     position: relative;
 }
@@ -26,14 +26,17 @@ h1 {
     font-size: 2rem;
     color: $indexTitleFontColor;
 }
+
 h2 {
     font-size: 1.75rem;
     color: $indexTitleFontColor;
 }
+
 h3 {
     font-size: 1.5rem;
     color: $indexFontColor;
 }
+
 h4 {
     font-size: 1.25rem;
     color: $indexFontColor;
@@ -48,10 +51,7 @@ h5 {
   }
 
   .member_contain {
-      border: 1px solid orange;
-    //   display: flex;
-    //   align-items: flex-start;
-    //   justify-content: center;
+      // border: 1px solid orange;
       overflow: hidden;
       position: relative;
 
@@ -62,41 +62,36 @@ h5 {
   }
   
   .member_wrap {
-    border: 1px solid deeppink;
+    // border: 1px solid deeppink;
     width: 100%;
   }
 
   .member_content {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: -300px;
+    margin-top: -500px;
       // transform: rotateZ(-45deg);
       
       .island {
+          border: 1px solid yellow;
           position: absolute;
           z-index: -1;
+          top: 200px;
+          left: -230px;
 
           img {
-            position: absolute;
-            width: 600px;
-            top: -250px;
-            left: -260px;
+          position: absolute;
+          width: 600px;
+            
           }
        }
   }
 
   .tab {
-    // transform: rotateZ(-45deg);
-    border: 1px solid green;
+    // border: 1px solid green;
     width: 80%;
-    position: absolute;
-    bottom: 0;
     margin: 0 auto;
-    z-index: 999;
+    margin-top: 400px;
   }
   
-//   body, html {
-//     height: 100vh;
-//     margin: 0;
-//   }

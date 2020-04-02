@@ -130,7 +130,7 @@ function sendMessage(e) {
         }, 2000);
         return;
     }else{
-        var mesText = document.getElementById('comment_textarea').value;
+        mesText = document.getElementById('comment_textarea').value;
         if(mesText === ''){
             alertBox.classList.remove('hidden');
             alertBox.style.backgroundColor = "firebrick";
@@ -152,7 +152,8 @@ function sendMessage(e) {
             let xhr = new XMLHttpRequest();
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    mesText = '';
+                    // mesText = '';
+                    document.getElementById('comment_textarea').value = '';
                     loadMessages();
                 }else{
                     alert(xhr.status);
