@@ -56,7 +56,7 @@ window.addEventListener("load",function(){
     }
   }
 
-  xhr.open("get", "../php/getCusfruits.php", true);
+  xhr.open("get", "./php/getCusfruits.php", true);
   xhr.send(null);
 })
 
@@ -134,7 +134,7 @@ function removeNewImg(e) {
 
   updateItemTotal()
   minusCountEach(toBeRemovedFruitId)
-  minusItemPrice()
+  minusItemPrice(toBeRemovedFruitId)
   minusHealthyIndex1(toBeMinusedIndex1)
   minusHealthyIndex2(toBeMinusedIndex2)
   minusHealthyIndex3(toBeMinusedIndex3)
@@ -174,9 +174,11 @@ function plusItemPrice(){
   $('#totalPrice').text(state.totalPrice); 
 }
 
-function minusItemPrice(){
-  state.totalPrice -= Number(newImg.price);
+function minusItemPrice(value){
+  var price = $(`[data-fruit="${value}"]`).attr('data-price')
+  state.totalPrice -= Number(price);
   $('#totalPrice').text(state.totalPrice); 
+  
 }
 
 function plusHealthyIndex1(){
@@ -228,7 +230,7 @@ $('[type="submit"]').click(function(){
     storage['prodNo5'] = state.selectedFruits[4];
     storage['prodNo6'] = state.selectedFruits[5];
     storage['cusFruitsPrice'] = state.totalPrice;
-  }else{
+  }else{    
     $("#alertBox").css("backgroundColor","firebrick").
                    css("boxShadow","2px 2px 5px rgba(178, 34, 34, 0.75)");
     $("#alertBox").removeClass('hidden');

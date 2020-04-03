@@ -365,7 +365,7 @@ body {
             border-bottom: 2px solid $gray;
             outline: 0;
             font-size: 1.3rem;
-            color: #8a5b41;
+            color: #c0c43b;
             padding: 20px 0 0;
             background: transparent;
             transition: border-color 0.2s;
@@ -425,9 +425,10 @@ body {
         & :nth-child(2) {
           @include btn_secondary(150px);
           margin-left: 10px;
+          transition: .5s;
         }
         .disabled {
-          background-color: #404946;
+          display: none;
         }
       }
     }

@@ -66,7 +66,7 @@ $product_review->execute();
             <input id="memNo" type="hidden" value="">
             <a id="shopCart" class="navItem_2" href="prod_shopping.html">
                 <i class="fas fa-shopping-cart"></i><span id="a_count"></span></a>
-            <a id="memNickname" href="member2.html">&nbsp;</a>
+            <a id="memNickname" href="member.html">&nbsp;</a>
             <!-- 會員暱稱 -->
             <a id="spanLogin" class="navItem_2">登入</a>
         </div>
@@ -87,7 +87,7 @@ $product_review->execute();
     <div id="rwdHamburgerMenu">
         <nav>
             <ul>
-                <a href="member2.html">
+                <a href="member.html">
                     <li id="mobilememNickname">&nbsp;</li>
                 </a>
                 <a id="mobileloginLink">

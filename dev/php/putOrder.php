@@ -34,6 +34,23 @@ try {
 		$orderItems->execute();
 	}
 
+	$sql = "SELECT `memPoint` 
+			FROM `member` 
+			WHERE `memNo` = :memNo";
+	$memPointGet = $pdo->prepare($sql);
+	$memPointGet->bindValue(":memNo", $_SESSION["memNo"]);
+	$memPointGet->execute();
+	$memPointGetRow = $memPointGet->fetch(PDO::FETCH_ASSOC);
+	$_SESSION["memPoint"] = $memPointGetRow["memPoint"];
+
+	$sql = "UPDATE `member` 
+			SET `memPoint`= :memPoint
+			WHERE `memNo` = :memNo";
+	$memPointUpdate = $pdo->prepare($sql);
+	$memPointUpdate->bindValue(":memNo", $_SESSION["memNo"]);
+	$memPointUpdate->bindValue(":memPoint", $_SESSION["memPoint"]-$total);
+	$memPointUpdate->execute();
+
 	echo "OK";
 } catch (PDOException $e) {
 	$errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
