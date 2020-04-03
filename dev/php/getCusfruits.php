@@ -6,7 +6,7 @@ try{
   $cusFruits->execute();
 
   if( $cusFruits->rowCount()==0){ //取不到資料
-	  echo "error";
+	  echo "error from cusFruits";
   }else{
     //自資料庫中取回資料
     $cusFruitsRows = $cusFruits->fetchAll(PDO::FETCH_ASSOC);

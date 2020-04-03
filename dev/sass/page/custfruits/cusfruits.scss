@@ -142,9 +142,6 @@ body {
         color: #ddeffb;
         padding: 5px;
       }
-      p {
-        line-height: 30px;
-      }
       .fruits_window {
         // width: 380px;
         height: 500px;
@@ -159,6 +156,22 @@ body {
             width: 100px;
             height: 100px;
             object-fit: contain;
+          }
+          .prodName {
+            color: whitesmoke;
+            position: relative;
+            top: -12px;
+            left: 10px;
+          }
+          .unitPrice {
+            color: white;
+            background-color: red;
+            display: inline;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 0 5px;
+            border-radius: 100%;
           }
         }
         .linktoqna {
@@ -178,6 +191,9 @@ body {
           left: 15px;
           max-width: 95%;
           display: flex;
+          .prodName {
+            top:-10px;
+          }
           .layer1Label {
             position: absolute;
             left: -4px;
@@ -213,7 +229,7 @@ body {
           }
         }
         .layer2 {
-          top: 120px;
+          top: 96px;
           left: 15px;
           max-width: 95%;
           display: flex;
@@ -242,7 +258,7 @@ body {
           }
         }
         .layer3 {
-          top: 170px;
+          top: 122px;
           left: 15px;
           max-width: 95%;
           display: flex;
@@ -406,7 +422,7 @@ body {
         div {
           display: flex;
           justify-content: space-between;
-          p{
+          p {
             color: whitesmoke;
             #items {
               font-size: 2rem;
@@ -425,7 +441,7 @@ body {
         & :nth-child(2) {
           @include btn_secondary(150px);
           margin-left: 10px;
-          transition: .5s;
+          transition: 0.5s;
         }
         .disabled {
           display: none;
