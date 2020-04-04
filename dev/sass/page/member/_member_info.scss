@@ -1,19 +1,15 @@
 .mem_info_container{
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 100%;
     padding: 10px;
+    font-size: 1.5rem;
 
     display: flex;
-    
-    .selfie_container {
-        border: 1px solid red;
-        width: 80%;
-        
-    }
 
-    .selfie {
-        border: 1px solid blue;
-        width: 30%;
+    .selfie_container {
+        // border: 1px solid blue;
+        border-radius: 50%;
+        width: 200px;
         height: 200px;
 
         display: flex;
@@ -21,20 +17,24 @@
         justify-content: center;
         align-items: center;
 
+        background-position: center; 
+        background-size: cover;
+        background-repeat: no-repeat;
+
         input {
             border: 1px solid rgb(12, 12, 68);
         }
     }
    
     form {
-        border: 1px solid green;
-        width: 70%;
+        // border: 1px solid green;
+        width: 60%;
         // margin: 0 auto;
         padding: 5px;
     }
  
     input {
-        border: 1px solid rgb(144, 144, 243);
+        // border: 1px solid rgb(144, 144, 243);
         width: 70%;
         padding: 5px;
         margin: 5px;
@@ -45,6 +45,30 @@
         display: block;
         margin: 50px auto;
     }
+
+    .alertBox {
+        font-size: 16px;
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        box-sizing: border-box;
+        width: 230px;
+        padding: 20px;
+        color: white;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: crimson;
+        box-shadow: 2px 2px 5px rgba(220, 20, 60, 0.75);
+        overflow: hidden;
+        z-index: 4;
+        transition: all 0.3s linear; }
+      
+      .alertBox.hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s linear; }
 
     
 }
