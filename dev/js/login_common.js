@@ -149,6 +149,75 @@ function getLoginInfo() {
 //以上登入登出結束
 
 //此段處理註冊
+
+function validateEmail(e){
+    e.preventDefault();
+    emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+    let xhr = new XMLHttpRequest();
+
+    if ($('.signup .registeremail').val().match(emailRule)) {
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.responseText == 'can use') {
+                    $(".signup .emailHint").text('該Email可以使用').css("color","green");                    
+                } else if (xhr.responseText == 'existed') {
+                    $(".signup .emailHint").text('Email已存在, 請重新輸入!').css("color","red");
+                } else {
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerText = xhr.responseText;
+                    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 2000);
+                }
+            }
+        }
+        let data_info = `memId=${$(".signup .registeremail").val()}`
+        xhr.open("POST", "./php/regValidateEmail.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.send(data_info);
+    }else{
+        $(".signup .emailHint").text('請檢查您輸入的email是否正確')
+    }
+}
+
+function validateEmailMobile(e){
+    e.preventDefault();
+    emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+    let xhr = new XMLHttpRequest();
+
+    if ($('#mobilelogintab2 .registeremail').val().match(emailRule)) {
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.responseText == 'can use') {
+                    $("#mobilelogintab2 .emailHint").text('該Email可以使用').css("color","green");                    
+                } else if (xhr.responseText == 'existed') {
+                    $("#mobilelogintab2 .emailHint").text('Email已存在, 請重新輸入!').css("color","red");
+                } else {
+                    $id("alertBox").style.backgroundColor = "firebrick";
+                    $id("alertBox").style.boxShadow = "2px 2px 5px rgba(178, 34, 34, 0.75)";
+        
+                    $id("alertBox").classList.remove('hidden');
+                    $id("alertMessage").innerText = xhr.responseText;
+                    
+                    setTimeout(function(){
+                        $id("alertBox").classList.add('hidden');
+                    }, 2000);
+                }
+            }
+        }
+        let data_info = `memId=${$("#mobilelogintab2 .registeremail").val()}`
+        xhr.open("POST", "./php/regValidateEmail.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.send(data_info);
+    }else{
+        $("#mobilelogintab2 .emailHint").text('請檢查您輸入的email是否正確');
+    }
+}
+
 function registerfun(e) {
     e.preventDefault();
     emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
@@ -169,6 +238,7 @@ function registerfun(e) {
                     
                                 $id("alertBox").classList.remove('hidden');
                                 $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入。";
+                                $(".emailHint").text('');
                                 
                                 setTimeout(function(){
                                     $id("alertBox").classList.add('hidden');
@@ -202,8 +272,7 @@ function registerfun(e) {
                     let regismemId = $('.registeremail').val();
                     let regispsw = $('.registerinput1').val();
                     let member_data = `memNickname=${regisnickname}&memId=${regismemId}&memPsw=${regispsw}`;
-                    let url = "dest/../php/register.php";
-                    xhr.open("post", url, true);
+                    xhr.open("post", "./php/register.php", true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     xhr.send(member_data);
                 } else {
@@ -274,6 +343,7 @@ function mobileregisterfun(e) {
                                 $id("alertBox").style.boxShadow = "2px 2px 5px #699c50";                        
                                 $id("alertBox").classList.remove('hidden');
                                 $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入";
+                                $(".emailHint").text('');
                                 
                                 setTimeout(function(){
                                     $id("alertBox").classList.add('hidden');
@@ -299,8 +369,7 @@ function mobileregisterfun(e) {
                     let regismemId = $('#mobilelogintab2 .registeremail').val();
                     let regispsw = $('#mobilelogintab2 .registerinput1').val();
                     let member_data = `memNickname=${regisnickname}&memId=${regismemId}&memPsw=${regispsw}`;
-                    let url = "dest/../php/register.php";
-                    xhr.open("post", url, true);
+                    xhr.open("post", "./php/register.php", true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     xhr.send(member_data);
                 } else {
@@ -360,12 +429,14 @@ window.addEventListener("load", function() {
     $id('mobilespanLogin').onclick = showLoginForm;
 
     if (window.location.href.indexOf("login") > -1) {
+        $('.signup .registeremail').blur(validateEmail);
+        $('#mobilelogintab2 .registeremail').blur(validateEmailMobile);
         $id('btnLogin').onclick = sendForm;
         $id('mobilebtnLogin').onclick = mobilesendForm;
         $id('btnRegis').onclick = registerfun;
         $id('mobilebtnRegis').onclick = mobileregisterfun;
-        $id('close_alert_btn').addEventListener('click', function(){
+        $id('close_alert_btn').onclick = function(){
             $id("alertBox").classList.add('hidden');
-        });
+        };
     }
 }, false);
