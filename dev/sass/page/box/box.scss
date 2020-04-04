@@ -375,8 +375,11 @@
             
         }
         .addCartBtn{
-            @include btn_link(150px);
-            margin:  30px auto 50px auto;
+            @include btn_secondary(150px);
+            // margin:  30px auto 50px auto;
+            margin-left: 50%;
+            transform:translateX(-50%);
+            margin-top: 50px;
         }
     }
     // .addCartAlert{
