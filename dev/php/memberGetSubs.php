@@ -1,6 +1,6 @@
 <?php
-// session_start();
-// $memNo = $_SESSION["memNo"];
+session_start();
+$memNo = $_SESSION["memNo"];
 try {
     require_once("connectSchoolServer.php");
 
@@ -10,7 +10,7 @@ try {
             where (article.artStatus = 1) and
                   (author_subscription.memNo = :memNo)";
     $mySubs = $pdo->prepare($sql);
-    $mySubs -> bindValue(":memNo", $_REQUEST["memNo"]);
+    $mySubs -> bindValue(":memNo", $memNo);
     $mySubs -> execute();   
 
     if($mySubs -> rowCount() == 0){

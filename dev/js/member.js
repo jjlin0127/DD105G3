@@ -67,8 +67,6 @@ loadMycollect();
 loadMySubscription()
 
 function loadMyAticle(){
-    // let memNo = document.getElementById('memNo').value;
-    let memNo ='1';
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
         if(xhr.status == 200){
@@ -81,7 +79,7 @@ function loadMyAticle(){
                     myAticleStr +=
                     `
                     <tr>
-                        <td class="member_aticleTitle"><a href="#">${mya.artTitle}</a></td>
+                        <td class="member_aticleTitle"><a href="forum_article.php?articleNo=${mya.articleNo}">${mya.artTitle}</a></td>
                         <td>${mya.artTime.substr(0, 10)}</td>
                         <td>${mya.artLikeCount}</td>
                     </tr>
@@ -96,26 +94,24 @@ function loadMyAticle(){
         let myAticle = document.getElementById('myAticle');
         myAticle.innerHTML = myAticleStr;
     };
-    xhr.open("GET", `./php/memberGetArticles.php?memNo=${memNo}`, true);
+    xhr.open("GET", "./php/memberGetArticles.php", true);
     xhr.send();
 };
 
 function loadMycollect(){
-    // let memNo = document.getElementById('memNo').value;
-    let memNo ='1';
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
         if(xhr.status == 200){
             var myCollectStr = '';
             if(xhr.responseText.indexOf('no data') == -1){
-                console.log(xhr.responseText);
+                // console.log(xhr.responseText);
                 var myCollectOriArr = JSON.parse(xhr.responseText);
                 myCollectCopy = JSON.parse(JSON.stringify(myCollectOriArr));
                 myCollectCopy.forEach(function(myc){
                     myCollectStr +=
                     `
                     <tr>
-                        <td class="member_aticleTitle"><a href="#">${myc.artTitle}</a></td>
+                        <td class="member_aticleTitle"><a href="forum_article.php?articleNo=${myc.articleNo}">${myc.artTitle}</a></td>
                         <td>${myc.artTime.substr(0, 10)}</td>
                         <td>${myc.artMesCount}</td>
                     </tr>
@@ -130,28 +126,26 @@ function loadMycollect(){
         let myCollect = document.getElementById('myCollect');
         myCollect.innerHTML = myCollectStr;
     };
-    xhr.open("GET", `./php/memberGetCollects.php?memNo=${memNo}`, true);
+    xhr.open("GET", "./php/memberGetCollects.php", true);
     xhr.send();
 }
 
 function loadMySubscription(){
-    // let memNo = document.getElementById('memNo').value;
-    let memNo ='1';
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
         if(xhr.status == 200){
             var mySubsStr = '';
             if(xhr.responseText.indexOf('no data') == -1){
-                console.log(xhr.responseText);
+                // console.log(xhr.responseText);
                 var mySubsOriArr = JSON.parse(xhr.responseText);
                 mySubsCopy = JSON.parse(JSON.stringify(mySubsOriArr));
-                mySubsCopy.forEach(function(myc){
+                mySubsCopy.forEach(function(mys){
                     mySubsStr +=
                     `
                     <tr>
-                        <td>${myc.memName}</td>
-                        <td class="member_aticleTitle"><a href="#">${myc.artTitle}</a></td>
-                        <td>${myc.artTime.substr(0, 10)}</td>
+                        <td>${mys.memNickname}</td>
+                        <td class="member_aticleTitle"><a href="forum_article.php?articleNo=${mys.articleNo}">${mys.artTitle}</a></td>
+                        <td>${mys.artTime.substr(0, 10)}</td>
                     </tr>
                     `;
                 });
@@ -164,7 +158,7 @@ function loadMySubscription(){
         let mySubscription = document.getElementById('mySubscription');
         mySubscription.innerHTML = mySubsStr;
     };
-    xhr.open("GET", `./php/memberGetSubs.php?memNo=${memNo}`, true);
+    xhr.open("GET", "./php/memberGetSubs.php", true);
     xhr.send();
 };
 
