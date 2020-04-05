@@ -152,7 +152,8 @@ function sendMessage(e) {
             let xhr = new XMLHttpRequest();
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    mesText = '';
+                    // mesText = '';
+                    document.getElementById('comment_textarea').value = '';
                     loadMessages();
                 }else{
                     alert(xhr.status);

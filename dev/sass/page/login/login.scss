@@ -1,11 +1,11 @@
-@import '../../base/reset';
-@import '../../base/variable';
-@import '../../base/fontSetting';
-@import '../../layout/header';
-@import '../../layout/footer';
-@import '../../mixin/titleStyle';
-@import '../../modules/button';
-@import '../../modules/rwd';
+@import "../../base/reset";
+@import "../../base/variable";
+@import "../../base/fontSetting";
+@import "../../layout/header";
+@import "../../layout/footer";
+@import "../../mixin/titleStyle";
+@import "../../modules/button";
+@import "../../modules/rwd";
 $green: #d0d6d6;
 @mixin butttonn02 {
     background-color: #f1c40f;
@@ -22,16 +22,51 @@ $green: #d0d6d6;
     }
 }
 
+.alertBox {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    box-sizing: border-box;
+    width: 425px;
+    line-height: 1.5;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 4;
+    transition: all 0.3s linear;
+}
+.alertBox.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#close_alert_btn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    line-height: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        color: black;
+    }
+}
+
 body {
-    background: url('../../../images/login/full_bg.png');
+    // background: url('../../../images/login/full_bg.png');
+    @include bgc_img(index_bgc_nightblue2);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .title_cusfruits {
-    @include title(3px,
-    dotted,
-    #a6c165,
-    10px,
-    #fff);
+    @include title(3px, dotted, #a6c165, 10px, #fff);
     margin: 50px auto;
 }
 
@@ -80,7 +115,7 @@ body {
     position: relative;
     .imageblock {
         &:before {
-            content: '';
+            content: "";
             display: block;
             width: 100%;
             height: 80%;
@@ -89,7 +124,7 @@ body {
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url('../../../images/login/block_bg.png');
+            background-image: url("../../../images/login/block_bg.png");
             background-size: cover;
             opacity: 0.5;
         }
@@ -104,13 +139,13 @@ body {
         border: 1px solid #aaa;
         width: 430px;
         height: 700px;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, .1);
-        transition: all .5s ease-in-out;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease-in-out;
         z-index: 2;
     }
     .displaynone {
         display: none;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
     }
     h1 {
         text-align: center;
@@ -150,9 +185,9 @@ body {
     .signin {
         form {
             padding-top: 35px;
-            div{
+            div {
                 position: relative;
-                .showText{
+                .showText {
                     width: 20px;
                     height: 20px;
                     position: absolute;
@@ -168,9 +203,9 @@ body {
         }
     }
     .signup {
-        div{
+        div {
             position: relative;
-            .showText{
+            .showText {
                 width: 20px;
                 height: 20px;
                 position: absolute;
@@ -180,11 +215,16 @@ body {
                 margin-top: 29px;
             }
         }
-        form{
-           button{
+        form {
+            button {
+                position: relative;
+                top: 18px;
+            }
+        }
+        .emailHint {
             position: relative;
-            top: 18px;   
-           } 
+            top: -30px;
+            font-size: 0.7rem;
         }
     }
     button {
@@ -237,7 +277,7 @@ body {
         }
         &:focus {
             font-size: 1em;
-            transition: .8s all ease;
+            transition: 0.8s all ease;
             &::placeholder {
                 opacity: 0;
             }
@@ -247,10 +287,10 @@ body {
 
 #mobilelogintab {
     display: none;
-    #mobilelogintab1{
-        div{
+    #mobilelogintab1 {
+        div {
             position: relative;
-            .showText{
+            .showText {
                 width: 20px;
                 height: 20px;
                 position: absolute;
@@ -258,51 +298,55 @@ body {
             }
         }
     }
-    #mobilelogintab2{
-        div{
+    #mobilelogintab2 {
+        div {
             position: relative;
-            .showText{
+            .showText {
                 width: 20px;
                 height: 20px;
                 position: absolute;
                 top: 10px;
             }
+        }
+        .emailHint {
+            position: relative;
+            top: 0px;
+            font-size: 0.7rem;
         }
     }
 }
 
-
 //動效
 .shake-vertical {
-	animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: shake-vertical 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 @keyframes shake-vertical {
     0%,
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     10%,
     30%,
     50%,
     70% {
-      transform: translateY(-8px);
+        transform: translateY(-8px);
     }
     20%,
     40%,
     60% {
-      transform: translateY(8px);
+        transform: translateY(8px);
     }
     80% {
-      transform: translateY(6.4px);
+        transform: translateY(6.4px);
     }
     90% {
-      transform: translateY(-6.4px);
+        transform: translateY(-6.4px);
     }
 }
-      
-@import './latopbig';
-@import './latopsmall';
-@import './ipadpro';
-@import './ipad';
-@import './phone';
+
+@import "./latopbig";
+@import "./latopsmall";
+@import "./ipadpro";
+@import "./ipad";
+@import "./phone";

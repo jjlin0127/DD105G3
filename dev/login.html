@@ -22,6 +22,14 @@
 
 <body>
     @@include('layout/header.html')
+
+    <!-- alert start -->
+    <div id="alertBox" class="alertBox hidden">
+        <span id="close_alert_btn">&times;</span>
+        <span id="alertMessage"></span>
+    </div>
+    <!-- alert end -->
+
     <div class="signupcontainer">
         <div class="imageblock">
             <div class="whiteform" style="transform: translateX(0%);">
@@ -32,6 +40,7 @@
                         <input type="text" class="emailinput regisnickname" name="memNickname">
                         <label>E-mail*:</label>
                         <input type="email" class="emailinput registeremail" name="memId" title="請輸入完整email地址">
+                        <span class="emailHint"></span>
                         <label>密碼*:</label>
                         <div>
                             <input type="password" class="emailinput firsttimepsw registerinput1" name="memPsw"
@@ -98,6 +107,7 @@
                 <input type="text" class="emailinput regisnickname" name="memNickname">
                 <label>E-mail*:</label>
                 <input type="email" class="emailinput registeremail" name="memId">
+                <span class="emailHint"></span>
                 <label>密碼*:</label>
                 <div>
                     <input type="password" class="emailinput firsttimepsw registerinput1" name="memPsw">

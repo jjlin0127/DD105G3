@@ -3,10 +3,9 @@ $('#summernote').summernote({
     tabsize: 2,
     minHeight: 300,
     toolbar: [
-      ['style', ['style']],
-      ['font', ['underline']],
-      ['color', ['color']],
-      ['para', ['paragraph']],
+        ['color', ['color']],
+        ['font', ['underline']],
+        ['para', ['paragraph']],
     ]
   });
 

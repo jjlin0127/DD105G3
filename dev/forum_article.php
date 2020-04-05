@@ -79,7 +79,7 @@ try {
             <div class="navList_2">
                 <input id="memNo" type="hidden" value="">
                 <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
-                <a id="memNickname" href="member2.html">&nbsp;</a>
+                <a id="memNickname" href="member.html">&nbsp;</a>
                 <!-- 會員暱稱 -->
                 <a id="spanLogin" class="navItem_2">登入</a>
             </div>
@@ -100,7 +100,7 @@ try {
         <div id="rwdHamburgerMenu">
             <nav>
                 <ul>
-                    <a href="member2.html">
+                    <a href="member.html">
                         <li id="mobilememNickname">&nbsp;</li>
                     </a>
                     <a id="mobileloginLink">
@@ -194,48 +194,65 @@ try {
                         for($i=0; $i<count($arrFruitsItems); $i++){
                             switch ($arrFruitsItems[$i]){
                                 case "1":
-                    ?>
+                    ?>      <a href="prod_detail.php?prodNo=1">
                             <span class="fruit_kind fruit_kind1">楊桃</span>
+                            </a>
                             <?php 
                                 break;
                                 case "2":
                             ?>
+                            <a href="prod_detail.php?prodNo=2">
                             <span class="fruit_kind fruit_kind1">鳳梨</span>
+                            </a>
                             <?php 
                                 break;
                                 case "3":
                             ?>
+                            <a href="prod_detail.php?prodNo=3">
                             <span class="fruit_kind fruit_kind1">火龍果</span>
+                            </a>
                             <?php 
                                 break;
                                 case "4":
                             ?>
+                            <a href="prod_detail.php?prodNo=4">
                             <span class="fruit_kind fruit_kind2">香蕉</span>
+                            </a>
                             <?php 
                                 break;
                                 case "5":
                             ?>
+                            <a href="prod_detail.php?prodNo=5">
                             <span class="fruit_kind fruit_kind2">草莓</span>
+                            </a>
                             <?php 
                                 break;
                                 case "6":
                             ?>
+                            <a href="prod_detail.php?prodNo=6">
                             <span class="fruit_kind fruit_kind2">芭樂</span>
+                            </a>
                             <?php 
                                 break;
                                 case "7":
                             ?>
+                            <a href="prod_detail.php?prodNo=7">
                             <span class="fruit_kind fruit_kind3">芒果</span>
+                            </a>
                             <?php 
                                 break;
                                 case "8":
                             ?>
+                            <a href="prod_detail.php?prodNo=8">
                             <span class="fruit_kind fruit_kind3">蘋果</span>
+                            </a>
                             <?php 
                                 break;
                                 case "9":
                             ?>
+                            <a href="prod_detail.php?prodNo=9">
                             <span class="fruit_kind fruit_kind3">藍莓</span>
+                            </a>
                             <?php
                                 break;
                                 default:
@@ -366,10 +383,13 @@ try {
     
     <footer>
         <div class="footer_content">
+            <strong>地址：320 桃園市中壢區中大路300號<br></strong>
+            <strong>電話：03-4257387<br></strong>
+            <strong>信箱：DD105G3@gmail.com<br></strong>
             <strong>Copyright &copy; 2020 Natural Sweet</srong>
                 <i class="fas fa-leaf"></i>
-        </div>
-    </footer> 
+            </div>
+    </footer>
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/vendor/all.js"></script>

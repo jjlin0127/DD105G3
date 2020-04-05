@@ -42,7 +42,7 @@ try {
             <div class="navList_2">
                 <input id="memNo" type="hidden" value="">
                 <a id="shopCart" class="navItem_2" href="prod_shopping.html"><i class="fas fa-shopping-cart"></i></a>
-                <a id="memNickname" href="member2.html">&nbsp;</a>
+                <a id="memNickname" href="member.html">&nbsp;</a>
                 <!-- 會員暱稱 -->
                 <a id="spanLogin" class="navItem_2">登入</a>
             </div>
@@ -63,7 +63,7 @@ try {
         <div id="rwdHamburgerMenu">
             <nav>
                 <ul>
-                    <a href="member2.html">
+                    <a href="member.html">
                         <li id="mobilememNickname">&nbsp;</li>
                     </a>
                     <a id="mobileloginLink">
@@ -101,8 +101,8 @@ try {
 
         <div class="hot_posts_area">            
             <h2 class="title_hot_posts">
-                <img src="./images/forum/leaf.svg"  class="leafLeft">
-                <img src="./images/forum/leaf.svg"  class="leafRight">
+                <img src="./images/index/leaf6.svg" class="leafLeft">
+                <img src="./images/index/leaf5.svg" class="leafRight">
                 熱門話題
             </h2>
             <div class="hot_posts">
@@ -251,8 +251,8 @@ try {
 
         <div class="all_posts_area">
             <h2 class="title_all_posts">
-                <img src="./images/forum/leaf.svg"  class="leafLeft">
-                <img src="./images/forum/leaf.svg"  class="leafRight">
+                <img src="./images/index/leaf6.svg" class="leafLeft">
+                <img src="./images/index/leaf5.svg" class="leafRight">
                 所有話題
             </h2>
 
@@ -372,10 +372,13 @@ try {
     
     <footer>
         <div class="footer_content">
+            <strong>地址：320 桃園市中壢區中大路300號<br></strong>
+            <strong>電話：03-4257387<br></strong>
+            <strong>信箱：DD105G3@gmail.com<br></strong>
             <strong>Copyright &copy; 2020 Natural Sweet</srong>
                 <i class="fas fa-leaf"></i>
         </div>
-    </footer> 
+    </footer>
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/vendor/all.js"></script>

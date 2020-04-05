@@ -10,7 +10,10 @@
 @import "../../page/index/index_quiz";
 body {
   box-sizing: border-box;
-  background: url("../../../images/cusFruits/full_bg.png");
+  // background: url("../../../images/cusFruits/full_bg.png");
+  @include bgc_img(index_bgc_nightblue2);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   .paddingtop {
     // padding-top: 100px;
@@ -24,14 +27,6 @@ body {
 //--------
 .popup {
   @include popup;
-  h2 {
-    @include newTitle(3px, 10px, 300px, linear-gradient(to top, #dfe9f3 0%, white 100%));
-    margin: 50px auto;
-    text-align: center;
-    border: none;
-    width: 100%;
-    margin: 0px;
-  }
   .guides {
     display: flex;
     justify-content: space-between;
@@ -56,11 +51,42 @@ body {
     }
   }
 }
-
-.popup2 {
-  @include popup;
+//--------
+.alertBox {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 425px;
+  line-height: 1.5;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 4;
+  transition: all 0.3s linear;
+}
+.alertBox.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
+#close_alert_btn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: black;
+  }
+}
 //--------
 .cusfruits_wrapper {
   display: flex;
@@ -85,7 +111,7 @@ body {
     & > :nth-child(even) {
       width: 100px;
       height: 25px;
-      border-bottom: dotted #0898a8;
+      border-bottom: dotted orange;
       margin: 0px 10px;
       div {
         margin: 0 50px;
@@ -102,6 +128,8 @@ body {
     justify-content: space-between;
     .wrapper_left {
       .cabinet_top {
+        position: relative;
+        left: -10px;
         width: 365px;
         height: 65px;
         background-image: url("../../../images/cusFruits/custfruit_cabinet_top.png");
@@ -113,9 +141,6 @@ body {
         text-align: center;
         color: #ddeffb;
         padding: 5px;
-      }
-      p {
-        line-height: 30px;
       }
       .fruits_window {
         // width: 380px;
@@ -131,6 +156,22 @@ body {
             width: 100px;
             height: 100px;
             object-fit: contain;
+          }
+          .prodName {
+            color: whitesmoke;
+            position: relative;
+            top: -12px;
+            left: 10px;
+          }
+          .unitPrice {
+            color: white;
+            background-color: red;
+            display: inline;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 0 5px;
+            border-radius: 100%;
           }
         }
         .linktoqna {
@@ -150,6 +191,17 @@ body {
           left: 15px;
           max-width: 95%;
           display: flex;
+          .prodName {
+            top:-10px;
+          }
+          .layer1Label {
+            position: absolute;
+            left: -4px;
+            top: -44px;
+            color: #63c9c5;
+            background-color: #03444b;
+            padding: 3px 5px;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -164,13 +216,31 @@ body {
           }
           .imgClicked {
             background: rgba(0, 0, 0, 0.5);
+            .btn_s {
+              background-image: url(../../../images/cusFruits/delete_icon.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+              height: 30px;
+              width: 30px;
+              outline: none;
+              margin-right: 10px;
+              border-radius: 50%;
+            }
           }
         }
         .layer2 {
-          top: 120px;
+          top: 96px;
           left: 15px;
           max-width: 95%;
           display: flex;
+          .layer2Label {
+            position: absolute;
+            left: -4px;
+            top: -39px;
+            color: #e3bd9c;
+            background-color: #03444b;
+            padding: 3px 5px;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -188,10 +258,19 @@ body {
           }
         }
         .layer3 {
-          top: 165px;
+          top: 122px;
           left: 15px;
           max-width: 95%;
           display: flex;
+          .layer3Label {
+            position: absolute;
+            left: -4px;
+            top: -33px;
+            color: #ff6347;
+            background-color: #03444b;
+            padding: 3px 5px;
+            z-index: 2;
+          }
           span {
             width: 25px;
             height: 25px;
@@ -238,11 +317,14 @@ body {
             height: 60px;
           }
           .btn_s {
+            background-image: url(../../../images/cusFruits/delete_icon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
             outline: none;
             margin-right: 10px;
-            border-radius: 5px;
-            padding: 3px;
-            font-family: "Noto Sans TC", sans-serif;
+            border-radius: 50%;
           }
         }
       }
@@ -255,6 +337,9 @@ body {
         height: 375px;
         display: flex;
         flex-direction: column;
+        h5 {
+          color: whitesmoke;
+        }
         .radar_wrapper {
           background: url("../../../images/cusFruits/custfruit_bubble.png");
           background-position: center;
@@ -265,15 +350,20 @@ body {
           height: 300px;
         }
       }
-      $primary: #11998e;
-      $secondary: #38ef7d;
+      $primary: #f7ff00;
+      $secondary: #db36a4;
       $white: #fff;
-      $gray: #9b9b9b;
+      $gray: #d5d5d5;
       .lower {
         position: relative;
         width: 375px;
         h5 {
+          color: whitesmoke;
           margin-bottom: 10px;
+          #totalPrice {
+            font-size: 2rem;
+            color: orange;
+          }
         }
         form {
           display: flex;
@@ -291,8 +381,8 @@ body {
             border-bottom: 2px solid $gray;
             outline: 0;
             font-size: 1.3rem;
-            color: $white;
-            padding: 7px 0;
+            color: #c0c43b;
+            padding: 20px 0 0;
             background: transparent;
             transition: border-color 0.2s;
             &::placeholder {
@@ -332,6 +422,13 @@ body {
         div {
           display: flex;
           justify-content: space-between;
+          p {
+            color: whitesmoke;
+            #items {
+              font-size: 2rem;
+              color: orange;
+            }
+          }
         }
       }
       .buttons {
@@ -344,6 +441,10 @@ body {
         & :nth-child(2) {
           @include btn_secondary(150px);
           margin-left: 10px;
+          transition: 0.5s;
+        }
+        .disabled {
+          display: none;
         }
       }
     }

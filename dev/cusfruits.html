@@ -18,23 +18,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
     <!-- jquery&jqueryUI -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery-ui.js"></script>
 
-    <!-- Vue.js -->
-    <script src="./js/vue.min.js"></script>
-    <script src="./js/index_qna.js"></script>
+    <!-- wow cdn -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-    <script src="./js/cusfruits.js" defer></script>
-    <script src="./js/getRecommendation.js"></script>
+    <script src="./js/cusfruits/getCusfruits.js" defer></script>
+    <script src="./js/cusfruits/getRecommendation.js" defer></script>
+    <script src="./js/cusfruits/cusfruits.js" defer></script>
     <script src="./js/lightbox.js" defer></script>
-    <script src="./js/shopping_cart01.js"></script>
-    
-
+    <script src="./js/shopping_cart01.js" defer></script>
 </head>
 
 <body>
     @@include('layout/header.html',{ "focus04" : "focus" })
+
+    <!-- alert start -->
+    <div id="alertBox" class="alertBox hidden">
+        <span id="close_alert_btn">&times;</span>
+        <span id="alertMessage"></span>
+    </div>
+    <!-- alert end -->
+
     <div class="paddingtop">
         <h2 class="title_cusfruits">
             <img src="./images/index/leaf6.svg" class="leafLeft">
@@ -42,7 +48,7 @@
         </h2>
     </div>
     <div class="popup">
-        <h2>客製果甘步驟</h2>
+        <h3>客製果甘步驟</h3>
         <div class="guides">
             <div>
                 <span>1</span>
@@ -59,76 +65,12 @@
         </div>
         <button name="close">我知道了</button>
     </div>
-    <div class="popup2">
-        <div id="app">
-            <!-- 題目 -->
-            <div v-if="progress < quiz.length">
-                <div class="quiz">
-                    <div class="qustions">
-                        <h5>{{quiz[progress].question}}</h5>
-                    </div>
-                    <div class="progressbar">
-                        <div class="progressbar text-center"
-                            style="background-color: green; margin: 0; color: white;"
-                            :style="{width:(progress*100/quiz.length)+'%'}">
-                            <!-- {{ progress }} -->
-                        </div>
-                    </div>
-                    <hr>
-                    <!-- 選項 -->
-                    <div v-for="(item, index) in quiz[progress].options" :key="index" class="quizOptions">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="option" v-model="answer"
-                                :value="optionsValue[index]">
-                            <span class="quizOption">
-                                {{optionsValue[index]}}
-                            </span>
-                            <span class="quizText">
-                                {{item}}
-                            </span>
-                        </label>
-                    </div>
-
-                    <!-- 按鈕 -->
-                    <div class="button-row">
-                        <div>
-                            <button v-if="progress===0" @click="prev()" type="button" class="btn-prev"
-                                disabled>上一題</button>
-                            <button v-else @click="prev()" type="button" class="btn-prev">上一題</button>
-                        </div>
-                        <div>
-                            <button v-if="answer===''" @click="next()" type="button" class="btn-next"
-                                disabled>下一題</button>
-                            <button v-else @click="next()" type="button" class="btn-next">下一題</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div v-else>
-                <div>
-                    <div class="recommend">
-                        <h3>已完成測驗</h3>
-                        <h2>推薦您 {{recommend}} 的組合</h2>
-                    </div>
-                    <hr>
-                    <div class="button-row">
-                        <div>
-                            <button @click="back()" type="button" class="btn-back">重作測驗</button>
-                        </div>
-                        <div>
-                            <button @click="refreshto(url)" type="button" class="btn-go">前往客製果甘</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="cusfruits_wrapper">
         <div class="recommended">
             <p>根據問答小測驗，天然甘推薦您
                 <span id="cusFruitsName"></span>
                 組合, 也會適度搭配其他果甘並重喔！</p>
-            <p>建議果乾組合: 
+            <p>建議果乾組合:
                 <span id="prodNo1"></span>
                 <span id="prodNo2"></span>
                 <span id="prodNo3"></span>
@@ -159,76 +101,21 @@
                 <div class="cabinet_title">
                     輕點添加選擇, 可以重複選購滿6樣即可喔！
                 </div>
-                <div class="fruits_window">
-                    <!-- <div class="linktoqna">
-                        或是去做測驗幫您推薦
-                    </div> -->
+                <div class="fruits_window" id="fruits_window">
                     <!-- 1：幫助消化 2：活化大腦 3：保護血管 -->
-                    <div class="layer1">
-                        <div>
-                            <img src="./images/cusFruits/01_starFruit_c.png" class="draggable" data-fruit="1"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/02_pineapple_c.png" class="draggable" data-fruit="2"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/03_dragon_c.png" class="draggable" data-fruit="3"
-                                data-price="60" data-point1="1" data-point2="0" data-point3="0">
-                            <span></span>
-                        </div>
+                    <div class="layer1" id="layer1">
+                        <p class="layer1Label">幫助消化</p>
                     </div>
-                    <div class="layer2">
-                        <div>
-                            <img src="./images/cusFruits/07_mango_c.png" class="draggable" data-fruit="4"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/08_apple_c.png" class="draggable" data-fruit="5"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/09_blueberry_c.png" class="draggable" data-fruit="6"
-                                data-price="60" data-point1="0" data-point2="1" data-point3="0">
-                            <span></span>
-                        </div>
+                    <div class="layer2" id="layer2">
+                        <p class="layer2Label">活化大腦</p>
                     </div>
-                    <div class="layer3">
-                        <div>
-                            <img src="./images/cusFruits/04_banana_c.png" class="draggable" data-fruit="7"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/05_stawberry_c.png" class="draggable" data-fruit="8"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
-                        <div>
-                            <img src="./images/cusFruits/06_guava_c.png" class="draggable" data-fruit="9"
-                                data-price="60" data-point1="0" data-point2="0" data-point3="1">
-                            <span></span>
-                        </div>
+                    <div class="layer3" id="layer3">
+                        <p class="layer3Label">保護血管</p>
                     </div>
                 </div>
             </div>
-            <div class="wrapper_middle">
+            <div class="wrapper_middle wow bounce">
                 <table id="selectedTable">
-                    <!-- 
-                    <tr>
-                        <td>
-                            <img src="./images/cusFruits/02_pineapple_c.png">
-                        </td>
-                        <td class="droppedzone">
-                            <input type="reset" value="移除" class="btn_s" disabled>
-                        </td>
-                    </tr>
-                    -->
                 </table>
             </div>
 
@@ -238,7 +125,6 @@
                         <img src="./images/cusFruits/cusfruit_staricon.png"> 養生指數
                         <img src="./images/cusFruits/cusfruit_subtitle.png">
                     </h5>
-                    <!-- <svg id="svg" width="375" height="375"></svg> -->
                     <div class="radar_wrapper">
                         <canvas id="heyChart" width="250" height="250"></canvas>
                     </div>
@@ -255,14 +141,14 @@
                         </form>
                         <div>
                             <p>已選: <span id="items">0</span>/6樣</p>
-                            <h5>目前總金額: <span id="totalPrice">0</span>元</h5>
+                            <h5>目前總金額: <span id="totalPrice">0</span>點</h5>
                         </div>
                     </div>
                     <div class="buttons">
                         <a href="index.html">取消</a>
-                        <button type="submit" class="addCartBtn putin" id="putin_11">放入購物車
+                        <button type="submit" class="addCartBtn putin disabled" id="putin_11">放入購物車
                             <input type="hidden" value="客製果甘|varFruits.png|360">
-                        </button>                        
+                        </button>
                     </div>
                 </div>
             </div>

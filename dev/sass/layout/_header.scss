@@ -12,7 +12,7 @@ header {
         justify-content: center;
         // position: fixed;
         height: 85px;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255, 255, 255, 0.95);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 
         // z-index: 99;
@@ -144,7 +144,7 @@ header .rwdHeader {
     display: none;
     // position: fixed;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 999;
 }
 
@@ -180,7 +180,7 @@ header #rwdHamburgerMenu {
     height: 100vh;
     position: fixed;
     right: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.95);
     transition: left 0.3s ease-in-out;
     z-index: 998;
 }
@@ -338,7 +338,7 @@ a {
         height: 100%;
         display: none;
         // position: fixed;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255, 255, 255, 0.95);
         z-index: 999;
     }
 
@@ -374,7 +374,7 @@ a {
         position: fixed;
         right: 100%;
         top: 80px;
-        background-color: rgba(255, 255, 255, 0.85);
+        background-color: rgba(255, 255, 255, 0.95);
         transition: left 0.3s ease-in-out;
         z-index: 998;
     }
