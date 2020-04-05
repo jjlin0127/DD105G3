@@ -10,7 +10,6 @@
 @import '../../page/member/member_tab';
 @import '../../page/member/member_order';
 @import '../../page/member/order';
-
   
 body {
     @include bgc_img(index_bgc_nightblue4);
@@ -20,6 +19,16 @@ body {
     font-family: $fontFamily;
     position: relative;
 }
+
+@media (max-width: 414px) {
+  body {
+    box-sizing: border-box;
+    color: #fff;
+    background-image: url(../../../images/bgc/index_bgc_darkblue.svg);
+    background-size: cover;
+  }
+}
+
 
 h1 {
     font-size: 2rem;
@@ -58,6 +67,13 @@ h5 {
         @include newTitle(3px, 10px, 400px, linear-gradient(to top, #dfe9f3 0%, white 100%));
         margin: 50px auto;
       }
+
+      @media (max-width: 414px) {
+        .member_title {
+          @include newTitle(3px, 10px, 260px, linear-gradient(to top, #dfe9f3 0%, white 100%));
+          margin: 50px auto;
+        }
+      }
   }
 
   section {
@@ -72,7 +88,12 @@ h5 {
       text-align: center;
       margin-top: 50px;
     }
-    
+
+    @media (max-width: 414px) {
+      .memBanner {
+        font-size: 2.5rem;
+      }
+    }
     .memBanner .text-wrapper {
       position: relative;
       display: inline-block;
@@ -92,7 +113,7 @@ h5 {
       text-align: center;
       color:#fff;
       font-size: 1.5rem;
-    }
+    }  
 
     .ufo {
       // border: 1px solid red;
@@ -111,6 +132,13 @@ h5 {
         left: -50px;
       } 
 
+      @media (max-width: 414px) {
+        .ufoimg1 {
+          width: 75px;
+          top: 50px;
+        } 
+      }
+
       .ufoimg2 {
         position: absolute;
         width: 250px;
@@ -121,6 +149,14 @@ h5 {
         top: 100px;
         right: -50px;
       } 
+
+      @media (max-width: 414px) {
+        .ufoimg2 {
+          width: 100px;
+          top: 200px;
+        } 
+      }
+
     }
   }
 
@@ -160,6 +196,7 @@ h5 {
     }
   }
   
+//---------------------------------
   .member_wrap {
       // border: 1px solid deeppink;
       width: 100%;
@@ -184,5 +221,22 @@ h5 {
               }
            }
       }
+
+      @media (max-width: 414px) {
+        .member_content {
+          .island {
+            position: absolute;
+            z-index: -1;
+            top: 500px;
+            left: -545px;
+        
+              img {
+                width: 180px;
+              }
+          }
+        }
+      }
   }
+
+  
   

@@ -3,13 +3,15 @@
       <div class="center">
         <div class="more-info">
           <div class="mem_info_container">
+            <form action="" name="selfieForm" id="selfieForm" method="POST" enctype="multipart/form-data">
             <div id="selfie_container" class="selfie">
                 <div class="selfie_container" style='background-image: url(./images/member/headShot/default.jpg);'></div>
                 <br>
                 <input type="file" name="" id="memSelfie">
             </div>
+            </form>
             <form action="" method="POST" id="memForm">
-                <!-- <span>帳號: </span>
+                <span>帳號: </span>
                 <span id="memId"></span>
                 <br>
                 <span>姓名: </span>
@@ -27,12 +29,8 @@
                 <span>點數: </span>
                 <input type="number"" name="memPoint" id="memPoint" disabled="true">
                 <br>
-                <input id="member_info_btn" class="member_info_btn" type="submit" value="確定修改"> -->
+                <input id="member_info_btn" class="member_info_btn" type="submit" value="確定修改">
             </form>
-            <div id="alertBox" class="alertBox hidden">
-              <span id="close_alert_btn">&times;</span>
-              <span id="alertMessage"></span>
-            </div>
         </div>
         </div>
         <img src="./images/member/fullmoon.svg">

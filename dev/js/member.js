@@ -170,6 +170,8 @@ function loadMySubscription(){
 
 
 // --------syy717 Order---------------------------
+
+
 // --------loadInfo---------------------------
 
 loadMemberInfo();
@@ -232,51 +234,9 @@ function $id(id) {
 	});
   }
   
-  //-----------會員資料編輯--------------------
+//-----------會員資料編輯--------------------
 
-  function $id(id) {
-	return document.getElementById(id);
-  }  
-
-  function modidyInfo(){
-	document.getElementById("memName").readOnly = false;
-	document.getElementById("memName").style.border = "2px solid #076baf";
-  }
-  function modidyInfo1(){
-	document.getElementById("memNickname").readOnly = false;
-	document.getElementById("memNickname").style.border = "2px solid #076baf";
-  } 
-  function modidyInfo2(){
-	document.getElementById("memPsw").readOnly = false;
-	document.getElementById("memPsw").style.border = "2px solid #076baf";
-  } 
-  function modidyInfo3(){
-	document.getElementById("memTel").readOnly = false;
-	document.getElementById("memTel").style.border = "2px solid #076baf";
-  } 
-	
-  function ModifyInfoCheck() {
-	var xhr = new XMLHttpRequest();
-	xhr.onload = function () {
-	  if (xhr.status == 200) {
-		alert("修改成功");
-		document.getElementById("memName").style.border = "1px solid #737374";
-		document.getElementById("memNickname").style.border = "1px solid #737374";
-		document.getElementById("memPsw").style.border = "1px solid #737374";
-		document.getElementById("memTel").style.border = "1px solid #737374";
-	  } else {
-		alert(xhr.status);
-	  }
-	}
-	xhr.open("Post", "memberModifyInfo.php", true);
-	var myForm = new FormData(document.getElementById('myForm'));
-	xhr.send(myForm);
-  }  
-  
-  function doFirst() {
-	$id('member_info_btn').addEventListener('click', ModifyInfoCheck);
-  }
-  window.addEventListener('load', doFirst);
+ 
 
 
 // --------loadSelfie---------------------------
@@ -288,24 +248,26 @@ function loadMemberSelfie(){
     xhr.onload = function(){
             // console.log(xhr.responseText);
             MemberSelfie = JSON.parse(xhr.responseText);
-            // console.log(MemberSelfie);
+            console.log(MemberSelfie);
             let memStr = '';
-            // memInfo.forEach(function(mem){
-               memStr =             `
-               <div id="selfie_container" class="selfie_container" style='background-image: url(./images/member/headShot/${MemberSelfie.memImgNo});'></div>
-               <br>
-               <input type="file" name="" id="memSelfie">
+               memStr =             
+               `
+               <form action="" name="selfieForm" id="selfieForm" method="POST" enctype="multipart/form-data">
+               <div id="selfie_container" class="selfie">
+                   <div class="selfie_container" style='background-image: url(./images/member/headShot/default.jpg);'></div>
+                   <br>
+                   <input type="file" name="" id="memSelfie">
+               </div>
+               </form>
                `;    
-            // });
-            let memSelfieDiv = document.getElementById('selfie_container');
+            let memSelfieDiv = document.getElementById('selfieForm');
             memSelfieDiv.innerHTML = memStr;
     };
     xhr.open("GET", "./php/memberGetSelfie.php", true);
-   //  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
     xhr.send();
 };
 
-// --------loadMyOrders---------------------------
+// --------loadOrders---------------------------
 
 loadMyOrders();
 
