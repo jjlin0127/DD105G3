@@ -9,13 +9,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: -100px;
-    height: 100%;
+    height: 50%;
     position: absolute;
       top: -100px;
       right: 0;
       bottom: 0;
       left: 0px;
-    // overflow: hidden;
     z-index: 1;
     transition: all;
   }
@@ -32,11 +31,12 @@ body {
   
   .member_info {
     // border: 1px solid green;
-    width: 70%;
+    width: 80%;
     height: 100%;
     transition: all;
     position: absolute;
     left: 0%;
+    top: 200px;
   }
 
   .center {
@@ -53,17 +53,17 @@ body {
     }
   
     .more-info {
-      background-image: linear-gradient(to bottom, rgba(10,10,10,1), black);
-      border-radius: 1em;
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      border-radius: 1rem;
       color: #fff;
       opacity: 0;
-      padding: 4rem;
+      padding: 2.75rem;
       transform: scale(.8);
       transform-origin: 0 0;
       width: 100%;
   
       h1 {
-        margin: 0 0 1em;
+        margin: 0 0 1rem;
         text-align: right;
       }
   
@@ -143,3 +143,81 @@ body {
       transform: rotateZ(360deg);
     }
   }
+
+  @media (max-width: 414px) {
+    .more-info {
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      border-radius: 1rem;
+      color: #fff;
+      opacity: 0;
+      padding: 3rem;
+      margin-top: 40px;
+      transform: scale(.9);
+      transform-origin: 0 0;
+      width: 100%;
+  
+      h1 {
+        margin: 0 0 1rem;
+        text-align: right;
+      }
+    }
+
+    .center:hover, .center.active {
+      transition: all;
+    
+      img {
+        transition: all;
+        transform: translateX(-75px) translateY(-75px) scale(.5);
+      }
+    
+      ~ .outer-container {
+        transition: all;
+        transform: translateX(-75px) translateY(-75px) scale(.4);
+        
+        img {
+          transition: all;
+          transform: translateX(-140px) translateY(-140px);
+        }
+      }
+    
+      .more-info {
+        opacity: 1;
+        transform: scale(.85);
+    
+        h1, li {
+          opacity: 1;
+        }
+      }
+    }   
+}
+
+
+@media (max-width: 375px) {
+  .center:hover, .center.active {
+    transition: all;
+  
+    img {
+      transition: all;
+      transform: translateX(-75px) translateY(-75px) scale(.5);
+    }
+  
+    ~ .outer-container {
+      transition: all;
+      transform: translateX(-75px) translateY(-75px) scale(.4);
+      
+      img {
+        transition: all;
+        transform: translateX(-140px) translateY(-140px);
+      }
+    }
+  
+    .more-info {
+      opacity: 1;
+      transform: scale(.7);
+  
+      h1, li {
+        opacity: 1;
+      }
+    }
+  }
+}
