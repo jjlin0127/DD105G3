@@ -25,7 +25,7 @@ window.addEventListener("load",function(){
                       <img src="./images/cusFruits/${e.fruitTypePic}" class="draggable" data-fruit="${e.fruitTypeNo}"
                           data-price="${e.fruitUnitPrice}" data-point1="1" data-point2="0" data-point3="0">
                       <span></span>
-                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}"></p>
+                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}">${e.fruitTypeName}</p>
                       <p class="unitPrice">${e.fruitUnitPrice}點<p>
                   </div>
                 `
@@ -36,7 +36,7 @@ window.addEventListener("load",function(){
                       <img src="./images/cusFruits/${e.fruitTypePic}" class="draggable" data-fruit="${e.fruitTypeNo}"
                           data-price="${e.fruitUnitPrice}" data-point1="0" data-point2="1" data-point3="0">
                       <span></span>
-                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}"></p>
+                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}">${e.fruitTypeName}</p>
                       <p class="unitPrice">${e.fruitUnitPrice}點<p>
                   </div>
                 `
@@ -47,7 +47,7 @@ window.addEventListener("load",function(){
                       <img src="./images/cusFruits/${e.fruitTypePic}" class="draggable" data-fruit="${e.fruitTypeNo}"
                           data-price="${e.fruitUnitPrice}" data-point1="0" data-point2="0" data-point3="1">
                       <span></span>
-                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}"></p>
+                      <p class="prodName" id="fruitTypeNo${e.fruitTypeNo}">${e.fruitTypeName}</p>
                       <p class="unitPrice">${e.fruitUnitPrice}點<p>
                   </div>
                 `
@@ -63,33 +63,6 @@ window.addEventListener("load",function(){
   }
 
   xhr.open("get", "./php/getCusfruits.php", true);
-  xhr.send(null);
-})
-
-window.addEventListener("load",function(){
-  //獲取果甘細節
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (xhr.status == 200) {
-        products = xhr.responseText;
-        if(cusFruits=="error"){
-          alert("出了一點問題, 取回果甘資料失敗")
-        } else{
-          success2 = JSON.parse(xhr.responseText);
-          for(let i=1;i<=success2.length;i++){
-            $(`#fruitTypeNo${i}`).text(             
-              `
-              ${success2[Number(success2[i-1].fruitTypeNo)-1].prodName}
-              `
-            );
-          };
-        }     
-    } else {
-      alert(xhr.status);
-    }
-  }
-
-  xhr.open("get", "./php/getProducts.php", true);
   xhr.send(null);
 })
 

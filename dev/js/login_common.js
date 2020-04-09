@@ -171,7 +171,7 @@ function validateEmail(e){
                     
                     setTimeout(function(){
                         $id("alertBox").classList.add('hidden');
-                    }, 2000);
+                    }, 3000);
                 }
             }
         }
@@ -205,7 +205,7 @@ function validateEmailMobile(e){
                     
                     setTimeout(function(){
                         $id("alertBox").classList.add('hidden');
-                    }, 2000);
+                    }, 3000);
                 }
             }
         }
@@ -215,6 +215,34 @@ function validateEmailMobile(e){
         xhr.send(data_info);
     }else{
         $("#mobilelogintab2 .emailHint").text('請檢查您輸入的email是否正確');
+    }
+}
+
+function validatePsw(e){
+    e.preventDefault();
+    let pswRule = /\w{6,17}$/;
+    if ($('.signup .firsttimepsw').val().match(pswRule)) {
+        if ($('.whiteform .firsttimepsw').val() === $('.whiteform .confirmpsw').val()) {
+            $(".pswHint").text('密碼可用').css("color","green");
+        } else {
+            $(".pswHint").text('請檢查兩次密碼輸入是否一致').css("color","red");;
+        }
+    } else {
+        $(".pswHint").text('密碼請輸入6-18碼英文、數字。');
+    }
+}
+
+function validatePswMobile(e){
+    e.preventDefault();
+    let pswRule = /\w{6,17}$/;
+    if ($('#mobilelogintab2 .firsttimepsw').val().match(pswRule)) {
+        if ($('.motabinner .firsttimepsw').val() === $('.motabinner .confirmpsw').val()) {
+            $(".pswHint").text('密碼可用').css("color","green");
+        } else {
+            $(".pswHint").text('請檢查兩次密碼輸入是否一致').css("color","red");;
+        }
+    } else {
+        $(".pswHint").text('密碼請輸入6-18碼英文、數字。');
     }
 }
 
@@ -237,13 +265,13 @@ function registerfun(e) {
                                 $id("alertBox").style.boxShadow = "2px 2px 5px #699c50";
                     
                                 $id("alertBox").classList.remove('hidden');
-                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入。";
+                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入<br>響應政府居家防疫, 註冊送1萬點";
                                 $(".emailHint").text('');
                                 
                                 setTimeout(function(){
                                     $id("alertBox").classList.add('hidden');
                                     $(location).attr('href', './login.html');
-                                }, 2000);
+                                }, 3000);
                                 
                             } else if (xhr.responseText.match('23000')) {
                                 $id("alertBox").style.backgroundColor = "firebrick";
@@ -342,13 +370,13 @@ function mobileregisterfun(e) {
                                 $id("alertBox").style.backgroundColor = "#96DF73";
                                 $id("alertBox").style.boxShadow = "2px 2px 5px #699c50";                        
                                 $id("alertBox").classList.remove('hidden');
-                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入";
+                                $id("alertMessage").innerHTML = "註冊成功! 歡迎加入天然甘, 請重新登入<br>響應政府居家防疫, 註冊送1萬點";
                                 $(".emailHint").text('');
                                 
                                 setTimeout(function(){
                                     $id("alertBox").classList.add('hidden');
                                     $(location).attr('href', './login.html');
-                                }, 2000);
+                                }, 3000);
                                 
                             } else if (xhr.responseText.match('23000')) {
                                 $id("alertBox").style.backgroundColor = "firebrick";
@@ -431,6 +459,11 @@ window.addEventListener("load", function() {
     if (window.location.href.indexOf("login") > -1) {
         $('.signup .registeremail').blur(validateEmail);
         $('#mobilelogintab2 .registeremail').blur(validateEmailMobile);
+
+        $('.signup .confirmpsw').blur(validatePsw);
+        $('#mobilelogintab2 .confirmpsw').blur(validatePswMobile);
+
+
         $id('btnLogin').onclick = sendForm;
         $id('mobilebtnLogin').onclick = mobilesendForm;
         $id('btnRegis').onclick = registerfun;

@@ -226,6 +226,11 @@ body {
             top: -30px;
             font-size: 0.7rem;
         }
+        .pswHint{
+            position: relative;
+            top: -30px;
+            font-size: 0.7rem;
+        }
     }
     button {
         @include butttonn02;
@@ -312,6 +317,12 @@ body {
             position: relative;
             top: 0px;
             font-size: 0.7rem;
+        }
+        .pswHint{
+            position: relative;
+            top: -10px;
+            font-size: 0.7rem;
+            white-space: nowrap;
         }
     }
 }
