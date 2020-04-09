@@ -1,6 +1,6 @@
 <?php
-// session_start();
-// $memNo = $_SESSION["memNo"];
+session_start();
+$memNo = $_SESSION["memNo"];
 try {
     require_once("connectSchoolServer.php");
 
@@ -9,7 +9,7 @@ try {
             where (article.artStatus = 1) and
                   (article_collect.memNo = :memNo)";
     $myCollects = $pdo->prepare($sql);
-    $myCollects -> bindValue(":memNo", $_REQUEST["memNo"]);
+    $myCollects -> bindValue(":memNo", $memNo);
     $myCollects -> execute();   
 
     if($myCollects -> rowCount() == 0){
