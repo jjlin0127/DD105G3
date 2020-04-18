@@ -132,7 +132,6 @@ function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function() {
         memberParse = JSON.parse(xhr.responseText);
-
         if (memberParse.memId) {
             $id("memNo").value = memberParse.memNo;
             $id("memNickname").innerText = memberParse.memNickname;

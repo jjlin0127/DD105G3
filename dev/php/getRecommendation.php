@@ -14,7 +14,7 @@ try{
     //寫入session
     session_start();
     $_SESSION["cusFruitsNo"] = $cusFruitsRow["cusFruitsNo"];
-    $_SESSION["memNo"] = $cusFruitsRow["memNo"];
+    $_SESSION["cus_memNo"] = $cusFruitsRow["memNo"];
     $_SESSION["cusFruitsName"] = $cusFruitsRow["cusFruitsName"];
     $_SESSION["prodNo1"] = $cusFruitsRow["prodNo1"];
     $_SESSION["prodNo2"] = $cusFruitsRow["prodNo2"];
@@ -26,7 +26,7 @@ try{
     //送出取回的資料
     $cusfruits_item = [
       "cusFruitsNo"=>$_SESSION["cusFruitsNo"], 
-      "memNo"=>$_SESSION["memNo"], 
+      "cus_memNo"=>$_SESSION["cus_memNo"], 
       "cusFruitsName"=>$_SESSION["cusFruitsName"], 
       "prodNo1"=>$_SESSION["prodNo1"],
       "prodNo2"=>$_SESSION["prodNo2"],
