@@ -14,7 +14,7 @@
     "gulp": "^3.9.1",
     "gulp-connect-php": "^1.0.3",
     "hover.css": "^2.3.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "mobile-drag-drop": "^2.3.0-rc.2",
     "scrollmagic": "^2.0.7"
